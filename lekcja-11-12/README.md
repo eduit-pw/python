@@ -8,6 +8,21 @@
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Pole i obwód, szkolne
 
 **Polecenie:** utwórz pole_prostokata(szerokosc: float, wysokosc: float) -> float i obwod_prostokata(szerokosc: float, wysokosc: float) -> float. Dla nieujemnych boków zwracaj odpowiednio ich iloczyn i 2 * (szerokosc + wysokosc). Funkcje nie odczytują i nie wypisują danych. W programie głównym wykonaj testy. Przyjmujemy poprawne, nieujemne wartości float; zero to dopuszczony przypadek graniczny do testowania wzoru.
@@ -68,6 +83,10 @@ Na tej lekcji używaj zwykłych funkcji. Jest to adaptacja algorytmów; klasę z
 ## Zadanie 5. Dla chętnych: Cyfry w raporcie - opcjonalne / domowe
 
 **Polecenie:** utwórz policz_cyfry(tekst: str) -> int i zbuduj_raport(tekst: str) -> str. Pierwsza funkcja liczy wyłącznie znaki od "0" do "9" jawną pętlą. Druga wywołuje pierwszą i zwraca komunikat Cyfry: {liczba}. Testy: "Błąd 404, port 80" daje 5, "ABC" daje 0, "" daje 0. Użyj przynależności do napisu "0123456789", aby kontrakt obejmował wyłącznie cyfry ASCII.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

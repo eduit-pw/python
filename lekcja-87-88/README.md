@@ -12,6 +12,21 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Każde zadanie zapisz jako osobny program, zachowując wersje wcześniejsze. W zadaniu 1 przycisk „Pokaż” kopiuje przycięty tekst pola do etykiety; pusty tekst daje „Podaj imię”. Zadanie 2 ćwiczy rozmieszczenie i nie wymaga zapisu danych. W zadaniu 3 podpisy R, G, B i odpowiadające im suwaki mają tworzyć trzy kolumny; podgląd jest w kolejnym wierszu, z columnSpan=3. Zakres suwaków 0-255, zmiany odświeżają kolor.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Pionowy formularz
 
 - Utwórz QWidget, QLineEdit, QPushButton „Pokaż” i QLabel.
@@ -43,6 +58,10 @@ Każde zadanie zapisz jako osobny program, zachowując wersje wcześniejsze. W z
 - Usuń ręczne move i setGeometry dla kontrolek obsługiwanych przez układ.
 
 **Wynik kontrolny:** kontrolki bez nakładania i bez wychodzenia poza obszar centralny.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

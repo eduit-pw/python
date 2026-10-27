@@ -12,6 +12,21 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Każdy przykład zapisz osobno, np. `zadanie1.py`. Sygnały podłączaj raz podczas budowy okna. Zadania 3-4 tworzą kolejne wersje panelu RGB. Duży podgląd i zapisana próbka są odrębnymi kontrolkami oraz odrębnymi wartościami stanu. Na początku oba kolory są białe.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Licznik kliknięć
 
 - Zbuduj etykietę wyniku, przyciski „+1” i „Reset”. Stan początkowy: 0.
@@ -43,6 +58,10 @@ Każdy przykład zapisz osobno, np. `zadanie1.py`. Sygnały podłączaj raz podc
 - Pobierz czerwony, potem ustaw niebieski bez kliknięcia przycisku. Adaptacja INF.04-01-25.06-SG, II: własny układ okna.
 
 **Wynik kontrolny:** duży podgląd niebieski, mała próbka nadal czerwona.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

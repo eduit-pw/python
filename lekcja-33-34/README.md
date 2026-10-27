@@ -8,6 +8,21 @@
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Licznik z kontrolowaną zmianą
 
 Zadanie autorskie. Napisz od początku `Licznik`:
@@ -81,6 +96,10 @@ Nie wymagamy osobnej metody wyświetlającej stan ani settera licznika. Nie trze
 Zadanie autorskie. Napisz `Uczen(ocena)` z właściwością `ocena`. Wewnętrzne `_ocena` zaczyna od 1. Setter przyjmuje liczby całkowite 1-6, a pozostałe liczby całkowite ignoruje. Konstruktor korzysta z tej samej reguły.
 
 Testy: stan `Uczen(4)` to 4; przypisania kolejno 6, 0, 7, 1 dają stany 6, 6, 6, 1. `Uczen(0)` ma 1. Drugi uczeń pozostaje niezależny. Bez dodatkowej walidacji typów.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

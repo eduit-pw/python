@@ -1,55 +1,30 @@
-# Ćwiczenia: Zespołowy projekt programistyczny: budowa serwisu internetowego z bazą danych i wersjonowaniem kodu w Git
+# Temat 62. Przygotowanie do samodzielnej pracy
 
-**Temat 62 | Lekcje 127-130**
+**Lekcje 127-130 | Zespołowy projekt programistyczny: budowa serwisu internetowego z bazą danych i wersjonowaniem kodu w Git**
 
-## Przygotowanie
+Właściwe polecenie, dane i zasady oddania otrzymasz od nauczyciela na zajęciach. W tym folderze jest zakres przygotowania.
 
-Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
+## Co powtórzyć
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Wróć do tematów 50-61. Uruchom własne rozwiązanie jednego wcześniejszego zadania na nowych danych. Odtwórz środowisko i sprawdź instrukcję uruchomienia.
 
-## Umowa projektu zespołowego
+### Projekt zespołowy
 
-To blok czterech lekcji. Podzielcie odpowiedzialności za schematy, SQL, endpointy, testy i dokumentację; pracujcie na gałęziach Git, scalając małe działające zmiany. Uruchomienie: `py -m uvicorn main:app --reload`; testy: `py -m unittest discover -v`. Pliki: main.py, schematy.py, baza.py, test_api.py, requirements.txt i URUCHOMIENIE.md.
+Uzgodnij schematy i kontrakty przed podziałem pracy. Każda zmiana ma mały zakres, własną weryfikację i opis. Po scaleniu uruchom cały zestaw testów.
 
-SQLite `kursy.db`: tabela kursy(id, nazwa) i zapisy(id, imie_nazwisko, kurs_id). ID zapisu jest INTEGER PRIMARY KEY AUTOINCREMENT, kurs_id to klucz obcy do kursy; włącz PRAGMA foreign_keys=ON przy każdym połączeniu. Startowa lista kursów: Programowanie w C#, Angular dla początkujących, Kurs Django. Wstawcie ją tylko przy pustej tabeli.
+### Klucz obcy
 
-| Operacja | Oczekiwany wynik |
-| --- | --- |
-| GET /kursy | 200, lista kursów z id i nazwa |
-| POST /zapisy | 201, zapis z nadanym id |
-| GET /zapisy | 200, lista zapisów |
-| GET /zapisy/{id} | 200 albo 404 |
-| DELETE /zapisy/{id} | 204 bez ciała albo 404 |
+Relacja między tabelami wymaga poprawnego ID istniejącego rekordu nadrzędnego. Ograniczenia SQL i sprawdzenie aplikacji współpracują. W SQLite świadomie włącz obsługę kluczy obcych.
 
-Wejście POST: imie_nazwisko jest niepustym str po strip, do 80 znaków; kurs_id to dokładnie dodatni int (bez bool). Nadmiarowe pola odrzućcie. Błędy schematu dają 422, nieistniejący kurs 404 bez zapisu. Sukces zwraca id, imie_nazwisko, kurs_id. Testy używają osobnej bazy; obejmują poprawny zapis, błędy, usuwanie i ponowną inicjalizację bez duplikowania kursów.
+### Odbiór
 
-## Etap 1. Kursy i trwała baza
+Sprawdź trwałość po restarcie, brak duplikatów inicjalizacji i izolację testów. Właściwe dane projektu oraz kryteria funkcjonalne udostępnia prowadzący.
 
-- Utwórzcie pustą bazę i inicjalizację kursów. Udostępnijcie GET /kursy.
-- Sprawdźcie listę i brak duplikatów po dwóch restartach.
-- Zapiszcie test oraz URUCHOMIENIE.md z poleceniem uruchomienia.
+## Próba przed zajęciami
 
-**Punkt kontrolny:** dokładnie 3 kursy po każdym uruchomieniu.
-
-## Etap 2. Zapis uczestnika
-
-- Dodajcie POST /zapisy ze schematem wejścia i kontrolą istnienia kursu.
-- Anna Nowak zapisuje się na Kurs Django. Wybierzcie jego ID z GET /kursy.
-- Sprawdźcie pustą osobę, ujemne ID i poprawne ID nieistniejącego kursu.
-
-**Punkt kontrolny:** 201 dla zapisu, 422 dla schematu, 404 dla brakującego kursu.
-
-## Etap 3. Odczyt, usunięcie i testy
-
-- Dodajcie listę zapisów, szczegóły zapisu i DELETE po ID.
-- Sprawdźcie 204 bez ciała, późniejszy GET 404 oraz zachowanie innych zapisów.
-- Testy mają własną bazę. Po scaleniach uruchamiajcie cały zestaw.
-
-**Punkt kontrolny:** restart zachowuje zapisy, usunięcie dotyczy jednego ID.
-
-## Oddanie pracy
-
-Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
+1. Wskaż wejście, wynik i ograniczenia wybranego wcześniejszego ćwiczenia.
+2. Uruchom poprawny przypadek, przypadek brzegowy i błędne dane.
+3. Wyjaśnij jedną decyzję w swoim kodzie bez odczytywania rozwiązania.
+4. Zapisz pytania do omówienia przed rozpoczęciem pracy ocenianej.
 
 [Spis lekcji](../README.md)

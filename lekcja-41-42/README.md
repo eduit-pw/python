@@ -8,6 +8,21 @@
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Pobieranie wieku
 
 **Plik:** `zadanie1.py`.
@@ -93,6 +108,10 @@ Suma: 8
 5. Dla poprawnych danych podaj `Koszt:` z dwoma miejscami po kropce i jednostką `zł`. Po każdej próbie wróć do pytania o kod.
 
 Próby: `A1, 3 → Koszt: 37.50 zł`; `X9, 2 → Nieznany kod produktu.`; `B2, abc → Podaj liczbę całkowitą.`; `C3, 0 → Liczba sztuk musi być dodatnia.`. Gdy oba teksty są błędne, najpierw sprawdzamy kod, więc otrzymujemy komunikat o kodzie. Nie wyszukujemy wszystkich problemów naraz.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

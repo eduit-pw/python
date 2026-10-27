@@ -12,6 +12,21 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 `pierwsza(n)` zwraca bool: dla n < 2 wynik False. Szukaj dzielnika od 2, dopóki d*d <= n. `wypelnij(tablica)` modyfikuje tablicę sita: od p=2, przy zaznaczonym p wykreślaj wielokrotności od p*p do końca tablicy, następnie zwiększ p; kontynuuj, dopóki p*p mieści się w tablicy. Nie zwracaj nowej tablicy. Przy rozkładzie powtarzaj dzielenie przez d, dopóki reszta jest zerowa; na końcu uwzględnij pozostały czynnik > 1. NWD z odejmowaniem zapisuj w osobnej funkcji dla dodatnich argumentów.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Przedział liczb pierwszych
 
 - Napisz program wypisujący liczby pierwsze z przedziału 0-20.
@@ -43,6 +58,10 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 - Porównaj wyniki z wersją modulo, używaną tylko jako kontrola. Adaptacja INF.04-01-23.01-SG, I: dodatnie dane i porównanie wersji.
 
 **Wynik kontrolny:** 6, 1, 6.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

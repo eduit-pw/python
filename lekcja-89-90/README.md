@@ -12,6 +12,21 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Rozwijaj jeden program `main.py`, zachowując kopie etapów. QAction importuj z `PyQt6.QtGui`. Menu, pasek narzędzi i skrót mają korzystać z tej samej instancji akcji. Anulowanie dialogu rozpoznaj po pustej ścieżce, zanim otworzysz plik. Po nieudanym zapisie zachowaj tekst; po nieudanym odczycie nie zastępuj zawartości edytora.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Menu i skrót
 
 - Utwórz QMainWindow z QTextEdit w obszarze centralnym.
@@ -43,6 +58,10 @@ Rozwijaj jeden program `main.py`, zachowując kopie etapów. QAction importuj z 
 - Sprawdź plik z zadania 3, anulowanie i niedostępny plik.
 
 **Wynik kontrolny:** sukces zmienia pole. Anulowanie lub błąd zachowuje jego treść.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

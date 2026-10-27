@@ -11,15 +11,15 @@ Materiały dla uczniów technikum. W folderach znajdziesz polecenia, dane wejśc
 
 ## Uruchamianie
 
-Materiały przygotowano dla Python 3.13. Poniższe polecenia dotyczą Windows i PowerShell. `py` musi wskazywać interpreter wybranego środowiska. W innych systemach użyj odpowiadającego mu `python3` lub `python`.
+Materiały przygotowano dla Python 3.13. Poniższe polecenia dotyczą Windows i PowerShell. Po aktywacji używaj `python`, który ma wskazywać interpreter wybranego środowiska. W innych systemach użyj odpowiadającego mu `python3` lub `python`.
 
 W katalogu repozytorium utwórz i aktywuj środowisko:
 
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
-py --version
-py -c "import sys; print(sys.executable)"
+python --version
+python -c "import sys; print(sys.executable)"
 ```
 
 Ostatnie polecenie powinno pokazać interpreter z `.venv`. W VS Code wybierz ten sam interpreter. Jeśli korzystasz z kilku środowisk, sprawdź tę ścieżkę w każdym terminalu przed instalacją i uruchomieniem.
@@ -28,13 +28,13 @@ Przejdź do folderu lekcji. Dla prostego skryptu:
 
 ```powershell
 cd lekcja-03-04
-py zadanie1.py
+python zadanie1.py
 ```
 
 Nazwy plików w zadaniach mają pierwszeństwo; polecenie pokazuje sposób uruchomienia pliku, który sam utworzysz. Gdy zadanie nie narzuca nazwy, użyj `zadanie1.py`, `zadanie2.py` itd. Projekty rozwijane etapami mogą korzystać z jednego main.py. W folderach z zewnętrznymi bibliotekami jest requirements.txt:
 
 ```powershell
-py -m pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 Bibliotek wbudowanych, np. csv, json, sqlite3, unittest i asyncio, nie instaluj z pip. PyQt6 wymaga środowiska graficznego. Qt Designer i Docker muszą być dostępne osobno na stanowisku. Django używa linii 5.2, Pydantic linii 2; zakresy wersji w requirements odpowiadają materiałom kursu.
@@ -42,16 +42,16 @@ Bibliotek wbudowanych, np. csv, json, sqlite3, unittest i asyncio, nie instaluj 
 Testy uruchamiaj z folderu projektu:
 
 ```powershell
-py -m unittest discover -v
+python -m unittest discover -v
 ```
 
 Celowo błędne demonstracje testów trzymaj poza folderem podstawowego zestawu. Nie uruchamiaj discover z katalogu całego kursu: lekcje mogą mieć moduły o tych samych nazwach.
 
-Django: polecenia manage.py wykonuj w folderze szkola_web. FastAPI: `py -m uvicorn main:app --reload` wykonuj obok main.py. Lokalne serwery zatrzymuj Ctrl+C. Przed uruchomieniem kolejnego zwolnij port 8000.
+Django: polecenia manage.py wykonuj w folderze szkola_web. FastAPI: `python -m uvicorn main:app --reload` wykonuj obok main.py. Lokalne serwery zatrzymuj Ctrl+C. Przed uruchomieniem kolejnego zwolnij port 8000.
 
 ## Kontynuacja projektów
 
-Kopiuj własną działającą wersję poprzedniego projektu do folderu następnej lekcji, bez .venv i plików tymczasowych. Dotyczy to zwłaszcza serii Django 51-54 oraz API 55-60. Zachowaj poprzednią wersję, żeby móc do niej wrócić. Nowy folder z README nie zawiera gotowej implementacji poprzedniego zadania.
+Kopiuj własną działającą wersję poprzedniego projektu do folderu następnej lekcji, bez .venv i plików tymczasowych. Dotyczy to zwłaszcza serii Django 51-54 oraz API 55-60. Zachowaj poprzednią wersję, żeby móc do niej wrócić. Folder zawiera startery, a nie gotową implementację poprzedniego zadania.
 
 Dane wejściowe są dołączone tam, gdzie polecenie ich wymaga. Klasa bazowa urządzenia, funkcja Cezara w lekcji testowania, funkcja zapisu do bufora i lokalny serwer integracyjny są materiałami początkowymi, a nie pełnymi rozwiązaniami ćwiczeń. Pozostałe wskazane pliki utwórz samodzielnie.
 
@@ -144,3 +144,13 @@ Do Git dodawaj kod, potrzebne dane, pliki .ui, migracje Django i konfigurację p
 ## Ćwiczenia z arkuszy
 
 Jeśli zadanie jest adaptacją INF.04, jego zakres opisano w treści. Rozszerzenia szkolne nie są dodatkowym wymaganiem oryginalnego arkusza. Podczas egzaminu stosuj technologię, nazwy plików, algorytm i dokumentację wskazane w otrzymanym poleceniu. Tematy Django, FastAPI i Docker rozwijają kurs. Zadania algorytmiczne ćwiczą również analizę przydatną na maturze.
+
+## Wersja kursu i dodatkowe materiały
+
+Wersja 2: 67 tematów, 140 godzin lekcyjnych. W każdej zwykłej lekcji jest `SCIAGA.md`, folder `startery/`, zadanie `diagnoza/` i jeden plik `testy.md`. Prezentacje są w osobnej paczce; obok każdego PPTX jest tekstowa wersja treści. Możesz do niej wrócić bez otwierania podręcznika.
+
+Tematy 13, 26, 47, 49 i 62 zawierają zakres przygotowania. Właściwe polecenia otrzymasz od nauczyciela. Wymagania zadań pochodzą z konspektów kursu; oznaczenia adaptacji INF.04 pozostawiono przy ćwiczeniach. Czas zajęć i wymagania tego kursu nie są regulaminem oficjalnego egzaminu.
+
+Po aktywacji środowiska używaj `python`; bez aktywacji uruchom `ścieżka-do-repo\.venv\Scripts\python.exe`. Qt Designer, Docker i budowanie plików Windows przygotuj zgodnie z instrukcją stanowiska. Nie dołączaj haseł, plików .env, baz uczniów ani .venv do repozytorium.
+
+[Zbiorcza ściąga do tematów 16-20](SCIAGA_16-20.md)

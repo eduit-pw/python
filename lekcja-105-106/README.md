@@ -23,6 +23,21 @@ py manage.py runserver
 
 Wybierz interpreter swojego venv; polecenie py musi używać tego samego środowiska. Jeśli używasz jawnej ścieżki do interpretera, zastąp py tą ścieżką. Po `startapp` dodaj `strony` do INSTALLED_APPS. Widoki używają HttpResponse; funkcja lekcja(request, numer) zwraca `Lekcja N`, gdzie N to przekazany numer. Kolejne lekcje kontynuują projekt, więc zachowaj działający katalog szkola_web.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Uruchom projekt
 
 - Utwórz szkola_web, venv, projekt szkola i aplikację strony według poleceń powyżej.
@@ -54,6 +69,10 @@ Wybierz interpreter swojego venv; polecenie py musi używać tego samego środow
 - Wyjaśnij różnicę między tekstem w URL a typem parametru widoku.
 
 **Wynik kontrolny:** Lekcja 51, Lekcja 0 oraz dwa statusy 404.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

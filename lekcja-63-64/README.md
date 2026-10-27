@@ -12,6 +12,21 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Zapisz zadania jako `zadanie1.py` itd. W zadaniu 2 utwórz `z_binarnego(tekst)`: zaczynasz od wyniku 0, dla każdej cyfry aktualizujesz `wynik = wynik * 2 + cyfra`. W zadaniu 4 `horner(wspolczynniki, x)` przyjmuje współczynniki od najwyższej potęgi; aktualizacja to `wynik = wynik * x + wspolczynnik`. Brakująca potęga wymaga współczynnika 0. Zwracaj wyniki, a wypisywanie umieść w programie głównym.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Konwersje kontrolne
 
 - Przelicz 45 na zapis binarny, ósemkowy i szesnastkowy.
@@ -43,6 +58,10 @@ Zapisz zadania jako `zadanie1.py` itd. W zadaniu 2 utwórz `z_binarnego(tekst)`:
 - Sprawdź x = 0 i x = -1. Wypisz wyniki. Adaptacja zbioru CKE „Schemat Hornera”: własny wielomian.
 
 **Wynik kontrolny:** [3, 0, -2, 4]. Wyniki: 24, 4, 3.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

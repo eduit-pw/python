@@ -20,6 +20,21 @@ py -m PyInstaller --onefile main.py
 
 Drugie polecenie dotyczy wariantu dynamicznie wczytującego .ui i tworzy dist/main_load. W zadaniu 3 wyznacz katalog danych przez `QStandardPaths.AppDataLocation`, po ustawieniu nazwy aplikacji i organizacji; utwórz go przed połączeniem z bazą. Dane trwałe nie mogą trafiać do tymczasowego katalogu rozpakowania onefile. Do odbiorcy przekaż całą paczkę onedir albo właściwy plik onefile, dla użytego systemu i architektury.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Paczka onedir
 
 - Sprawdź działanie main.py, potem zbuduj --onedir z widoczną konsolą.
@@ -51,6 +66,10 @@ Drugie polecenie dotyczy wariantu dynamicznie wczytującego .ui i tworzy dist/ma
 - Dodaj krótką instrukcję uruchomienia oraz wersje użytych zależności.
 
 **Wynik kontrolny:** odbiorca wie, co uruchomić i gdzie program zapisuje dane.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

@@ -12,6 +12,21 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Zapisz osobne funkcje. Liniowe wyszukiwanie zwraca pierwszy pasujący indeks albo -1 wraz z liczbą porównań. Wartownik również zwraca pierwszy indeks albo -1, nie zmieniając wejścia. Wyszukiwanie binarne wymaga posortowanej rosnąco listy: lewy=0, prawy=len(dane)-1, środek=(lewy+prawy)//2; po porównaniu odrzuć połowę, przesuwając granicę poza środek. Dla braku zwróć -1. W bisekcji x²-2 wybieraj połówkę zachowującą zmianę znaku; zakończ po uzyskaniu szerokości <= 0.001.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Indeks i liczba porównań
 
 - Rozbuduj liniowe wyszukiwanie: zwracaj (indeks, liczba_porownan).
@@ -43,6 +58,10 @@ Zapisz osobne funkcje. Liniowe wyszukiwanie zwraca pierwszy pasujący indeks alb
 - Policz iteracje i wypisz wynik z trzema miejscami po przecinku.
 
 **Wynik kontrolny:** 10 iteracji, zapis 1.415. Przed zaokrągleniem błąd <= 0.0005.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

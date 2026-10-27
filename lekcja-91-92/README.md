@@ -12,6 +12,21 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Zadania zapisz w oddzielnych plikach. ID jest daną rekordu, nie indeksem wiersza. Odczytuj je z zaznaczonego wiersza albo przechowuj jako UserRole. Podczas wypełniania tabeli wyłącz sortowanie, a włącz je po uzupełnieniu wszystkich komórek. Brak zaznaczenia i pusta tabela muszą być obsłużone przed odczytem item(...). Sortowanie liczb wymaga wartości int w DisplayRole, a nie tekstu liczbowego.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Lista albumów
 
 - Dodaj QListWidget z tytułami „Poranek”, „Wieczór” i „Noc”.
@@ -43,6 +58,10 @@ Zadania zapisz w oddzielnych plikach. ID jest daną rekordu, nie indeksem wiersz
 - Sprawdź obsługę przycisku odczytu, gdy tabela jest pusta.
 
 **Wynik kontrolny:** kolejność 1,2,10. Po opróżnieniu: komunikat, bez wyjątku.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

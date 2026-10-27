@@ -12,6 +12,21 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Kod zapisuj w `main.py` albo w osobnych plikach kolejnych zadań. Wyniki pokaż jako tekst, np. przez QLabel.setText; nie interpretuj tekstu użytkownika jako HTML. Cennik do zadania 3: Pocztówka = 1 zł, List = 1,5 zł, Paczka = 10 zł. Początkowo wybrana jest Pocztówka, ale cena pojawia się po kliknięciu. W zadaniu 4 najpierw sprawdzaj długość kodu, potem każdy znak jako cyfrę ASCII 0-9; wynik wyświetlaj po kliknięciu „Zatwierdź”.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Formularz ucznia
 
 - Zbuduj QLineEdit „Imię”, QSpinBox 1-5 „Klasa” i przycisk „Pokaż”.
@@ -43,6 +58,10 @@ Kod zapisuj w `main.py` albo w osobnych plikach kolejnych zadań. Wyniki pokaż 
 - Poprawny kod: „Dane poprawne”. Sprawdź 12345, 1234, 12a45 i 12-345. Adaptacja INF.04-01-23.06-SG, II: uproszczone komunikaty.
 
 **Wynik kontrolny:** tylko 12345 daje potwierdzenie.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

@@ -14,6 +14,21 @@ Skopiuj kontrakt API i schematy z tematu 57. Napisz `baza.py`: połączenie SQLi
 
 Użyj `main.py`, `schematy.py`, `baza.py`. Zachowaj statusy z tematu 57 oraz GET /status. Restart nie kasuje danych. Samodzielnie połącz moduły; pełne rozwiązanie nie jest dołączone. Uruchom `py -m uvicorn main:app --reload`.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Trwały zapis
 
 - Zaimplementuj wersję SQLite według kontraktu powyżej i uruchom usługę.
@@ -44,6 +59,10 @@ Użyj `main.py`, `schematy.py`, `baza.py`. Zachowaj statusy z tematu 57 oraz GET
 - Przechwyć IntegrityError poza with db i odczytaj tabelę.
 
 **Wynik kontrolny:** oba zapisy wycofane, tabela pusta.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

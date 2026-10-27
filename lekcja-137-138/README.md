@@ -21,6 +21,21 @@ py raport.py --help
 
 W osobnym config_demo.py wczytaj .env obok skryptu przez load_dotenv(..., override=False). Reguła wyboru URL: niepuste --url, następnie API_URL już w środowisku lub wczytane z .env, na końcu http://127.0.0.1:8000. Plik .env.example jest wzorem; skopiuj go lokalnie do .env do próby. W tym ćwiczeniu adres nie jest sekretem.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Raport z progiem
 
 - Napisz i uruchom raport.py dla danych Poranek=120 i Wieczór=80, z --min 100.
@@ -51,6 +66,10 @@ W osobnym config_demo.py wczytaj .env obok skryptu przez load_dotenv(..., overri
 - Używaj adresów demonstracyjnych. Nie wypisuj sekretów.
 
 **Wynik kontrolny:** CLI wygrywa ze środowiskiem, środowisko z .env, potem działa domyślna wartość.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

@@ -14,6 +14,21 @@ Napisz `async def pobierz(nazwa, czas)`: zaczekaj przez await asyncio.sleep(czas
 
 W zadaniu 3 użyj `async with asyncio.timeout(0.1)`; except TimeoutError umieść poza tym blokiem, a po obsłudze wykonaj pobierz z czasem 0.01. Zadanie 4 wymaga dwóch osobnych wersji korutyny, jednej blokującej i drugiej nieblokującej.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Sekwencja i współbieżność
 
 - Uruchom pobierz dla A=0,3 s oraz B=0,5 s w wariancie sekwencyjnym i współbieżnym opisanym powyżej.
@@ -43,6 +58,10 @@ W zadaniu 3 użyj `async with asyncio.timeout(0.1)`; except TimeoutError umieś�
 - Wyjaśnij, dlaczego time.sleep blokuje postęp drugiego zadania.
 
 **Wynik kontrolny:** około 0,6 s z time.sleep, około 0,3 s z asyncio.sleep.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

@@ -22,6 +22,21 @@ Kontynuuj kopię main.py i schematy.py z tematu 56. Przywróć wymagane pole pob
 
 Pola wejścia: tytul i pobrania. Schemat waliduje je przed zmianą stanu; id nadaje serwer. Nie zaimplementowano PATCH. Uruchom `py -m uvicorn main:app --reload`. Dla tego ćwiczenia nie zmieniaj kodu między kolejnymi operacjami testowej sekwencji, bo przeładowanie resetuje pamięć.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Dodawanie i lista
 
 - Połącz schemat z tematu 56 z kodem GET i POST z tej lekcji.
@@ -52,6 +67,10 @@ Pola wejścia: tytul i pobrania. Schemat waliduje je przed zmianą stanu; id nad
 - Pobierz Wieczór ponownie i sprawdź zachowanie poprzednich danych.
 
 **Wynik kontrolny:** dwa statusy 422, zapisane wartości bez zmian.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 

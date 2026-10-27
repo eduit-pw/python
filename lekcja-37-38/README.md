@@ -23,6 +23,21 @@ class Figura(ABC):
 
 Zakładamy wymiary liczbowe. Wersja podstawowa dopuszcza zero. Każde zadanie zapisz w osobnym pliku i dodaj pokaz działania.
 
+## Sposób pracy podczas bloku
+
+| Etap | Czas | Co robisz |
+| --- | ---: | --- |
+| Wyjaśnienia i demonstracja | 0-25 min | Czytasz przykład, przewidujesz wynik i zadajesz pytania. |
+| Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
+| Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
+| Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
+| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
+
+Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+
+**Przed praktyką:** przeczytaj [ściągę](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+
 ## Zadanie 1. Kolejne głosy
 
 1. Przed uruchomieniem pętli dla `[Pies(), Kot(), Zwierze()]` zapisz przewidywane wyniki i klasy, których metody zostaną wykonane.
@@ -114,6 +129,10 @@ Rozbuduj `Prostokat` i `Trojkat`, aby w konstruktorze zgłaszały `ValueError`, 
 
 **Testy:** `Prostokat(-1, 4)` i `Trojkat(4, -2)` dają `ValueError`; `Prostokat(0, 4).pole()` daje `0`; `Trojkat(4, 0).pole()` daje `0.0`. Nie musisz obsługiwać napisów i `None`; zakres danych to liczby.  
 **Przypomnienie:** `raise ValueError("Wymiary nie mogą być ujemne")` przerywa inicjalizację. Do pokazu oczekiwanego błędu użyj krótkiego `try/except ValueError`.
+
+## Diagnoza i praca domowa
+
+Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
 
