@@ -1,25 +1,29 @@
-# Temat 3. Wyjaśnienia do praktyki
+# Temat 03. Operatory i warunki
 
-## Trzy rodzaje dzielenia
+## Składnia pod ręką
 
-/ daje iloraz typu float. // zaokrągla iloraz w dół, także dla liczb ujemnych. % daje resztę zgodną z regułą a == (a // b) * b + a % b. Dzielnik nie może być zerem.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `a / b` | Dzielenie | Dla liczb int daje float. |
+| `a // b` | Iloraz zaokrąglony w dół | 7 // 3 to 2, a -7 // 3 to -3. |
+| `a % b` | Reszta zgodna z dzieleniem // | 7 % 3 to 1. |
+| `a ** b` | Potęgowanie | 2 ** 3 to 8. |
+| `==, !=, <, <=, >, >=` | Porównania | Zwykle dają True albo False. |
+| `dol <= x <= gora` | Sprawdzenie przedziału domkniętego | Obie granice należą do przedziału. |
+| `and, or, not` | Łączenie i negowanie warunków | and i or stosują skrócone obliczanie. |
+| `if / elif / else` | Wybór gałęzi | Wykonuje się pierwsza pasująca gałąź. |
 
-## Warunek i wcięcia
+## Krótki wzorzec
 
-Po if występuje wyrażenie logiczne i dwukropek. Wcięty blok działa tylko przy spełnionym warunku. Stosuj cztery spacje i nie mieszaj ich z tabulatorami.
+```python
+liczba = 47
+print(liczba // 10, liczba % 10)  # 4 7
+if 10 <= liczba < 50:
+    print("W przedziale")
+else:
+    print("Poza przedziałem")
+```
 
-## Pierwsza pasująca gałąź
+Dwa osobne if mogą wykonać dwa bloki. W łańcuchu if/elif/else wykona się najwyżej jeden. Zero jako dzielnik powoduje ZeroDivisionError.
 
-W if, elif, else wykona się pierwsza spełniona gałąź. Dwa osobne if są niezależne i oba mogą się wykonać. Kolejność reguł ma znaczenie dla progów i rabatów.
-
-## and, or i not
-
-and wymaga obu warunków, or przynajmniej jednego, not odwraca wartość logiczną. Python oblicza and/or tylko do rozstrzygnięcia wyniku. Nawiasy pomagają pokazać zamierzoną kolejność.
-
-## Granice przedziału
-
-Zapis 0 <= wiek <= 120 obejmuje oba końce. Wersja 0 < wiek < 120 je wyklucza. Sprawdź wartości tuż poniżej granicy, równe granicy i tuż powyżej.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/tutorial/controlflow.html) · [Zadania lekcji](README.md)

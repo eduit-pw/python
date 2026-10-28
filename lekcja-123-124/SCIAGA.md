@@ -1,25 +1,36 @@
-# Temat 60. Wyjaśnienia do praktyki
+# Temat 60. Testy API
 
-## TestClient
+## Składnia pod ręką
 
-TestClient wywołuje aplikację w teście bez osobnego serwera Uvicorn. Otrzymujesz odpowiedź ze status_code, json i content. Wymagane zależności testowe muszą być zainstalowane.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `from fastapi.testclient import TestClient` | Lokalny klient testowy | Nie wymaga uruchomionego Uvicorn. |
+| `with TestClient(app) as klient:` | Klient wraz z lifespan | Start i zakończenie aplikacji obejmują blok. |
+| `klient.get("/adres")` | Żądanie GET | Zwraca odpowiedź testową. |
+| `klient.post("/adres", json=dane)` | Żądanie z JSON | Automatycznie koduje body. |
+| `odpowiedz.status_code` | Kod odpowiedzi | Sprawdzaj konkretną oczekiwaną liczbę. |
+| `odpowiedz.json()` | Body jako obiekt Python | Nie wywołuj dla pustej odpowiedzi 204. |
+| `TemporaryDirectory()` | Tymczasowy katalog | Może zawierać osobną bazę każdego testu. |
+| `Osobna baza i stan` | Izolacja testów | Wynik nie zależy od danych z ręcznego uruchomienia. |
 
-## Start aplikacji w teście
+## Krótki wzorzec
 
-with TestClient(app) uruchamia cykl lifespan. Samo utworzenie obiektu klienta poza kontekstem nie jest równoważnym sprawdzeniem startu aplikacji.
+```python
+from fastapi import FastAPI
+from fastapi.testclient import TestClient
 
-## Baza tymczasowa
+app = FastAPI()
 
-W setUp utwórz osobną ścieżkę i zachowaj poprzednią konfigurację. W tearDown zamknij klienta, przywróć konfigurację i usuń katalog. Nie testuj usuwania na bazie użytkownika.
+@app.get("/status")
+def status():
+    return {"ok": True}
 
-## Asercje odpowiedzi
+with TestClient(app) as klient:
+    r = klient.get("/status")
+    assert r.status_code == 200
+    assert r.json() == {"ok": True}
+```
 
-Sprawdź status, pola i wartości. Dla DELETE 204 sprawdź puste content. Po błędnym POST odczytaj listę, aby wykryć ewentualny częściowy zapis.
+Po POST lub PUT sprawdzaj także późniejszy GET i rzeczywiście zapisane dane. Przy 204 sprawdź brak treści zamiast próbować odczytać JSON.
 
-## Wykrywanie regresji
-
-Celowo zmień jeden status w kopii i zobacz nieudany test. Przywróć poprawną implementację i uruchom pełny zestaw. Przejście kilku testów nie dowodzi pokrycia wszystkich możliwych danych.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://fastapi.tiangolo.com/advanced/testing-events/) · [Zadania lekcji](README.md)

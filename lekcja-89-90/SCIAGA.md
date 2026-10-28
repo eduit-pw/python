@@ -1,25 +1,31 @@
-# Temat 44. Wyjaśnienia do praktyki
+# Temat 44. Menu, akcje i dialogi
 
-## QAction
+## Składnia pod ręką
 
-QAction reprezentuje jedną akcję: tekst, skrót i sygnał triggered. W PyQt6 importuj ją z QtGui. Ta sama akcja może być jednocześnie w menu i pasku narzędzi.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `QAction("Zapisz", self)` | Wspólna akcja | Import QAction z PyQt6.QtGui. |
+| `akcja.triggered.connect(obsluga)` | Obsługa wykonania akcji | Jedna akcja może być w menu i pasku narzędzi. |
+| `akcja.setShortcut("Ctrl+S")` | Skrót klawiaturowy | Wywołuje tę samą akcję. |
+| `self.menuBar().addMenu("Plik")` | Menu w QMainWindow | menu.addAction(akcja) dodaje pozycję. |
+| `QFileDialog.getOpenFileName(...)` | Wybór pliku do odczytu | Wynik: (ścieżka, filtr). |
+| `QFileDialog.getSaveFileName(...)` | Wybór miejsca zapisu | Sam dialog nie zapisuje danych. |
+| `if sciezka:` | Sprawdzenie wyboru | Po anulowaniu ścieżka jest pusta. |
+| `QMessageBox.information(...), warning(...)` | Komunikat informacyjny i ostrzeżenie | question służy do pytania o decyzję. |
 
-## Dialog wyboru pliku
+## Krótki wzorzec
 
-getOpenFileName i getSaveFileName zwracają ścieżkę oraz wybrany filtr. Pusta ścieżka oznacza anulowanie. Najpierw sprawdź wynik, potem otwieraj plik.
+```python
+from PyQt6.QtGui import QAction
 
-## Odczyt i zapis
+# W metodzie okna QMainWindow:
+def dodaj_menu(self):
+    akcja = QAction("Zakończ", self)
+    akcja.setShortcut("Ctrl+Q")
+    akcja.triggered.connect(self.close)
+    self.menuBar().addMenu("Plik").addAction(akcja)
+```
 
-QTextEdit.toPlainText pobiera zwykły tekst, setPlainText ustawia go bez interpretacji HTML. Plik zapisuj jako UTF-8. Przy błędzie odczytu zachowaj poprzedni tekst.
+Fragment dodaj_menu wywołaj na instancji QMainWindow po utworzeniu QApplication. Dialog wyboru ścieżki i operacja na pliku to dwa osobne kroki.
 
-## Komunikaty
-
-QMessageBox.information pokazuje informację, warning problem, question pytanie o decyzję. Nie traktuj zamknięcia dialogu jako potwierdzenia usunięcia.
-
-## Połączenia i skróty
-
-Połącz akcję raz podczas budowy okna. Dodawanie connect po każdym kliknięciu może wywołać tę samą operację wielokrotnie. Sprawdź menu, pasek i skrót.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://doc.qt.io/qt-6/qfiledialog.html) · [Zadania lekcji](README.md)

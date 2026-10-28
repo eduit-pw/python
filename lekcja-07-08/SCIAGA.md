@@ -1,25 +1,27 @@
-# Temat 4. Wyjaśnienia do praktyki
+# Temat 04. Pętle i sterowanie wykonaniem
 
-## for i range
+## Składnia pod ręką
 
-range(start, stop, step) opisuje liczby od start z pominięciem stop. Krok może być ujemny, ale nie zerowy. for pobiera kolejne wartości; samo n nie jest automatycznie uwzględniane jako koniec.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `range(stop)` | Liczby od 0 do stop bez stop | range(3) daje kolejno 0, 1, 2. |
+| `range(start, stop, krok)` | Zakres z określonym krokiem | range(5, 0, -2) daje 5, 3, 1. |
+| `for element in dane:` | Przejście po elementach | Pusty zakres oznacza zero iteracji. |
+| `while warunek:` | Powtarzanie, dopóki warunek jest prawdziwy | Zadbaj o zmianę stanu pętli. |
+| `break` | Zakończenie najbliższej pętli | Nie kończy automatycznie pętli zewnętrznej. |
+| `continue` | Pominięcie reszty bieżącej iteracji | W while może ominąć zmianę licznika. |
+| `suma += liczba` | Aktualizacja akumulatora | Zwykle suma zaczyna się od 0. |
+| `licznik += 1` | Zliczenie jednego przypadku | Zwiększaj dopiero po spełnieniu warunku. |
 
-## while i postęp
+## Krótki wzorzec
 
-while sprawdza warunek przed każdą iteracją. Gdy warunek od początku jest fałszywy, blok nie wykona się ani razu. Zmieniaj stan tak, aby pętla mogła się zakończyć.
+```python
+suma = 0
+for liczba in range(2, 9, 2):
+    suma += liczba
+print(suma)  # 20
+```
 
-## break i continue
+Górna granica range nie należy do zakresu. Warunek while jest sprawdzany przed każdym obiegiem, także przed pierwszym.
 
-break kończy najbliższą pętlę. continue pomija resztę bieżącej iteracji i przechodzi do następnego sprawdzenia. Kod aktualizacji licznika umieść tak, aby continue go nie omijało przypadkiem.
-
-## Licznik i akumulator
-
-Licznik zwiększasz o 1 za przyjęty element, akumulator o jego wartość. Obie zmienne inicjalizuj przed pętlą. Wartość kończąca wprowadzanie nie należy do danych obliczenia.
-
-## Brak danych
-
-Minimum i maksimum zacznij od pierwszego przyjętego elementu. Przed średnią sprawdź licznik > 0. Początkowe minimum 0 daje błędny rezultat dla samych liczb dodatnich.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/tutorial/controlflow.html) · [Zadania lekcji](README.md)

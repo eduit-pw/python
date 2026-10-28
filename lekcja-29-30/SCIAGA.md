@@ -1,25 +1,36 @@
-# Temat 15. Wyjaśnienia do praktyki
+# Temat 15. Pola i rodzaje metod
 
-## Pole obiektu i klasy
+## Składnia pod ręką
 
-Pole zapisane przez self należy do instancji. Pole zapisane w ciele klasy jest wspólne w odczycie, dopóki instancja go nie przesłoni. Wspólna mutowalna lista może połączyć dane wielu obiektów.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `self.x` | Pole instancji | Stan konkretnego obiektu. |
+| `Klasa.x` | Pole klasy | Dane dostępne przez klasę. |
+| `def metoda(self):` | Metoda instancji | Ma dostęp do konkretnego obiektu. |
+| `@classmethod` | Dekorator metody klasowej | Pierwszy parametr cls wskazuje klasę. |
+| `return cls(...)` | Utworzenie obiektu przez metodę klasową | Uwzględnia klasę, na której wywołano metodę. |
+| `@staticmethod` | Dekorator metody statycznej | Nie dodaje automatycznie self ani cls. |
+| `self.lista = [] w __init__` | Osobna lista każdej instancji | Lista w ciele klasy byłaby współdzielona. |
+| `obj.x = wartość` | Przypisanie na instancji | Zwykle może przesłonić pole klasy o tej nazwie. |
 
-## Metoda klasowa
+## Krótki wzorzec
 
-@classmethod przekazuje klasę jako cls. Przydaje się do wspólnych danych i alternatywnego tworzenia przez cls(...). Nie dostaje automatycznie konkretnej instancji.
+```python
+class Pomiar:
+    def __init__(self, wartosc):
+        self.wartosc = wartosc
 
-## Metoda statyczna
+    @classmethod
+    def z_tekstu(cls, tekst):
+        return cls(float(tekst))
 
-@staticmethod nie dodaje self ani cls. Otrzymuje tylko podane argumenty. Użyj jej dla narzędzia związanego tematycznie z klasą, które nie potrzebuje stanu obiektu.
+    @staticmethod
+    def poprawny(x):
+        return x >= 0
 
-## Wspólny licznik
+print(Pomiar.z_tekstu("2.5").wartosc)  # 2.5
+```
 
-Zwiększaj Klasa.licznik i zapisuj nadany numer w self.numer. self.licznik += 1 może utworzyć pole instancji zamiast zmienić wspólną liczbę. del zmiennej sam nie zmniejsza licznika.
+Dla metody operującej na stanie instancji wybierz self. Metoda statyczna nie otrzymuje obiektu automatycznie.
 
-## Osobna lista
-
-Utwórz self.wpisy = [] w __init__, jeśli każdy obiekt ma mieć własną listę. Sprawdź dwa obiekty i mutację jednego. Przy metodach obliczeniowych zwracaj wynik, nie wyłącznie print.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/functions.html#classmethod) · [Zadania lekcji](README.md)

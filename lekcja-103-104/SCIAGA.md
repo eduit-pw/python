@@ -1,25 +1,29 @@
-# Temat 50. Wyjaśnienia do praktyki
+# Temat 50. HTTP i klient API
 
-## HTTP i żądanie
+## Składnia pod ręką
 
-Klient wysyła metodę, adres, nagłówki i ewentualne ciało. Serwer zwraca status, nagłówki i treść. GET służy do odczytu, POST do przesłania danych zgodnie z umową API.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `GET, POST, PUT, DELETE` | Odczyt, utworzenie, zastąpienie i usunięcie | Znaczenie szczegółowe określa umowa API. |
+| `URL i query, np. ?limit=5` | Adres zasobu i parametry | Parametry query są częścią URL. |
+| `Content-Type: application/json` | Deklaracja typu treści | Nie zastępuje walidacji danych. |
+| `200, 201, 204` | Sukces, utworzenie, brak treści | Przy 204 nie oczekuj JSON w odpowiedzi. |
+| `400, 404, 422, 500` | Wybrane kody błędów | Odpowiednio błędne żądanie, brak zasobu, błąd walidacji, błąd serwera. |
+| `urlopen(url, timeout=5)` | Żądanie z biblioteki standardowej | Wynikiem jest obiekt odpowiedzi. |
+| `odpowiedz.read().decode("utf-8")` | Bajty na napis | Kodowanie powinno pasować do treści. |
+| `json.loads(tekst)` | Napis JSON na obiekt Python | Nie jest to żądanie HTTP. |
 
-## Status i typ treści
+## Krótki wzorzec
 
-200 oznacza poprawny odczyt, 201 utworzenie, 204 sukces bez treści. 404 dotyczy brakującego zasobu, a 500 błędu serwera. Content-Type określa format odpowiedzi, np. application/json.
+```python
+from urllib.request import Request
 
-## urlopen
+zadanie = Request("http://127.0.0.1:8000/status",
+                  headers={"Accept": "application/json"}, method="GET")
+print(zadanie.get_method())  # GET
+print(zadanie.full_url)     # http://127.0.0.1:8000/status
+```
 
-urllib.request.urlopen pobiera odpowiedź i może otrzymać timeout. read daje bajty, decode tekst, json.loads strukturę. Dopiero potem kontrolujesz typ i pola danych.
+Utworzenie Request nie wysyła żądania. Dopiero urlopen je wykonuje. Odpowiedź 404 oznacza kontakt z serwerem, a nie brak połączenia.
 
-## Rodzaje awarii
-
-HTTPError opisuje błąd HTTP, URLError problem dostępu do zasobu. HTTPError jest podtypem URLError, więc obsłuż go wcześniej. Niepoprawny JSON ma osobny błąd parsowania.
-
-## Umowa API
-
-Dla operacji zapisz metodę, ścieżkę, wejście, sukces i błędy. Poprawne połączenie nie gwarantuje poprawnego schematu danych. Nie próbuj odczytywać JSON z pustej odpowiedzi 204.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/urllib.request.html) · [Zadania lekcji](README.md)

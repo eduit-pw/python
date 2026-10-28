@@ -1,25 +1,29 @@
-# Temat 6. Wyjaśnienia do praktyki
+# Temat 06. Funkcje, argumenty i return
 
-## Definicja i wywołanie
+## Składnia pod ręką
 
-def tworzy funkcję, a nazwa(argumenty) ją wykonuje. Parametr to nazwa w definicji, argument to wartość podana w wywołaniu. Ciało funkcji ma własne wcięcie.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `def nazwa(parametr):` | Definicja funkcji | Ciało wykonuje się po wywołaniu. |
+| `nazwa(wartość)` | Wywołanie funkcji | Wartość trafia do parametru. |
+| `return wynik` | Zwrócenie wyniku i koniec funkcji | Kończy także wykonanie pętli wewnątrz tej funkcji. |
+| `print(wynik)` | Wyświetlenie wyniku | Sam print zwraca None. |
+| `parametr=wartość` | Argument nazwany przy wywołaniu | Np. potega(podstawa=3, wykladnik=2). |
+| `def f(x: int) -> int:` | Adnotacje typów | Same nie sprawdzają danych podczas wykonania. |
+| `"""Opis funkcji."""` | Docstring | Pierwsza instrukcja wewnątrz funkcji. |
+| `None` | Brak wartości wyniku | Funkcja bez wykonanego return też zwraca None. |
 
-## return i print
+## Krótki wzorzec
 
-return przekazuje wynik do miejsca wywołania i kończy funkcję. print wyświetla tekst. Funkcja bez wykonanego return z wartością zwraca None. Obliczenie powinno zwracać wynik, jeśli wymaga tego zadanie.
+```python
+def pole_prostokata(a: float, b: float) -> float:
+    """Zwraca iloczyn długości boków."""
+    return a * b
 
-## Wynik a pętla
+wynik = pole_prostokata(3, b=4)
+print(wynik)  # 12
+```
 
-return umieszczone wewnątrz pętli może zakończyć funkcję po pierwszym elemencie. Sumę zwykle zwracasz po zakończeniu pętli. Wcześniejszy return pasuje do znalezienia pierwszego błędu.
+Argumenty są wartościami podanymi przy wywołaniu, parametry to nazwy w definicji. Wynik obliczenia i jego wyświetlenie można rozdzielić.
 
-## Warunek wejściowy
-
-Opisz, jakie dane przyjmuje funkcja i co zwraca dla przypadku brzegowego. Pobieranie input i wypisywanie raportu trzymaj w programie głównym, jeśli funkcja ma być obliczeniowa.
-
-## Adnotacje i dokumentacja
-
-Zapis parametr: int i -> bool opisuje oczekiwane typy. Sam nie wymusza ich w czasie wykonania. Komentarz lub docstring opisuje cel, argumenty i wynik zgodnie z poleceniem.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/tutorial/controlflow.html#defining-functions) · [Zadania lekcji](README.md)

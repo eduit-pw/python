@@ -1,25 +1,29 @@
-# Temat 38. Wyjaśnienia do praktyki
+# Temat 38. Daty i czas
 
-## date i datetime
+## Składnia pod ręką
 
-date opisuje dzień kalendarzowy, datetime także czas. Nie dodawaj dni przez ręczną zmianę numeru miesiąca. Użyj timedelta.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `date(rok, miesiac, dzien)` | Data kalendarzowa | Nieistniejąca data powoduje ValueError. |
+| `datetime(...)` | Data z godziną | Bez tzinfo jest pozbawiona informacji o strefie. |
+| `date.fromisoformat("2026-10-27")` | Odczyt daty ISO | Wynik date. |
+| `datetime.strptime(tekst, "%d.%m.%Y")` | Parsowanie według formatu | Niepasujący zapis powoduje ValueError. |
+| `data.strftime("%Y-%m-%d")` | Formatowanie do napisu | Wynik str. |
+| `koniec - poczatek` | Różnica dat lub czasu | Wynik timedelta. |
+| `timedelta(days=1), roznica.total_seconds()` | Przedział i łączna liczba sekund | roznica.seconds pomija pełne dni. |
+| `datetime.now(timezone.utc)` | Bieżący czas ze strefą UTC | Obiekt świadomy strefy. |
 
-## Parsowanie i formatowanie
+## Krótki wzorzec
 
-strptime(napis, format) odczytuje datę z tekstu. strftime(format) tworzy tekst daty. %d oznacza dzień, %m miesiąc, %Y czterocyfrowy rok. Błędna data zgłasza ValueError.
+```python
+from datetime import date, timedelta
 
-## Różnica czasu
+poczatek = date.fromisoformat("2026-10-27")
+koniec = poczatek + timedelta(days=3)
+print(koniec.isoformat())       # 2026-10-30
+print((koniec - poczatek).days)  # 3
+```
 
-Odjęcie dwóch zgodnych datetime daje timedelta. total_seconds() obejmuje cały czas, a seconds jest tylko częścią składową. Minuty uzyskasz przez podzielenie całej liczby sekund przez 60.
+%m oznacza miesiąc, %M minuty. Porównuj daty, a nie napisy w przypadkowym formacie. Dla godzin ustal zasady stref czasowych.
 
-## Przedziały dat
-
-Przedział poczatek <= data < koniec ułatwia filtrowanie pełnego miesiąca. Początek włączasz, początek następnego miesiąca wykluczasz. Sprawdź obie granice.
-
-## Strefy i umowa danych
-
-Datetime bez tzinfo nie przechowuje strefy. W tych ćwiczeniach wspólny lokalny czas jest świadomym uproszczeniem. Dla danych z wielu stref trzeba ustalić sposób normalizacji.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/datetime.html) · [Zadania lekcji](README.md)

@@ -1,25 +1,27 @@
-# Temat 32. Wyjaśnienia do praktyki
+# Temat 32. Operacje przy szyfrowaniu tekstu
 
-## Alfabet i indeks
+## Składnia pod ręką
 
-ord zwraca kod znaku, chr znak dla kodu. Po odjęciu ord("a") mała litera ma indeks 0-25. Po przesunięciu dodaj początek alfabetu i użyj chr.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `ord(znak)` | Kod znaku Unicode | Argument musi mieć długość 1. |
+| `chr(kod)` | Znak o wskazanym kodzie | Operacja odwrotna do ord w prawidłowym zakresie. |
+| `ord(znak) - ord("A")` | Indeks litery A..Z | Zakres sprawdź przed obliczeniem. |
+| `(indeks + klucz) % 26` | Przesunięcie w alfabecie 26 liter | Modulo zawija indeks na początek. |
+| `(indeks - klucz) % 26` | Przesunięcie odwrotne | Przydatne przy odszyfrowaniu. |
+| `slownik.get(znak, znak)` | Podstawienie lub zachowanie znaku | Mapa może obsługiwać pary zamian. |
+| `"".join(znaki)` | Składanie wyniku z fragmentów | Zwraca str. |
 
-## Modulo i klucz
+## Krótki wzorzec
 
-(indeks + klucz) % 26 zawija wynik do alfabetu. Działa również dla klucza ujemnego i większego od 26. Spacje przepisz zgodnie z umową, zamiast przesuwać ich kod.
+```python
+znak = "Y"
+klucz = 4
+indeks = ord(znak) - ord("A")
+nowy = chr(ord("A") + (indeks + klucz) % 26)
+print(nowy)  # C
+```
 
-## Szyfr podstawieniowy
+Ten przykład dotyczy tylko A..Z. Małe litery, polskie znaki i znaki spoza alfabetu wymagają jawnej reguły. Proste szyfry szkolne nie chronią poufnych danych.
 
-GADERYPOLUKI składa się z par GA, DE, RY, PO, LU, KI. Każdą parę zamieniasz w obie strony. Wielkość liter i pozostałe znaki obsługuj dokładnie według specyfikacji.
-
-## Odwracalność
-
-Cezara odszyfrujesz przeciwnym kluczem. Szyfr par zastosowany dwa razy daje wejście. Taki test własności uzupełnia stałe oczekiwane wyniki, ale ich nie zastępuje.
-
-## Struktura programu
-
-Funkcja szyfrująca przyjmuje tekst i klucz, zwraca str. Input i print są w programie głównym. Zapisuj literalne oczekiwania testów, żeby błędny algorytm nie produkował własnych odpowiedzi.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/functions.html#ord) · [Zadania lekcji](README.md)

@@ -1,25 +1,29 @@
-# Temat 8. Wyjaśnienia do praktyki
+# Temat 08. Listy
 
-## Lista i mutacja
+## Składnia pod ręką
 
-Lista zachowuje kolejność i pozwala zmieniać elementy. a = [1, 2] tworzy listę, b = a daje drugą nazwę tego samego obiektu. Dopisanie przez b będzie widoczne przez a.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `a.append(x)` | Dodanie jednego obiektu | Modyfikuje a, zwraca None. |
+| `a.extend(dane)` | Dodanie kolejnych elementów | extend([2, 3]) dodaje dwa elementy. |
+| `a.insert(i, x)` | Wstawienie przed indeksem i | Pozostałe elementy przesuwają się. |
+| `a.pop(i), a.pop()` | Usunięcie i zwrot elementu | Bez i usuwa ostatni, pusta lista daje IndexError. |
+| `a.remove(x)` | Usunięcie pierwszej wartości x | ValueError, jeśli jej nie ma. |
+| `del a[i]` | Usunięcie elementu | Nie zwraca wartości. |
+| `a.index(x), a.count(x)` | Pierwszy indeks i liczba wystąpień | index zgłasza ValueError przy braku x. |
+| `a.copy(), a[:]` | Płytka kopia listy | Zagnieżdżone obiekty nadal mogą być wspólne. |
+| `a.sort(), sorted(a)` | Sortowanie w miejscu i nowa lista | sort zwraca None. |
 
-## append, extend i insert
+## Krótki wzorzec
 
-append(x) dodaje jeden element x. extend(iterowalne) dodaje kolejne elementy argumentu. insert(i, x) wstawia x przed pozycją i. Te metody zmieniają listę i zwracają None.
+```python
+oryginal = [6, 2, 4]
+kopia = oryginal.copy()
+kopia.append(1)
+print(sorted(kopia))  # [1, 2, 4, 6]
+print(oryginal)       # [6, 2, 4]
+```
 
-## Usuwanie i wyszukiwanie
+b = a tworzy drugą nazwę tej samej listy. Unikaj usuwania z listy podczas przechodzenia po niej zwykłą pętlą for.
 
-pop(i) usuwa i zwraca element, domyślnie ostatni. remove(x) usuwa pierwszą równą wartość. index(x) podaje pierwszy indeks. Przy braku wartości remove/index zgłaszają ValueError.
-
-## Kopia i sortowanie
-
-copy tworzy nową listę z tymi samymi elementami. Dla zagnieżdżonych list jest to kopia płytka. sorted zwraca nową listę, sort zmienia istniejącą i zwraca None.
-
-## Usuwanie podczas pętli
-
-Usunięcie elementu przesuwa kolejne indeksy i może pominąć rekord. Filtrowanie do nowej listy zachowuje prostą kontrolę przebiegu. Gdy masz modyfikować w miejscu, świadomie steruj indeksem.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/tutorial/datastructures.html) · [Zadania lekcji](README.md)

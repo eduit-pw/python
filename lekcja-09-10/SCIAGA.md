@@ -1,25 +1,28 @@
-# Temat 5. Wyjaśnienia do praktyki
+# Temat 05. Napisy i metody tekstowe
 
-## Indeksy i wycinki
+## Składnia pod ręką
 
-Indeks 0 oznacza pierwszy znak, -1 ostatni. tekst[start:stop] pomija stop. Wycinek może być pusty bez błędu, ale odczyt nieistniejącego pojedynczego indeksu zgłasza IndexError.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `s[i], s[-1]` | Znak pod indeksem i ostatni znak | Indeks poza napisem powoduje IndexError. |
+| `s[a:b:k]` | Wycinek od a do b bez b, co k znaków | Zbyt daleka granica wycinka jest dozwolona. |
+| `s[::-1]` | Odwrócony napis | Zwraca nowy str. |
+| `s.strip()` | Usunięcie białych znaków z brzegów | Nie usuwa spacji wewnętrznych. |
+| `s.split(), s.split(";")` | Podział na listę napisów | Bez argumentu grupuje białe znaki. |
+| `"-".join(elementy)` | Połączenie napisów separatorem | Elementy muszą być napisami. |
+| `s.lower(), s.upper()` | Zmiana wielkości liter | Oryginał pozostaje bez zmian. |
+| `s.replace("a", "b")` | Zamiana fragmentów | Wynik trzeba przypisać, jeśli ma zastąpić s. |
+| `len(s), "x" in s` | Długość oraz obecność fragmentu | Wyniki: int oraz bool. |
 
-## Niemutowalny napis
+## Krótki wzorzec
 
-Nie przypiszesz tekst[0] = "A". Metody str zwracają nowe napisy. Zapis tekst.lower() bez zachowania wyniku nie zmienia tekstu wskazanego przez nazwę tekst.
+```python
+tekst = "  kot;pies  "
+slowa = tekst.strip().split(";")
+print(" / ".join(slowa))  # kot / pies
+print(tekst.strip()[1:3])  # ot
+```
 
-## strip, split i join
+str jest niemodyfikowalny. s[0] = "A" powoduje TypeError. isdigit() rozpoznaje także niektóre cyfry spoza ASCII.
 
-strip usuwa białe znaki ze skrajów. split() dzieli według białych znaków i pomija puste pola. separator.join(fragmenty) skleja napisy podanym separatorem i zwraca str.
-
-## Wielkość liter i zamiana
-
-lower i upper zwracają nowe napisy. replace(stare, nowe) zastępuje fragmenty. Nie usuwaj spacji i interpunkcji, jeśli specyfikacja każe je zachować.
-
-## Cyfry i kody
-
-isdigit akceptuje więcej znaków Unicode niż cyfry ASCII. Gdy wymagane są znaki 0-9, sprawdź każdy znak w tym zakresie. Najpierw długość i format, potem odczyt indeksu.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/stdtypes.html#text-sequence-type-str) · [Zadania lekcji](README.md)

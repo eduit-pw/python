@@ -1,25 +1,34 @@
-# Temat 14. Wyjaśnienia do praktyki
+# Temat 14. Klasy, obiekty i __init__
 
-## Klasa i instancja
+## Składnia pod ręką
 
-class opisuje dane i zachowanie. Wywołanie Klasa(...) tworzy instancję. Dwa wywołania zwykle tworzą dwa niezależne obiekty, przypisanie b = a tylko drugą nazwę tego samego.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `class Nazwa:` | Definicja klasy | Klasa opisuje dane i operacje obiektu. |
+| `Nazwa(argumenty)` | Utworzenie instancji | Zwykle uruchamia jej __init__. |
+| `def __init__(self, x):` | Inicjalizacja stanu | Metoda ma zwracać None. |
+| `self.pole = x` | Pole konkretnego obiektu | Każda instancja może mieć inną wartość. |
+| `def metoda(self):` | Metoda instancji | Przy obj.metoda() Python przekazuje obj jako self. |
+| `obj.pole` | Odczyt pola | Brak pola powoduje AttributeError. |
+| `obj.metoda()` | Wywołanie metody | Nawiasy rozpoczynają wykonanie. |
+| `drugi = pierwszy` | Druga nazwa tego samego obiektu | Nie tworzy kopii instancji. |
 
-## __init__
+## Krótki wzorzec
 
-__init__(self, ...) inicjalizuje utworzony obiekt. Parametry po self przekazuje wywołujący. Metoda nie zwraca tworzonej instancji i powinna zakończyć się None.
+```python
+class Lampa:
+    def __init__(self, kolor):
+        self.kolor = kolor
+        self.wlaczona = False
 
-## self i pole
+    def wlacz(self):
+        self.wlaczona = True
 
-self wskazuje bieżący obiekt. self.imie = imie zapisuje pole instancji z parametru. Sam zapis imie = ... tworzy lub zmienia nazwę lokalną, nie pole.
+lampa = Lampa("biała")
+lampa.wlacz()
+print(lampa.wlaczona)  # True
+```
 
-## Metoda instancji
+self nie jest słowem kluczowym. To przyjęta nazwa parametru wskazującego bieżący obiekt.
 
-obj.opis() wywołuje metodę i przekazuje obj jako self. Metoda może zwracać wynik albo zmieniać stan. Nawiasy wykonują metodę, ich pominięcie daje obiekt metody.
-
-## Aktualny stan
-
-Pole i obwód obliczaj z aktualnych wymiarów. Po zmianie szerokości wynik metody ma odzwierciedlać nowe dane. Nie trzymaj nieaktualnej kopii wyniku bez potrzeby.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/tutorial/classes.html) · [Zadania lekcji](README.md)

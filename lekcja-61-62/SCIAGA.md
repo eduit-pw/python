@@ -1,25 +1,29 @@
-# Temat 30. Wyjaśnienia do praktyki
+# Temat 30. Wyrażenia regularne
 
-## Wzorzec i raw string
+## Składnia pod ręką
 
-r"..." pomaga zapisać backslash we wzorcu bez dodatkowego interpretowania przez napis Pythona. Sam wzorzec opisuje układ znaków, nie znaczenie biznesowe danych.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `r"wzorzec"` | Surowy napis Pythona | Ułatwia zapis ukośników używanych przez re. |
+| `re.fullmatch(wzorzec, tekst)` | Dopasowanie całego tekstu | Zwraca Match albo None. |
+| `re.search(wzorzec, tekst)` | Szukanie pierwszego fragmentu | Nie wymaga dopasowania całego tekstu. |
+| `re.findall(wzorzec, tekst)` | Lista dopasowań | Grupy przechwytujące wpływają na kształt wyniku. |
+| `re.sub(wzorzec, zamiana, tekst)` | Zastąpienie dopasowań | Zwraca nowy napis. |
+| `[A-Z], [0-9]` | Klasa znaków | W tych zapisach wyłącznie wskazane zakresy ASCII. |
+| `\d, \w, \s` | Cyfra, znak słowa, biały znak | Domyślnie uwzględniają Unicode dla napisów. |
+| `?, *, +, {m,n}` | Liczba powtórzeń | Odpowiednio 0..1, 0+, 1+, m..n. |
+| `(...), m.group(1)` | Grupa i jej odczyt | Najpierw sprawdź, czy m nie jest None. |
 
-## fullmatch i search
+## Krótki wzorzec
 
-fullmatch wymaga dopasowania całego napisu. search szuka wystąpienia fragmentu. Walidator kodu powinien odrzucić dopisane znaki, a nie znaleźć poprawny kawałek w środku.
+```python
+import re
 
-## Klasy znaków i liczności
+m = re.fullmatch(r"([A-Z]{2})-([0-9]{3})", "AB-123")
+if m is not None:
+    print(m.group(1), m.group(2))  # AB 123
+```
 
-[0-9] oznacza cyfrę ASCII, {5} dokładnie pięć powtórzeń. \d może obejmować inne cyfry Unicode. Zwykły łącznik wpisany poza klasą jest dosłownym znakiem.
+Wzorzec daty może sprawdzić format, lecz nie musi sprawdzać istnienia daty w kalendarzu. Do reguł kalendarza użyj datetime.
 
-## Grupy i findall
-
-Nawiasy tworzą grupę przechwytującą. findall może zwracać zawartość grup, a nie całe dopasowania. Po wyszukaniu cyfr przekształć wyniki na int do obliczeń.
-
-## Granice walidacji
-
-Wzorzec RRRR-MM-DD sprawdza format. 2026-02-30 nadal może pasować, mimo że nie jest datą. Poprawność kalendarzową sprawdzaj narzędziem do dat.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/re.html) · [Zadania lekcji](README.md)

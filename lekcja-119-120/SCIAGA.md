@@ -1,25 +1,27 @@
-# Temat 58. Wyjaśnienia do praktyki
+# Temat 58. Swagger UI i próby API
 
-## OpenAPI i Swagger UI
+## Składnia pod ręką
 
-/openapi.json opisuje operacje i schematy maszynowo. /docs prezentuje ten opis w interfejsie. Dokumentacja nie zastępuje sprawdzenia rzeczywistego zachowania.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `/openapi.json` | Schemat OpenAPI | Opisuje ścieżki, modele i odpowiedzi. |
+| `/docs` | Domyślny Swagger UI | Interfejs do przeglądania i wywoływania API. |
+| `Try it out / Execute` | Rzeczywiste wywołanie endpointu | Operacja może zmienić dane. |
+| `Metoda + URL + nagłówki + body` | Opis żądania | Zachowaj wszystkie istotne elementy w raporcie błędu. |
+| `Status + nagłówki + body` | Opis odpowiedzi | Sam status 200 nie dowodzi poprawnej treści. |
+| `POST, GET, PUT, GET, DELETE, GET` | Przykładowy cykl CRUD | Ostatni GET usuniętego rekordu powinien sprawdzić brak. |
+| `Próba negatywna` | Błędne dane lub nieistniejące ID | Sprawdź też, czy stan pozostał poprawny. |
 
-## Scenariusz testowy
+## Krótki wzorzec
 
-Zapisz metodę, adres, body i oczekiwany status przed żądaniem. ID z POST wykorzystaj w dalszych krokach zamiast zakładać stałą wartość z innego uruchomienia.
+```http
+GET /rekordy/999
+Accept: application/json
 
-## Pełen cykl
+# Oczekiwany status przy braku rekordu: 404
+# Przykładowe body: {"detail": "Brak"}
+```
 
-Utwórz rekord, odczytaj, zmień, sprawdź zmianę, usuń i odczytaj brak. Po nieudanym zapisie sprawdź, że liczba rekordów i poprzednie dane są niezmienione.
+To zapis żądania, nie kod Pythona. W Postmanie lub Swagger UI wybierz GET, wpisz pełny URL działającego lokalnego API i porównaj status oraz body.
 
-## Próby negatywne
-
-Oddziel brak pola, zły zakres, dodatkowe pole, brak zasobu i nieobsługiwaną metodę. Status i ciało błędu mają odpowiadać umowie.
-
-## Raport usterki
-
-Podaj kroki odtworzenia, dane, wynik oczekiwany i rzeczywisty. Zmiana statusu 201 na 200 może być błędem umowy mimo poprawnego JSON. Po naprawie powtórz próbę.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://fastapi.tiangolo.com/tutorial/first-steps/) · [Zadania lekcji](README.md)

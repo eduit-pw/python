@@ -1,25 +1,31 @@
-# Temat 65. Wyjaśnienia do praktyki
+# Temat 65. logging
 
-## Logger i poziom
+## Składnia pod ręką
 
-Logger emituje zdarzenia DEBUG, INFO, WARNING, ERROR i CRITICAL. Ustawiony próg przepuszcza poziom równy lub wyższy. INFO nie zapisze DEBUG.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `logging.getLogger(__name__)` | Logger modułu | Nazwa pomaga znaleźć źródło wpisu. |
+| `logging.basicConfig(...)` | Podstawowa konfiguracja | Zwykle raz, w punkcie wejścia programu. |
+| `level=logging.INFO` | Próg komunikatów | DEBUG poniżej progu nie zostanie zapisany. |
+| `DEBUG, INFO, WARNING, ERROR, CRITICAL` | Poziomy rosnącej ważności | Najniższy: DEBUG. |
+| `logger.info("Liczba: %s", n)` | Wpis z argumentami | Formatowanie zostaje obsłużone przez logging. |
+| `logger.exception("Opis")` | Wpis ERROR ze stosem wyjątku | Używaj wewnątrz except. |
+| `filename="app.log", encoding="utf-8"` | Zapis do pliku | Domyślny filemode to dopisywanie "a". |
+| `%(asctime)s, %(levelname)s, %(message)s` | Pola formatu | Np. data, poziom, komunikat. |
 
-## Handler i format
+## Krótki wzorzec
 
-Handler wskazuje miejsce zapisu, formatter postać wiersza. Podaj czas, poziom i komunikat. Konfigurację wykonaj raz, zanim rozpoczniesz przetwarzanie.
+```python
+import logging
 
-## Tryb pliku
+logging.basicConfig(level=logging.INFO,
+                    format="%(levelname)s: %(message)s")
+logger = logging.getLogger(__name__)
+logger.debug("Ten wpis jest poniżej progu")
+logger.info("Przetworzono %s pliki", 3)
+# INFO: Przetworzono 3 pliki
+```
 
-Tryb dopisywania zachowuje historię między uruchomieniami. UTF-8 chroni polskie znaki. Przed testem liczby wpisów zacznij od jawnie ustalonego stanu pliku.
+Logger i jego handlery mogą mieć osobne progi. Duplikaty wpisów mogą wynikać z wielu handlerów albo propagacji do loggera nadrzędnego.
 
-## Wyjątek w logu
-
-logger.exception wewnątrz except zapisuje traceback na poziomie ERROR. warning może opisać odrzucony rekord bez traceback. Nie loguj jednego błędu kilka razy w różnych warstwach.
-
-## Duplikaty
-
-Dwa handlery mogą zapisać to samo zdarzenie dwa razy. Powielanie addHandler przy każdym wywołaniu pogarsza problem. Skontroluj konfigurację i propagację loggera.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/howto/logging.html) · [Zadania lekcji](README.md)

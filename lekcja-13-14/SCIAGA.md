@@ -1,25 +1,31 @@
-# Temat 7. Wyjaśnienia do praktyki
+# Temat 07. Zakres nazw i elastyczne argumenty
 
-## Zakres nazw
+## Składnia pod ręką
 
-Nazwa przypisana w funkcji jest zwykle lokalna. Python szuka nazw kolejno w zakresie lokalnym, otaczającym, module i wbudowanych. Lokalna nazwa może przesłonić zewnętrzną.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `x = ... wewnątrz funkcji` | Zwykle tworzy nazwę lokalną | Nie zmienia automatycznie x z modułu. |
+| `global x` | Powiązanie przypisania z nazwą modułu | Często czytelniej zwrócić wynik. |
+| `nonlocal x` | Nazwa z otaczającej funkcji | Nie dotyczy zmiennej globalnej. |
+| `def f(x=10):` | Parametr z wartością domyślną | Wartość domyślna powstaje przy definicji funkcji. |
+| `def f(*args):` | Dowolna liczba argumentów pozycyjnych | args jest krotką. |
+| `def f(**kwargs):` | Dowolna liczba argumentów nazwanych | kwargs jest słownikiem. |
+| `def f(*, tryb):` | Parametr wyłącznie nazwany | Wywołanie: f(tryb="krótki"). |
+| `f(*lista), f(**slownik)` | Rozpakowanie argumentów | Gwiazdki przy wywołaniu rozpakowują dane. |
 
-## Wartość domyślna
+## Krótki wzorzec
 
-Domyślny argument pozwala pominąć wartość w wywołaniu. Obiekt domyślny powstaje przy definicji funkcji. Lista [] jako wartość domyślna może przez to zbierać dane z wielu wywołań.
+```python
+def dopisz(wartosc, dane=None):
+    if dane is None:
+        dane = []
+    dane.append(wartosc)
+    return dane
 
-## None i nowa lista
+print(dopisz(2))  # [2]
+print(dopisz(5))  # [5]
+```
 
-Użyj tagi=None i utwórz nową listę, gdy tagi is None. Lista przekazana jawnie nadal jest tym samym obiektem. Wzorzec None nie kopiuje argumentu.
+Domyślna lista w def f(dane=[]) jest współdzielona między wywołaniami korzystającymi z tego argumentu domyślnego. Wzorzec z None tworzy nową listę.
 
-## *args i **kwargs
-
-*args zbiera dodatkowe argumenty pozycyjne do krotki. **kwargs zbiera nazwane do słownika. Nazwy args i kwargs są umowne, gwiazdki określają zachowanie.
-
-## Argumenty tylko nazwane
-
-Parametry po samodzielnej * albo po *args podawaj po nazwie. Zapis premia=3 wyjaśnia znaczenie liczby. Nie zastępuj komunikacji argumentami przez modyfikację zmiennych globalnych.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/tutorial/controlflow.html#more-on-defining-functions) · [Zadania lekcji](README.md)

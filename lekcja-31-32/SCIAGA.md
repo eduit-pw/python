@@ -1,25 +1,36 @@
-# Temat 16. Wyjaśnienia do praktyki
+# Temat 16. Metody specjalne
 
-## __str__
+## Składnia pod ręką
 
-str(obj) i print(obj) korzystają z __str__. Metoda zwraca str z opisem dla użytkownika. Nie umieszczaj w niej samego print, bo jego wynik None nie spełnia kontraktu.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `str(obj), print(obj)` | Czytelny opis obiektu | Korzysta z __str__, z rezerwowym __repr__. |
+| `repr(obj), f"{obj!r}"` | Reprezentacja diagnostyczna | Korzysta z __repr__. |
+| `print([obj])` | Wydruk listy obiektów | Lista używa repr swoich elementów. |
+| `def __str__(self):` | Własny opis dla użytkownika | Zwraca str, samo print w metodzie nie wystarcza. |
+| `def __repr__(self):` | Własna reprezentacja | Też musi zwrócić str. |
+| `def __len__(self):` | Obsługa len(obj) | Zwraca nieujemną liczbę całkowitą. |
+| `def __eq__(self, other):` | Obsługa porównania == | Dla nieobsługiwanego typu można zwrócić NotImplemented. |
+| `a is b` | Tożsamość obiektów | Sprawdza, czy to ten sam obiekt. |
 
-## __repr__
+## Krótki wzorzec
 
-repr(obj) daje reprezentację do analizy. Lista obiektów używa repr swoich elementów. !r we f-stringu również pobiera repr i poprawnie reprezentuje argument napisowy.
+```python
+class Kolor:
+    def __init__(self, nazwa):
+        self.nazwa = nazwa
 
-## __len__
+    def __str__(self):
+        return self.nazwa
 
-len(obj) wywołuje __len__, które ma zwrócić nieujemny int. Dla własnej kolekcji zwykle zwracasz długość jej listy wewnętrznej, także 0.
+    def __repr__(self):
+        return f"Kolor({self.nazwa!r})"
 
-## __eq__ i is
+x = Kolor("zielony")
+print(x)     # zielony
+print([x])   # [Kolor('zielony')]
+```
 
-== korzysta z porównania wartości, które możesz zdefiniować w __eq__. is sprawdza tożsamość. Równe współrzędne nie oznaczają tego samego obiektu.
+NotImplemented jest specjalną wartością, a NotImplementedError wyjątkiem. Bez __bool__ wynik __len__ równy 0 daje bool(obj) równy False.
 
-## NotImplemented
-
-Dla nieobsługiwanego typu argumentu __eq__ może zwrócić NotImplemented. Jest to specjalna wartość, a nie wyjątek NotImplementedError. Python może wtedy spróbować drugiego porównania.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/reference/datamodel.html) · [Zadania lekcji](README.md)

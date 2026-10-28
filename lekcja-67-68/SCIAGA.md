@@ -1,25 +1,29 @@
-# Temat 33. Wyjaśnienia do praktyki
+# Temat 33. Liczby pierwsze, sito i NWD
 
-## Liczba pierwsza
+## Składnia pod ręką
 
-Pierwsza ma dokładnie dwa dodatnie dzielniki i jest >=2. Wartości 0 i 1 nie są pierwsze. Wystarczy sprawdzać dzielniki d, dopóki d*d <= n.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `n < 2` | Wykluczenie liczby pierwszej | 0, 1 i liczby ujemne nie są pierwsze. |
+| `d * d <= n` | Granica prób dzielenia | Trzeba uwzględnić dzielnik równy pierwiastkowi. |
+| `n % d == 0` | Sprawdzenie podzielności | d musi być różne od 0. |
+| `[True] * (n + 1)` | Tablica znaczników od 0 do n | Znaczniki 0 i 1 trzeba wyłączyć. |
+| `range(p * p, n + 1, p)` | Wielokrotności w sicie | Niższe wielokrotności p już mają mniejszy dzielnik. |
+| `n //= d` | Usunięcie jednego czynnika | Dla powtarzającego się czynnika wykonuj wielokrotnie. |
+| `a, b = b, a % b` | Krok algorytmu Euklidesa | Powtarzaj, dopóki b != 0. |
+| `math.gcd(a, b), math.isqrt(n)` | Gotowe NWD i pierwiastek całkowity | Przydatne do kontroli własnego rozwiązania. |
 
-## Sito Eratostenesa
+## Krótki wzorzec
 
-Tablica logiczna opisuje kandydatów od 0 do granicy. Oznacz 0 i 1 jako niepierwsze. Dla pierwszego p wykreślaj wielokrotności od p*p, ponieważ mniejsze miały już mniejszy dzielnik.
+```python
+import math
 
-## Modyfikacja tablicy
+n = 49
+print(math.isqrt(n))  # 7
+print(n % 7 == 0)     # True
+print(math.gcd(30, 42))  # 6
+```
 
-Funkcja wypełniająca sito może zmieniać przekazaną listę i zwracać None. Nie oczekuj nowej tablicy, jeśli umowa mówi o zmianie argumentu.
+Jeśli zadanie wymaga konkretnego algorytmu, pokaż jego kroki. math.gcd może sprawdzić wynik, ale nie zastąpi wymaganego kodu.
 
-## Czynniki pierwsze
-
-Dziel przez bieżący dzielnik tak długo, jak liczba jest podzielna. Każde wystąpienie dopisz, także powtórzenia. Na końcu pozostała liczba >1 jest ostatnim czynnikiem.
-
-## NWD
-
-Odejmowanie mniejszej dodatniej liczby od większej zachowuje NWD. Zakończ przy równości. Wersja modulo jest szybsza dla niektórych danych, ale nie zastępuje algorytmu narzuconego poleceniem.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/math.html) · [Zadania lekcji](README.md)

@@ -1,25 +1,35 @@
-# Temat 59. Wyjaśnienia do praktyki
+# Temat 59. FastAPI i trwałość SQLite
 
-## Warstwa danych
+## Składnia pod ręką
 
-Endpoint obsługuje HTTP, a moduł baza wykonuje SQL. Funkcje warstwy danych zwracają rekord albo informację o braku. Nie mieszaj obiektu odpowiedzi HTTP z wynikiem execute.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `Warstwa endpointów` | HTTP, modele wejścia i statusy | Nie powinna duplikować wszystkich zapytań SQL. |
+| `Warstwa repozytorium` | Operacje na bazie | Zwraca dane albo informację o braku. |
+| `@asynccontextmanager` | Kontekst używany w lifespan | Kod przed yield przygotowuje, po yield sprząta. |
+| `FastAPI(lifespan=lifespan)` | Cykl życia aplikacji | Służy np. do przygotowania struktury bazy. |
+| `with sqlite3.connect(...) as db:` | Transakcja | Osobno zadbaj o zamknięcie połączenia. |
+| `db.execute("... VALUES (?)", (wartosc,))` | Parametryzowany zapis | Chroni przed wstawianiem wartości do tekstu SQL. |
+| `sqlite3.IntegrityError` | Naruszenie ograniczeń | Zmapuj znany konflikt na świadomą odpowiedź HTTP. |
+| `Plik bazy na dysku` | Dane zachowane po restarcie | W kontenerze wymaga trwałego wolumenu. |
 
-## Trwałość SQLite
+## Krótki wzorzec
 
-Plik bazy zachowuje rekordy po restarcie. CREATE TABLE IF NOT EXISTS przygotowuje brakującą tabelę bez kasowania danych. Dane przykładowe nie powinny być dopisywane przy każdym starcie.
+```python
+from contextlib import asynccontextmanager
+from fastapi import FastAPI
 
-## Lifespan
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    app.state.gotowa = True
+    try:
+        yield
+    finally:
+        app.state.gotowa = False
 
-Kontekst lifespan wykonuje przygotowanie przy starcie aplikacji i sprzątanie przy końcu. Utwórz tabelę przed obsługą żądań. Nie traktuj importu modułu jako zamiennika całego cyklu aplikacji.
+app = FastAPI(lifespan=lifespan)
+```
 
-## Parametry i ograniczenia
+Przykład pokazuje składnię lifespan. Zamiast flagi wstawiasz przygotowanie i zwolnienie rzeczywistych zasobów. Nie współdziel przypadkowo jednego połączenia SQLite między różnymi wątkami.
 
-Parametry SQL oddzielają wartości od składni. CHECK(pobrania>=0) wspiera spójność zapisu. Apostrof w tytule powinien przejść jako zwykła dana.
-
-## Błędy i transakcje
-
-Brak rekordu przekłada się na 404 zgodnie z API. Błąd drugiego zapisu w transakcji wycofuje również pierwszy. Próbę wycofania wykonuj w osobnej bazie testowej.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://fastapi.tiangolo.com/advanced/events/) · [Zadania lekcji](README.md)

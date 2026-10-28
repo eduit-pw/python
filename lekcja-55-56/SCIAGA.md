@@ -1,25 +1,32 @@
-# Temat 27. Wyjaśnienia do praktyki
+# Temat 27. Pliki tekstowe
 
-## open i with
+## Składnia pod ręką
 
-open(plik, tryb, encoding="utf-8") otwiera plik. with zamyka zasób po bloku także przy wyjątku. Ścieżka względna zależy od bieżącego katalogu procesu.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `open(sciezka, "r", encoding="utf-8")` | Otwarcie do odczytu | Brak pliku powoduje FileNotFoundError. |
+| `open(sciezka, "w", encoding="utf-8")` | Otwarcie do zapisu | Istniejąca treść zostaje usunięta przy otwarciu. |
+| `open(sciezka, "a", encoding="utf-8")` | Dopisywanie na końcu | Tworzy plik, jeśli go nie ma. |
+| `with open(...) as plik:` | Automatyczne zamknięcie | Także przy wyjątku w bloku. |
+| `plik.read()` | Odczyt od bieżącej pozycji do końca | Zwraca str w trybie tekstowym. |
+| `for wiersz in plik:` | Czytanie kolejnych wierszy | Wiersz zwykle zawiera końcowe \n. |
+| `plik.write(tekst)` | Zapis napisu | Nie dodaje znaku nowej linii, zwraca liczbę zapisanych znaków. |
+| `plik.seek(0)` | Powrót do początku | Kolejny read zacznie od początku. |
 
-## Tryby r, w i a
+## Krótki wzorzec
 
-r czyta istniejący plik. w tworzy lub nadpisuje. a dopisuje na końcu. Otwarcie w może skasować poprzednią treść, więc najpierw zakończ walidację wejścia.
+```python
+from tempfile import TemporaryDirectory
+from pathlib import Path
 
-## read i iterowanie
+with TemporaryDirectory() as folder:
+    sciezka = Path(folder) / "pokaz.txt"
+    with open(sciezka, "w", encoding="utf-8") as plik:
+        plik.write("Pierwszy\nDrugi\n")
+    with open(sciezka, encoding="utf-8") as plik:
+        print(plik.readline().rstrip("\n"))  # Pierwszy
+```
 
-read zwraca treść, readline pojedynczy wiersz, a pętla po pliku kolejne wiersze. Wiersz zwykle zawiera końcowe \n. Pusty wiersz i koniec pliku wymagają rozróżnienia.
+Ścieżka względna jest liczona od folderu roboczego procesu. rstrip("\n") usuwa końce wierszy, strip() może usunąć również znaczące spacje.
 
-## write i nowa linia
-
-write(tekst) zapisuje str i zwraca liczbę zapisanych znaków. Nową linię dodajesz sam przez \n. Liczba znaków nie musi być liczbą bajtów pliku UTF-8.
-
-## Rekord wielowierszowy
-
-Kontroluj kompletność bloku przed tworzeniem obiektów. Pomijanie pustych wierszy jest poprawne tylko tam, gdzie zezwala na to format. Obsłuż brak pliku i błędną konwersję z numerem wiersza.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/tutorial/inputoutput.html#reading-and-writing-files) · [Zadania lekcji](README.md)

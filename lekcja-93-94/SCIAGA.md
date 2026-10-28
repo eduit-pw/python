@@ -1,25 +1,32 @@
-# Temat 46. Wyjaśnienia do praktyki
+# Temat 46. SQLite i GUI
 
-## Połączenie SQLite
+## Składnia pod ręką
 
-sqlite3.connect otwiera bazę. Połączenie wymaga zamknięcia. with db zatwierdza albo wycofuje transakcję, ale samo nie zamyka połączenia.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `sqlite3.connect(sciezka)` | Otwarcie połączenia | ":memory:" tworzy bazę w pamięci. |
+| `db.execute(sql, parametry)` | Wykonanie instrukcji | Wartości przekazuj przez placeholdery ?. |
+| `db.execute("... WHERE id = ?", (id,))` | Parametr jednoelementowy | Przecinek tworzy krotkę. |
+| `kursor.fetchall(), kursor.fetchone()` | Wszystkie wiersze lub jeden | fetchone zwraca None przy braku danych. |
+| `db.commit(), db.rollback()` | Zatwierdzenie i cofnięcie transakcji | Nie zamykają połączenia. |
+| `with db:` | Kontekst transakcji | Zatwierdza lub cofa otwartą transakcję, nie zamyka połączenia. |
+| `db.close()` | Zamknięcie połączenia | Zadbaj o nie także przy błędzie. |
+| `sqlite3.IntegrityError` | Naruszenie ograniczeń | Np. UNIQUE lub NOT NULL. |
 
-## Parametry SQL
+## Krótki wzorzec
 
-Wartości przekazuj osobno przez ?, np. execute(sql, (tytul, rok)). Krotka jednoelementowa potrzebuje przecinka. Apostrof w tytule jest wtedy daną, a nie częścią składni SQL.
+```python
+import sqlite3
+from contextlib import closing
 
-## CRUD po ID
+with closing(sqlite3.connect(":memory:")) as db:
+    db.execute("CREATE TABLE kolory (id INTEGER PRIMARY KEY, nazwa TEXT)")
+    with db:
+        db.execute("INSERT INTO kolory (nazwa) VALUES (?)", ("zielony",))
+    print(db.execute("SELECT nazwa FROM kolory").fetchone())
+    # ('zielony',)
+```
 
-SELECT odczytuje, INSERT dodaje, UPDATE zmienia, DELETE usuwa. Zmiany filtruj po identyfikatorze, nie po numerze wiersza interfejsu. Sprawdź rowcount lub brak rekordu.
+Po udanym zapisie odśwież widok GUI. Placeholdery służą do wartości, a nazw tabel i kolumn nie przekazuj jako parametrów SQL.
 
-## Ograniczenia i transakcja
-
-NOT NULL, CHECK i klucze wspierają spójność bazy. Jeśli druga operacja transakcji naruszy ograniczenie, wycofaj całość. Obsłuż IntegrityError poza blokiem transakcji.
-
-## Odświeżenie widoku
-
-Po udanym zapisie odczytaj dane ponownie i uaktualnij tabelę. Po odrzuconej operacji pozostaw dane i wyświetl komunikat. Inicjalizacja nie powinna dopisywać rekordów przy każdym starcie.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/sqlite3.html) · [Zadania lekcji](README.md)

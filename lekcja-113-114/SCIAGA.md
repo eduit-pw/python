@@ -1,25 +1,31 @@
-# Temat 55. Wyjaśnienia do praktyki
+# Temat 55. FastAPI: endpointy
 
-## FastAPI i app
+## Składnia pod ręką
 
-app = FastAPI() tworzy aplikację. Dekorator @app.get wiąże funkcję z metodą i ścieżką. Słownik wyniku jest serializowany do odpowiedzi JSON.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `app = FastAPI()` | Obiekt aplikacji | Import z fastapi. |
+| `@app.get("/status")` | Powiązanie GET i ścieżki z funkcją | Dekorator umieszczasz nad funkcją. |
+| `@app.get("/kolory/{id}")` | Parametr w ścieżce | Parametr funkcji id: int włącza walidację typu. |
+| `limit: int = 10` | Typowy parametr query | Gdy nie jest parametrem ścieżki ani modelem ciała. |
+| `return {"klucz": wartosc}` | Odpowiedź serializowana do JSON | Zwykle status 200. |
+| `raise HTTPException(status_code=404, detail="Brak")` | Odpowiedź błędu | raise przerywa obsługę. |
+| `python -m uvicorn main:app --reload` | Start lokalnego serwera | main to moduł main.py, app to obiekt aplikacji. |
+| `/docs, /openapi.json` | Swagger UI i schemat API | Adresy domyślne. |
 
-## Parametr ścieżki
+## Krótki wzorzec
 
-Nazwa w /kwadrat/{liczba} pasuje do parametru funkcji. Adnotacja int uruchamia konwersję i walidację. Niepoprawny zapis daje odpowiedź 422.
+```python
+# main.py
+from fastapi import FastAPI
 
-## Query i wartość domyślna
+app = FastAPI()
 
-Parametr funkcji nieujęty w ścieżce może pochodzić z query. Wartość domyślna pozwala go pominąć. Adres /powitanie?imie=Anna przekazuje napis do argumentu imie.
+@app.get("/podwoj/{n}")
+def podwoj(n: int):
+    return {"wynik": n * 2}
+```
 
-## Uvicorn
+Uruchom z folderu main.py. GET /podwoj/4 zwróci {"wynik": 8}, a niepoprawny parametr /podwoj/kot domyślnie odpowiedź walidacyjną 422.
 
-python -m uvicorn main:app uruchamia obiekt app z modułu main. --reload przeładowuje przy zmianie kodu i służy pracy developerskiej. Zatrzymaj poprzedni serwer przed zajęciem tego samego portu.
-
-## Dokumentacja i status
-
-/docs pokazuje operacje i pozwala je wywołać. Nieistniejąca ścieżka daje 404, niedozwolona metoda 405, błąd danych 422. To różne przyczyny, a nie jeden ogólny problem połączenia.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://fastapi.tiangolo.com/tutorial/path-params/) · [Zadania lekcji](README.md)

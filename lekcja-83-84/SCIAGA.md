@@ -1,25 +1,32 @@
-# Temat 41. Wyjaśnienia do praktyki
+# Temat 41. Kontrolki i formularze PyQt6
 
-## Pola wejściowe
+## Składnia pod ręką
 
-QLineEdit.text() zwraca str. QSpinBox.value() int w ustawionym zakresie. Walidację pola tekstowego wykonaj przed budowaniem raportu. Same spacje nie są poprawnym imieniem.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `QLabel("tekst"), etykieta.setText(tekst)` | Etykieta i zmiana jej tekstu | setText przyjmuje str. |
+| `QLineEdit(), pole.text()` | Jednowierszowe pole i odczyt | Wynik str, także dla wpisanych cyfr. |
+| `pole.clear(), pole.setPlaceholderText("opis")` | Wyczyszczenie i podpowiedź | Placeholder nie jest wartością pola. |
+| `QSpinBox(), pole.value()` | Całkowite pole liczbowe | value zwraca int. |
+| `QDoubleSpinBox(), pole.value()` | Pole z częścią ułamkową | value zwraca float. |
+| `pole.setRange(minimum, maksimum)` | Dopuszczalny zakres | Dotyczy kontrolek liczbowych. |
+| `QCheckBox(), opcja.isChecked()` | Niezależna opcja | Odczyt bool. |
+| `QRadioButton(), QButtonGroup` | Wybór jednej opcji z grupy | Grupę zdefiniuj jawnie przy bardziej złożonym układzie. |
 
-## Checkbox i radio
+## Krótki wzorzec
 
-QCheckBox pozwala na niezależne wybory. Radio w jednej grupie wybiera jeden wariant. QButtonGroup jawnie łączy przyciski i może nadawać im identyfikatory.
+```python
+from PyQt6.QtWidgets import QLineEdit, QSpinBox
 
-## Odczyt stanu
+# Po utworzeniu QApplication:
+tekst = QLineEdit()
+tekst.setText("  kot  ")
+ilosc = QSpinBox()
+ilosc.setRange(1, 20)
+ilosc.setValue(4)
+print(tekst.text().strip(), ilosc.value())  # kot 4
+```
 
-isChecked daje bool. Wczytaj aktualny stan po kliknięciu właściwego przycisku. Nie przechowuj nieaktualnej kopii wyboru z konstruktora.
+To fragment do uruchomienia po utworzeniu QApplication. Wartości odczytuj w chwili obsługi akcji, żeby korzystać z aktualnego stanu formularza.
 
-## Wynik w etykiecie
-
-setText ustawia tekst QLabel. Jeśli dane użytkownika mają być dosłowne, ustaw format PlainText. Nie pozwalaj przypadkiem traktować zawartości jako rich text.
-
-## Kolejność walidacji
-
-Najpierw sprawdź wymagany rozmiar kodu, potem dozwolone znaki. Wyświetl jeden komunikat odpowiadający ustalonej regule. Nie wyliczaj ceny lub zapisu po nieudanej walidacji.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://doc.qt.io/qt-6/qlineedit.html) · [Zadania lekcji](README.md)

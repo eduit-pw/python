@@ -1,25 +1,30 @@
-# Temat 37. Wyjaśnienia do praktyki
+# Temat 37. Rekurencja, stos i kolejka
 
-## Warunek bazowy
+## Składnia pod ręką
 
-Funkcja rekurencyjna wywołuje samą siebie dla mniejszego problemu. Warunek bazowy zatrzymuje wywołania. Brak postępu albo warunku końca prowadzi do RecursionError.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `Warunek bazowy` | Zakończenie rekurencji | Musi działać także dla najmniejszego dopuszczalnego wejścia. |
+| `return f(mniejszy_problem)` | Przekazanie wyniku wywołania | Brak return może zgubić wynik. |
+| `Stos wywołań` | Przechowywanie niezakończonych wywołań | Zbyt głęboka rekurencja może dać RecursionError. |
+| `lista.append(x), lista.pop()` | Dodanie i zdjęcie ze stosu | LIFO: ostatni dodany wychodzi pierwszy. |
+| `deque.append(x), deque.popleft()` | Dodanie i zdjęcie z kolejki | FIFO: pierwszy dodany wychodzi pierwszy. |
+| `pivot oraz podział danych` | Idea quicksort | Równe elementy też muszą trafić do wyniku. |
 
-## Stos wywołań
+## Krótki wzorzec
 
-Każde wywołanie ma własne parametry i zmienne lokalne. Powroty następują w odwrotnej kolejności. Kod przed wywołaniem i po nim pokazuje dwa różne przebiegi.
+```python
+from collections import deque
 
-## Quicksort
+stos = []
+stos.append("A")
+stos.append("B")
+print(stos.pop())  # B
 
-Podziel elementy względem pivota na mniejsze, równe i większe. Sortuj rekurencyjnie części i połącz. Oddzielna część równych zachowuje powtórzenia i kończy przypadek wszystkich równych.
+kolejka = deque(["A", "B"])
+print(kolejka.popleft())  # A
+```
 
-## LIFO
+pop i popleft na pustej kolekcji zgłaszają IndexError. Quicksort ma średni koszt O(n log n), a w niekorzystnym przypadku O(n²).
 
-Stos działa ostatni wszedł, pierwszy wychodzi. Lista z append i pop realizuje taki porządek. Przed pop sprawdź pusty stos, jeśli aplikacja ma pokazać komunikat.
-
-## FIFO
-
-Kolejka obsługuje w kolejności przyjścia. deque.append dodaje na końcu, popleft pobiera z początku. Nie myl kolejności obsługi z sortowaniem po wartości zgłoszenia.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/collections.html#collections.deque) · [Zadania lekcji](README.md)

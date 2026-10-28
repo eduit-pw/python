@@ -1,25 +1,30 @@
-# Temat 28. Wyjaśnienia do praktyki
+# Temat 28. pathlib i ścieżki
 
-## Path i operator /
+## Składnia pod ręką
 
-Path reprezentuje ścieżkę. baza / "dane" / "plik.txt" łączy jej części, ale nie tworzy pliku ani folderu. Nie sklejaj separatorów systemowych ręcznie.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `from pathlib import Path` | Klasa ścieżek | Sam Path nie tworzy pliku. |
+| `Path("dane") / "plik.txt"` | Złożenie ścieżki | Operator / dodaje składnik ścieżki. |
+| `Path.cwd()` | Bieżący folder procesu | Może zależeć od sposobu uruchomienia. |
+| `Path(__file__).resolve().parent` | Folder bieżącego skryptu | __file__ nie występuje w każdej konsoli interaktywnej. |
+| `p.exists(), p.is_file(), p.is_dir()` | Sprawdzenie zasobu | Wynik bool. |
+| `p.mkdir(parents=True, exist_ok=True)` | Utworzenie folderu z rodzicami | Nie zgłasza błędu dla istniejącego katalogu. |
+| `p.iterdir(), p.glob("*.txt")` | Przegląd katalogu i dopasowania | Zwracają iteratory ścieżek. |
+| `p.name, p.stem, p.suffix, p.parent` | Składowe ścieżki | Np. dane.txt, dane, .txt i katalog nadrzędny. |
+| `p.read_text(encoding="utf-8")` | Odczyt całego pliku | Zwraca str, zamyka plik. |
 
-## Kotwica __file__
+## Krótki wzorzec
 
-Path(__file__).resolve().parent wskazuje folder skryptu. Budowanie ścieżek od tej kotwicy pozwala uruchomić program z innego katalogu. cwd oznacza katalog procesu, niekoniecznie skryptu.
+```python
+from pathlib import Path
 
-## Sprawdzenie zasobu
+p = Path("dane") / "pomiary.csv"
+print(p.name)    # pomiary.csv
+print(p.stem)    # pomiary
+print(p.suffix)  # .csv
+```
 
-exists sprawdza obecność, is_file zwykły plik, is_dir folder. Stan może się zmienić po sprawdzeniu, dlatego sama operacja odczytu lub zapisu nadal wymaga obsługi błędu.
+Istnienie pliku sprawdzone przed open nie gwarantuje, że operacja później się powiedzie. Błędy odczytu nadal wymagają obsługi.
 
-## Przeglądanie i metadane
-
-iterdir zwraca wpisy bez rekurencji, glob wybiera wzorzec. suffix daje rozszerzenie, name nazwę, stat().st_size rozmiar w bajtach. Sortowanie ustala kolejność raportu.
-
-## Tworzenie i zmiana
-
-mkdir(parents=True, exist_ok=True) przygotowuje foldery. rename zmienia ścieżkę lub nazwę. Przed operacją kontroluj konflikt i zachowaj cudze dane. Nie zakładaj identycznego nadpisywania na wszystkich systemach.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/pathlib.html) · [Zadania lekcji](README.md)

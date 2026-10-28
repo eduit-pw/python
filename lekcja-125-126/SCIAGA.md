@@ -1,25 +1,30 @@
-# Temat 61. Wyjaśnienia do praktyki
+# Temat 61. Docker: polecenia i pliki
 
-## Obraz i kontener
+## Składnia pod ręką
 
-Obraz opisuje środowisko i pliki aplikacji. Kontener jest uruchomioną instancją obrazu. Zmiana źródeł wymaga przebudowania obrazu, jeśli nie montujesz ich jako osobnego zasobu.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `FROM python:3.13-slim` | Baza obrazu | Wybierz linię zgodną z projektem. |
+| `WORKDIR /app` | Katalog roboczy w obrazie | Kolejne polecenia używają tej lokalizacji. |
+| `COPY requirements.txt .` | Kopiowanie plików do obrazu | Osobna warstwa ułatwia wykorzystanie cache. |
+| `RUN python -m pip install -r requirements.txt` | Instalacja zależności | Wykonywana przy budowaniu. |
+| `CMD ["python", "-m", "uvicorn", ...]` | Domyślny start kontenera | Lista argumentów w formacie JSON. |
+| `docker build -t pokaz-api .` | Budowanie obrazu | Kropka oznacza kontekst bieżącego folderu. |
+| `docker run --rm -p 8000:8000 pokaz-api` | Start i mapowanie portu | Lewy port hosta, prawy kontenera. |
+| `-v pokaz-dane:/app/dane` | Nazwany wolumen | Dane poza jednorazową warstwą kontenera. |
+| `docker logs nazwa` | Odczyt logów | Użyj nazwy lub ID kontenera. |
 
-## Dockerfile
+## Krótki wzorzec
 
-FROM wybiera bazę, WORKDIR katalog pracy, COPY pliki, RUN wykonuje instalację podczas budowy, CMD wskazuje start przy uruchomieniu. Nie myl budowy ze startem aplikacji.
+```dockerfile
+FROM python:3.13-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN python -m pip install --no-cache-dir -r requirements.txt
+COPY . .
+CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+```
 
-## Porty
+Wzorzec Dockerfile wymaga main.py i requirements.txt zawierającego FastAPI oraz Uvicorn. Dodaj .dockerignore wykluczający .venv, .git, .env i pliki robocze. Samo EXPOSE nie publikuje portu.
 
--p 127.0.0.1:8000:8000 udostępnia port kontenera lokalnie na hoście. Uvicorn wewnątrz powinien nasłuchiwać na 0.0.0.0. Adres 127.0.0.1 wewnątrz kontenera ma inne znaczenie niż na hoście.
-
-## Wolumen
-
-Nazwany wolumen przechowuje dane niezależnie od usunięcia kontenera. Ścieżka bazy musi trafiać do zamontowanego katalogu. Usunięcie wolumenu usuwa tę kopię danych.
-
-## Diagnostyka
-
-docker ps -a pokazuje także zatrzymane kontenery, docker logs komunikaty startu. Błędny moduł main:app uniemożliwi start mimo udanej budowy obrazu. .dockerignore ogranicza pliki przekazywane do budowy.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.docker.com/reference/dockerfile/) · [Zadania lekcji](README.md)

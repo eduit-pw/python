@@ -1,25 +1,31 @@
-# Temat 40. Wyjaśnienia do praktyki
+# Temat 40. Qt Designer i pliki .ui
 
-## Plik .ui
+## Składnia pod ręką
 
-Designer zapisuje strukturę interfejsu w XML .ui. objectName pozwala odszukać kontrolkę w kodzie. Tekst widoczny na przycisku i objectName są różnymi właściwościami.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `objectName` | Nazwa kontrolki w pliku .ui | Nie jest tym samym co tekst widoczny na przycisku. |
+| `from PyQt6 import uic` | Narzędzia obsługi .ui | Plik .ui przechowuje opis interfejsu. |
+| `uic.loadUi(sciezka, self)` | Wczytanie interfejsu do obiektu | Typ bazowy okna musi pasować do .ui. |
+| `uic.loadUi(sciezka)` | Wczytanie jako nowy obiekt okna | Zachowaj zwrócony obiekt. |
+| `pyuic6 okno.ui -o ui_okno.py` | Generowanie pliku Python | Polecenie terminalu. |
+| `self.setupUi(self)` | Inicjalizacja w typowym wzorcu dziedziczenia z Ui_* | Wariant z kodem wygenerowanym. |
+| `Path(__file__).resolve().parent / "okno.ui"` | Ścieżka względem skryptu | Przekaż str(sciezka) do loadUi. |
 
-## Layout w Designer
+## Krótki wzorzec
 
-Layout określa rozmieszczenie przy zmianie rozmiaru. Umieść kontrolki w układzie, a potem sprawdź podgląd. Ręczne pozycje nie zapewniają dopasowania do różnych rozmiarów.
+```python
+from pathlib import Path
+from PyQt6 import uic
+from PyQt6.QtWidgets import QMainWindow
 
-## loadUi
+class Okno(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        plik = Path(__file__).resolve().parent / "okno.ui"
+        uic.loadUi(str(plik), self)
+```
 
-PyQt6.uic.loadUi wczytuje .ui w czasie wykonania. Plik musi być dostępny w paczce. Ścieżkę buduj względem skryptu, żeby katalog terminalu nie zmieniał wyniku.
+Fragment zakłada okno QMainWindow zapisane w okno.ui oraz standardowy start QApplication z poprzedniego tematu. Logikę trzymaj poza plikiem generowanym, bo ponowne generowanie nadpisze zmiany.
 
-## Generowanie kodu
-
-python -m PyQt6.uic.pyuic okno.ui -o ui_okno.py tworzy kod interfejsu. Po zmianie .ui wygeneruj go ponownie. Logikę aplikacji trzymaj w osobnym własnym pliku.
-
-## Połączenie akcji
-
-clicked.connect(self.powitaj) przekazuje metodę do wykonania po kliknięciu. Nawiasy self.powitaj() uruchomiłyby ją od razu. W metodzie pobierz text, zastosuj strip i ustaw wynik.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://www.riverbankcomputing.com/static/Docs/PyQt6/designer.html) · [Zadania lekcji](README.md)

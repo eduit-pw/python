@@ -1,25 +1,38 @@
-# Temat 17. Wyjaśnienia do praktyki
+# Temat 17. Hermetyzacja i property
 
-## Hermetyzacja
+## Składnia pod ręką
 
-Obiekt udostępnia kontrolowane operacje zamiast dowolnego zmieniania stanu przez kod zewnętrzny. W Pythonie _nazwa jest konwencją. __nazwa uruchamia zmianę nazwy związaną z klasą, a nie pełne zabezpieczenie danych.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `self._x` | Umownie wewnętrzne pole | Podkreślnik nie blokuje dostępu. |
+| `self.__x` | Nazwa podlegająca przekształceniu w klasie | Nie zapewnia ochrony sekretów. |
+| `@property` | Getter właściwości | Użycie: obj.x bez nawiasów. |
+| `@x.setter` | Setter właściwości x | Użycie: obj.x = wartość. |
+| `self._x w getterze` | Odczyt pola przechowującego dane | self.x w getterze x wywołałoby go ponownie. |
+| `self.x = wartość w __init__` | Inicjalizacja przez setter | Wykorzystuje tę samą walidację. |
+| `raise ValueError("opis")` | Odrzucenie niedozwolonej wartości | Sprawdź dane przed zmianą stanu. |
+| `property bez settera` | Właściwość tylko do odczytu | Przypisanie do niej powoduje AttributeError. |
 
-## @property
+## Krótki wzorzec
 
-Getter property pozwala czytać obj.cena bez nawiasów i wykonywać przy tym metodę. Powinien zwrócić pole pomocnicze, np. self._cena.
+```python
+class Skala:
+    def __init__(self, wartosc):
+        self.wartosc = wartosc
 
-## Setter
+    @property
+    def wartosc(self):
+        return self._wartosc
 
-@cena.setter obsługuje przypisanie obj.cena = wartosc. Wykonaj sprawdzenia przed zmianą pola. Reakcję na zły zakres określa zadanie: może to być ignorowanie albo wyjątek.
+    @wartosc.setter
+    def wartosc(self, nowa):
+        if nowa < 0:
+            raise ValueError("Wartość ujemna")
+        self._wartosc = nowa
 
-## Inicjalizacja przez setter
+print(Skala(3).wartosc)  # 3
+```
 
-Jeśli konstruktor użyje self.cena = cena, zadziała ta sama reguła walidacji. W zadaniu z ignorowaniem błędu ustaw najpierw bezpieczną wartość początkową.
+Getter i setter w zwykłym zapisie dekoratorowym powinny mieć tę samą nazwę właściwości. Błędna wartość ma pozostawić poprzedni stan.
 
-## Rekursja i tylko odczyt
-
-self.cena wewnątrz gettera cena wywoła go ponownie. W setterze to samo zrobi przypisanie do self.cena. Korzystaj z _cena. Property bez settera blokuje przypisanie przez tę właściwość.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/functions.html#property) · [Zadania lekcji](README.md)

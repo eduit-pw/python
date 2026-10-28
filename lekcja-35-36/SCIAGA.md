@@ -1,25 +1,33 @@
-# Temat 18. Wyjaśnienia do praktyki
+# Temat 18. Dziedziczenie i super
 
-## Klasa bazowa i pochodna
+## Składnia pod ręką
 
-class Pralka(Urzadzenie) tworzy klasę pochodną. Obiekt dziedziczy dostępne metody bazy. Dziedziczenie opisuje relację, w której obiekt pochodny jest rodzajem obiektu bazowego.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `class Dziecko(Baza):` | Klasa pochodna | Dziedziczy dostępne metody klasy bazowej. |
+| `Brak własnego __init__` | Wyszukanie odziedziczonej inicjalizacji | Wywołanie musi pasować do jej parametrów. |
+| `Własny __init__` | Zastąpienie odziedziczonej inicjalizacji | Bazowe __init__ nie uruchomi się automatycznie. |
+| `super().__init__(...)` | Współpraca z inicjalizacją bazową | W prostym dziedziczeniu uruchamia inicjalizację rodzica. |
+| `super().metoda(...)` | Rozszerzenie odziedziczonego zachowania | super korzysta z kolejności MRO. |
+| `isinstance(obj, Baza)` | Sprawdzenie instancji klasy lub podklasy | Wynik bool. |
+| `issubclass(Dziecko, Baza)` | Sprawdzenie relacji między klasami | Argumentami są klasy. |
 
-## Odziedziczone __init__
+## Krótki wzorzec
 
-Klasa bez własnego __init__ może korzystać z inicjalizacji odziedziczonej. Definicja własnego __init__ zastępuje odziedziczone wywołanie, więc inicjalizację bazy trzeba świadomie uruchomić.
+```python
+class Pojazd:
+    def __init__(self, marka):
+        self.marka = marka
 
-## super
+class Rower(Pojazd):
+    def __init__(self, marka, biegi):
+        super().__init__(marka)
+        self.biegi = biegi
 
-super().__init__(nazwa) wykorzystuje dalszą inicjalizację w kolejności dziedziczenia. W prostym pojedynczym dziedziczeniu jest to baza. Nie przekazuj self drugi raz.
+rower = Rower("Miejski", 7)
+print(rower.marka, rower.biegi)  # Miejski 7
+```
 
-## Nadpisanie metody
+Dziedziczenie pasuje do relacji „jest rodzajem”. Relację „ma obiekt” zwykle modeluje pole z innym obiektem.
 
-Metoda o tej samej nazwie w klasie pochodnej nadpisuje zachowanie odziedziczone. super().opis() pozwala wykorzystać opis bazy i dopisać własne informacje.
-
-## Spójność stanu
-
-Po nieudanej zmianie programu pralki poprzednia wartość powinna pozostać. Sprawdź granice i dwa niezależne obiekty. self.opis() wewnątrz opis może wywoływać metodę rekurencyjnie.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/tutorial/classes.html#inheritance) · [Zadania lekcji](README.md)

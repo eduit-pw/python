@@ -1,25 +1,28 @@
-# Temat 9. Wyjaśnienia do praktyki
+# Temat 09. Krotki i zbiory
 
-## Krotka i przecinek
+## Składnia pod ręką
 
-Krotka przechowuje uporządkowane elementy bez przypisywania nowych wartości pod indeksami. Krotka jednoelementowa wymaga przecinka: (5,). Samo (5) jest liczbą.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `(x,), tuple(dane)` | Krotka jednoelementowa i konwersja | To przecinek tworzy krotkę, (x) to samo x. |
+| `a, b = para` | Rozpakowanie sekwencji | Liczba wartości musi pasować do liczby nazw. |
+| `pierwszy, *reszta = dane` | Rozpakowanie z resztą | reszta będzie listą. |
+| `set(), {1, 2}` | Pusty i niepusty zbiór | {} tworzy słownik. |
+| `s.add(x), s.update(dane)` | Dodanie jednej lub wielu wartości | Zbiór przechowuje wartości unikalne. |
+| `s.discard(x), s.remove(x)` | Usunięcie wartości | remove zgłasza KeyError przy braku, discard nie. |
+| `a \| b, a & b` | Suma i część wspólna | Operacje zwracają zbiory. |
+| `a - b, a ^ b` | Różnica i różnica symetryczna | Różnica zależy od kolejności argumentów. |
+| `sorted(s)` | Uporządkowana lista elementów zbioru | Elementy muszą dać się porównać. |
 
-## Rozpakowanie
+## Krótki wzorzec
 
-a, b = para przypisuje kolejne elementy do nazw i wymaga odpowiedniej liczby wartości. Zapis a, b = b, a zamienia wartości bez zmiennej pomocniczej.
+```python
+a = {2, 4, 6}
+b = {4, 5, 6}
+print(sorted(a & b))  # [4, 6]
+print(sorted(a - b))  # [2]
+```
 
-## Zbiór i unikalność
+Zbiór nie ma indeksów ani gwarantowanej kolejności. Jego elementy muszą być hashowalne. Krotka może zawierać listę, ale wtedy sama nie nadaje się na element zbioru.
 
-set przechowuje unikalne, hashowalne elementy. Pusty zbiór zapiszesz set(), bo {} tworzy słownik. Zbioru nie indeksujesz i nie opierasz raportu na jego kolejności.
-
-## Operacje zbiorowe
-
-a | b daje sumę, a & b część wspólną, a - b różnicę. a <= b bada podzbiór. Operacje te tworzą wyniki bez zmieniania a i b.
-
-## Dodawanie i usuwanie
-
-add dodaje jeden element, update elementy argumentu. discard pomija brak wartości, remove zgłasza wtedy KeyError. sorted(zbior) daje uporządkowaną listę do wydruku.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/tutorial/datastructures.html) · [Zadania lekcji](README.md)

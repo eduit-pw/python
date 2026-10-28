@@ -1,25 +1,32 @@
-# Temat 20. Wyjaśnienia do praktyki
+# Temat 20. Iteratory i generatory
 
-## Iterable i iterator
+## Składnia pod ręką
 
-iter(obiekt) pobiera iterator. next(iterator) zwraca następny element. Lista pozwala tworzyć nowe iteratory, a istniejący iterator pamięta bieżącą pozycję.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `iter(dane)` | Pobranie iteratora | Iterator przechowuje stan przejścia. |
+| `next(it)` | Pobranie kolejnej wartości | Po wyczerpaniu zgłasza StopIteration. |
+| `next(it, domyslna)` | Odczyt z wartością zastępczą | Zwraca domyslna po wyczerpaniu. |
+| `__iter__(self)` | Obsługa iter(obj) | Zwraca iterator, iterator zwykle zwraca self. |
+| `__next__(self)` | Obsługa next(obj) | Zwraca wartość albo zgłasza StopIteration. |
+| `yield wartość` | Oddanie wartości i zawieszenie funkcji | Funkcja z yield tworzy generator. |
+| `return w generatorze` | Koniec generatora | Nie oddaje kolejnego elementu. |
+| `(f(x) for x in dane)` | Wyrażenie generatorowe | Przetwarza elementy na żądanie. |
 
-## Koniec iteracji
+## Krótki wzorzec
 
-__next__ zgłasza StopIteration po wyczerpaniu. Pętla for obsługuje ten sygnał. next(it, domyslna) zwraca podaną wartość zamiast wyjątku, gdy iterator się skończył.
+```python
+def odliczaj(n):
+    while n > 0:
+        yield n
+        n -= 1
 
-## Generator i yield
+g = odliczaj(3)
+print(next(g))  # 3
+print(list(g))  # [2, 1]
+print(list(g))  # []
+```
 
-Wywołanie funkcji z yield tworzy generator. Kod zaczyna działać przy pobieraniu. yield oddaje wartość i wstrzymuje wykonanie z zachowaniem stanu. Kolejne pobranie wznawia kod za yield.
+Generator jest jednorazowym iteratorem. Samo len(g) nie działa. list(g) zużywa generator i przechowuje wszystkie uzyskane elementy w pamięci.
 
-## Jednorazowość
-
-Wyczerpany generator nie zaczyna od nowa. list(g) zużywa pozostałe elementy i przechowuje je w pamięci. sum(g), a potem kolejne przejście po g nie odczyta tych samych danych.
-
-## Zużycie pamięci
-
-Generator może uniknąć list wyników pośrednich. Nadal przechowuje swój stan i referencje do źródeł. Nie oznacza zerowego zużycia pamięci ani automatycznego zwolnienia całej listy wejściowej.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/tutorial/classes.html#generators) · [Zadania lekcji](README.md)

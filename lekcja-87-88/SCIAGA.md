@@ -1,25 +1,30 @@
-# Temat 43. Wyjaśnienia do praktyki
+# Temat 43. Układy kontrolek
 
-## Layout i geometria
+## Składnia pod ręką
 
-Layout zarządza pozycją i rozmiarem dzieci. Gdy kontrolka należy do layoutu, ręczne move lub setGeometry nie jest właściwym sposobem jej stałego rozmieszczenia.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `QVBoxLayout()` | Układ pionowy | Kolejne kontrolki od góry do dołu. |
+| `QHBoxLayout()` | Układ poziomy | Kolejne kontrolki obok siebie. |
+| `QFormLayout()` | Układ etykieta i pole | addRow("Opis", pole). |
+| `QGridLayout()` | Siatka wierszy i kolumn | addWidget(widget, wiersz, kolumna). |
+| `layout.addWidget(widget)` | Dodanie kontrolki | Układ zarządza jej geometrią. |
+| `layout.addLayout(inny)` | Zagnieżdżenie układu | Łączy np. pionową sekcję z poziomym rzędem. |
+| `layout.addStretch()` | Elastyczne wolne miejsce | Rozsuwa inne elementy. |
+| `widget.setLayout(layout)` | Przypisanie układu | Zwykły QWidget ma jeden główny layout. |
 
-## QVBoxLayout i QHBoxLayout
+## Krótki wzorzec
 
-Układ pionowy zachowuje kolejność od góry, poziomy od lewej. spacing ustawia odstęp, contentsMargins marginesy. Zagnieżdżaj układy dla formularza i przycisków.
+```python
+from PyQt6.QtWidgets import QWidget, QFormLayout, QLineEdit
 
-## QFormLayout
+# Po utworzeniu QApplication:
+panel = QWidget()
+uklad = QFormLayout(panel)
+uklad.addRow("Miasto:", QLineEdit())
+uklad.addRow("Ulica:", QLineEdit())
+```
 
-Układ formularza łączy etykietę i pole w wierszu. Czytelne podpisy pomagają wskazać znaczenie danych. Sprawdź zachowanie przy wąskim oknie.
+Fragment po utworzeniu QApplication. W QMainWindow ustaw układ na centralnym QWidget. Ręczna geometria kontrolek koliduje z zarządzaniem ich pozycją przez layout.
 
-## QGridLayout
-
-Podaj wiersz i kolumnę, a opcjonalnie rowSpan i columnSpan. Rozpiętość pozwala podglądowi zająć kilka kolumn. Nie myl numeru kolumny z jej liczbą.
-
-## Dostępne miejsce
-
-Stretch przejmuje wolną przestrzeń i pomaga wyrównać przyciski. Minimum size ogranicza najmniejszy użyteczny rozmiar. W QMainWindow layout umieść na centralnym QWidget.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://doc.qt.io/qt-6/layout.html) · [Zadania lekcji](README.md)

@@ -1,25 +1,32 @@
-# Temat 39. Wyjaśnienia do praktyki
+# Temat 39. PyQt6: start okna
 
-## QApplication
+## Składnia pod ręką
 
-QApplication zarządza aplikacją graficzną i zdarzeniami. Utwórz jedną instancję w procesie przed kontrolkami. Program konsolowy i okienkowy mają inny sposób oczekiwania na użytkownika.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `from PyQt6.QtWidgets import QApplication, QWidget` | Import klas GUI | Wymaga zainstalowanego PyQt6. |
+| `app = QApplication(sys.argv)` | Obiekt aplikacji | Zwykle jeden na proces, przed tworzeniem kontrolek. |
+| `okno = QWidget()` | Proste okno lub kontrolka | Samo utworzenie nie pokazuje go na ekranie. |
+| `okno.setWindowTitle("Tytuł")` | Tytuł okna | Argument str. |
+| `okno.resize(szerokosc, wysokosc)` | Początkowy rozmiar | Nie zastępuje elastycznego układu kontrolek. |
+| `okno.show()` | Pokazanie okna | Pętla zdarzeń musi jeszcze działać. |
+| `app.exec()` | Start pętli zdarzeń | Zwraca kod zakończenia po zamknięciu aplikacji. |
+| `QMainWindow.setCentralWidget(widget)` | Centralna zawartość okna głównego | QMainWindow ma też miejsca na menu i pasek stanu. |
 
-## Okno i show
+## Krótki wzorzec
 
-QWidget jest podstawową kontrolką i może być oknem. resize ustawia rozmiar, setWindowTitle tytuł, show pokazuje okno. Samo utworzenie obiektu nie gwarantuje jego wyświetlenia.
+```python
+import sys
+from PyQt6.QtWidgets import QApplication, QWidget
 
-## Pętla zdarzeń
+app = QApplication(sys.argv)
+okno = QWidget()
+okno.setWindowTitle("Przykład")
+okno.resize(320, 160)
+okno.show()
+sys.exit(app.exec())
+```
 
-app.exec uruchamia obsługę zdarzeń do zamknięcia aplikacji. Nie wykonuj długiej blokującej pracy w obsłudze kliknięcia, bo okno przestanie reagować.
+Uruchamiaj jako osobny skrypt w środowisku graficznym. Długa operacja w głównym wątku blokuje reagowanie okna.
 
-## Rodzic kontrolki
-
-QLabel(tekst, rodzic) wiąże etykietę z oknem. Pozycja jest liczona względem rodzica. Referencja do okna musi istnieć podczas działania programu.
-
-## QMainWindow
-
-QMainWindow ma miejsca na menu, pasek narzędzi i centralny widget. Treść główną ustaw przez setCentralWidget. Nie ustawiaj zwykłego layoutu bezpośrednio na QMainWindow.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://doc.qt.io/qt-6/qapplication.html) · [Zadania lekcji](README.md)

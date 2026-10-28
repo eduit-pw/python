@@ -1,25 +1,31 @@
-# Temat 63. Wyjaśnienia do praktyki
+# Temat 63. requests i zewnętrzne API
 
-## requests i odpowiedź
+## Składnia pod ręką
 
-requests.get(url, params=..., timeout=...) zwraca Response. status_code opisuje status, text treść jako napis, json() próbuje odczytać JSON. Samo udane połączenie nie dowodzi sukcesu HTTP.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `requests.get(url, timeout=5)` | Żądanie GET | Podawaj limit czasu oczekiwania. |
+| `params={"q": "tekst"}` | Parametry query | Biblioteka koduje je w URL. |
+| `headers={"Authorization": f"Bearer {token}"}` | Nagłówek tokenu | Token wczytuj z konfiguracji. |
+| `requests.post(url, json=dane, timeout=5)` | Wysłanie JSON | Nie myl z data=, które ma inne zastosowanie. |
+| `r.status_code, r.headers` | Status i nagłówki odpowiedzi | Dostępne po odebraniu odpowiedzi. |
+| `r.raise_for_status()` | Zgłoszenie błędu dla statusu 4xx/5xx | Może zgłosić HTTPError. |
+| `r.json()` | Parsowanie body JSON | Może zawieść także przy statusie 200. |
+| `requests.RequestException` | Wspólna baza błędów requests | Nie zastępuje walidacji schematu danych. |
 
-## raise_for_status
+## Krótki wzorzec
 
-raise_for_status zgłasza błąd dla odpowiedzi HTTP 4xx/5xx. Błąd HTTP, timeout, połączenie i niepoprawny JSON wymagają odróżnienia. Nie zastępuj ich pustą poprawną listą.
+```python
+import requests
 
-## Query i nagłówki
+zadanie = requests.Request(
+    "GET", "http://127.0.0.1:8000/szukaj",
+    params={"q": "zielony kolor"}
+).prepare()
+print(zadanie.url)
+# http://127.0.0.1:8000/szukaj?q=zielony+kolor
+```
 
-params koduje parametry adresu. headers przekazuje nagłówki, json= buduje ciało JSON. Nie sklejaj ręcznie query z tekstem, jeśli API udostępnia params.
+Przykład tylko przygotowuje żądanie, bez połączenia z siecią. timeout nie jest ścisłym limitem łącznego czasu całego pobierania. Nie zapisuj tokenów w kodzie ani logach.
 
-## Token
-
-Token pobierz ze środowiska i przekaż w wymaganym nagłówku. Nie wypisuj go w logu ani nie zapisuj do repozytorium. Lokalny token demonstracyjny nie jest kontem rzeczywistego dostawcy.
-
-## Schemat danych
-
-Sprawdź typ kolekcji i wymagane pola odpowiedzi przed obliczeniem. Błędne dane dostawcy są innym problemem niż brak odpowiedzi sieci. Ustal zachowanie dla pustej listy.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://requests.readthedocs.io/en/latest/user/quickstart/) · [Zadania lekcji](README.md)

@@ -1,25 +1,30 @@
-# Temat 21. Wyjaśnienia do praktyki
+# Temat 21. Obsługa wyjątków
 
-## Wyjątek i zakres try
+## Składnia pod ręką
 
-Wyjątek przerywa zwykły przebieg i szuka pasującego except. Obejmuj try operacje, których spodziewany błąd obsługujesz. Zbyt szeroki blok może ukryć błąd programistyczny.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `try:` | Blok kodu, który może zgłosić wyjątek | Ogranicz go do operacji wymagających obsługi. |
+| `except ValueError as blad:` | Obsługa konkretnego typu błędu | blad przechowuje obiekt wyjątku. |
+| `except (TypeError, ValueError):` | Wspólna obsługa kilku typów | Nawiasy zawierają krotkę typów. |
+| `else: po except` | Kod po udanym try | Wykonuje się, gdy try nie zgłosi wyjątku. |
+| `finally:` | Sprzątanie przy opuszczaniu try | Zwykle także po wyjątku lub return. |
+| `raise` | Ponowne zgłoszenie aktualnego wyjątku | Użycie wewnątrz jego obsługi. |
+| `ValueError, TypeError` | Zła wartość i nieodpowiedni typ | Np. int("abc") oraz 1 + "a". |
+| `IndexError, KeyError` | Brak indeksu i brak klucza | Np. [][0] oraz {}["x"]. |
 
-## Rodzaje błędów
+## Krótki wzorzec
 
-int niepoprawnego tekstu zgłasza ValueError, dzielenie przez 0 ZeroDivisionError, brak klucza KeyError. Zapis, który nie jest zgodny ze składnią, wymaga poprawy kodu.
+```python
+tekst = "12a"
+try:
+    liczba = int(tekst)
+except ValueError:
+    print("Niepoprawna liczba")
+else:
+    print(liczba * 2)
+```
 
-## Kolejność except
+Bardziej szczegółowe except zapisuj przed ogólnymi. Unikaj pustego except, które ukrywa przyczynę błędu.
 
-Umieszczaj szczegółowe typy przed ogólnymi. Pierwszy pasujący except obsłuży wyjątek. Nie używaj samego except do zwykłej walidacji danych.
-
-## else i finally
-
-else przy try działa, gdy blok try zakończył się bez wyjątku. finally wykonuje sprzątanie przy zwykłym zakończeniu i obsłudze wyjątku. Nie zastępuje wyniku operacji.
-
-## Ponawianie wejścia
-
-Błąd konwersji obsłuż w except, a poprawny typ ze złym zakresem osobnym if. Po sukcesie zwróć wartość lub zakończ pętlę. Po błędzie nie używaj nieprzypisanej zmiennej.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/tutorial/errors.html) · [Zadania lekcji](README.md)

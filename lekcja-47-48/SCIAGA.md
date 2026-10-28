@@ -1,25 +1,38 @@
-# Temat 24. Wyjaśnienia do praktyki
+# Temat 24. Przygotowanie i izolacja testów
 
-## setUp
+## Składnia pod ręką
 
-setUp wykonuje się przed każdą metodą testową. Przygotuj w nim nowy obiekt i niezależne dane. Zmiana w jednym teście nie powinna przygotowywać stanu następnego.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `setUp(self)` | Przygotowanie przed każdym testem | Ustawia świeży stan instancji testowej. |
+| `tearDown(self)` | Sprzątanie po teście | Uruchamia się także po błędzie testu, jeśli setUp się powiodło. |
+| `self.addCleanup(funkcja, ...)` | Rejestracja sprzątania | Wykona się także po nieudanym setUp, jeśli zarejestrowano ją wcześniej. |
+| `with self.subTest(dane=x):` | Osobne raportowanie wariantów | Jeden błąd asercji nie przerywa pozostałych wariantów. |
+| `io.StringIO()` | Tekstowy bufor w pamięci | Obsługuje m.in. write, read, seek, getvalue. |
+| `bufor.seek(0)` | Przesunięcie odczytu na początek | Po zapisie kursor znajduje się dalej. |
+| `bufor.getvalue()` | Pobranie całej treści | Nie wymaga seek(0). |
+| `Przypadek graniczny` | Próba przy granicy kontraktu | Np. puste dane, zero, ostatni dozwolony indeks. |
 
-## tearDown
+## Krótki wzorzec
 
-tearDown działa po metodzie testowej, również po nieudanej asercji, gdy setUp zakończył się poprawnie. Zamknij otwarte zasoby. Nie jest potrzebny dla każdego zwykłego obiektu.
+```python
+import unittest
+from io import StringIO
 
-## StringIO
+class TestBufor(unittest.TestCase):
+    def setUp(self):
+        self.bufor = StringIO()
+        self.addCleanup(self.bufor.close)
 
-io.StringIO jest buforem tekstowym w pamięci. write dopisuje tekst, getvalue zwraca całość, close zamyka bufor. Zawartość odczytaj przed zamknięciem.
+    def test_odczyt(self):
+        self.bufor.write("abc")
+        self.bufor.seek(0)
+        self.assertEqual(self.bufor.read(), "abc")
 
-## Przypadki brzegowe
+if __name__ == "__main__":
+    unittest.main()
+```
 
-Sprawdź dolny i górny próg, wartości obok progu, puste wejście i błędny typ zgodnie z kontraktem. Każdy przypadek ma mieć określone oczekiwanie.
+Każdy test powinien działać samodzielnie. Nie uzależniaj jego wyniku od kolejności uruchomienia innych testów.
 
-## Stan współdzielony
-
-Nowa instancja TestCase nie resetuje automatycznie liczników klas aplikacji. Przygotuj i przywróć taki stan świadomie. Osobna baza lub folder tymczasowy chroni dane innych testów.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/unittest.html#organizing-test-code) · [Zadania lekcji](README.md)

@@ -1,25 +1,32 @@
-# Temat 56. Wyjaśnienia do praktyki
+# Temat 56. Pydantic 2 i walidacja
 
-## Model Pydantic
+## Składnia pod ręką
 
-BaseModel opisuje oczekiwane pola i typy. Obiekt modelu zawiera zwalidowane dane. Field dodaje ograniczenia, np. ge=0 lub max_length=80.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `class Dane(BaseModel):` | Model danych | Import BaseModel z pydantic. |
+| `nazwa: str` | Wymagane pole | Brak wartości domyślnej oznacza obowiązek podania. |
+| `Field(min_length=1, max_length=40)` | Ograniczenie długości | Dotyczy długości napisu. |
+| `Field(ge=0, le=10), Field(gt=0)` | Granice liczb | ge/le włącznie, gt wyłącznie. |
+| `Field(default_factory=list)` | Nowa domyślna lista | Funkcja zostanie użyta przy tworzeniu modelu. |
+| `@field_validator("nazwa")` | Własna walidacja pola | Validator zwraca poprawną wartość albo zgłasza błąd. |
+| `model.model_dump()` | Model na słownik | API Pydantic 2. |
+| `Model.model_validate(dane)` | Utworzenie i walidacja modelu | Błędne dane powodują ValidationError. |
 
-## Konwersja i strict
+## Krótki wzorzec
 
-Domyślnie część typów może być przekształcana. strict=True pozwala wymagać ścisłego rodzaju danych dla pola. Bool i tekst liczbowy odrzuć, gdy kontrakt wymaga liczby całkowitej.
+```python
+from pydantic import BaseModel, Field
 
-## Walidator tekstu
+class Kolor(BaseModel):
+    nazwa: str = Field(min_length=1, max_length=40)
+    jasnosc: int = Field(ge=0, le=100)
 
-field_validator pozwala oczyścić tytuł i sprawdzić jego sens. Po strip same spacje stają się pustym napisem. Kolejność walidacji długości i oczyszczania musi odpowiadać kontraktowi.
+kolor = Kolor(nazwa="zielony", jasnosc=70)
+print(kolor.model_dump())
+# {'nazwa': 'zielony', 'jasnosc': 70}
+```
 
-## Pola dodatkowe i brakujące
+Domyślnie część danych może być konwertowana, np. napis na liczbę. Samo min_length=1 nie odrzuca napisu ze spacjami. Do tego potrzebne jest strip i odpowiednia walidacja.
 
-ConfigDict(extra="forbid") odrzuca nieznane pola. Pole bez wartości domyślnej jest wymagane. default=0 pozwala je pominąć, więc świadomie zmienia umowę.
-
-## Schemat odpowiedzi
-
-response_model opisuje dane zwracane klientowi. ID może nadawać serwer, chociaż model wejścia go nie przyjmuje. W /docs sprawdź osobno schemat wejścia i wyniku.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.pydantic.dev/latest/concepts/fields/) · [Zadania lekcji](README.md)

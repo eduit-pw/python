@@ -1,25 +1,27 @@
-# Temat 36. Wyjaśnienia do praktyki
+# Temat 36. Minimum, maksimum i sortowanie
 
-## Minimum i maksimum parami
+## Składnia pod ręką
 
-Porównaj dwa elementy między sobą, potem mniejszy z minimum, większy z maksimum. Obsłuż nieparzystą długość i pojedynczy element. Puste wejście wymaga określonej reakcji.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `min(dane), max(dane)` | Najmniejsza i największa wartość | Puste dane bez default powodują ValueError. |
+| `sorted(dane)` | Nowa posortowana lista | Nie zmienia danych wejściowych. |
+| `lista.sort()` | Sortowanie listy w miejscu | Zwraca None. |
+| `reverse=True` | Porządek malejący | Opcja sorted i sort. |
+| `key=lambda x: ...` | Wskazanie klucza sortowania | Porównywana jest obliczona cecha. |
+| `a[i], a[j] = a[j], a[i]` | Zamiana elementów | Przydatna m.in. w bubble sort i selection sort. |
+| `klucz = a[i]` | Zapamiętanie wartości przed przesuwaniem | Potrzebne w insertion sort. |
+| `Stabilne sortowanie` | Zachowanie kolejności równych kluczy | Wbudowane sort i sorted są stabilne. |
 
-## Bubble sort
+## Krótki wzorzec
 
-Porównuj sąsiadów i zamieniaj te w złej kolejności. Po pełnym przebiegu największy element trafia na koniec rozpatrywanej części. Nie gub powtórzeń.
+```python
+dane = [("b", 2), ("a", 1), ("c", 2)]
+wynik = sorted(dane, key=lambda para: para[1])
+print(wynik)  # [('a', 1), ('b', 2), ('c', 2)]
+print(min([4, -2, 7]), max([4, -2, 7]))  # -2 7
+```
 
-## Insertion sort
+W zadaniu wymagającym bubble sort, insertion sort lub selection sort użyj wskazanego algorytmu. sorted wykorzystaj do porównania wyników.
 
-Zachowaj wstawianą wartość, przesuń większe elementy uporządkowanej części w prawo i wpisz wartość w zwolnione miejsce. Nie nadpisuj jej przed zapamiętaniem.
-
-## Selection sort
-
-W nieuporządkowanej części znajdź indeks ekstremum, a potem zamień raz z pozycją początkową tej części. Wybór maksimum daje łatwy porządek malejący.
-
-## Zmiana a nowa lista
-
-Własne sortowanie może modyfikować argument i zwracać None. Wyraźnie ustal kontrakt. Do sprawdzenia użyj niezależnej kopii i wyniku oczekiwanego, także dla [] i listy jednoelementowej.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/howto/sorting.html) · [Zadania lekcji](README.md)

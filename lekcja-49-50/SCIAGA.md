@@ -1,25 +1,37 @@
-# Temat 25. Wyjaśnienia do praktyki
+# Temat 25. Wzorce i dekoratory
 
-## Singleton
+## Składnia pod ręką
 
-Singleton zwraca tę samą instancję przy kolejnych wywołaniach klasy. __new__ odpowiada za tworzenie, __init__ może działać ponownie. Nie zeruj zmienionych ustawień przy każdym wywołaniu.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `__new__(cls)` | Utworzenie instancji | Może służyć do kontrolowania jednej instancji. |
+| `__init__(self)` | Inicjalizacja instancji | Może uruchomić się ponownie po zwrocie istniejącego obiektu z __new__. |
+| `Metoda wytwórcza` | Punkt tworzenia obiektu | Pozwala podklasie zmienić typ tworzonego produktu. |
+| `@dekorator` | Opakowanie funkcji podczas definicji | Odpowiada przypisaniu f = dekorator(f). |
+| `def wrapper(*args, **kwargs):` | Przekazanie dowolnych argumentów | Funkcja wewnętrzna wywołuje oryginał. |
+| `return funkcja(*args, **kwargs)` | Przekazanie wyniku oryginału | Brak return zgubiłby wynik. |
+| `return wrapper` | Zwrócenie opakowania z dekoratora | Bez nawiasów. |
+| `@functools.wraps(funkcja)` | Zachowanie metadanych oryginału | M.in. __name__ i docstring. |
 
-## Metoda wytwórcza
+## Krótki wzorzec
 
-Twórca korzysta z utworz(), a podklasa wybiera klasę produktu. Wspólna operacja pracuje przez interfejs produktu. Dodanie nowego produktu nie powinno wymagać if po typach we wspólnej operacji.
+```python
+from functools import wraps
 
-## Dekorator funkcji
+def z_opisem(funkcja):
+    @wraps(funkcja)
+    def wrapper(*args, **kwargs):
+        wynik = funkcja(*args, **kwargs)
+        return f"Wynik: {wynik}"
+    return wrapper
 
-Dekorator przyjmuje funkcję i zwraca funkcję opakowującą. @loguj nad def jest skrótem zastosowania dekoratora do tej funkcji. Nie wykonuj funkcji w momencie dekorowania bez potrzeby.
+@z_opisem
+def podwoj(x):
+    return x * 2
 
-## Argumenty i wynik
+print(podwoj(4))  # Wynik: 8
+```
 
-Opakowanie przekazuje *args i **kwargs oraz zwraca wynik wywołania. Brak return gubi wynik. functools.wraps pomaga zachować nazwę i docstring funkcji.
+Singleton w prostym przykładzie nie rozwiązuje automatycznie problemów wielu wątków i procesów. Wzorzec dobieraj do potrzeby, nie do samej nazwy.
 
-## Oddzielenie rozszerzenia
-
-Czysta funkcja obliczeniowa zachowuje wymagany kontrakt bez I/O. Logowanie dołącz jako osobne opakowanie. Testuj sukces, wyjątek, argumenty nazwane i metadane.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/functools.html#functools.wraps) · [Zadania lekcji](README.md)

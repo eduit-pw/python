@@ -1,25 +1,33 @@
-# Temat 53. Wyjaśnienia do praktyki
+# Temat 53. Django ORM i migracje
 
-## Model ORM
+## Składnia pod ręką
 
-Klasa dziedzicząca po models.Model opisuje tabelę. Atrybuty pól określają typy i ograniczenia. Instancja modelu odpowiada rekordowi, a pk jego kluczowi.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `class Rekord(models.Model):` | Model danych | Klasa zapisana zwykle w models.py. |
+| `models.CharField(max_length=80)` | Krótkie pole tekstowe | Długość określ jawnie. |
+| `models.IntegerField(), models.BooleanField(default=False)` | Liczba i flaga | Typy kolumn modelu. |
+| `python manage.py makemigrations` | Przygotowanie migracji | Zapisuje zmianę schematu w pliku. |
+| `python manage.py migrate` | Zastosowanie migracji | Wykonuje zmiany w bazie. |
+| `Model.objects.create(pole=wartosc)` | Utworzenie i zapis | Zwraca obiekt modelu. |
+| `Model.objects.filter(pole=wartosc)` | Filtrowanie | Zwraca QuerySet, który może być pusty. |
+| `Model.objects.get(pk=id)` | Jeden obiekt | Może zgłosić DoesNotExist lub MultipleObjectsReturned. |
+| `obj.save(), obj.delete()` | Zapis zmian i usunięcie | Zmiana pola w Pythonie sama nie aktualizuje bazy. |
 
-## Migracje
+## Krótki wzorzec
 
-makemigrations tworzy opis zmiany schematu, migrate stosuje go w bazie. Modyfikacja pliku modelu sama nie zmienia tabeli. Pliki migracji należą do repozytorium.
+```python
+# models.py istniejącej aplikacji Django
+from django.db import models
 
-## Zapytania
+class Kolor(models.Model):
+    nazwa = models.CharField(max_length=40)
+    aktywny = models.BooleanField(default=True)
 
-objects.all i filter tworzą QuerySet, order_by określa porządek. first zwraca obiekt albo None. get dla braku lub wielu wyników zgłasza wyjątek.
+    def __str__(self):
+        return self.nazwa
+```
 
-## Zapis i walidacja
+Po zmianie modelu przygotuj i zastosuj migrację. Pliki migracji dodawaj do repozytorium. ORM nie usuwa potrzeby walidacji reguł biznesowych.
 
-save zapisuje stan instancji, ale nie wywołuje automatycznie pełnego full_clean. Walidację modelu, formularza i ograniczenia bazy rozróżniaj. Nie zakładaj, że nazwa typu pola rozwiązuje wszystkie błędy wejścia.
-
-## Domyślna wartość
-
-Nowe pole z default pozwala określić wartość dla rekordów. Po migracji sprawdź zachowanie istniejących danych. Zmieniaj tylko wskazany obiekt, nie wszystkie rekordy.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.djangoproject.com/en/5.2/topics/db/models/) · [Zadania lekcji](README.md)

@@ -1,25 +1,30 @@
-# Temat 35. Wyjaśnienia do praktyki
+# Temat 35. Wyszukiwanie i bisekcja
 
-## Wyszukiwanie liniowe
+## Składnia pod ręką
 
-Przeglądaj pozycje od początku i zakończ na pierwszym trafieniu. Przy braku zwróć ustalony znacznik, np. -1. Koszt rośnie liniowo z liczbą odwiedzonych elementów.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `x in dane` | Sprawdzenie obecności | Dla listy zwykle wyszukiwanie liniowe. |
+| `enumerate(dane)` | Przegląd wartości wraz z indeksem | Pomaga zwrócić pozycję wyniku. |
+| `lewy, prawy = 0, len(dane) - 1` | Przedział indeksów domknięty | Pusta lista daje prawy równy -1. |
+| `srodek = (lewy + prawy) // 2` | Środek przedziału | Dzielenie całkowite daje indeks. |
+| `lewy = srodek + 1` | Odrzucenie lewej części | Dla posortowanej listy, gdy szukana wartość jest większa. |
+| `prawy = srodek - 1` | Odrzucenie prawej części | Gdy szukana wartość jest mniejsza. |
+| `O(n), O(log n)` | Typowy koszt wyszukiwania liniowego i binarnego | Binarne wymaga uporządkowanych danych. |
+| `f(a) * f(b) < 0` | Przeciwne znaki końców | Dla ciągłej funkcji gwarantuje miejsce zerowe wewnątrz. |
 
-## Wartownik
+## Krótki wzorzec
 
-Dopisz szukaną wartość na kopii listy. Pętla musi znaleźć ją najpóźniej na końcu. Po pętli odróżnij trafienie oryginalne od wartownika. Nie zmieniaj danych wejściowych.
+```python
+from bisect import bisect_left
 
-## Wyszukiwanie binarne
+dane = [2, 5, 8, 11]
+x = 8
+i = bisect_left(dane, x)
+znaleziono = i < len(dane) and dane[i] == x
+print(i, znaleziono)  # 2 True
+```
 
-Wymaga odpowiednio posortowanej listy. Porównaj element środkowy i odrzuć połowę zakresu. Granicę przesuń poza środek, żeby przedział malał.
+bisect_left zwraca miejsce wstawienia, nie potwierdzenie obecności. Własne wyszukiwanie zaimplementuj, gdy tego wymaga polecenie. W bisekcji funkcji osobno sprawdź zera na końcach.
 
-## Złożoność
-
-O(n) opisuje liniowy wzrost pracy, O(log n) wzrost logarytmiczny. Koszt posortowania wejścia też ma znaczenie. Mierz tę samą operację dla porównywalnych danych.
-
-## Bisekcja funkcji
-
-Dla ciągłej funkcji i zmiany znaku na końcach zachowuj połówkę z pierwiastkiem. Zakończ przy wymaganej szerokości. Środek końcowego przedziału ma błąd nie większy niż połowa jego szerokości.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/bisect.html) · [Zadania lekcji](README.md)

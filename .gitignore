@@ -1,30 +1,12 @@
-# Środowiska i cache
 .venv/
-venv/
 __pycache__/
 *.py[cod]
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-# Lokalne ustawienia i sekrety
 .env
-.env.*
-!.env.example
-.idea/
-# Pliki generowane i dane robocze
-*.log
-*.db
-*.db-journal
-*.db-shm
-*.db-wal
-*.sqlite
 *.sqlite3
-*.sqlite3-journal
-*.sqlite3-shm
-*.sqlite3-wal
+*.db
+*.log
 build/
 dist/
-*.egg-info/
-# Pliki systemowe
-Thumbs.db
-.DS_Store
+.pytest_cache/
+.idea/
+.vscode/

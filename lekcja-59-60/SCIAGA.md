@@ -1,25 +1,32 @@
-# Temat 29. Wyjaśnienia do praktyki
+# Temat 29. CSV i JSON
 
-## CSV i separator
+## Składnia pod ręką
 
-CSV przechowuje pola tekstowe w rekordach. Separator może wystąpić wewnątrz pola ujętego w cudzysłowy. Dlatego użyj csv zamiast split(";").
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `csv.reader(plik, delimiter=";")` | Odczyt wierszy CSV | Zwykle lista napisów w każdym wierszu. |
+| `csv.DictReader(plik, delimiter=";")` | Odczyt według nagłówków | Wartości pól zwykle pozostają str. |
+| `csv.writer(plik).writerow(dane)` | Zapis jednego wiersza | Obsługuje cytowanie separatorów. |
+| `csv.DictWriter(plik, fieldnames=...)` | Zapis słowników | writeheader() zapisuje nagłówek. |
+| `open(..., newline="", encoding="utf-8")` | Plik dla modułu csv | Pozwala csv obsłużyć końce wierszy. |
+| `json.load(plik), json.dump(dane, plik)` | JSON w pliku | Odczyt obiektu i zapis. |
+| `json.loads(tekst), json.dumps(dane)` | JSON w napisie | loads odczytuje, dumps zwraca str. |
+| `ensure_ascii=False, indent=2` | Opcje zapisu JSON | Czytelne znaki Unicode i wcięcia. |
 
-## DictReader i konwersja
+## Krótki wzorzec
 
-DictReader używa nagłówka jako nazw pól i zwraca wartości napisowe. int przekształca ilość dopiero po odczycie. Otwórz plik z newline="" i odpowiednim encoding.
+```python
+import csv
+import json
+from io import StringIO
 
-## DictWriter
+plik = StringIO("nazwa;sztuki\nzeszyt;3\n")
+wiersz = next(csv.DictReader(plik, delimiter=";"))
+wiersz["sztuki"] = int(wiersz["sztuki"])
+print(json.dumps(wiersz, ensure_ascii=False))
+# {"nazwa": "zeszyt", "sztuki": 3}
+```
 
-Podaj fieldnames, zapisz writeheader, a potem writerow lub writerows. Kolejność kolumn wynika z fieldnames. Użyj tego samego separatora, którego wymaga zadanie.
+Poprawna składnia JSON nie dowodzi zgodności ze schematem. Sprawdź wymagane klucze, typy i zakresy wartości.
 
-## JSON w pliku
-
-json.load czyta strukturę z pliku, loads z napisu. dump zapisuje do pliku, dumps zwraca napis. ensure_ascii=False zachowuje czytelne polskie litery, indent dodaje wcięcia.
-
-## Składnia i schemat
-
-Poprawny JSON nie oznacza danych zgodnych z umową. Oddziel błąd składni JSON od brakującego pola, złego typu i zakresu. true w JSON jest bool, a nie poprawnym int w kontrakcie ścisłym.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/csv.html) · [Zadania lekcji](README.md)

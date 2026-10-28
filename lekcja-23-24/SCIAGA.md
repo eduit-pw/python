@@ -1,25 +1,30 @@
-# Temat 12. Wyjaśnienia do praktyki
+# Temat 12. lambda, map, filter, math i random
 
-## lambda i klucz
+## Składnia pod ręką
 
-lambda p: p[1] tworzy funkcję zwracającą drugie pole rekordu. W sorted(..., key=...) klucz służy do porównań i nie zmienia rekordu. Równe klucze zachowują wcześniejszą kolejność.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `lambda x: wyrażenie` | Mała funkcja z jednym wyrażeniem | Wynik wyrażenia jest wynikiem funkcji. |
+| `sorted(dane, key=lambda x: ...)` | Sortowanie według wybranej cechy | Zwraca nową listę. |
+| `map(f, dane)` | Zastosowanie f do elementów | Wynik jest iteratorem. |
+| `filter(f, dane)` | Pozostawienie elementów spełniających f | Wynik jest iteratorem. |
+| `math.sqrt(x), math.isqrt(n)` | Pierwiastek i całkowita część pierwiastka | isqrt przyjmuje nieujemne int. |
+| `math.gcd(a, b)` | Największy wspólny dzielnik | Wynik jest nieujemną liczbą całkowitą. |
+| `random.randint(a, b)` | Losowy int od a do b włącznie | Obie granice należą do zakresu. |
+| `random.randrange(a, b)` | Losowy int w zakresie range(a, b) | b jest pomijane. |
+| `random.choice(dane), random.shuffle(lista)` | Wybór elementu i przetasowanie | shuffle zmienia listę, zwraca None. |
 
-## map i filter
+## Krótki wzorzec
 
-map(f, dane) przekształca elementy, filter(f, dane) wybiera te z prawdziwym wynikiem predykatu. W Pythonie 3 zwracają iteratory. list(...) zapisuje ich wyniki w liście.
+```python
+import math
 
-## math
+pary = [("a", 8), ("b", 3)]
+print(sorted(pary, key=lambda para: para[1]))
+# [('b', 3), ('a', 8)]
+print(math.gcd(42, 30))  # 6
+```
 
-Najpierw import math. math.sqrt(x) daje pierwiastek, pi stałą do wzorów koła, floor i ceil zaokrąglają w dół i górę. Zaokrąglaj wynik przy prezentacji, nie stałą pi przed obliczeniem.
+Iterator map lub filter zużywa się podczas odczytu. random służy do symulacji i losowania w ćwiczeniach. Do tokenów używa się secrets.
 
-## random i granice
-
-randint(a, b) dopuszcza oba końce. randrange(a, b) pomija b. choice wybiera element niepustej sekwencji, a sample wybiera pozycje bez powtórnego wyboru tej samej pozycji.
-
-## Testy losowania
-
-Nie oczekuj stałej sekwencji. Sprawdź długość, typ, zakres i ewentualną unikalność. Raport zliczania testuj dodatkowo na stałych, ręcznie sprawdzalnych danych.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/random.html) · [Zadania lekcji](README.md)

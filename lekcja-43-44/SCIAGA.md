@@ -1,25 +1,33 @@
-# Temat 22. Wyjaśnienia do praktyki
+# Temat 22. Własne wyjątki i walidacja
 
-## raise
+## Składnia pod ręką
 
-raise ValueError(komunikat) zgłasza błąd z opisem. Funkcja walidująca zgłasza wyjątek lub zwraca poprawną wartość. O sposobie pokazania błędu decyduje kod wywołujący.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `raise ValueError("opis")` | Zgłoszenie niedozwolonej wartości | Przerywa zwykły przebieg funkcji. |
+| `raise TypeError("opis")` | Zgłoszenie nieodpowiedniego typu | Pozwala odróżnić błąd typu od wartości. |
+| `class Blad(ValueError):` | Własna klasa wyjątku | Można obsłużyć Blad lub jego klasę bazową. |
+| `super().__init__(komunikat)` | Komunikat wyjątku w klasie pochodnej | str(blad) wyświetli komunikat. |
+| `isinstance(x, int)` | Sprawdzenie typu wraz z podklasami | True jest też instancją int. |
+| `type(x) is int` | Wymaganie dokładnego typu int | Odrzuca bool i podklasy int. |
+| `Walidacja przed przypisaniem` | Ochrona poprawnego stanu | Sprawdź wszystkie reguły przed zmianą pól. |
 
-## Własny typ wyjątku
+## Krótki wzorzec
 
-class OcenaError(ValueError) tworzy szczegółowy rodzaj błędu wartości. except ValueError przechwyci również ten podtyp. Jeśli go odróżniasz, except OcenaError umieść wcześniej.
+```python
+class BladZakresu(ValueError):
+    pass
 
-## Typ a wartość
+def ustaw_poziom(x):
+    if type(x) is not int:
+        raise TypeError("Oczekiwano int")
+    if not 0 <= x <= 10:
+        raise BladZakresu("Dozwolony zakres: 0..10")
+    return x
 
-TypeError oznacza niewłaściwy typ argumentu, ValueError niedopuszczalną wartość odpowiedniego typu. Gdy kontrakt wymaga dokładnie int, pamiętaj, że bool jest podtypem int.
+print(ustaw_poziom(4))  # 4
+```
 
-## Walidacja przed zapisem
+Własny wyjątek może przechowywać dane, np. odrzuconą wartość. Nie zastępuj każdego wyjątku ogólnym Exception.
 
-Sprawdź argumenty przed zmianą listy, licznika lub pola obiektu. Odrzucona operacja ma pozostawić stan niezmieniony. Konstruktor nie powinien tworzyć częściowo zaakceptowanych danych.
-
-## Dane w wyjątku
-
-Obiekt wyjątku może zawierać odrzuconą wartość w atrybucie. super().__init__(komunikat) ustawia jego tekst. Nie zastępuj błędu poprawnym wynikiem 0, jeśli umowa tego nie przewiduje.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/tutorial/errors.html#user-defined-exceptions) · [Zadania lekcji](README.md)

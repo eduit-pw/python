@@ -1,25 +1,34 @@
-# Temat 67. Wyjaśnienia do praktyki
+# Temat 67. asyncio
 
-## Korutyna
+## Składnia pod ręką
 
-async def tworzy funkcję korutynową. Jej wywołanie daje obiekt korutyny, nie gotowy wynik. await czeka w sposób pozwalający innym zadaniom pętli działać przy odpowiedniej operacji.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `async def f():` | Definicja funkcji korutynowej | Samo wywołanie f() tworzy obiekt korutyny. |
+| `await operacja` | Oczekiwanie wewnątrz korutyny | Pozwala oddać sterowanie przy operacji zawieszającej. |
+| `asyncio.run(main())` | Start głównej korutyny | Zwykły punkt wejścia skryptu, bez innej działającej pętli. |
+| `asyncio.create_task(f())` | Zaplanowanie korutyny | Wymaga działającej pętli. |
+| `await asyncio.gather(a(), b())` | Współbieżne operacje i lista wyników | Wyniki w kolejności argumentów. |
+| `await asyncio.sleep(sekundy)` | Nieblokujące oczekiwanie | time.sleep blokowałoby wątek pętli. |
+| `async with asyncio.timeout(limit):` | Ograniczenie czasu bloku | TimeoutError obsłuż poza blokiem. |
+| `await asyncio.to_thread(funkcja, argument)` | Blokujące I/O w osobnym wątku | Anulowanie await nie zatrzymuje automatycznie wątku. |
 
-## asyncio.run
+## Krótki wzorzec
 
-asyncio.run(main()) uruchamia główną korutynę w zwykłym skrypcie i zarządza pętlą. Nie wywołuj go wewnątrz już działającej pętli. Zachowaj jeden punkt startu aplikacji.
+```python
+import asyncio
 
-## gather
+async def pomiar(nazwa, opoznienie):
+    await asyncio.sleep(opoznienie)
+    return nazwa
 
-asyncio.gather planuje przekazane operacje współbieżnie i zwraca wyniki w kolejności argumentów. Kolejność zakończenia nie musi być kolejnością listy wynikowej.
+async def main():
+    wyniki = await asyncio.gather(pomiar("A", 0.02), pomiar("B", 0.01))
+    print(wyniki)  # ['A', 'B']
 
-## Nieblokujące oczekiwanie
+asyncio.run(main())
+```
 
-await asyncio.sleep oddaje sterowanie. time.sleep blokuje wątek i zatrzymuje postęp innych zadań tej pętli. Współbieżność I/O nie oznacza automatycznego przyspieszenia obliczeń CPU.
+B kończy się wcześniej, ale wyniki są w kolejności A, B. asyncio usprawnia oczekiwanie na I/O, nie przyspiesza automatycznie obliczeń CPU.
 
-## Timeout
-
-asyncio.timeout ogranicza czas bloku. TimeoutError obsłuż na zewnątrz tego bloku. Po obsłudze program może kontynuować. Zmierz rzeczywisty czas przez perf_counter i traktuj wynik jako przybliżony.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/asyncio-task.html) · [Zadania lekcji](README.md)

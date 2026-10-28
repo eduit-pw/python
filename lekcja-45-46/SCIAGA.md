@@ -1,25 +1,35 @@
-# Temat 23. Wyjaśnienia do praktyki
+# Temat 23. unittest i asercje
 
-## TestCase i metoda testowa
+## Składnia pod ręką
 
-Klasa dziedziczy po unittest.TestCase. Metoda o nazwie zaczynającej się od test_ opisuje przypadek. Test przygotowuje dane, wykonuje operację i sprawdza wynik.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `class TestX(unittest.TestCase):` | Klasa testów | Testy są metodami instancji. |
+| `def test_przypadek(self):` | Metoda wykrywana jako test | Domyślna nazwa zaczyna się od test. |
+| `self.assertEqual(a, b)` | Porównanie wartości | Niezgodność oznacza FAIL. |
+| `self.assertTrue(warunek)` | Sprawdzenie prawdziwości | Dodaj konkretny warunek. |
+| `self.assertIsNone(wynik)` | Sprawdzenie None | Nie myli z False ani 0. |
+| `with self.assertRaises(ValueError):` | Oczekiwanie wyjątku | Brak wyjątku oznacza FAIL. |
+| `python -m unittest -v test_modul` | Uruchomienie modułu testów | Polecenie terminalu, bez .py w nazwie modułu. |
+| `python -m unittest discover -v` | Wyszukanie testów | Domyślnie pliki test*.py. |
 
-## Asercje
+## Krótki wzorzec
 
-assertEqual porównuje wartości, assertTrue i assertFalse sprawdzają prawdziwość, assertIs tożsamość. Wartość oczekiwaną wyznacz niezależnie od badanego kodu.
+```python
+import unittest
 
-## Oczekiwany wyjątek
+class TestNapis(unittest.TestCase):
+    def test_wielkie_litery(self):
+        self.assertEqual("kot".upper(), "KOT")
 
-with self.assertRaises(TypBledu) sprawdza zgłoszenie określonego wyjątku. Jeśli błąd nie nastąpi, test nie przejdzie. Przy odrzuconej zmianie sprawdź także niezmieniony stan.
+    def test_bledna_konwersja(self):
+        with self.assertRaises(ValueError):
+            int("kot")
 
-## FAIL i ERROR
+if __name__ == "__main__":
+    unittest.main()
+```
 
-FAIL oznacza niespełnioną asercję. ERROR oznacza nieobsłużony błąd wykonania testu. Czytaj nazwę testu i traceback, nie tylko ostatnie słowo podsumowania.
+FAIL oznacza niespełnioną asercję. ERROR oznacza inny nieobsłużony wyjątek. Zero znalezionych testów nie potwierdza poprawności programu.
 
-## Import i uruchomienie
-
-Import modułu testowanego nie powinien pytać o input. Interakcję umieść pod if __name__ == "__main__". Uruchom python -m unittest discover -v w folderze konkretnego projektu.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/unittest.html) · [Zadania lekcji](README.md)

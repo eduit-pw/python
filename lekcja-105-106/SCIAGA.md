@@ -1,25 +1,32 @@
-# Temat 51. Wyjaśnienia do praktyki
+# Temat 51. Django: projekt, adres i widok
 
-## Projekt i aplikacja
+## Składnia pod ręką
 
-Projekt Django zawiera konfigurację serwisu, aplikacja wydzieloną funkcjonalność. startproject tworzy projekt, startapp aplikację. Dodaj aplikację do INSTALLED_APPS.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `python -m django startproject config .` | Utworzenie projektu w bieżącym folderze | Powstaje manage.py i pakiet config. |
+| `python manage.py startapp strony` | Utworzenie aplikacji | Dodaj ją do INSTALLED_APPS, gdy korzystasz z jej zasobów. |
+| `python manage.py runserver` | Serwer deweloperski | Domyślnie http://127.0.0.1:8000. |
+| `path("adres/", widok, name="nazwa")` | Reguła adresu | Import path z django.urls. |
+| `path("liczba/<int:n>/", widok)` | Parametr ścieżki | Do widoku trafi int pod nazwą n. |
+| `include("strony.urls")` | Dołączenie tras aplikacji | Adres końcowy składa się z prefiksu i trasy aplikacji. |
+| `def widok(request):` | Funkcja obsługująca żądanie | Musi zwrócić odpowiedź HTTP. |
+| `HttpResponse("tekst")` | Prosta odpowiedź | Import z django.http. |
 
-## URL i widok
+## Krótki wzorzec
 
-path wiąże wzorzec adresu z funkcją widoku. include dołącza adresy aplikacji. Widok przyjmuje request i zwraca HttpResponse. Sam napis nie jest pełnym obiektem odpowiedzi.
+```python
+# views.py
+from django.http import HttpResponse
 
-## Parametr ścieżki
+def witaj(request):
+    return HttpResponse("Dzień dobry")
 
-<int:numer> przechwytuje nieujemny zapis liczby z URL i przekazuje int. Niedopasowany adres daje 404. Nazwa parametru widoku musi pasować do wzorca.
+# W urls.py tej samej aplikacji:
+from django.urls import path
+urlpatterns = [path("witaj/", witaj, name="witaj")]
+```
 
-## Polecenia manage.py
+To wzorzec do projektu Django. Gdy urlpatterns jest w osobnym pliku urls.py, zaimportuj witaj przez from .views import witaj. Serwer runserver służy do pracy lokalnej.
 
-migrate przygotowuje tabele, runserver uruchamia serwer developerski. Polecenia wykonuj z katalogu manage.py tym samym interpreterem. Ctrl+C zatrzymuje serwer.
-
-## Środowisko lokalne
-
-Serwer developerski służy do ćwiczeń. Wersję Django i interpreter zapisz rzeczywiście zainstalowane. Zależności odtwarzaj z requirements, bez kopiowania .venv.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.djangoproject.com/en/5.2/intro/tutorial01/) · [Zadania lekcji](README.md)

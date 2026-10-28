@@ -1,25 +1,32 @@
-# Temat 54. Wyjaśnienia do praktyki
+# Temat 54. Django: admin i formularze
 
-## Panel administratora
+## Składnia pod ręką
 
-Rejestracja modelu udostępnia go w panelu admina. createsuperuser tworzy konto lokalne. Admin i własny widok pracują na tych samych rekordach modelu.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `python manage.py createsuperuser` | Konto administratora | Wymaga przygotowanej bazy. |
+| `admin.site.register(Model)` | Rejestracja modelu w panelu | Zwykle w admin.py. |
+| `class Formularz(forms.Form):` | Formularz niezależny od modelu | Definiuje pola i walidację. |
+| `class Formularz(forms.ModelForm):` | Formularz powiązany z modelem | Meta wskazuje model i dozwolone fields. |
+| `Formularz(request.POST)` | Formularz z przesłanymi danymi | Nie oznacza jeszcze, że dane są poprawne. |
+| `formularz.is_valid()` | Uruchomienie walidacji | Wynik bool. |
+| `formularz.cleaned_data` | Dane po walidacji | Korzystaj po udanym is_valid(). |
+| `formularz.save()` | Zapis ModelForm | Nie występuje w zwykłym Form. |
+| `{% csrf_token %}` | Token w formularzu POST | Zachowaj ochronę CSRF. |
 
-## ModelForm
+## Krótki wzorzec
 
-ModelForm wiąże formularz z modelem i wybranymi polami. Dla POST przekaż request.POST. is_valid wykonuje walidację i udostępnia cleaned_data albo błędy.
+```python
+from django import forms
 
-## GET i POST
+class FormularzKoloru(forms.Form):
+    nazwa = forms.CharField(max_length=40)
 
-GET pokazuje pusty formularz. POST sprawdza dane i zapisuje tylko poprawne. Przy błędzie pokaż ten sam formularz z danymi i komunikatami.
+formularz = FormularzKoloru({"nazwa": "  zielony  "})
+if formularz.is_valid():
+    print(formularz.cleaned_data["nazwa"])  # zielony
+```
 
-## Przekierowanie
+Przykład uruchom w skonfigurowanym projekcie Django. request.POST zawiera dane wejściowe, a cleaned_data dane po walidacji i konwersji.
 
-Po zapisie przekieruj do listy. Odświeżenie strony docelowej nie powinno ponownie wysłać wcześniejszego POST i utworzyć duplikatu.
-
-## CSRF
-
-csrf_token w formularzu współpracuje z middleware. Brak wymaganego tokenu w POST może dać 403. Nie wyłączaj ochrony po to, aby ukryć błąd konfiguracji formularza.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.djangoproject.com/en/5.2/topics/forms/) · [Zadania lekcji](README.md)

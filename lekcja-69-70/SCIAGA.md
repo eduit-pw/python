@@ -1,25 +1,28 @@
-# Temat 34. Wyjaśnienia do praktyki
+# Temat 34. Palindromy, anagramy i lider
 
-## Dokładne porównanie
+## Składnia pod ręką
 
-Palindrom zależy od umowy normalizacji i pustego napisu. Porównywanie od obu końców działa bez kopiowania odwróconego tekstu. Niezgodność choć jednej pary wystarcza do False.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `s == s[::-1]` | Test palindromu | Porównuje dokładny tekst. |
+| `s.lower(), s.casefold()` | Ujednolicenie wielkości liter | casefold jest silniejszą normalizacją Unicode. |
+| `znak.isalnum()` | Litera lub cyfra | Uwzględnia Unicode. |
+| `sorted(a) == sorted(b)` | Test anagramu po normalizacji | Zachowuje liczności znaków. |
+| `liczniki.get(znak, 0) + 1` | Kolejna liczność znaku | Sam zbiór znaków gubi powtórzenia. |
+| `liczby.count(kandydat)` | Zliczenie kandydata | Jeden pełny przebieg po liście. |
+| `licznosc > len(dane) // 2` | Ścisła większość | Dokładnie połowa nie wystarcza. |
+| `Drugi przebieg algorytmu lidera` | Potwierdzenie kandydata | Samo wskazanie kandydata nie dowodzi większości. |
 
-## Anagram i liczności
+## Krótki wzorzec
 
-Anagramy mają takie same liczności wszystkich znaków. Ten sam zbiór znaków nie wystarcza: aab i abb mają różne powtórzenia. Najpierw możesz sprawdzić długość.
+```python
+tekst = "Kajak"
+normalny = tekst.lower()
+print(normalny == normalny[::-1])  # True
+print(sorted("rama") == sorted("mara"))  # True
+print(set("aab") == set("abb"))  # True, lecz to nie anagramy
+```
 
-## Lider większościowy
+Normalizację dobierz do polecenia. Nie usuwaj spacji ani nie zmieniaj liter, jeżeli zadanie wymaga porównania dokładnego zapisu.
 
-Lider występuje więcej niż n/2 razy. Dokładnie połowa nie wystarcza. W pierwszym przebiegu paruj różne wartości i ustal kandydata, w drugim policz jego rzeczywiste wystąpienia.
-
-## Kandydat a potwierdzenie
-
-Algorytm wyboru kandydata może zwrócić wartość również przy braku lidera. Bez drugiego przebiegu odpowiedź może być błędna. Dla pustego wejścia zwróć None zgodnie z kontraktem.
-
-## Normalizacja
-
-Zastosuj tylko wymienione zmiany: np. lower i usunięcie zwykłych spacji. Nie zakładaj pomijania interpunkcji, jeśli nie ma tego w zadaniu. Zachowaj oryginał do porównania.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/stdtypes.html#str.casefold) · [Zadania lekcji](README.md)

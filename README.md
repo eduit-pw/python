@@ -145,12 +145,79 @@ Do Git dodawaj kod, potrzebne dane, pliki .ui, migracje Django i konfigurację p
 
 Jeśli zadanie jest adaptacją INF.04, jego zakres opisano w treści. Rozszerzenia szkolne nie są dodatkowym wymaganiem oryginalnego arkusza. Podczas egzaminu stosuj technologię, nazwy plików, algorytm i dokumentację wskazane w otrzymanym poleceniu. Tematy Django, FastAPI i Docker rozwijają kurs. Zadania algorytmiczne ćwiczą również analizę przydatną na maturze.
 
-## Wersja kursu i dodatkowe materiały
+## Podręczne zestawienia
 
-Wersja 2: 67 tematów, 140 godzin lekcyjnych. W każdej zwykłej lekcji jest `SCIAGA.md`, folder `startery/`, zadanie `diagnoza/` i jeden plik `testy.md`. Prezentacje są w osobnej paczce; obok każdego PPTX jest tekstowa wersja treści. Możesz do niej wrócić bez otwierania podręcznika.
+67 tematów, 140 godzin lekcyjnych. W każdej zwykłej lekcji plik `SCIAGA.md` zawiera tabelę konstrukcji, funkcji i metod oraz krótki wzorzec użycia. Podaje argumenty, zwracane wartości i najważniejsze ograniczenia. Podczas pisania kodu możesz do niego wracać. Foldery `startery/` i `diagnoza/` oraz `testy.md` służą do pracy praktycznej. Prezentacje są w osobnej paczce. Zawierają wyjaśnienia, przykłady i pytania teoretyczne do omówienia oraz odpowiedzi. Zadania praktyczne wykonuj według README lekcji.
 
-Tematy 13, 26, 47, 49 i 62 zawierają zakres przygotowania. Właściwe polecenia otrzymasz od nauczyciela. Wymagania zadań pochodzą z konspektów kursu; oznaczenia adaptacji INF.04 pozostawiono przy ćwiczeniach. Czas zajęć i wymagania tego kursu nie są regulaminem oficjalnego egzaminu.
+Tematy 13, 26, 47, 49 i 62 zawierają zakres przygotowania. Właściwe polecenia otrzymasz od nauczyciela. Wymagania zadań należą do programu kursu; oznaczenia adaptacji INF.04 pozostawiono przy ćwiczeniach. Czas zajęć i wymagania tego kursu nie są regulaminem oficjalnego egzaminu.
 
 Po aktywacji środowiska używaj `python`; bez aktywacji uruchom `ścieżka-do-repo\.venv\Scripts\python.exe`. Qt Designer, Docker i budowanie plików Windows przygotuj zgodnie z instrukcją stanowiska. Nie dołączaj haseł, plików .env, baz uczniów ani .venv do repozytorium.
 
-[Zbiorcza ściąga do tematów 16-20](SCIAGA_16-20.md)
+
+
+### Szybki dostęp do składni
+
+| Temat | Zestawienie |
+| ---: | --- |
+| 1 | [Uruchamianie i środowisko](lekcja-01-02/SCIAGA.md) |
+| 2 | [Zmienne, typy i formatowanie](lekcja-03-04/SCIAGA.md) |
+| 3 | [Operatory i warunki](lekcja-05-06/SCIAGA.md) |
+| 4 | [Pętle i sterowanie wykonaniem](lekcja-07-08/SCIAGA.md) |
+| 5 | [Napisy i metody tekstowe](lekcja-09-10/SCIAGA.md) |
+| 6 | [Funkcje, argumenty i return](lekcja-11-12/SCIAGA.md) |
+| 7 | [Zakres nazw i elastyczne argumenty](lekcja-13-14/SCIAGA.md) |
+| 8 | [Listy](lekcja-15-16/SCIAGA.md) |
+| 9 | [Krotki i zbiory](lekcja-17-18/SCIAGA.md) |
+| 10 | [Słowniki](lekcja-19-20/SCIAGA.md) |
+| 11 | [Wyrażenia składane, enumerate i zip](lekcja-21-22/SCIAGA.md) |
+| 12 | [lambda, map, filter, math i random](lekcja-23-24/SCIAGA.md) |
+| 14 | [Klasy, obiekty i __init__](lekcja-27-28/SCIAGA.md) |
+| 15 | [Pola i rodzaje metod](lekcja-29-30/SCIAGA.md) |
+| 16 | [Metody specjalne](lekcja-31-32/SCIAGA.md) |
+| 17 | [Hermetyzacja i property](lekcja-33-34/SCIAGA.md) |
+| 18 | [Dziedziczenie i super](lekcja-35-36/SCIAGA.md) |
+| 19 | [Polimorfizm i abstrakcja](lekcja-37-38/SCIAGA.md) |
+| 20 | [Iteratory i generatory](lekcja-39-40/SCIAGA.md) |
+| 21 | [Obsługa wyjątków](lekcja-41-42/SCIAGA.md) |
+| 22 | [Własne wyjątki i walidacja](lekcja-43-44/SCIAGA.md) |
+| 23 | [unittest i asercje](lekcja-45-46/SCIAGA.md) |
+| 24 | [Przygotowanie i izolacja testów](lekcja-47-48/SCIAGA.md) |
+| 25 | [Wzorce i dekoratory](lekcja-49-50/SCIAGA.md) |
+| 27 | [Pliki tekstowe](lekcja-55-56/SCIAGA.md) |
+| 28 | [pathlib i ścieżki](lekcja-57-58/SCIAGA.md) |
+| 29 | [CSV i JSON](lekcja-59-60/SCIAGA.md) |
+| 30 | [Wyrażenia regularne](lekcja-61-62/SCIAGA.md) |
+| 31 | [Systemy liczbowe i Horner](lekcja-63-64/SCIAGA.md) |
+| 32 | [Operacje przy szyfrowaniu tekstu](lekcja-65-66/SCIAGA.md) |
+| 33 | [Liczby pierwsze, sito i NWD](lekcja-67-68/SCIAGA.md) |
+| 34 | [Palindromy, anagramy i lider](lekcja-69-70/SCIAGA.md) |
+| 35 | [Wyszukiwanie i bisekcja](lekcja-71-72/SCIAGA.md) |
+| 36 | [Minimum, maksimum i sortowanie](lekcja-73-74/SCIAGA.md) |
+| 37 | [Rekurencja, stos i kolejka](lekcja-75-76/SCIAGA.md) |
+| 38 | [Daty i czas](lekcja-77-78/SCIAGA.md) |
+| 39 | [PyQt6: start okna](lekcja-79-80/SCIAGA.md) |
+| 40 | [Qt Designer i pliki .ui](lekcja-81-82/SCIAGA.md) |
+| 41 | [Kontrolki i formularze PyQt6](lekcja-83-84/SCIAGA.md) |
+| 42 | [Sygnały i sloty](lekcja-85-86/SCIAGA.md) |
+| 43 | [Układy kontrolek](lekcja-87-88/SCIAGA.md) |
+| 44 | [Menu, akcje i dialogi](lekcja-89-90/SCIAGA.md) |
+| 45 | [Listy i tabele PyQt6](lekcja-91-92/SCIAGA.md) |
+| 46 | [SQLite i GUI](lekcja-93-94/SCIAGA.md) |
+| 48 | [Pakowanie programu](lekcja-99-100/SCIAGA.md) |
+| 50 | [HTTP i klient API](lekcja-103-104/SCIAGA.md) |
+| 51 | [Django: projekt, adres i widok](lekcja-105-106/SCIAGA.md) |
+| 52 | [Django: szablony](lekcja-107-108/SCIAGA.md) |
+| 53 | [Django ORM i migracje](lekcja-109-110/SCIAGA.md) |
+| 54 | [Django: admin i formularze](lekcja-111-112/SCIAGA.md) |
+| 55 | [FastAPI: endpointy](lekcja-113-114/SCIAGA.md) |
+| 56 | [Pydantic 2 i walidacja](lekcja-115-116/SCIAGA.md) |
+| 57 | [FastAPI: CRUD](lekcja-117-118/SCIAGA.md) |
+| 58 | [Swagger UI i próby API](lekcja-119-120/SCIAGA.md) |
+| 59 | [FastAPI i trwałość SQLite](lekcja-121-122/SCIAGA.md) |
+| 60 | [Testy API](lekcja-123-124/SCIAGA.md) |
+| 61 | [Docker: polecenia i pliki](lekcja-125-126/SCIAGA.md) |
+| 63 | [requests i zewnętrzne API](lekcja-131-132/SCIAGA.md) |
+| 64 | [BeautifulSoup i HTML](lekcja-133-134/SCIAGA.md) |
+| 65 | [logging](lekcja-135-136/SCIAGA.md) |
+| 66 | [argparse i konfiguracja](lekcja-137-138/SCIAGA.md) |
+| 67 | [asyncio](lekcja-139-140/SCIAGA.md) |

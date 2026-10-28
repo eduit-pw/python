@@ -1,25 +1,32 @@
-# Temat 64. Wyjaśnienia do praktyki
+# Temat 64. BeautifulSoup i HTML
 
-## HTML i parser
+## Składnia pod ręką
 
-BeautifulSoup przekształca HTML w drzewo. Podaj parser html.parser. Wczytaj tekst w odpowiednim kodowaniu. Parser nie wykonuje JavaScript strony.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `BeautifulSoup(html, "html.parser")` | Parsowanie HTML | Biblioteka beautifulsoup4. |
+| `soup.select(".karta")` | Wszystkie elementy pasujące do CSS | Wynik lista. |
+| `soup.select_one("#tytul")` | Pierwszy pasujący element | Wynik Tag albo None. |
+| `".klasa", "#id", "a[href]"` | Selektory klasy, ID i atrybutu | .klasa nie oznacza nazwy znacznika. |
+| `element.get_text(strip=True)` | Tekst elementu | Opcjonalny separator=" " rozdziela fragmenty. |
+| `element.get("href")` | Odczyt atrybutu | Zwraca None, gdy atrybutu nie ma. |
+| `float(tekst.replace(",", "."))` | Przykładowa konwersja liczby | Wcześniej usuń symbole i sprawdź format danych. |
+| `urllib.parse.urljoin(baza, href)` | Pełny adres z linku względnego | Sprawdź href przed łączeniem. |
 
-## Selektory CSS
+## Krótki wzorzec
 
-select zwraca listę dopasowań, select_one pojedyncze dopasowanie lub None. article.album wybiera article z klasą album. Zmiana struktury strony może zmienić liczbę wyników.
+```python
+from bs4 import BeautifulSoup
 
-## Tekst i atrybut
+html = '<p class="cena">12,50 zł</p>'
+soup = BeautifulSoup(html, "html.parser")
+element = soup.select_one(".cena")
+if element is not None:
+    tekst = element.get_text(strip=True)
+    wartosc = float(tekst.removesuffix(" zł").replace(",", "."))
+    print(wartosc)  # 12.5
+```
 
-get_text(strip=True) pobiera tekst węzła. get("data-id") odczytuje atrybut. Najpierw sprawdź istnienie węzła, potem wołaj jego metody.
+Parser nie wykonuje JavaScript. Brak elementu nie oznacza automatycznie wartości 0. Ustal, czy rekord pominąć, czy zgłosić błąd.
 
-## Konwersja i reguła braku
-
-Pobrania odczytane z HTML są tekstem do konwersji. Brak pola i błędna liczba są różnymi przypadkami. Wartość domyślną 0 stosuj wyłącznie tam, gdzie ustalono taką umowę.
-
-## Eksport i kontrola importu
-
-Zapisuj dane do CSV z nagłówkiem i UTF-8. Sprawdź liczbę rekordów oraz sumę kontrolną. Nagły spadek liczby kart może wskazywać zmianę źródła, a nie poprawny pusty wynik.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) · [Zadania lekcji](README.md)

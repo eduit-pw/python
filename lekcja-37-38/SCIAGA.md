@@ -1,25 +1,33 @@
-# Temat 19. Wyjaśnienia do praktyki
+# Temat 19. Polimorfizm i abstrakcja
 
-## Polimorfizm
+## Składnia pod ręką
 
-Ta sama operacja obj.pole() może działać inaczej dla prostokąta i trójkąta. Wspólna pętla korzysta z interfejsu bez sprawdzania typu każdego obiektu.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `obj.metoda()` | Wywołanie zgodnie z typem obiektu | Różne klasy mogą realizować ten sam interfejs. |
+| `Duck typing` | Wymaganie konkretnej operacji | Klasy nie muszą mieć wspólnej klasy bazowej. |
+| `from abc import ABC, abstractmethod` | Import narzędzi abstrakcji | Moduł standardowy. |
+| `class Baza(ABC):` | Klasa mogąca definiować kontrakt | Sama obecność ABC nie wymusza metod abstrakcyjnych. |
+| `@abstractmethod` | Oznaczenie wymaganej metody | Niepełnej klasy abstrakcyjnej nie utworzysz. |
+| `Wspólna sygnatura i znaczenie wyniku` | Zastępowalność obiektów | Sama taka sama nazwa metody nie wystarcza. |
 
-## Duck typing
+## Krótki wzorzec
 
-Python może obsługiwać różne obiekty o zgodnym zachowaniu także bez wspólnej bazy. Ważne, aby używana metoda istniała i miała odpowiedni kontrakt.
+```python
+from abc import ABC, abstractmethod
 
-## ABC i metoda abstrakcyjna
+class Eksport(ABC):
+    @abstractmethod
+    def opis(self):
+        pass
 
-Dziedziczenie po ABC i @abstractmethod jawnie określa wymagania. Nie utworzysz instancji klasy z niezaimplementowanymi metodami abstrakcyjnymi.
+class Tekst(Eksport):
+    def opis(self):
+        return "TXT"
 
-## Kontrakt metody
+print(Tekst().opis())  # TXT
+```
 
-Jeśli pole ma zwracać liczbę, wszystkie figury muszą zwracać liczbę. Sam print daje None i uniemożliwia sumowanie. Zachowaj sposób wywołania metody w podklasach.
+Próba Eksport() w tym przykładzie spowoduje TypeError. Klasa pochodna musi zaimplementować wymagane metody, aby dało się utworzyć jej instancję.
 
-## Normalizacja odpowiedzi
-
-strip usuwa skrajne białe znaki, lower lub upper ujednolica litery. Nie usuwaj spacji wewnętrznych, gdy polecenie wymaga dokładnego tekstu. Sprawdź puste i niedozwolone odpowiedzi.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/abc.html) · [Zadania lekcji](README.md)

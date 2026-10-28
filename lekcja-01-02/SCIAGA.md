@@ -1,25 +1,26 @@
-# Temat 1. Wyjaśnienia do praktyki
+# Temat 01. Uruchamianie i środowisko
 
-## Interpreter i plik
+## Składnia pod ręką
 
-Interpreter wykonuje zapisany kod. Plik .py jest tekstem z instrukcjami, a nie poleceniami terminalu. Po zmianie zapisz plik przed kolejnym uruchomieniem.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `py --version` | Odczyt wersji Pythona | Polecenie terminalu Windows. |
+| `py plik.py` | Wykonanie zapisanego skryptu | Uruchom w folderze pliku albo podaj ścieżkę. |
+| `py -m venv .venv` | Utworzenie środowiska projektu | Własny kod zapisuj obok .venv. |
+| `.\.venv\Scripts\Activate.ps1` | Aktywacja w PowerShell | Dotyczy bieżącego terminalu. |
+| `.\.venv\Scripts\python.exe plik.py` | Wykonanie bez aktywacji | Używa interpretera z tego środowiska. |
+| `python -m pip install nazwa` | Instalacja do wybranego interpretera | Wykonuj po wyborze właściwego środowiska. |
+| `print("Cześć")` | Wyświetlenie napisu w Pythonie | Domyślnie kończy wiersz. |
+| `# komentarz` | Opis w pliku .py | Interpreter pomija treść komentarza. |
 
-## Terminal i tryb interaktywny
+## Krótki wzorzec
 
-W terminalu wpisujesz python nazwa.py. W trybie interaktywnym po znaku >>> wpisujesz instrukcje Pythona. Nie wklejaj znaku >>> ani polecenia terminalu do pliku .py.
+```powershell
+py -m venv .venv
+.\.venv\Scripts\python.exe --version
+.\.venv\Scripts\python.exe pokaz.py
+```
 
-## print i komentarz
+Polecenia z tego przykładu wpisuj w PowerShell. Plik pokaz.py utwórz wcześniej, np. z instrukcją print("Cześć"). Znak >>> oznacza tryb interaktywny Pythona. Środowisko na nowym komputerze odtwórz, zamiast kopiować .venv.
 
-print przyjmuje wartości i wypisuje ich tekstową postać, domyślnie z nową linią. Tekst ujmij w cudzysłowy. Komentarz po # objaśnia kod i nie jest wykonywany.
-
-## Środowisko venv
-
-python -m venv .venv tworzy osobny interpreter i zestaw pakietów projektu. Folderu .venv nie kopiujesz do repozytorium. Na nowym stanowisku tworzysz środowisko ponownie.
-
-## Kontrola uruchomienia
-
-Sprawdź wersję i ścieżkę interpretera oraz katalog terminalu. Zrzut wyniku powinien pokazywać polecenie i rezultat. Błąd sprzętu lub brak uprawnień zgłoś prowadzącemu.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/library/venv.html) · [Zadania lekcji](README.md)

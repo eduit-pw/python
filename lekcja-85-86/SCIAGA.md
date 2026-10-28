@@ -1,25 +1,31 @@
-# Temat 42. Wyjaśnienia do praktyki
+# Temat 42. Sygnały i sloty
 
-## Sygnał i slot
+## Składnia pod ręką
 
-Sygnał opisuje zdarzenie, slot jest funkcją reagującą na nie. connect otrzymuje funkcję bez nawiasów. Jeden sygnał może dostarczać argument, np. nową wartość.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `przycisk.clicked.connect(obsluga)` | Połączenie sygnału z funkcją | Podaj funkcję bez nawiasów. |
+| `def obsluga():` | Zwykła funkcja jako slot | Wykona się po emisji połączonego sygnału. |
+| `pole.textChanged.connect(obsluga)` | Reakcja na zmianę tekstu | Może reagować także na setText z kodu. |
+| `spin.valueChanged.connect(obsluga)` | Reakcja na zmianę liczby | Sygnał przekazuje nową wartość. |
+| `sygnal.disconnect(obsluga)` | Usunięcie połączenia | Brak połączenia może spowodować TypeError. |
+| `lambda checked=False: f(x)` | Przekazanie dodatkowego argumentu | clicked może przekazać bool checked. |
+| `Powtórne connect` | Drugie połączenie tej samej obsługi | Może dać wielokrotne wykonanie. |
 
-## Stan licznika
+## Krótki wzorzec
 
-self.licznik przechowuje wartość niezależnie od tekstu etykiety. Po zmianie stanu odśwież widok. Reset ustawia wartość, a nie tworzy nowego połączenia sygnału.
+```python
+from PyQt6.QtWidgets import QPushButton
 
-## textChanged
+# Po utworzeniu QApplication:
+przycisk = QPushButton("Pokaż")
+def obsluga():
+    print("Kliknięto")
 
-textChanged reaguje przy każdej zmianie tekstu, również programowej. Długość obejmuje spacje. Pusty napis daje 0.
+przycisk.clicked.connect(obsluga)
+przycisk.click()  # Kliknięto
+```
 
-## valueChanged
+connect(obsluga()) wywołałoby funkcję od razu i przekazało do connect jej wynik. Stan aplikacji przechowuj w danych, a etykietę aktualizuj na jego podstawie.
 
-Suwak emituje zmianę wartości. W obsłudze odczytaj R, G i B, a następnie odśwież kolor i podpis. Ustal zakres 0-255 oraz początkowy stan wszystkich kontrolek.
-
-## Podgląd i zatwierdzona próbka
-
-Bieżący podgląd zmienia się na żywo. Zapisaną próbkę aktualizuje tylko przycisk. Przechowuj te dwa stany oddzielnie i sprawdź zmianę suwaka po zapisaniu próbki.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://doc.qt.io/qt-6/signalsandslots.html) · [Zadania lekcji](README.md)

@@ -1,25 +1,27 @@
-# Temat 2. Wyjaśnienia do praktyki
+# Temat 02. Zmienne, typy i formatowanie
 
-## Nazwa, wartość i przypisanie
+## Składnia pod ręką
 
-Zapis cena = 12 wiąże nazwę z obiektem liczbowym. Późniejsze przypisanie zastępuje to powiązanie. = służy do przypisania, a == do porównania.
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `nazwa = wartość` | Przypisanie wartości do nazwy | = przypisuje, == porównuje. |
+| `input("Komunikat: ")` | Pobranie wiersza z klawiatury | Wynik ma typ str. |
+| `int("12"), float("2.5")` | Konwersja napisu na liczbę | Błędny zapis powoduje ValueError. |
+| `str(12), type(12)` | Napis oraz odczyt typu | Odpowiednio "12" i int. |
+| `bool(0), bool("")` | Konwersja do wartości logicznej | Oba wyniki to False. Niepusty napis "False" daje True. |
+| `f"{cena:.2f}"` | Napis z dwoma miejscami po kropce | Formatowanie nie zmienia zmiennej cena. |
+| `f"{numer:04d}"` | Dopełnienie liczby zerami | Dla 7 daje "0007". |
+| `print(a, b, sep=";", end="!")` | Separator wartości i zakończenie | end zastępuje domyślny znak nowej linii. |
 
-## Cztery proste typy
+## Krótki wzorzec
 
-int reprezentuje liczbę całkowitą, float przybliżoną liczbę rzeczywistą, str napis, a bool True albo False. type(wartosc) pozwala sprawdzić typ w czasie wykonania.
+```python
+cena = 7.5
+sztuki = 3
+opis = f"Razem: {cena * sztuki:.2f} zł"
+print(opis)  # Razem: 22.50 zł
+```
 
-## input i konwersja
+Kody, numery telefonów i identyfikatory z zerem na początku przechowuj jako str. float używa przybliżeń binarnych.
 
-input(komunikat) wyświetla pytanie i zwraca str, nawet jeśli wpisano cyfry. int("12") daje 12, float("2.5") daje 2.5. Błędny zapis liczby powoduje ValueError.
-
-## Identyfikatory jako tekst
-
-Kod 00123, numer telefonu i PIN przechowuj jako str, gdy początkowe zera mają znaczenie. Konwersja całego kodu do int usuwa informację o liczbie początkowych zer.
-
-## F-string i format wyniku
-
-W f"Cena: {cena:.2f}" wyrażenie w nawiasach jest obliczane, a .2f daje dwie cyfry po kropce. Format 03d uzupełnia liczbę całkowitą zerami do szerokości co najmniej 3.
-
-[Zadania i wyniki kontrolne](README.md)
-
-To uzupełnienie przykładów z prezentacji. Definicje i kontrakty zadań czytaj łącznie. Szczegółowe przykłady są również w tekście prezentacji dołączonym do paczki.
+[Dokumentacja](https://docs.python.org/3.13/tutorial/inputoutput.html) · [Zadania lekcji](README.md)
