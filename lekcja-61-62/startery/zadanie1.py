@@ -1,18 +1,12 @@
-# Zadanie 1. Kod z łącznikiem
+# Zadanie 1. Uruchom i zamknij
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-import re
-from datetime import date
+import sys
+from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QMainWindow
 
-def poprawny_kod(tekst):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+class Okno(QWidget):
 
-def piec_cyfr(tekst):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def format_daty(tekst):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+    def __init__(self):
+        """TODO: uzupełnij zgodnie z kontraktem w README."""
+        pass

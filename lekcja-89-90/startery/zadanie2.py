@@ -1,4 +1,4 @@
-# Zadanie 2. Pasek narzędzi
+# Zadanie 2. Bubble sort
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

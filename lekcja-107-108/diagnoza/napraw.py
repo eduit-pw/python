@@ -1,4 +1,5 @@
-from django.template import Engine, Context
-def strona(nazwa):
-    silnik = Engine(autoescape=False)
-    return silnik.from_string("<p>{{ nazwa }}</p>").render(Context({"nazwa": nazwa}))
+from django.urls import path
+from django.http import HttpResponse
+def start(request):
+    return HttpResponse("Start")
+urlpatterns = [path("start/", start(None))]

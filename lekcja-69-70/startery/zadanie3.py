@@ -1,4 +1,4 @@
-# Zadanie 3. Lider listy
+# Zadanie 3. Siatka RGB
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

@@ -1,2 +1,3 @@
-def sukces(status):
-    return status == 200
+from pathlib import Path
+def zasob(nazwa):
+    return Path.cwd() / nazwa

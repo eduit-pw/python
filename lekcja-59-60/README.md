@@ -1,6 +1,6 @@
 # Ćwiczenia: Przetwarzanie ustrukturyzowanych danych tekstowych: pliki CSV oraz format JSON
 
-**Temat 29 | Lekcje 59-60**
+**Temat 30 | Lekcje 59-60**
 
 ## Przygotowanie
 
@@ -27,7 +27,7 @@ JSON ma zawierać listę słowników z polami `nazwa` (niepusty str po `strip()`
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Suma ilości w CSV
 
@@ -53,7 +53,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 **Wynik kontrolny:** Ołówek;0 i Gumka;0.
 
-## Zadanie 4. Walidacja JSON
+## Zadanie 4. Dla chętnych: Walidacja JSON
 
 - Napisz funkcję sprawdzającą listę produktów według umowy opisanej w przygotowaniu.
 - Sprawdź puste [], brak ilosc, ilosc=-1, ilosc="2" oraz ilosc=true.

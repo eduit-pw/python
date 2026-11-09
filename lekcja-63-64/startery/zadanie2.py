@@ -1,5 +1,12 @@
-# Zadanie 2. Horner i walidacja
+# Zadanie 2. Wczytanie i akcja
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+import sys
+from pathlib import Path
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
+
+def powitaj():
+    """TODO: uzupełnij zgodnie z kontraktem w README."""
+    pass

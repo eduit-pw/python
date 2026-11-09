@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Analiza liczb
 
@@ -66,7 +66,7 @@ Dane: `pozycje = [("zeszyt", 7), ("dlugopis", 3), ("zeszyt", 8), ("gumka", 2)]`.
 
 Wynik zawiera ceny: zeszyt 8, dlugopis 3, gumka 2. Wypisanie: `dlugopis 3`, `gumka 2`, `zeszyt 8`. Dla pustej listy wynik to `{}`, a pętla wypisująca nie wykonuje żadnego kroku.
 
-## Zadanie 4. Suma kontrolna i cyfra płci PESEL - adaptacja INF.04-01-24.01-SG
+## Zadanie 4. Dla chętnych: Suma kontrolna i cyfra płci PESEL - adaptacja INF.04-01-24.01-SG
 
 **Rdzeń z arkusza:** PESEL przechowywany jako tekst lub tablica, oddzielna funkcja płci zwracająca K/M, oddzielna funkcja sumy zwracająca bool, wczytanie numeru, wywołania funkcji i opisane wyniki. Dziesiąta cyfra określa płeć parzystością, jedenasta służy do kontroli. Algorytm używa wag oraz etapów S, M i R.
 

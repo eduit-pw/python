@@ -1,4 +1,4 @@
-# Zadanie 3. Siatka RGB
+# Zadanie 3. Wyszukiwanie binarne
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

@@ -1,16 +1,16 @@
-# Ćwiczenia: Łączenie przycisków z akcjami w kodzie: reagowanie na kliknięcia i wprowadzany tekst (sygnały i sloty)
+# Ćwiczenia: Algorytmy na tekstach i listach: badanie palindromów, anagramów oraz Algorytm Wyszukiwania Lidera
 
-**Temat 42 | Lekcje 85-86**
+**Temat 43 | Lekcje 85-86**
 
 ## Przygotowanie
 
-Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
+Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Stan początkowy i zapis wersji
+## Reguły funkcji
 
-Każdy przykład zapisz osobno, np. `zadanie1.py`. Sygnały podłączaj raz podczas budowy okna. Zadania 3-4 tworzą kolejne wersje panelu RGB. Duży podgląd i zapisana próbka są odrębnymi kontrolkami oraz odrębnymi wartościami stanu. Na początku oba kolory są białe.
+`palindrom(tekst)` porównuje znaki od obu końców i zwraca bool, bez zmiany tekstu. Dla pustego napisu zwraca True zgodnie z umową tego zadania. `anagram(a, b)` porównuje liczności wszystkich znaków, z rozróżnianiem wielkości liter. `lider(dane)` zwraca element występujący **więcej niż połowę** razy albo None. W pierwszym przebiegu wyznacz kandydata przez parowanie różnych wartości, w drugim potwierdź jego liczność. Zachowaj wejścia. W zadaniu 4 normalizację wykonaj przed wywołaniem palindrom.
 
 ## Sposób pracy podczas bloku
 
@@ -25,39 +25,39 @@ Każdy przykład zapisz osobno, np. `zadanie1.py`. Sygnały podłączaj raz podc
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Licznik kliknięć
+## Zadanie 1. Palindromy
 
-- Zbuduj etykietę wyniku, przyciski „+1” i „Reset”. Stan początkowy: 0.
-- Pierwszy przycisk zwiększa pole self.licznik, drugi zeruje je.
-- Kliknij +1 trzy razy, Reset i +1 jeden raz.
+- Zaimplementuj palindrom bez odwracania napisu przez slicing.
+- Sprawdź: kajak, abba, kot, a oraz pusty napis.
+- Zachowaj umowę: porównanie dokładne, pusty napis daje True.
 
-**Wynik kontrolny:** kolejno 1, 2, 3, 0, 1.
+**Wynik kontrolny:** True, True, False, True, True.
 
-## Zadanie 2. Liczba znaków na żywo
+## Zadanie 2. Pary anagramów
 
-- Połącz QLineEdit.textChanged z metodą pokazującą długość tekstu.
-- Licz wszystkie znaki, także spacje. Pusty napis ma długość 0.
-- Sprawdź „abc”, „a b” oraz wyczyszczenie pola.
+- Sprawdź pary: (kot,kto), (aab,abb), (abcd,dcba), (abc,ab).
+- Użyj funkcji zliczającej znaki. Wypisz tylko pary anagramów.
+- Oblicz liczbę pasujących par. Porównanie ma być dokładne. Adaptacja wiązki „Anagramy” ze zbioru CKE: cztery własne pary.
 
-**Wynik kontrolny:** 3, 3, 0.
+**Wynik kontrolny:** (kot,kto) i (abcd,dcba), razem 2.
 
-## Zadanie 3. Podgląd RGB
+## Zadanie 3. Lider listy
 
-- Utwórz suwaki R, G, B 0-255, początkowo wszystkie ustawione na 255.
-- Po każdej zmianie odśwież duży QLabel i napis z trzema wartościami.
-- Sprawdź ustawienia (255,0,0), (0,255,0), (0,0,255). Adaptacja INF.04-01-25.06-SG, II: same suwaki i podgląd.
+- Napisz dwuprzebiegową funkcję lider(dane), zwracającą int albo None.
+- Dane mają być listą liczb całkowitych. Sprawdź,, [].
+- Nie używaj None jako elementu wejściowego.
 
-**Wynik kontrolny:** podgląd czerwony, zielony i niebieski.
+**Wynik kontrolny:** 2, None, None.
 
-## Zadanie 4. Zapamiętanie próbki
+## Zadanie 4. Dla chętnych: Zdanie i normalizacja
 
-- Do zadania 3 dodaj „Pobierz” oraz osobny QLabel małej próbki i zapisanych wartości.
-- Na początku próbka jest biała, (255,255,255). Zapisuj ją tylko przyciskiem.
-- Pobierz czerwony, potem ustaw niebieski bez kliknięcia przycisku. Adaptacja INF.04-01-25.06-SG, II: własny układ okna.
+- Przed testem palindromu zamień litery na małe i usuń zwykłe spacje.
+- Sprawdź „Kobyła ma mały bok” oraz „Ala ma kota”.
+- Pozostałe znaki zachowaj. Wypisz także tekst po normalizacji.
 
-**Wynik kontrolny:** duży podgląd niebieski, mała próbka nadal czerwona.
+**Wynik kontrolny:** „kobyłamamałybok”: True. „alamakota”: False.
 
 ## Diagnoza i praca domowa
 
@@ -68,3 +68,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

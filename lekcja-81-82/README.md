@@ -1,24 +1,26 @@
-# Ćwiczenia: Wizualne projektowanie wyglądu okna w programie Qt Designer i łączenie go z kodem Pythona
+# Ćwiczenia: Szyfrowanie danych: zamiana liter w tekście, szyfr Cezara oraz szyfr GADERYPOLUKI
 
-**Temat 40 | Lekcje 81-82**
+**Temat 41 | Lekcje 81-82**
 
 ## Przygotowanie
 
-Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
+Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Specyfikacja formularza
+## Umowa szyfrów i przypadki testowe
 
-W Qt Designer utwórz formularz typu QWidget. Dodaj QLineEdit o objectName `imieEdit`, QPushButton `powitajButton` i QLabel `wynikLabel`. Ułóż je pionowo w layoucie. QLabel ma początkowo pusty tekst. Zapisz `okno.ui` w folderze projektu. Designer musi być dostępny na stanowisku; sam pakiet PyQt6 nie gwarantuje instalacji programu Designer.
+Napisz `cezar(tekst, klucz)` dla małych liter a-z i spacji oraz dowolnego całkowitego klucza. Spacje zachowaj; litery przesuwaj z zawijaniem modulo 26. Szyfrowanie i odszyfrowanie różnią się znakiem klucza. Funkcja zwraca str i nie wykonuje input/print.
 
-Wariant dynamiczny uruchamiaj przez `py main_load.py`, a generowany przez `py main.py`. Wygeneruj kod poleceniem:
+| Tekst | Klucz | Wynik |
+| --- | ---: | --- |
+| abc | 3 | def |
+| xyz | 3 | abc |
+| def | -3 | abc |
+| abc | 29 | def |
+| ab cd | 2 | cd ef |
 
-```powershell
-py -m PyQt6.uic.pyuic okno.ui -o ui_okno.py
-```
-
-Logikę powitania umieść w swojej klasie, a ścieżkę .ui w wariancie loadUi ustal względem pliku skryptu.
+GADERYPOLUKI zamienia w obie strony litery par `GA`, `DE`, `RY`, `PO`, `LU`, `KI`. W tej wersji zmieniasz wyłącznie wielkie litery; inne znaki pozostają bez zmian. Napisz własne funkcje, nie kopiuj implementacji z lekcji testowania.
 
 ## Sposób pracy podczas bloku
 
@@ -33,39 +35,39 @@ Logikę powitania umieść w swojej klasie, a ścieżkę .ui w wariancie loadUi 
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Projekt formularza
+## Zadanie 1. Funkcja Cezara
 
-- Utwórz w Designer formularz zgodny z powyższą specyfikacją.
-- Ustaw tytuł „Powitanie”, przycisk „Powitaj” i pusty wynik.
-- Zapisz okno.ui i sprawdź podgląd przy zmianie rozmiaru.
+- Napisz cezar(tekst, klucz), zgodnie z umową powyżej.
+- Wczytaj tekst i klucz w programie głównym. Wynik wypisz z etykietą.
+- Sprawdź pięć przypadków z powyższej tabeli oraz pusty napis z kluczem 3. Adaptacja INF.04-02-25.06-SG, I: funkcja i program konsolowy.
 
-**Wynik kontrolny:** trzy kontrolki w pionowym układzie, poprawne objectName.
+**Wynik kontrolny:** wszystkie wyniki zgodne z tabelą, pusty napis daje „”.
 
-## Zadanie 2. Wczytanie i akcja
+## Zadanie 2. Testy jednostkowe
 
-- Wczytaj okno.ui przez loadUi. Połącz przycisk z funkcją powitania.
-- Dla pustego lub białego imienia pokaż „Podaj imię”.
-- Dla „ Anna ” pokaż powitanie bez zewnętrznych spacji.
+- Napisz pięć osobnych metod unittest dla tabeli przypadków Cezara.
+- Nadaj nazwy opisujące przypadki. Użyj assertEqual.
+- Uruchom python -m unittest -v. Dodaj osobny test klucza 0. Adaptacja INF.04-02-25.06-SG, III: dodatkowy test klucza 0.
 
-**Wynik kontrolny:** „Witaj, Anna” albo „Podaj imię”.
+**Wynik kontrolny:** 6 testów kończy się OK.
 
-## Zadanie 3. Wariant generowany
+## Zadanie 3. Szyfr z par
 
-- Wygeneruj ui_okno.py, utwórz własną klasę Okno i dodaj metodę powitaj.
-- Zachowaj działanie z zadania 2. Nie modyfikuj pliku generowanego.
-- Uruchom program z main.py.
+- Napisz gaderypoluki(tekst) dla wielkich liter. Pozostałe znaki zachowaj.
+- Zbuduj słownik par w kodzie i użyj go w pętli po tekście.
+- Sprawdź tekst „KOT ALA!” oraz pusty napis.
 
-**Wynik kontrolny:** powitanie i kontrola pustego imienia działają jak wcześniej.
+**Wynik kontrolny:** „IPT GUG!” i „”.
 
-## Zadanie 4. Zmiana projektu
+## Zadanie 4. Dla chętnych: Sprawdzenie odwracalności
 
-- W .ui zmień tekst przycisku na „Pokaż powitanie” i dodaj QLabel „Imię ucznia”.
-- Sprawdź program z loadUi, a potem wariant generowany.
-- Dla drugiego wariantu ponownie wygeneruj ui_okno.py.
+- Dla Cezara użyj „ala ma kota” i kluczy -29, 0, 3, 52.
+- Zaszyfruj i odszyfruj każdy wynik, porównaj z oryginałem.
+- Dwa razy zastosuj GADERYPOLUKI do „KOT ALA!”.
 
-**Wynik kontrolny:** nowy wygląd, własna metoda powitania zachowana.
+**Wynik kontrolny:** każdy tekst wraca do postaci wejściowej.
 
 ## Diagnoza i praca domowa
 
@@ -76,3 +78,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

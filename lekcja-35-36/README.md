@@ -25,7 +25,7 @@ W pliku `urzadzenie.py` jest gotowa klasa `Urzadzenie(nazwa)` z polem `wlaczone 
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Odziedziczone metody i dwa obiekty
 
@@ -73,7 +73,7 @@ Pralka: włączone, program 5
 
 **Wskazówka:** do połączenia napisu z liczbą użyj `str(self.program)` albo znanego f-stringa.
 
-## Zadanie 4. Drugie urządzenie i raport
+## Zadanie 4. Dla chętnych: Drugie urządzenie i raport
 
 1. Zdefiniuj `Odkurzacz(Urzadzenie)`. Inicjalizuj stan bazy i własny atrybut `moc = 1`.
 2. Napisz `ustaw_moc(self, poziom)`. Dopuszcza całkowite wartości 1-3. Poprawna wartość daje `True` i aktualizuje moc; błędna daje `False` bez zmiany mocy.

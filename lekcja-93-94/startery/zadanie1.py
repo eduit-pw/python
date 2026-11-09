@@ -1,32 +1,13 @@
-# Zadanie 1. Utwórz i odczytaj bazę
+# Zadanie 1. Termin za dwa tygodnie
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-import sqlite3
-from pathlib import Path
-from contextlib import contextmanager
+from datetime import date, datetime, timedelta
 
-@contextmanager
-def polacz():
+def wczytaj_date(tekst):
     """TODO: uzupełnij zgodnie z kontraktem w README."""
     pass
 
-def inicjalizuj():
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def odczytaj():
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def dodaj(tytul, rok):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def zmien(identyfikator, tytul, rok):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def usun(identyfikator):
+def pazdziernik(teksty):
     """TODO: uzupełnij zgodnie z kontraktem w README."""
     pass

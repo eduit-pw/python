@@ -1,6 +1,6 @@
 # Ćwiczenia: Organizacja stanowiska komputerowego, szkolenie BHP i regulamin pracowni. Wprowadzenie do języka Python i wirtualne środowiska (venv)
 
-**Temat 1 | Lekcje 1-2**
+**Temat 1 | Lekcje 01-02**
 
 ## Przygotowanie
 
@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Stanowisko i folder projektu
 
@@ -70,7 +70,7 @@ print(Program działa.)
 
 Za każdym razem poprawny wynik ma brzmieć `Program działa.`. Nazwij pomyłkę własnymi słowami. Po zakończeniu pozostaw w `poprawa.py` poprawną wersję.
 
-## Zadanie 4. Środowisko i dokumentacja programu
+## Zadanie 4. Dla chętnych: Środowisko i dokumentacja programu
 
 1. W folderze `temat01` utwórz `.venv` poleceniem `py -m venv .venv`.
 2. Wybierz ten interpreter w VS Code.

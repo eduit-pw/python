@@ -1,3 +1,7 @@
-# Parametry polecenia uruchomienia Uvicorn wewnątrz kontenera.
-def argumenty():
-    return ["uvicorn", "main:app", "--host", "127.0.0.1", "--port", "8000"]
+import sqlite3
+def dodaj(sciezka, nazwa):
+    conn = sqlite3.connect(sciezka)
+    try:
+        conn.execute("INSERT INTO produkty (nazwa) VALUES (?)", (nazwa,))
+    finally:
+        conn.close()

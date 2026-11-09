@@ -1,6 +1,6 @@
-# Ćwiczenia: Pakowanie aplikacji do kontenera Docker: tworzenie pliku konfiguracyjnego i uruchamianie usługi
+# Ćwiczenia: Połączenie serwisu sieciowego FastAPI z relacyjną bazą danych SQLite
 
-**Temat 61 | Lekcje 125-126**
+**Temat 63 | Lekcje 125-126**
 
 ## Przygotowanie
 
@@ -8,23 +8,11 @@
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Projekt i polecenia Docker
+## Wersja z bazą danych
 
-Pracuj na własnym API SQLite z tematu 59 lub 60. Docker musi działać na stanowisku. Utwórz Dockerfile: obraz bazowy python:3.13-slim, WORKDIR /app, kopiowanie requirements.txt, instalacja zależności, kopiowanie aplikacji. Proces startowy: `python -m uvicorn main:app --host 0.0.0.0 --port 8000`. W .dockerignore pomiń .venv, .git, __pycache__, pliki baz i logi. Zachowaj GET /status. W zadaniu 3 ustaw ścieżkę SQLite na `/app/dane/albumy.db`, utwórz katalog przed startem i wykorzystaj nazwany wolumen.
+Skopiuj kontrakt API i schematy z tematu 61. Napisz `baza.py`: połączenie SQLite, inicjalizacja tabeli oraz CRUD po ID. `albumy` ma pola: id INTEGER PRIMARY KEY AUTOINCREMENT, tytul TEXT NOT NULL, pobrania INTEGER NOT NULL CHECK(pobrania>=0). Ścieżkę bazy wyznacz względem modułu. Funkcje zapisują parametrami SQL, zatwierdzają operację i zamykają połączenie. Inicjalizacja przez lifespan FastAPI ma tworzyć brakującą tabelę bez usuwania danych.
 
-```powershell
-docker build -t albumy-api .
-docker run --name albumy-test -p 127.0.0.1:8000:8000 albumy-api
-docker logs albumy-test
-```
-
-Po próbie zatrzymaj albumy-test. Wersję z bazą uruchom po przebudowaniu obrazu:
-
-```powershell
-docker run --name albumy-db -p 127.0.0.1:8000:8000 -v albumy-dane:/app/dane albumy-api
-```
-
-Po usunięciu kontenera albumy-db uruchom to samo polecenie ponownie. Nie usuwaj wolumenu albumy-dane, bo to on przechowuje wynik próby trwałości. Wariant z błędnym CMD zbuduj pod inną nazwą obrazu i kontenera.
+Użyj `main.py`, `schematy.py`, `baza.py`. Zachowaj statusy z tematu 61 oraz GET /status. Restart nie kasuje danych. Samodzielnie połącz moduły; pełne rozwiązanie nie jest dołączone. Uruchom `py -m uvicorn main:app --reload`.
 
 ## Sposób pracy podczas bloku
 
@@ -39,38 +27,38 @@ Po usunięciu kontenera albumy-db uruchom to samo polecenie ponownie. Nie usuwaj
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Obraz i odpowiedź API
+## Zadanie 1. Trwały zapis
 
-- Dodaj Dockerfile oraz .dockerignore do projektu. Zbuduj obraz albumy-api.
-- Uruchom kontener i sprawdź /status oraz /docs.
-- Zapisz, który port należy do hosta, a który do kontenera.
+- Zaimplementuj wersję SQLite według kontraktu powyżej i uruchom usługę.
+- Dodaj Poranek=120 i Wieczór=80. Zatrzymaj i ponownie uruchom serwer.
+- Odczytaj listę. Nie dodawaj danych startowych przy każdym uruchomieniu.
 
-**Wynik kontrolny:** usługa odpowiada lokalnie na porcie 8000.
+**Wynik kontrolny:** te same dwa rekordy po restarcie.
 
-## Zadanie 2. Błąd startu
+## Zadanie 2. Parametry i apostrof
 
-- Zatrzymaj kontener, utwórz wariant z błędnym modułem brak:app w CMD i uruchom go.
-- Sprawdź docker ps -a i docker logs dla nowego kontenera.
-- Przywróć main:app, zbuduj poprawny obraz i uruchom usługę.
+- Dodaj album o tytule "Anna's album" i pobrania=0.
+- Odczytaj go po ID i sprawdź dokładny tytuł.
+- Przejrzyj INSERT i potwierdź osobne przekazanie parametrów.
 
-**Wynik kontrolny:** log wskazuje brak modułu; poprawiony obraz uruchamia API.
+**Wynik kontrolny:** apostrof zapisany poprawnie, bez błędu SQL.
 
-## Zadanie 3. Baza w wolumenie
+## Zadanie 3. Brak rekordu
 
-- Zmień ścieżkę bazy, przebuduj obraz i uruchom wariant albumy-db z wolumenem.
-- Zatrzymaj wcześniejszy kontener, aby zwolnić port 8000. Dodaj jeden album.
-- Usuń tylko kontener albumy-db i uruchom nowy z tym samym wolumenem.
+- Wywołaj GET, PUT i DELETE dla ID, którego nie ma w bazie.
+- Nie wybieraj ID istniejącego albumu. Sprawdź listę przed i po próbach.
 
-**Wynik kontrolny:** zapisany album pozostaje po utworzeniu nowego kontenera.
+**Wynik kontrolny:** trzy statusy 404, istniejące dane bez zmian.
 
-## Zadanie 4. Instrukcja uruchomienia
+## Zadanie 4. Dla chętnych: Transakcja testowa
 
-- Przygotuj URUCHOMIENIE.md: build, run z portem i wolumenem, adres /docs oraz logs.
-- Sprawdź polecenia od nowego kontenera. Opisz miejsce trwałej bazy.
+- W osobnej testowej bazie wykonaj w jednym with db dwa INSERT.
+- Pierwszy album ma pobrania=1, drugi pobrania=-1 i narusza CHECK.
+- Przechwyć IntegrityError poza with db i odczytaj tabelę.
 
-**Wynik kontrolny:** druga osoba uruchamia usługę według instrukcji.
+**Wynik kontrolny:** oba zapisy wycofane, tabela pusta.
 
 ## Diagnoza i praca domowa
 
@@ -81,3 +69,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

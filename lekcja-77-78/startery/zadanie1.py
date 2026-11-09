@@ -1,13 +1,18 @@
-# Zadanie 1. Termin za dwa tygodnie
+# Zadanie 1. Kod z łącznikiem
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-from datetime import date, datetime, timedelta
+import re
+from datetime import date
 
-def wczytaj_date(tekst):
+def poprawny_kod(tekst):
     """TODO: uzupełnij zgodnie z kontraktem w README."""
     pass
 
-def pazdziernik(teksty):
+def piec_cyfr(tekst):
+    """TODO: uzupełnij zgodnie z kontraktem w README."""
+    pass
+
+def format_daty(tekst):
     """TODO: uzupełnij zgodnie z kontraktem w README."""
     pass

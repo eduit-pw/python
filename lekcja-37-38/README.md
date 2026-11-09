@@ -36,7 +36,7 @@ Zakładamy wymiary liczbowe. Wersja podstawowa dopuszcza zero. Każde zadanie za
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Kolejne głosy
 
@@ -85,7 +85,7 @@ class Prostokat(Figura):
 
 **Wskazówka:** zacznij od `suma = 0`, a w pętli użyj `suma += figura.pole()`.
 
-## Zadanie 4. Dwa rodzaje pytań do quizu
+## Zadanie 4. Dla chętnych: Dwa rodzaje pytań do quizu
 
 Klasa bazowa jest gotowym szkieletem. `sprawdz(odpowiedz)` ma zwracać `bool`. Przyjmujemy wyłącznie napisy jako odpowiedzi, a klucz poprawnej odpowiedzi jest poprawny dla danego rodzaju pytania.
 

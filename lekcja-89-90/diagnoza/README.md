@@ -1,8 +1,8 @@
-# Diagnoza i praca domowa: temat 44
+# Diagnoza i praca domowa: temat 45
 
 ## Kontrakt
 
-Anulowany dialog zwraca pustą nazwę. Wtedy niczego nie zapisuj i zwróć False; po poprawnym zapisie True.
+Zwróć nową listę rosnącą, zachowując powtórzenia i oryginał.
 
 ## Kolejność pracy
 
@@ -15,3 +15,7 @@ Anulowany dialog zwraca pustą nazwę. Wtedy niczego nie zapisuj i zwróć False
 Plik z samymi definicjami nie wypisuje wyników automatycznie. Do prób dopisz wywołania na swojej kopii albo użyj konsoli interaktywnej. Zależności są takie jak w folderze lekcji; GUI wymaga PyQt6. W zadaniach webowych możesz dopisać mały test z TestClient lub klientem Django.
 
 **Wariant dodatkowy:** dopisz własny przypadek, który wykrywa pierwotny błąd, i uzasadnij dobór danych. **Praca domowa:** dokończ diagnozę i wyjaśnienie, jeżeli nie zmieściły się na zajęciach.
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

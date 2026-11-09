@@ -1,4 +1,4 @@
-# Zadanie 4. Sprawdzenie odwracalności
+# Zadanie 4. Kod i zatwierdzenie
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

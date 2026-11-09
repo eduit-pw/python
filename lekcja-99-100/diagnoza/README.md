@@ -1,8 +1,8 @@
-# Diagnoza i praca domowa: temat 48
+# Diagnoza i praca domowa: temat 50
 
 ## Kontrakt
 
-Dla zwykłego skryptu lokalizuj okno.ui względem pliku programu, niezależnie od katalogu terminalu. Wyjaśnij dodatkowo dołączenie pliku przez --add-data w PyInstaller.
+Wyszukuj nazwę dokładnie jako dane, także z apostrofem. Nie sklejaj SQL z wejściem.
 
 ## Kolejność pracy
 
@@ -15,3 +15,7 @@ Dla zwykłego skryptu lokalizuj okno.ui względem pliku programu, niezależnie o
 Plik z samymi definicjami nie wypisuje wyników automatycznie. Do prób dopisz wywołania na swojej kopii albo użyj konsoli interaktywnej. Zależności są takie jak w folderze lekcji; GUI wymaga PyQt6. W zadaniach webowych możesz dopisać mały test z TestClient lub klientem Django.
 
 **Wariant dodatkowy:** dopisz własny przypadek, który wykrywa pierwotny błąd, i uzasadnij dobór danych. **Praca domowa:** dokończ diagnozę i wyjaśnienie, jeżeli nie zmieściły się na zajęciach.
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

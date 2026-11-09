@@ -1,11 +1,10 @@
-# Zadanie 1. Obraz i odpowiedź API
+# Zadanie 1. Trwały zapis
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
 import sqlite3
 from pathlib import Path
 from contextlib import contextmanager
-import os
 
 @contextmanager
 def polacz():

@@ -1,5 +1,5 @@
-# Zadanie 4. Transakcja testowa
+# Zadanie 4. Błędne dane nie zmieniają stanu
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-import sqlite3
+# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.

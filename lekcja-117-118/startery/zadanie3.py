@@ -1,4 +1,4 @@
-# Zadanie 3. Usunięcie i kolejny zapis
+# Zadanie 3. Opcjonalne query
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

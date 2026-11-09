@@ -1,6 +1,6 @@
 # Ćwiczenia: Współbieżne wykonywanie zadań i programowanie asynchroniczne: moduł asyncio oraz instrukcje async i await
 
-**Temat 67 | Lekcje 139-140**
+**Temat 70 | Lekcje 139-140**
 
 ## Przygotowanie
 
@@ -27,7 +27,7 @@ W zadaniu 3 użyj `async with asyncio.timeout(0.1)`; except TimeoutError umieś�
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Sekwencja i współbieżność
 
@@ -51,7 +51,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 **Wynik kontrolny:** komunikat o czasie, a program nadal wykonuje kolejną operację.
 
-## Zadanie 4. Blokujące i nieblokujące oczekiwanie
+## Zadanie 4. Dla chętnych: Blokujące i nieblokujące oczekiwanie
 
 - W dwóch zadaniach porównaj time.sleep(0.3) z await asyncio.sleep(0.3).
 - W obu wariantach zaplanuj zadania współbieżnie i zmierz czas.
@@ -68,3 +68,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

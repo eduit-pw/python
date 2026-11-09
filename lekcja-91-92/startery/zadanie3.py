@@ -1,4 +1,4 @@
-# Zadanie 3. ID po sortowaniu
+# Zadanie 3. Historia zmian
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

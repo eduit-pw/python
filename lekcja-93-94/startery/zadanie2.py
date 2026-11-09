@@ -1,5 +1,5 @@
-# Zadanie 2. Formularz dodawania
+# Zadanie 2. Wczytanie daty
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-import baza
+# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.

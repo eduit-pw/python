@@ -1,8 +1,8 @@
-# Diagnoza i praca domowa: temat 34
+# Diagnoza i praca domowa: temat 35
 
 ## Kontrakt
 
-Porównuj dokładne znaki z uwzględnieniem powtórzeń. Nie normalizuj tekstu.
+Umieść etykietę w zarządzanej przez layout centralnej części QMainWindow.
 
 ## Kolejność pracy
 

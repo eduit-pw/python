@@ -1,5 +1,3 @@
-from fastapi import FastAPI, HTTPException
-app = FastAPI()
-@app.post("/produkty", status_code=200)
-def dodaj():
-    return {"id": 1}
+from pydantic import BaseModel, Field, ValidationError
+class Produkt(BaseModel):
+    cena: float = Field(ge=0)

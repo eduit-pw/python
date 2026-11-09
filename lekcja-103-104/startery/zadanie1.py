@@ -1,11 +1,12 @@
-# Zadanie 1. Sprawdź odpowiedź w przeglądarce
+# Zadanie 1. Paczka onedir
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-import json
-from urllib.request import urlopen
-from urllib.error import HTTPError, URLError
+import sys
+from pathlib import Path
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
 
-def pobierz(url):
+def powitaj():
     """TODO: uzupełnij zgodnie z kontraktem w README."""
     pass

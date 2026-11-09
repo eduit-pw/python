@@ -1,4 +1,4 @@
-# Zadanie 2. Tabela rekordów
+# Zadanie 2. Quicksort z powtórzeniami
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

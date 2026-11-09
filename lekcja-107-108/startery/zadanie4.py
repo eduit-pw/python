@@ -1,4 +1,4 @@
-# Zadanie 4. Tekst zawierający znaczniki
+# Zadanie 4. Numer lekcji
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

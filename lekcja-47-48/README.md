@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Granice magazynu - siedem testów
 
@@ -74,7 +74,7 @@ Każda metoda zaczyna z oceną 4. Nie traktujemy kolejnych wierszy jako sekwencj
 
 Dane są stałe, a oczekiwania zapisane wprost. `setUp` nie jest obowiązkowe do testowania funkcji: stosujemy je tu do wydzielenia powtarzanego napisu. Metody mogą nadal podawać własne inne dane, np. `"xyz"`.
 
-## Zadanie 4. Bufor i tearDown - trzy testy
+## Zadanie 4. Dla chętnych: Bufor i tearDown - trzy testy
 
 1. W dołączonym `raport.py` znajduje się funkcja `zapisz_wynik(bufor, nazwa, czy_ok)`. Założenia ćwiczenia: `nazwa` jest napisem, `czy_ok` ma typ `bool`, bufor jest otwarty i umożliwia zapis tekstu.
 2. W `test_raport.py` zaimportuj `io`, `unittest` i funkcję. W `setUp` twórz `self.bufor = io.StringIO()`.

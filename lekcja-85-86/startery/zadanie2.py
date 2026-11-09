@@ -1,4 +1,4 @@
-# Zadanie 2. Liczba znaków na żywo
+# Zadanie 2. Pary anagramów
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

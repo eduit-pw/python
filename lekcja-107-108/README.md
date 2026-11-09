@@ -1,6 +1,6 @@
-# Ćwiczenia: Wyświetlanie danych na stronach w Django: szablony HTML i przekazywanie informacji do widoku
+# Ćwiczenia: Pierwsze kroki z frameworkiem Django: tworzenie projektu, ustawienia i adresy podstron
 
-**Temat 52 | Lekcje 107-108**
+**Temat 54 | Lekcje 107-108**
 
 ## Przygotowanie
 
@@ -8,9 +8,20 @@
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Kontynuacja projektu i dane widoku
+## Utworzenie projektu
 
-Skopiuj działający `szkola_web` z poprzedniej lekcji do bieżącego folderu bez .venv. Uruchom go tym samym interpreterem. Utwórz katalog `strony/templates/strony/`. Lista początkowa to `["Programowanie w C#", "Angular dla początkujących", "Kurs Django"]`. Widok przekazuje ją w kontekście pod kluczem `kursy`. Szablony: `base.html`, `kursy.html`, `kontakt.html`; szablony podstron korzystają z extends i bloku treści. Zachowaj nazwy URL `kursy` i `kontakt`.
+Utwórz lokalne środowisko i zainstaluj Django 5.2 według instrukcji na stronie głównej. Z folderu lekcji wykonaj:
+
+```powershell
+mkdir szkola_web
+cd szkola_web
+py -m django startproject szkola .
+py manage.py startapp strony
+py manage.py migrate
+py manage.py runserver
+```
+
+Wybierz interpreter swojego venv; polecenie py musi używać tego samego środowiska. Jeśli używasz jawnej ścieżki do interpretera, zastąp py tą ścieżką. Po `startapp` dodaj `strony` do INSTALLED_APPS. Widoki używają HttpResponse; funkcja lekcja(request, numer) zwraca `Lekcja N`, gdzie N to przekazany numer. Kolejne lekcje kontynuują projekt, więc zachowaj działający katalog szkola_web.
 
 ## Sposób pracy podczas bloku
 
@@ -25,37 +36,39 @@ Skopiuj działający `szkola_web` z poprzedniej lekcji do bieżącego folderu be
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Dynamiczna lista
+## Zadanie 1. Uruchom projekt
 
-- Utwórz widok kursy, trasę /kursy/ i szablon listy trzech nazw podanych powyżej.
-- Wyświetl liczbę elementów oraz listę numerowaną. Dopisz czwarty kurs w widoku.
-- Liczba oraz liczba pozycji mają zmienić się bez ręcznej zmiany HTML. Adaptacja motywu INF.04-02-22.06-SG, II: wyświetlanie w Django.
+- Utwórz szkola_web, venv, projekt szkola i aplikację strony według poleceń powyżej.
+- Uruchom migrate, a potem runserver. Otwórz http://127.0.0.1:8000/.
+- Zapisz wersję Pythona i Django. Zatrzymaj serwer przez Ctrl+C.
 
-**Wynik kontrolny:** najpierw 3, następnie 4 kursy.
+**Wynik kontrolny:** domyślna strona Django przed dodaniem własnych adresów.
 
-## Zadanie 2. Pusta lista
+## Zadanie 2. Strona główna
 
-- Zastąp listę kursów przez []. Użyj {% empty %} do pokazania „Brak kursów”.
-- Nagłówek nadal pokazuje liczbę. Nie dodawaj danych zastępczych w widoku.
+- Dodaj aplikację do INSTALLED_APPS. Utwórz widok start i dwa pliki konfiguracji URL.
+- Użyj include do dołączenia adresów aplikacji w pustym prefiksie.
+- Uruchom serwer i sprawdź / oraz nieistniejącą /brak/.
 
-**Wynik kontrolny:** liczba 0 i czytelny komunikat.
+**Wynik kontrolny:** „Witaj w szkole!” i status 200. Dla /brak/: 404.
 
-## Zadanie 3. Dwie strony, jeden układ
+## Zadanie 3. Kontakt
 
-- Utwórz base.html z dokumentem HTML i linkiem do kursów przez {% url %}.
-- Niech kursy.html i kontakt.html dziedziczą ten układ.
-- Zmień podpis linku tylko w base.html i sprawdź obie strony.
+- Dodaj widok kontakt z odpowiedzią „Kontakt: sekretariat”.
+- W strony/urls.py dodaj path dla kontakt/ i nazwę „kontakt”.
+- Sprawdź /kontakt/ oraz ponownie /.
 
-**Wynik kontrolny:** zmiana widoczna w obu szablonach.
+**Wynik kontrolny:** obie podstrony działają i zwracają własny tekst.
 
-## Zadanie 4. Tekst zawierający znaczniki
+## Zadanie 4. Dla chętnych: Numer lekcji
 
-- Przekaż tytul="<b>Oferta</b>" i wyświetl go przez {{ tytul }}.
-- Sprawdź treść strony i jej źródło. Nie używaj safe ani autoescape off.
+- Dodaj widok lekcja i ścieżkę lekcja/<int:numer>/.
+- Sprawdź /lekcja/51/, /lekcja/0/, /lekcja/abc/ i /lekcja/-1/.
+- Wyjaśnij różnicę między tekstem w URL a typem parametru widoku.
 
-**Wynik kontrolny:** widoczny tekst `<b>Oferta</b>`, bez pogrubienia.
+**Wynik kontrolny:** Lekcja 51, Lekcja 0 oraz dwa statusy 404.
 
 ## Diagnoza i praca domowa
 
@@ -66,3 +79,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

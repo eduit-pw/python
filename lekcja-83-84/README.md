@@ -1,16 +1,16 @@
-# Ćwiczenia: Dodawanie i obsługa elementów okna: napisy, pola tekstowe, przyciski i opcje wyboru
+# Ćwiczenia: Działania na liczbach: sprawdzanie liczb pierwszych, Sito Eratostenesa, rozkład na czynniki i Algorytm Euklidesa
 
-**Temat 41 | Lekcje 83-84**
+**Temat 42 | Lekcje 83-84**
 
 ## Przygotowanie
 
-Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
+Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Ustalenia formularza
+## Umowy algorytmów
 
-Kod zapisuj w `main.py` albo w osobnych plikach kolejnych zadań. Wyniki pokaż jako tekst, np. przez QLabel.setText; nie interpretuj tekstu użytkownika jako HTML. Cennik do zadania 3: Pocztówka = 1 zł, List = 1,5 zł, Paczka = 10 zł. Początkowo wybrana jest Pocztówka, ale cena pojawia się po kliknięciu. W zadaniu 4 najpierw sprawdzaj długość kodu, potem każdy znak jako cyfrę ASCII 0-9; wynik wyświetlaj po kliknięciu „Zatwierdź”.
+`pierwsza(n)` zwraca bool: dla n < 2 wynik False. Szukaj dzielnika od 2, dopóki d*d <= n. `wypelnij(tablica)` modyfikuje tablicę sita: od p=2, przy zaznaczonym p wykreślaj wielokrotności od p*p do końca tablicy, następnie zwiększ p; kontynuuj, dopóki p*p mieści się w tablicy. Nie zwracaj nowej tablicy. Przy rozkładzie powtarzaj dzielenie przez d, dopóki reszta jest zerowa; na końcu uwzględnij pozostały czynnik > 1. NWD z odejmowaniem zapisuj w osobnej funkcji dla dodatnich argumentów.
 
 ## Sposób pracy podczas bloku
 
@@ -25,39 +25,39 @@ Kod zapisuj w `main.py` albo w osobnych plikach kolejnych zadań. Wyniki pokaż 
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Formularz ucznia
+## Zadanie 1. Przedział liczb pierwszych
 
-- Zbuduj QLineEdit „Imię”, QSpinBox 1-5 „Klasa” i przycisk „Pokaż”.
-- Po kliknięciu wypisz w QLabel: „Anna, klasa 4” dla danych Anna i 4.
-- Puste imię po strip ma dawać „Podaj imię”.
+- Napisz program wypisujący liczby pierwsze z przedziału 0-20.
+- Użyj funkcji pierwsza i sprawdź osobno -7, 0, 1, 2, 49.
+- Wyjaśnij, dlaczego warunek d*d <= n nie może być zastąpiony przez <.
 
-**Wynik kontrolny:** poprawne podsumowanie albo komunikat pustego pola.
+**Wynik kontrolny:** 2, 3, 5, 7, 11, 13, 17, 19.
 
-## Zadanie 2. Opcje niezależne
+## Zadanie 2. Sito do 100
 
-- Dodaj QCheckBox „Python” i „SQL” oraz przycisk podsumowania.
-- Wypisz wybrane nazwy w tej kolejności, rozdzielone przecinkiem.
-- Gdy żadna nie jest wybrana, pokaż „Brak wyboru”.
+- Utwórz tablicę 101 wartości logicznych. Ustaw 0 i 1 na False.
+- Napisz funkcję wypelnij(tablica) bez wartości zwracanej, zgodną z opisem algorytmu powyżej.
+- Wypisz liczby pierwsze od 2 do 100 i ich liczbę. Adaptacja INF.04-01-23.06-SG, I: dodatkowe zliczanie wyników.
 
-**Wynik kontrolny:** „Python”, „SQL”, „Python, SQL” albo „Brak wyboru”.
+**Wynik kontrolny:** 25 liczb. Pierwsza 2, ostatnia 97.
 
-## Zadanie 3. Rodzaj przesyłki i cena
+## Zadanie 3. Rozkład i odtworzenie
 
-- Utwórz trzy pola radio i QButtonGroup. Pocztówka wybrana na początku.
-- Dodaj przycisk „Sprawdź cenę” i QLabel z początkowym tekstem „Cena:”.
-- Wyświetl cenę z powyższego cennika. Obraz zastąp etykietą rodzaju przesyłki. Adaptacja INF.04-01-23.06-SG, II: etykieta zamiast obrazu.
+- Napisz funkcję czynniki(n), przyjmującą int >= 2.
+- Sprawdź 84, 49 i 13. Wypisz listę czynników i ich iloczyn.
+- Odrzuć n < 2 przez ValueError.
 
-**Wynik kontrolny:** List: 1,5 zł. Paczka: 10 zł.
+**Wynik kontrolny:**,, [13]. Iloczyny: 84, 49, 13.
 
-## Zadanie 4. Kod i zatwierdzenie
+## Zadanie 4. Dla chętnych: NWD zgodnie z poleceniem
 
-- Do zadania 3 dodaj QLineEdit kodu oraz przycisk „Zatwierdź”.
-- Za krótki lub długi kod: „Wymagane 5 znaków”. Obcy znak: „Wymagane cyfry”.
-- Poprawny kod: „Dane poprawne”. Sprawdź 12345, 1234, 12a45 i 12-345. Adaptacja INF.04-01-23.06-SG, II: uproszczone komunikaty.
+- Wczytaj dwie dodatnie liczby całkowite i oblicz NWD przez odejmowanie.
+- Sprawdź pary (18,12), (7,5), (6,6). Odrzuć 0 i liczby ujemne.
+- Porównaj wyniki z wersją modulo, używaną tylko jako kontrola. Adaptacja INF.04-01-23.01-SG, I: dodatnie dane i porównanie wersji.
 
-**Wynik kontrolny:** tylko 12345 daje potwierdzenie.
+**Wynik kontrolny:** 6, 1, 6.
 
 ## Diagnoza i praca domowa
 
@@ -68,3 +68,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

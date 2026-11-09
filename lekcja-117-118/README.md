@@ -1,6 +1,6 @@
-# Ćwiczenia: Pełna obsługa danych w FastAPI: pobieranie, dodawanie, edycja i usuwanie wpisów przez sieć
+# Ćwiczenia: Nowoczesne usługi sieciowe w FastAPI: uruchomienie serwera i pierwsze punkty dostępu
 
-**Temat 57 | Lekcje 117-118**
+**Temat 59 | Lekcje 117-118**
 
 ## Przygotowanie
 
@@ -8,19 +8,15 @@
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Kontrakt CRUD
+## Uruchomienie usługi
 
-Kontynuuj kopię main.py i schematy.py z tematu 56. Przywróć wymagane pole pobrania, bez default. Zapis w tej lekcji jest w pamięci procesu: restart usuwa albumy i zaczyna ID od 1. Utrzymuj oddzielny rosnący licznik ID; nie wyliczaj nowego ID z długości listy.
+Utwórz `main.py` i obiekt `app = FastAPI()`. Samodzielnie dodaj GET /status zwracający słownik `{"stan": "ok"}`. Używaj pliku requirements.txt i środowiska FastAPI z instrukcji głównej. Po zapisaniu kodu uruchom:
 
-| Metoda i adres | Sukces | Brak zasobu |
-| --- | --- | --- |
-| GET /albumy | 200, lista (również pusta) | Nie dotyczy |
-| GET /albumy/{id} | 200, album | 404 |
-| POST /albumy | 201, album z nadanym id | Nie dotyczy |
-| PUT /albumy/{id} | 200, cały zaktualizowany album | 404 |
-| DELETE /albumy/{id} | 204, bez ciała | 404 |
+```powershell
+py -m uvicorn main:app --reload
+```
 
-Pola wejścia: tytul i pobrania. Schemat waliduje je przed zmianą stanu; id nadaje serwer. Nie zaimplementowano PATCH. Uruchom `py -m uvicorn main:app --reload`. Dla tego ćwiczenia nie zmieniaj kodu między kolejnymi operacjami testowej sekwencji, bo przeładowanie resetuje pamięć.
+Adres bazowy: `http://127.0.0.1:8000`. Dokumentacja: `/docs`. W /kwadrat/{liczba} odpowiedź ma pola `liczba` i `kwadrat`. Zatrzymaj inne serwery używające portu 8000.
 
 ## Sposób pracy podczas bloku
 
@@ -35,38 +31,35 @@ Pola wejścia: tytul i pobrania. Schemat waliduje je przed zmianą stanu; id nad
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Dodawanie i lista
+## Zadanie 1. Usługa działa
 
-- Połącz schemat z tematu 56 z kodem GET i POST z tej lekcji.
-- Od pustego stanu dodaj Poranek=120 i Wieczór=80. Pobierz listę.
+- Utwórz main.py z GET /status według powyższej umowy i uruchom Uvicorn.
+- Sprawdź /status w przeglądarce oraz przez Try it out w /docs.
 
-**Wynik kontrolny:** 201 dla obu zapisów, lista dwóch różnych ID.
+**Wynik kontrolny:** 200 oraz {"stan":"ok"}.
 
-## Zadanie 2. Edycja po ID
+## Zadanie 2. Parametr liczbowy
 
-- Dodaj PUT. Zmień pobrania pierwszego albumu na 121, zachowując tytuł.
-- Spróbuj zmienić nieistniejący album 999.
-- Porównaj pełną listę przed i po nieudanej zmianie.
+- Dodaj /kwadrat/{liczba} z parametrem int. Zwróć liczbę i jej kwadrat.
+- Wyślij wartości 5, -3 i abc. Nie przechwytuj błędu typu ręcznie.
 
-**Wynik kontrolny:** pierwszy album zmieniony, 999 daje 404 bez dodatkowego rekordu.
+**Wynik kontrolny:** 25, 9 oraz odpowiedź 422 dla abc.
 
-## Zadanie 3. Usunięcie i kolejny zapis
+## Zadanie 3. Opcjonalne query
 
-- Usuń pierwszy album. Ponownie wyślij DELETE dla tego samego ID.
-- Dodaj trzeci album Noc z pobrania=0.
-- Sprawdź, czy Wieczór zachował ID, a nowy album nie przejął usuniętego ID.
+- Dodaj /powitanie z parametrem imie: str = "Uczeń".
+- Zwróć {"tekst": "Cześć, ..."}. Sprawdź brak parametru i imie=Anna.
 
-**Wynik kontrolny:** 204, potem 404; nowe id=3, Wieczór nadal id=2.
+**Wynik kontrolny:** Cześć, Uczeń oraz Cześć, Anna.
 
-## Zadanie 4. Błędne dane nie zmieniają stanu
+## Zadanie 4. Dla chętnych: Różne błędy HTTP
 
-- Wyślij PUT dla Wieczoru z pobrania=-1, potem bez pola pobrania.
-- Używaj modelu z wymaganymi polami, bez wartości domyślnej z ćwiczenia 56.3.
-- Pobierz Wieczór ponownie i sprawdź zachowanie poprzednich danych.
+- Wyślij GET /brak, POST /status i GET /kwadrat/abc.
+- Zapisz metodę, URL, status i krótki opis przyczyny każdego wyniku.
 
-**Wynik kontrolny:** dwa statusy 422, zapisane wartości bez zmian.
+**Wynik kontrolny:** kolejno 404, 405 i 422.
 
 ## Diagnoza i praca domowa
 
@@ -77,3 +70,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

@@ -1,6 +1,6 @@
-# Ćwiczenia: Przygotowanie programu do uruchomienia na innych komputerach: tworzenie pliku wykonywalnego (.exe)
+# Ćwiczenia: Zapisywanie i odczytywanie danych z lokalnej bazy danych SQLite w aplikacji okienkowej (sqlite3)
 
-**Temat 48 | Lekcje 99-100**
+**Temat 50 | Lekcje 99-100**
 
 ## Przygotowanie
 
@@ -8,17 +8,11 @@
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Projekt wejściowy i polecenia
+## Schemat bazy i podział kodu
 
-Użyj własnego działającego projektu z poprzedniej lekcji; wariant .ui pochodzi z tematu 40. Zainstaluj PyInstaller. Polecenia wykonuj z folderu zawierającego main.py, po sprawdzeniu zwykłego `py main.py`.
+Przygotuj `baza.py` dla operacji SQL i `main.py` dla okna. Baza `albumy.db` jest plikiem roboczym obok skryptu. Tabela `albumy`: `id INTEGER PRIMARY KEY`, `tytul TEXT NOT NULL`, `rok INTEGER NOT NULL CHECK(rok BETWEEN 1900 AND 2100)`. Tytuł po strip nie może być pusty. Używaj parametrów `?`, zatwierdzaj transakcje i zamykaj połączenia. Inicjalizacja tabeli ma być idempotentna. Dane początkowe dodawaj jednorazowo, nie przy każdym odczycie.
 
-```powershell
-py -m PyInstaller --onedir main.py
-py -m PyInstaller --onedir --add-data "okno.ui:." main_load.py
-py -m PyInstaller --onefile main.py
-```
-
-Drugie polecenie dotyczy wariantu dynamicznie wczytującego .ui i tworzy dist/main_load. W zadaniu 3 wyznacz katalog danych przez `QStandardPaths.AppDataLocation`, po ustawieniu nazwy aplikacji i organizacji; utwórz go przed połączeniem z bazą. Dane trwałe nie mogą trafiać do tymczasowego katalogu rozpakowania onefile. Do odbiorcy przekaż całą paczkę onedir albo właściwy plik onefile, dla użytego systemu i architektury.
+Próbę wycofania wykonaj w oddzielnej pustej bazie testowej, np. `:memory:`; przygotowanie tabeli zatwierdź przed transakcją z dwoma INSERT. Nie testuj błędnych transakcji na własnych danych użytkowych.
 
 ## Sposób pracy podczas bloku
 
@@ -33,39 +27,39 @@ Drugie polecenie dotyczy wariantu dynamicznie wczytującego .ui i tworzy dist/ma
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Paczka onedir
+## Zadanie 1. Utwórz i odczytaj bazę
 
-- Sprawdź działanie main.py, potem zbuduj --onedir z widoczną konsolą.
-- Skopiuj cały dist/main do nowego folderu testowego.
-- Uruchom plik wynikowy z tego folderu. Zanotuj brakujące zasoby lub błędy.
+- Utwórz nową albumy.db z tabelą opisaną powyżej.
+- Dodaj parametrami dwa albumy: (Poranek,2024), (Wieczór,2023).
+- Wypisz id, tytuł i rok, uporządkowane po id. Uruchom osobno sam odczyt.
 
-**Wynik kontrolny:** aplikacja działa bez otwartego projektu źródłowego.
+**Wynik kontrolny:** 2 trwałe rekordy. Odczyt nie dopisuje nowych.
 
-## Zadanie 2. Interfejs .ui
+## Zadanie 2. Formularz dodawania
 
-- Spakuj formularz z tematu 40, używający loadUi.
-- Dołącz okno.ui przez --add-data i odczytuj ścieżkę względem __file__.
-- Sprawdź uruchomienie paczki z folderu o innej ścieżce.
+- Zbuduj QLineEdit tytułu, QSpinBox 1900-2100 i przycisk „Dodaj”.
+- Po poprawnym zapisie odśwież QTableWidget. Odrzuć pusty tytuł.
+- Dodaj tytuł „Anna's album”, aby sprawdzić przekazanie apostrofu jako danych.
 
-**Wynik kontrolny:** formularz ładuje się bez kopiowania .ui ręcznie obok źródeł.
+**Wynik kontrolny:** apostrof zapisany poprawnie, pusty tytuł nie tworzy rekordu.
 
-## Zadanie 3. Trwała baza
+## Zadanie 3. Zmiana i usunięcie po ID
 
-- W projekcie albumów umieść bazę w AppDataLocation, także przed pakowaniem.
-- Dodaj rekord, zamknij program i uruchom go ponownie.
-- Zbuduj onefile i powtórz test. Wypisz w URUCHOMIENIE.md faktyczne miejsce bazy.
+- Dodaj obsługę zaznaczonego rekordu: zmień jego tytuł, potem usuń go.
+- Wykonuj SQL po id, nie po numerze wiersza ani po tytule.
+- Sprawdź próbę operacji bez zaznaczenia i po sortowaniu tabeli.
 
-**Wynik kontrolny:** rekord pozostaje po obu restartach.
+**Wynik kontrolny:** zmienia się tylko wskazany rekord, brak wyboru daje komunikat.
 
-## Zadanie 4. Przekazanie odbiorcy
+## Zadanie 4. Dla chętnych: Wycofanie transakcji
 
-- Przygotuj paczkę onedir lub onefile dla tego samego systemu i architektury.
-- Sprawdź start, zapis, odczyt, anulowanie dialogu i brak zasobu.
-- Dodaj krótką instrukcję uruchomienia oraz wersje użytych zależności.
+- W nowej testowej bazie wykonaj w jednym with db dwa INSERT.
+- Pierwszy: (Dobry,2024). Drugi: (Błędny,1800), naruszający CHECK.
+- Przechwyć IntegrityError poza with db i odczytaj tabelę.
 
-**Wynik kontrolny:** odbiorca wie, co uruchomić i gdzie program zapisuje dane.
+**Wynik kontrolny:** tabela pusta. Cała transakcja została wycofana.
 
 ## Diagnoza i praca domowa
 
@@ -76,3 +70,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

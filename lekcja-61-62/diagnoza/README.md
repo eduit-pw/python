@@ -1,8 +1,8 @@
-# Diagnoza i praca domowa: temat 30
+# Diagnoza i praca domowa: temat 31
 
 ## Kontrakt
 
-Akceptuj wyłącznie cały kod NN-NNN z cyfr ASCII. Odrzuć dodatkowe znaki i końcową nową linię.
+Po wykonaniu inicjalizacji okno ma być widoczne. Zachowaj referencję do niego. Testy automatyczne nie muszą uruchamiać app.exec().
 
 ## Kolejność pracy
 

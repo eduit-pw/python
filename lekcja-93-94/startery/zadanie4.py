@@ -1,5 +1,5 @@
-# Zadanie 4. Wycofanie transakcji
+# Zadanie 4. Rekordy z października
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-import sqlite3
+# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.

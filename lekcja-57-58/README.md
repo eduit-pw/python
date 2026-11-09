@@ -1,6 +1,6 @@
 # Ćwiczenia: Sprawdzanie obecności plików, tworzenie folderów i porządkowanie dysku z poziomu Pythona (os, pathlib)
 
-**Temat 28 | Lekcje 57-58**
+**Temat 29 | Lekcje 57-58**
 
 ## Przygotowanie
 
@@ -25,7 +25,7 @@ Pracuj wyłącznie na podfolderze `cwiczenia`. Dołączone pliki `cwiczenia/dane
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Inwentaryzacja folderu
 
@@ -51,7 +51,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 **Wynik kontrolny:** suma 9 w obu uruchomieniach.
 
-## Zadanie 4. Porządkowanie bez nadpisywania
+## Zadanie 4. Dla chętnych: Porządkowanie bez nadpisywania
 
 - W cwiczenia utwórz roboczy.txt i zmień nazwę na gotowy.txt.
 - Przed rename sprawdź obecność nazwy docelowej. Przy konflikcie odmów zmiany.

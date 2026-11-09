@@ -1,6 +1,6 @@
 # Ćwiczenia: Działania na liczbach, warunki logiczne oraz podejmowanie decyzji w programie (if, elif, else)
 
-**Temat 3 | Lekcje 5-6**
+**Temat 3 | Lekcje 05-06**
 
 ## Przygotowanie
 
@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Kalkulator dwóch liczb
 
@@ -108,7 +108,7 @@ Cena i koszt zajmują dwie osobne linie. Dla błędnych danych wypisz jeden komu
 
 Dodatkowe próby: (1, 100), (2, 1), (3, 1), (1, 0), (4, 2). Cena i koszt mają kropkę oraz dokładnie dwa miejsca po niej. Menu wypisujemy zawsze przed wczytaniem obu liczb.
 
-## Zadanie 4. Analiza trzech liczb
+## Zadanie 4. Dla chętnych: Analiza trzech liczb
 
 1. Pobierz trzy liczby całkowite a, b i c.
 2. Wyznacz minimum i maksimum przez porównania. Zacznij od a. Nie używaj min() ani max().

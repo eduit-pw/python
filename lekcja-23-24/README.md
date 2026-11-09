@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Rabat i wybór cen
 
@@ -62,7 +62,7 @@ Kontrola: `dlugopis 3`, `gumka 3`, `zeszyt 7`. Oryginalna lista nadal zaczyna si
 | 3 | Pole: 28.27, Obwód: 18.85 |
 | -1 | komunikat o niedopuszczalnym promieniu |
 
-## Zadanie 4. Loteria liczbowa INF.04
+## Zadanie 4. Dla chętnych: Loteria liczbowa INF.04
 
 Adaptacja części konsolowej **INF.04-01-25.06-SG**. W Pythonie realizujemy ją strukturalnie. Zakres aplikacji zachowuje losowanie wielu zestawów i raport wystąpień. Kontrola dodatniości liczby zestawów, konkretne nazwy funkcji oraz ćwiczenie algorytmu z `while` są doprecyzowaniem szkolnym.
 

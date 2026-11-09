@@ -1,8 +1,8 @@
-# Diagnoza i praca domowa: temat 61
+# Diagnoza i praca domowa: temat 63
 
 ## Kontrakt
 
-Usługa w kontenerze ma nasłuchiwać na wszystkich interfejsach. Wyjaśnij także mapowanie docker run -p 8000:8000.
+Wpis ma pozostać w bazie po zamknięciu i ponownym otwarciu połączenia.
 
 ## Kolejność pracy
 
@@ -15,3 +15,7 @@ Usługa w kontenerze ma nasłuchiwać na wszystkich interfejsach. Wyjaśnij tak�
 Plik z samymi definicjami nie wypisuje wyników automatycznie. Do prób dopisz wywołania na swojej kopii albo użyj konsoli interaktywnej. Zależności są takie jak w folderze lekcji; GUI wymaga PyQt6. W zadaniach webowych możesz dopisać mały test z TestClient lub klientem Django.
 
 **Wariant dodatkowy:** dopisz własny przypadek, który wykrywa pierwotny błąd, i uzasadnij dobór danych. **Praca domowa:** dokończ diagnozę i wyjaśnienie, jeżeli nie zmieściły się na zajęciach.
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

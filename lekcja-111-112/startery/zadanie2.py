@@ -1,4 +1,4 @@
-# Zadanie 2. Formularz filmu
+# Zadanie 2. Zapytanie i sortowanie
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

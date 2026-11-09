@@ -1,8 +1,8 @@
-# Diagnoza i praca domowa: temat 33
+# Diagnoza i praca domowa: temat 34
 
 ## Kontrakt
 
-Rozpoznaj liczby pierwsze. Koniecznie sprawdź kwadrat liczby pierwszej, np. 49.
+Każde kliknięcie zwiększa licznik dokładnie o 1. Sprawdź dwa kolejne kliknięcia.
 
 ## Kolejność pracy
 

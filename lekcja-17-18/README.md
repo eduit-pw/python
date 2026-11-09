@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Dwa punkty pomiarowe
 
@@ -88,7 +88,7 @@ Dane: rano = [" ala ", "jan", "Ala", "ola", " "], popoludnie = ["Jan", "ewa", "e
 
 Testuj także dwie puste listy, listy samych odstępów i przypadek rano = ['ala'], popoludnie = []. Dla dwóch pustych wejść mamy dwie puste listy oraz trzy puste zbiory. Gdy rano jest ala, a po południu nic: wszyscy {'ala'}, wspolni set(), nowi set(). Nie wymagamy, by kolejność zbioru zgadzała się z wejściem. Normalizacja do małych liter jest regułą tego ćwiczenia, nie uniwersalną regułą każdego systemu kont.
 
-## Zadanie 4. Sześć różnych liczb - przygotowanie do INF.04-01-25.06-SG
+## Zadanie 4. Dla chętnych: Sześć różnych liczb - przygotowanie do INF.04-01-25.06-SG
 
 Projektowe § 1.6 opisuje loterię z sześcioma różnymi liczbami z zakresu 1-49. Z arkuszem i kluczem zweryfikowano warunki, a nie tylko skrót projektowy. **Z oryginału bierzemy rozmiar i zakres zestawu oraz brak powtórzeń.** Nasz wybór z gotowej listy nie jest losowaniem, dlatego nie przypisujemy mu spełnienia kryterium dotyczącego generatora lub losowania bez powtórzeń.
 

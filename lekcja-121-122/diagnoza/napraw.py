@@ -1,7 +1,6 @@
-import sqlite3
-def dodaj(sciezka, nazwa):
-    conn = sqlite3.connect(sciezka)
-    try:
-        conn.execute("INSERT INTO produkty (nazwa) VALUES (?)", (nazwa,))
-    finally:
-        conn.close()
+from fastapi import FastAPI, HTTPException
+app = FastAPI()
+dane = {1: {"nazwa": "A"}}
+@app.get("/produkty/{id}")
+def pobierz(id: int):
+    return dane.get(id)

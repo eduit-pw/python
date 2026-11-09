@@ -1,4 +1,4 @@
-# Zadanie 4. Liczby i pusta tabela
+# Zadanie 4. Obsługa zgłoszeń
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

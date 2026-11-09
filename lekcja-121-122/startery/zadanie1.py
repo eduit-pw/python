@@ -1,36 +1,36 @@
-# Zadanie 1. Trwały zapis
+# Zadanie 1. Dodawanie i lista
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-import sqlite3
-from pathlib import Path
-from contextlib import contextmanager
+from fastapi import FastAPI, HTTPException, Response
+from schematy import AlbumWejscie, AlbumOdczyt
 
-@contextmanager
-def polacz():
+@app.get('/status')
+def status():
     """TODO: uzupełnij zgodnie z kontraktem w README."""
     pass
 
-def inicjalizuj():
+@app.get('/albumy', response_model=list[AlbumOdczyt])
+def lista():
     """TODO: uzupełnij zgodnie z kontraktem w README."""
     pass
 
-def wszystkie():
+@app.get('/albumy/{identyfikator}', response_model=AlbumOdczyt)
+def odczyt(identyfikator: int):
     """TODO: uzupełnij zgodnie z kontraktem w README."""
     pass
 
-def znajdz(identyfikator):
+@app.post('/albumy', status_code=201, response_model=AlbumOdczyt)
+def dodaj(album: AlbumWejscie):
     """TODO: uzupełnij zgodnie z kontraktem w README."""
     pass
 
-def dodaj(tytul, pobrania):
+@app.put('/albumy/{identyfikator}', response_model=AlbumOdczyt)
+def zmien(identyfikator: int, album: AlbumWejscie):
     """TODO: uzupełnij zgodnie z kontraktem w README."""
     pass
 
-def zmien(identyfikator, tytul, pobrania):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def usun(identyfikator):
+@app.delete('/albumy/{identyfikator}', status_code=204, response_class=Response)
+def usun(identyfikator: int):
     """TODO: uzupełnij zgodnie z kontraktem w README."""
     pass

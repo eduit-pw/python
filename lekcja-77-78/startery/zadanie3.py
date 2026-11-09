@@ -1,4 +1,4 @@
-# Zadanie 3. Czas trwania
+# Zadanie 3. Identyfikatory w tekście
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

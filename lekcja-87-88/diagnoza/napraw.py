@@ -1,6 +1,11 @@
-from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QLineEdit, QVBoxLayout, QMainWindow, QTableWidget, QTableWidgetItem, QSpinBox
-app = QApplication.instance() or QApplication([])
-okno = QMainWindow()
-uklad = QVBoxLayout()
-uklad.addWidget(QLabel("Treść"))
-okno.setLayout(uklad)
+def szukaj(dane, cel):
+    lewy, prawy = 0, len(dane) - 1
+    while lewy < prawy:
+        srodek = (lewy + prawy) // 2
+        if dane[srodek] == cel:
+            return srodek
+        if dane[srodek] < cel:
+            lewy = srodek + 1
+        else:
+            prawy = srodek - 1
+    return -1

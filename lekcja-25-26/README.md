@@ -6,7 +6,7 @@ Właściwe polecenie, dane i zasady oddania otrzymasz od nauczyciela na zajęcia
 
 ## Co powtórzyć
 
-Wróć do tematów 1-12. Uruchom własne rozwiązanie jednego wcześniejszego zadania na nowych danych. Odtwórz środowisko i sprawdź instrukcję uruchomienia.
+Wróć do tematów 1–12. Uruchom własne rozwiązanie jednego wcześniejszego zadania na nowych danych. Odtwórz środowisko i sprawdź instrukcję uruchomienia.
 
 ### Przygotowanie do sprawdzianu
 

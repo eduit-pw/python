@@ -1,4 +1,4 @@
-# Zadanie 3. Zapis i anulowanie
+# Zadanie 3. Insertion sort
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

@@ -1,5 +1,5 @@
-# Zadanie 2. Strona główna
+# Zadanie 2. Raport klienta
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-# TODO: zapisz kolejne kroki rozwiązania.
+# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.

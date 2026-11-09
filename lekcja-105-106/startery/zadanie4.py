@@ -1,5 +1,5 @@
-# Zadanie 4. Numer lekcji
+# Zadanie 4. Umowa przyszłego API
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-# TODO: zapisz kolejne kroki rozwiązania.
+# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.

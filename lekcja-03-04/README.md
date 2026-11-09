@@ -1,6 +1,6 @@
 # Ćwiczenia: Zmienne, proste typy danych oraz pobieranie i formatowanie wyświetlanych informacji (f-string)
 
-**Temat 2 | Lekcje 3-4**
+**Temat 2 | Lekcje 03-04**
 
 ## Przygotowanie
 
@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Wizytówka ucznia
 
@@ -197,7 +197,7 @@ Suma: 0.00
 
 Średnia dotyczy trzech podanych wartości, nie automatycznie całej doby. Suma jest pośrednią wielkością obliczeniową, dlatego pokazujemy ją bez jednostki i nie przedstawiamy jako osobnej temperatury. Nie określamy sprawności czujnika na podstawie trzech pomiarów.
 
-## Zadanie 4. Dane adresowe na podstawie arkusza INF.04
+## Zadanie 4. Dla chętnych: Dane adresowe na podstawie arkusza INF.04
 
 **Pochodzenie:** projektowe `02_zadania_desktopowe.md`, D.2, wskazuje arkusz **INF.04-01-23.06-SG**, czerwiec 2023. Oryginalna część II, strona 3 z 5, zawiera pola „Ulica z numerem”, „Kod pocztowy”, „Miasto”. Nasze ćwiczenie wykorzystuje te pola do szkolnego programu konsolowego. Nie jest pełnym zadaniem egzaminacyjnym: nie tworzy GUI, nie wybiera ceny przesyłki, nie podmienia obrazów i nie sprawdza kodu.
 

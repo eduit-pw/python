@@ -1,4 +1,4 @@
-# Zadanie 3. Własny zapis binarny
+# Zadanie 3. Wariant generowany
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

@@ -1,4 +1,4 @@
-# Startery: temat 34
+# Startery: temat 35
 
 Pliki `zadanie1.py` itd. zawierają miejsce na Twój kod; od tematu 6 mogą zawierać szkielety funkcji i klas. `pass` oznacza brak implementacji. Samo poprawne uruchomienie pustego szkieletu nie oznacza wykonania zadania.
 

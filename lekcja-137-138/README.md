@@ -1,6 +1,6 @@
 # Ćwiczenia: Tworzenie programów uruchamianych z wiersza poleceń z opcjami i parametrami (argparse, dotenv)
 
-**Temat 66 | Lekcje 137-138**
+**Temat 69 | Lekcje 137-138**
 
 ## Przygotowanie
 
@@ -34,7 +34,7 @@ W osobnym config_demo.py wczytaj .env obok skryptu przez load_dotenv(..., overri
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Raport z progiem
 
@@ -59,7 +59,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 **Wynik kontrolny:** kod 1 dla obu błędów, poprawny raport z kodem 0.
 
-## Zadanie 4. Priorytet konfiguracji
+## Zadanie 4. Dla chętnych: Priorytet konfiguracji
 
 - W osobnym config_demo.py dodaj --url, load_dotenv i os.getenv według reguły opisanej powyżej.
 - Porównaj brak konfiguracji, API_URL w .env, API_URL w środowisku i --url.
@@ -76,3 +76,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

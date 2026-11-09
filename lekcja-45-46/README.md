@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Cztery testy funkcji logicznej
 
@@ -68,7 +68,7 @@ W tym zadaniu zakładamy argument `int`; nie dodajemy walidacji ani przypadków 
 | Pobranie 6 | `BrakTowaruError`, następnie `stan == 5`. |
 | Pobranie 0 | `ValueError`, następnie `stan == 5`. |
 
-## Zadanie 4. Pięć testów szyfru Cezara z arkusza
+## Zadanie 4. Dla chętnych: Pięć testów szyfru Cezara z arkusza
 
 **Źródło:** INF.04-02-25.06-SG, część III, tabela 4. Wykorzystujemy podane przypadki i własne nazwy plików.
 

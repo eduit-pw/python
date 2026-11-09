@@ -1,8 +1,8 @@
-# Diagnoza i praca domowa: temat 32
+# Diagnoza i praca domowa: temat 33
 
 ## Kontrakt
 
-Dla litery A-Z zastosuj cykliczne przesunięcie. Sprawdź Z+1, A-1 i B+27.
+Pole zawierające same spacje jest puste. Sprawdź pusty napis, spacje i imię ze spacjami na skrajach.
 
 ## Kolejność pracy
 

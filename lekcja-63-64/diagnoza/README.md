@@ -1,8 +1,8 @@
-# Diagnoza i praca domowa: temat 31
+# Diagnoza i praca domowa: temat 32
 
 ## Kontrakt
 
-Cyfry są podane od najbardziej znaczącej i są już zweryfikowane. 101 w bazie 2 daje 5.
+Przed kliknięciem napis jest pusty, po kliknięciu Cześć!. Przekaż slot jako funkcję.
 
 ## Kolejność pracy
 

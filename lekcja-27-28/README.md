@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Dwoje uczniów
 
@@ -57,7 +57,7 @@ Dodatkowo sprawdź kwadrat 5 × 5. Przyjmujemy poprawne dodatnie wymiary, bez wa
 
 Oczekiwane pary: początkowo `0 0`, po zwiększeniach `2 1`, po zerowaniu `0 1`. Dodatkowo zwiększ ponownie pierwszy licznik i sprawdź parę `1 1`. To dwa pola instancji; wspólny licznik klasy pojawi się w temacie 15.
 
-## Zadanie 4. Film w wypożyczalni
+## Zadanie 4. Dla chętnych: Film w wypożyczalni
 
 1. Utwórz `Film()` z początkowymi polami `_tytul = ""` oraz `_liczba_wypozyczen = 0`.
 2. Dodaj `ustaw_tytul(tytul)`, `pobierz_tytul()` i `pobierz_liczbe_wypozyczen()`.

@@ -1,6 +1,6 @@
 # Ćwiczenia: Rejestrowanie pracy programu: zapisywanie komunikatów, ostrzeżeń i błędów do pliku dziennika (logging)
 
-**Temat 65 | Lekcje 135-136**
+**Temat 68 | Lekcje 135-136**
 
 ## Przygotowanie
 
@@ -25,7 +25,7 @@ Utwórz main.py. Konfigurację logging wykonaj raz, przed przetwarzaniem. Format
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Plik i dwa uruchomienia
 
@@ -50,7 +50,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 **Wynik kontrolny:** 2 poprawne liczby, suma 11, jeden opis błędnego wiersza.
 
-## Zadanie 4. Powielone wpisy
+## Zadanie 4. Dla chętnych: Powielone wpisy
 
 - W małym przykładzie dodaj dwa osobne handlery zapisujące do tego samego pliku.
 - Wyślij jeden komunikat i sprawdź duplikat. Popraw konfigurację do jednego handlera.
@@ -67,3 +67,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

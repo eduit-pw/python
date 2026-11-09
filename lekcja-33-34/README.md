@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Licznik z kontrolowaną zmianą
 
@@ -64,7 +64,7 @@ Zadanie autorskie. Napisz klasę `Egzemplarz`:
 
 Przez „tylko do odczytu” rozumiemy tutaj publiczną właściwość. Metoda klasy nadal może aktualizować wewnętrzny stan. Bezpośrednia zmiana `_liczba_wypozyczen` z zewnątrz jest technicznie możliwa, ale omija zaprojektowany interfejs.
 
-## Zadanie 4. Wypożyczalnia filmów i dokumentacja
+## Zadanie 4. Dla chętnych: Wypożyczalnia filmów i dokumentacja
 
 **Adaptacja CKE:** INF.04-03-23.06-SG, część I i dokumentacja części konsolowej z III. Polecenie w skrócie:
 

@@ -1,4 +1,4 @@
-# Zadanie 3. Dwie strony, jeden układ
+# Zadanie 3. Kontakt
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

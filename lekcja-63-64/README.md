@@ -1,16 +1,24 @@
-# Ćwiczenia: Zamiana liczb między systemami dwójkowym, ósemkowym, dziesiętnym i szesnastkowym oraz Schemat Hornera
+# Ćwiczenia: Wizualne projektowanie wyglądu okna w programie Qt Designer i łączenie go z kodem Pythona
 
-**Temat 31 | Lekcje 63-64**
+**Temat 32 | Lekcje 63-64**
 
 ## Przygotowanie
 
-Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
+Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Wymagane funkcje
+## Specyfikacja formularza
 
-Zapisz zadania jako `zadanie1.py` itd. W zadaniu 2 utwórz `z_binarnego(tekst)`: zaczynasz od wyniku 0, dla każdej cyfry aktualizujesz `wynik = wynik * 2 + cyfra`. W zadaniu 4 `horner(wspolczynniki, x)` przyjmuje współczynniki od najwyższej potęgi; aktualizacja to `wynik = wynik * x + wspolczynnik`. Brakująca potęga wymaga współczynnika 0. Zwracaj wyniki, a wypisywanie umieść w programie głównym.
+W Qt Designer utwórz formularz typu QWidget. Dodaj QLineEdit o objectName `imieEdit`, QPushButton `powitajButton` i QLabel `wynikLabel`. Ułóż je pionowo w layoucie. QLabel ma początkowo pusty tekst. Zapisz `okno.ui` w folderze projektu. Designer musi być dostępny na stanowisku; sam pakiet PyQt6 nie gwarantuje instalacji programu Designer.
+
+Wariant dynamiczny uruchamiaj przez `py main_load.py`, a generowany przez `py main.py`. Wygeneruj kod poleceniem:
+
+```powershell
+py -m PyQt6.uic.pyuic okno.ui -o ui_okno.py
+```
+
+Logikę powitania umieść w swojej klasie, a ścieżkę .ui w wariancie loadUi ustal względem pliku skryptu.
 
 ## Sposób pracy podczas bloku
 
@@ -25,39 +33,39 @@ Zapisz zadania jako `zadanie1.py` itd. W zadaniu 2 utwórz `z_binarnego(tekst)`:
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Konwersje kontrolne
+## Zadanie 1. Projekt formularza
 
-- Przelicz 45 na zapis binarny, ósemkowy i szesnastkowy.
-- Wypisz wyniki bez prefiksów, z wielkimi literami w hex.
-- Przelicz każdy z otrzymanych napisów z powrotem na int.
+- Utwórz w Designer formularz zgodny z powyższą specyfikacją.
+- Ustaw tytuł „Powitanie”, przycisk „Powitaj” i pusty wynik.
+- Zapisz okno.ui i sprawdź podgląd przy zmianie rozmiaru.
 
-**Wynik kontrolny:** 101101, 55, 2D. Każdy powrót daje 45.
+**Wynik kontrolny:** trzy kontrolki w pionowym układzie, poprawne objectName.
 
-## Zadanie 2. Horner i walidacja
+## Zadanie 2. Wczytanie i akcja
 
-- Rozbuduj z_binarnego: odrzucaj pusty napis i znaki inne niż 0 lub 1.
-- Wypisz wartości po przetworzeniu kolejnych cyfr napisu 1101.
-- Porównaj końcowy wynik z int("1101", 2).
+- Wczytaj okno.ui przez loadUi. Połącz przycisk z funkcją powitania.
+- Dla pustego lub białego imienia pokaż „Podaj imię”.
+- Dla „ Anna ” pokaż powitanie bez zewnętrznych spacji.
 
-**Wynik kontrolny:** 1, 3, 6, 13. Dla „102” i „” występuje ValueError.
+**Wynik kontrolny:** „Witaj, Anna” albo „Podaj imię”.
 
-## Zadanie 3. Własny zapis binarny
+## Zadanie 3. Wariant generowany
 
-- Napisz funkcję do_binarnego(n) dla int >= 0, używając dzielenia i reszt.
-- Zwróć napis. Nie używaj bin ani format do obliczeń.
-- Sprawdź n = 0, 1, 13 oraz odrzuć wartości ujemne.
+- Wygeneruj ui_okno.py, utwórz własną klasę Okno i dodaj metodę powitaj.
+- Zachowaj działanie z zadania 2. Nie modyfikuj pliku generowanego.
+- Uruchom program z main.py.
 
-**Wynik kontrolny:** „0”, „1”, „1101”.
+**Wynik kontrolny:** powitanie i kontrola pustego imienia działają jak wcześniej.
 
-## Zadanie 4. Wielomian z brakującą potęgą
+## Zadanie 4. Dla chętnych: Zmiana projektu
 
-- Zapisz listę współczynników dla 3x³ - 2x + 4.
-- Oblicz wartość dla x = 2 za pomocą schematu Hornera.
-- Sprawdź x = 0 i x = -1. Wypisz wyniki. Adaptacja zbioru CKE „Schemat Hornera”: własny wielomian.
+- W .ui zmień tekst przycisku na „Pokaż powitanie” i dodaj QLabel „Imię ucznia”.
+- Sprawdź program z loadUi, a potem wariant generowany.
+- Dla drugiego wariantu ponownie wygeneruj ui_okno.py.
 
-**Wynik kontrolny:** [3, 0, -2, 4]. Wyniki: 24, 4, 3.
+**Wynik kontrolny:** nowy wygląd, własna metoda powitania zachowana.
 
 ## Diagnoza i praca domowa
 

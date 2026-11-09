@@ -1,22 +1,24 @@
-# Ćwiczenia: Jak działa sieć i strony internetowe: zapytania i odpowiedzi, przesyłanie danych oraz zasady API
+# Ćwiczenia: Przygotowanie programu do uruchomienia na innych komputerach: tworzenie pliku wykonywalnego (.exe)
 
-**Temat 50 | Lekcje 103-104**
+**Temat 52 | Lekcje 103-104**
 
 ## Przygotowanie
 
-Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
+Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Lokalny serwer i dane
+## Projekt wejściowy i polecenia
 
-Dołączony `http_lab/dane.json` zawiera dwa albumy z polami tytul i pobrania (120 i 80). W pierwszym terminalu, z folderu lekcji, uruchom:
+Użyj własnego działającego projektu z poprzedniej lekcji; wariant .ui pochodzi z tematu 32. Zainstaluj PyInstaller. Polecenia wykonuj z folderu zawierającego main.py, po sprawdzeniu zwykłego `py main.py`.
 
 ```powershell
-py -m http.server 8000 --bind 127.0.0.1 --directory http_lab
+py -m PyInstaller --onedir main.py
+py -m PyInstaller --onedir --add-data "okno.ui:." main_load.py
+py -m PyInstaller --onefile main.py
 ```
 
-Otwórz `http://127.0.0.1:8000/dane.json`. Klienta `klient.py` uruchamiaj z drugiego terminalu. Użyj urllib.request.urlopen z limitem czasu, odkoduj UTF-8 i przetwórz json.loads. Sprawdzaj obecność tytułu typu str oraz pobrania dokładnie int >=0; bool nie jest poprawną liczbą pobrań. Próby z błędnym JSON wykonuj na kopii, a potem przywróć dane.
+Drugie polecenie dotyczy wariantu dynamicznie wczytującego .ui i tworzy dist/main_load. W zadaniu 3 wyznacz katalog danych przez `QStandardPaths.AppDataLocation`, po ustawieniu nazwy aplikacji i organizacji; utwórz go przed połączeniem z bazą. Dane trwałe nie mogą trafiać do tymczasowego katalogu rozpakowania onefile. Do odbiorcy przekaż całą paczkę onedir albo właściwy plik onefile, dla użytego systemu i architektury.
 
 ## Sposób pracy podczas bloku
 
@@ -31,41 +33,39 @@ Otwórz `http://127.0.0.1:8000/dane.json`. Klienta `klient.py` uruchamiaj z drug
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Sprawdź odpowiedź w przeglądarce
+## Zadanie 1. Paczka onedir
 
-- Użyj pliku http_lab/dane.json i uruchom serwer według powyższej instrukcji.
-- W narzędziach przeglądarki otwórz kartę Network i pobierz /dane.json.
-- Zapisz metodę, status, Content-Type i liczbę albumów.
+- Sprawdź działanie main.py, potem zbuduj --onedir z widoczną konsolą.
+- Skopiuj cały dist/main do nowego folderu testowego.
+- Uruchom plik wynikowy z tego folderu. Zanotuj brakujące zasoby lub błędy.
 
-**Wynik kontrolny:** GET, 200, application/json, 2 albumy.
+**Wynik kontrolny:** aplikacja działa bez otwartego projektu źródłowego.
 
-## Zadanie 2. Raport klienta
+## Zadanie 2. Interfejs .ui
 
-- Pobierz dane.json przez urlopen i odczytaj listę słowników.
-- Wypisz tytuły oraz sumę pola pobrania.
-- Sprawdź, czy otrzymany obiekt jest listą, a pobrania są nieujemnymi int.
+- Spakuj formularz z tematu 32, używający loadUi.
+- Dołącz okno.ui przez --add-data i odczytuj ścieżkę względem __file__.
+- Sprawdź uruchomienie paczki z folderu o innej ścieżce.
 
-**Wynik kontrolny:** Poranek, Wieczór, suma 200.
+**Wynik kontrolny:** formularz ładuje się bez kopiowania .ui ręcznie obok źródeł.
 
-## Zadanie 3. Rozróżnij błędy
+## Zadanie 3. Trwała baza
 
-- Przechwyć HTTPError przed URLError. Dodaj osobną obsługę JSONDecodeError.
-- Pobierz /brak.json, zatrzymaj serwer i pobierz ponownie, a potem podaj błędny JSON.
-- Dla błędnego JSON użyj pliku dane.json z samym znakiem „{”.
+- W projekcie albumów umieść bazę w AppDataLocation, także przed pakowaniem.
+- Dodaj rekord, zamknij program i uruchom go ponownie.
+- Zbuduj onefile i powtórz test. Wypisz w URUCHOMIENIE.md faktyczne miejsce bazy.
 
- import błędów z urllib.error i json.
+**Wynik kontrolny:** rekord pozostaje po obu restartach.
 
-**Wynik kontrolny:** 404, błąd połączenia oraz błąd formatu.
+## Zadanie 4. Dla chętnych: Przekazanie odbiorcy
 
-## Zadanie 4. Umowa przyszłego API
+- Przygotuj paczkę onedir lub onefile dla tego samego systemu i architektury.
+- Sprawdź start, zapis, odczyt, anulowanie dialogu i brak zasobu.
+- Dodaj krótką instrukcję uruchomienia oraz wersje użytych zależności.
 
-- Opisz trzy operacje: GET /albumy/, POST /albumy/ i DELETE /albumy/7/.
-- Dla dodawania podaj przykład JSON z tytułem i liczbą pobrań.
-- Ustal odpowiedzi: odczyt 200, dodanie 201, usunięcie bez treści 204.
-
-**Wynik kontrolny:** opis metody, adresu, wejścia i wyjścia dla każdej operacji.
+**Wynik kontrolny:** odbiorca wie, co uruchomić i gdzie program zapisuje dane.
 
 ## Diagnoza i praca domowa
 
@@ -76,3 +76,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

@@ -1,4 +1,4 @@
-# Diagnoza i praca domowa: temat 27
+# Diagnoza i praca domowa: temat 28
 
 ## Kontrakt
 

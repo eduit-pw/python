@@ -1,4 +1,4 @@
-# Zadanie 4. QMainWindow bez nakładania
+# Zadanie 4. Przybliżenie pierwiastka z 2
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

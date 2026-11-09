@@ -1,7 +1,9 @@
-from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QLineEdit, QVBoxLayout, QMainWindow, QTableWidget, QTableWidgetItem, QSpinBox
-app = QApplication.instance() or QApplication([])
-pole = QLineEdit()
-wynik = QLabel()
-def zatwierdz():
-    imie = pole.text()
-    wynik.setText("OK" if imie else "Podaj imię")
+def pierwsza(n):
+    if n < 2:
+        return False
+    d = 2
+    while d * d < n:
+        if n % d == 0:
+            return False
+        d += 1
+    return True

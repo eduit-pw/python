@@ -1,12 +1,15 @@
-# Zadanie 1. Uruchom i zamknij
+# Zadanie 1. Konwersje kontrolne
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QMainWindow
+def z_binarnego(tekst, pokaz=False):
+    """TODO: uzupełnij zgodnie z kontraktem w README."""
+    pass
 
-class Okno(QWidget):
+def do_binarnego(n):
+    """TODO: uzupełnij zgodnie z kontraktem w README."""
+    pass
 
-    def __init__(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+def horner(wspolczynniki, x):
+    """TODO: uzupełnij zgodnie z kontraktem w README."""
+    pass

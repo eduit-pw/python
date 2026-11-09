@@ -1,6 +1,6 @@
-# Ćwiczenia: Automatyczne testowanie działania endpointów sieciowych z użyciem modułu unittest
+# Ćwiczenia: Przeglądanie i sprawdzanie działania usługi za pomocą automatycznej strony Swagger UI i narzędzia typu Postman
 
-**Temat 60 | Lekcje 123-124**
+**Temat 62 | Lekcje 123-124**
 
 ## Przygotowanie
 
@@ -8,11 +8,9 @@
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Kod wejściowy i izolacja testów
+## Projekt wejściowy
 
-Pracuj na kopii rozwiązania SQLite z tematu 59. Dodaj test_api.py, unittest, tempfile i fastapi.testclient.TestClient. W setUp zachowaj dotychczasową ścieżkę baza.SCIEZKA, utwórz TemporaryDirectory i skieruj bazę do niego. Użyj menedżera kontekstu TestClient, aby lifespan utworzył tabele. W tearDown zamknij klienta, przywróć ścieżkę i usuń katalog tymczasowy. Każda metoda zaczyna od pustej własnej bazy.
-
-Pierwsze dwa testy: (1) POST Poranek=120 daje 201, potem GET po zwróconym ID daje 200 i ten sam tytuł; (2) POST z pobrania=-1 daje 422 i GET /albumy zwraca pustą listę. Nie koduj z góry ID istniejącego w bazie użytkownika. Uruchamiaj `py -m unittest discover -v` z folderu projektu; testy nie wymagają uruchomionego Uvicorn.
+Pracuj na kopii własnego CRUD z tematu 61. Zachowaj GET /status, /docs i /openapi.json oraz model z dwoma wymaganymi polami. Użyj klienta Swagger UI lub Postmana. Przed pełnym cyklem kontrolnym zrestartuj usługę do pustego stanu, następnie nie zmieniaj kodu do zakończenia sekwencji. W /docs, po rozpakowaniu odpowiedniej operacji, zapisuj metodę, URL, JSON, status i ciało odpowiedzi. Żądania kieruj na http://127.0.0.1:8000.
 
 ## Sposób pracy podczas bloku
 
@@ -27,37 +25,39 @@ Pierwsze dwa testy: (1) POST Poranek=120 daje 201, potem GET po zwróconym ID da
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Pierwsze dwa testy
+## Zadanie 1. Odczyt opisu API
 
-- Napisz setUp, tearDown i dwa testy opisane powyżej. Uruchom `py -m unittest discover -v`.
-- Uruchom cały zestaw ponownie. Nie usuwaj ręcznie bazy użytkowej.
+- Uruchom API z tematu 61 i porównaj /docs z /openapi.json.
+- Znajdź schemat AlbumWejscie oraz kod sukcesu POST.
+- Zapisz wymagane pola i dozwolony zakres pobrania.
 
-**Wynik kontrolny:** oba testy przechodzą również w drugim uruchomieniu.
+**Wynik kontrolny:** tytul i pobrania wymagane, pobrania>=0, sukces 201.
 
-## Zadanie 2. Cykl edycji i usunięcia
+## Zadanie 2. Cykl CRUD w kliencie API
 
-- Dodaj test: POST, PUT pobrania=121, GET, DELETE i ponowny GET.
-- Sprawdź niezmienione ID, nowe wartości, status 204 i puste ciało DELETE.
+- Od pustego stanu wykonaj POST, GET po otrzymanym ID, PUT i DELETE.
+- Po zmianie odczytaj album, a po usunięciu spróbuj odczytać go jeszcze raz.
+- Zapisz każde żądanie w kolekcji lub tabeli scenariuszy.
 
-**Wynik kontrolny:** wartość 121 przed usunięciem, 404 po usunięciu.
+**Wynik kontrolny:** 201, 200, 200, 204, a na końcu 404.
 
-## Zadanie 3. Uszkodzona implementacja
+## Zadanie 3. Próby negatywne
 
-- Zmień lokalnie POST tak, aby oddawał 200 zamiast 201. Uruchom testy.
-- Odczytaj nazwę testu, oczekiwaną i rzeczywistą wartość.
-- Przywróć poprawny kod i powtórz zestaw.
+- Sprawdź POST bez tytułu, z pobrania=-1 i z dodatkowym id.
+- Sprawdź nieistniejący ID oraz nieobsługiwaną metodę PATCH /albumy/1.
+- Po nieudanych zapisach porównaj listę z jej poprzednim stanem.
 
-**Wynik kontrolny:** test wykrywa błąd statusu, po naprawie przechodzi.
+**Wynik kontrolny:** 422 dla danych, 404 dla brakującego ID, 405 dla PATCH.
 
-## Zadanie 4. Start aplikacji i izolacja
+## Zadanie 4. Dla chętnych: Raport błędu
 
-- Ustaw osobną ścieżkę bazy i wykonaj próbę wewnątrz with TestClient(app) as client.
-- Nie wywołuj inicjalizuj ręcznie: sprawdź start tabeli przez lifespan.
-- Przywróć ścieżkę bazy po próbie. Porównaj z przygotowaniem stanu we własnym setUp.
+- Zmień lokalnie status sukcesu POST z 201 na 200 i uruchom scenariusz ponownie.
+- Opisz URL, dane, oczekiwany i rzeczywisty wynik oraz kroki odtworzenia.
+- Przywróć 201 i sprawdź przypadek jeszcze raz.
 
-**Wynik kontrolny:** lifespan inicjalizuje bazę przy wejściu do with.
+**Wynik kontrolny:** raport wskazuje naruszenie umowy statusu, po poprawce próba przechodzi.
 
 ## Diagnoza i praca domowa
 
@@ -68,3 +68,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

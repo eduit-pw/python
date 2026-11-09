@@ -1,8 +1,8 @@
-# Diagnoza i praca domowa: temat 39
+# Diagnoza i praca domowa: temat 40
 
 ## Kontrakt
 
-Po wykonaniu inicjalizacji okno ma być widoczne. Zachowaj referencję do niego. Testy automatyczne nie muszą uruchamiać app.exec().
+Cyfry są podane od najbardziej znaczącej i są już zweryfikowane. 101 w bazie 2 daje 5.
 
 ## Kolejność pracy
 
@@ -15,3 +15,7 @@ Po wykonaniu inicjalizacji okno ma być widoczne. Zachowaj referencję do niego.
 Plik z samymi definicjami nie wypisuje wyników automatycznie. Do prób dopisz wywołania na swojej kopii albo użyj konsoli interaktywnej. Zależności są takie jak w folderze lekcji; GUI wymaga PyQt6. W zadaniach webowych możesz dopisać mały test z TestClient lub klientem Django.
 
 **Wariant dodatkowy:** dopisz własny przypadek, który wykrywa pierwotny błąd, i uzasadnij dobór danych. **Praca domowa:** dokończ diagnozę i wyjaśnienie, jeżeli nie zmieściły się na zajęciach.
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

@@ -1,5 +1,5 @@
-# Zadanie 2. Testy jednostkowe
+# Zadanie 2. Opcje niezależne
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-from cezar import cezar, gaderypoluki
+# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.

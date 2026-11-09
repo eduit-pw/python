@@ -1,6 +1,6 @@
 # Ćwiczenia: Bezpieczny odczyt i zapis danych w plikach tekstowych z użyciem instrukcji with
 
-**Temat 27 | Lekcje 55-56**
+**Temat 28 | Lekcje 55-56**
 
 ## Przygotowanie
 
@@ -25,7 +25,7 @@ Używaj `with open(...)` oraz UTF-8; liczby zapisuj po jednej w wierszu. Dołąc
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Raport z liczb
 
@@ -52,7 +52,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 **Wynik kontrolny:** 2 albumy, razem 200 pobrań.
 
-## Zadanie 4. Błędy odczytu
+## Zadanie 4. Dla chętnych: Błędy odczytu
 
 - Rozbuduj zadanie 1: osobno obsłuż brak pliku i nieliczbowy wiersz.
 - W komunikacie błędu danych podaj numer wiersza. Zakończ obliczenia.

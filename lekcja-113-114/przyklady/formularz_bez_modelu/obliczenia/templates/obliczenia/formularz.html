@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="pl">
+<head><meta charset="utf-8"><title>Mnożenie liczb</title></head>
+<body>
+  <h1>Mnożenie liczb</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Oblicz</button>
+  </form>
+  {% if wynik is not None %}
+  <p id="wynik">Wynik: {{ wynik }} jako liczba całkowita</p>
+  {% endif %}
+</body>
+</html>

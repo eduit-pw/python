@@ -1,11 +1,8 @@
-def szukaj(dane, cel):
-    lewy, prawy = 0, len(dane) - 1
-    while lewy < prawy:
-        srodek = (lewy + prawy) // 2
-        if dane[srodek] == cel:
-            return srodek
-        if dane[srodek] < cel:
-            lewy = srodek + 1
-        else:
-            prawy = srodek - 1
-    return -1
+def srednia(wartosci):
+    if not wartosci:
+        raise ValueError("Lista nie może być pusta.")
+    return sum(wartosci) // len(wartosci)
+
+
+if __name__ == "__main__":
+    print(srednia([2, 3]))

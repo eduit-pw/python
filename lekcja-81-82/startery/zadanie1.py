@@ -1,17 +1,11 @@
-# Zadanie 1. Projekt formularza
+# Zadanie 1. Funkcja Cezara
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-import sys
-from PyQt6.QtWidgets import QApplication, QWidget
-from ui_okno import Ui_Form
+def cezar(tekst, klucz):
+    """TODO: uzupełnij zgodnie z kontraktem w README."""
+    pass
 
-class Okno(QWidget):
-
-    def __init__(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
-
-    def powitaj(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+def gaderypoluki(tekst):
+    """TODO: uzupełnij zgodnie z kontraktem w README."""
+    pass

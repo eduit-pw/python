@@ -1,26 +1,16 @@
-# Ćwiczenia: Szyfrowanie danych: zamiana liter w tekście, szyfr Cezara oraz szyfr GADERYPOLUKI
+# Ćwiczenia: Dodawanie i obsługa elementów okna: napisy, pola tekstowe, przyciski i opcje wyboru
 
-**Temat 32 | Lekcje 65-66**
+**Temat 33 | Lekcje 65-66**
 
 ## Przygotowanie
 
-Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
+Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Umowa szyfrów i przypadki testowe
+## Ustalenia formularza
 
-Napisz `cezar(tekst, klucz)` dla małych liter a-z i spacji oraz dowolnego całkowitego klucza. Spacje zachowaj; litery przesuwaj z zawijaniem modulo 26. Szyfrowanie i odszyfrowanie różnią się znakiem klucza. Funkcja zwraca str i nie wykonuje input/print.
-
-| Tekst | Klucz | Wynik |
-| --- | ---: | --- |
-| abc | 3 | def |
-| xyz | 3 | abc |
-| def | -3 | abc |
-| abc | 29 | def |
-| ab cd | 2 | cd ef |
-
-GADERYPOLUKI zamienia w obie strony litery par `GA`, `DE`, `RY`, `PO`, `LU`, `KI`. W tej wersji zmieniasz wyłącznie wielkie litery; inne znaki pozostają bez zmian. Napisz własne funkcje, nie kopiuj implementacji z lekcji testowania.
+Kod zapisuj w `main.py` albo w osobnych plikach kolejnych zadań. Wyniki pokaż jako tekst, np. przez QLabel.setText; nie interpretuj tekstu użytkownika jako HTML. Cennik do zadania 3: Pocztówka = 1 zł, List = 1,5 zł, Paczka = 10 zł. Początkowo wybrana jest Pocztówka, ale cena pojawia się po kliknięciu. W zadaniu 4 najpierw sprawdzaj długość kodu, potem każdy znak jako cyfrę ASCII 0-9; wynik wyświetlaj po kliknięciu „Zatwierdź”.
 
 ## Sposób pracy podczas bloku
 
@@ -35,39 +25,39 @@ GADERYPOLUKI zamienia w obie strony litery par `GA`, `DE`, `RY`, `PO`, `LU`, `KI
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Funkcja Cezara
+## Zadanie 1. Formularz ucznia
 
-- Napisz cezar(tekst, klucz), zgodnie z umową powyżej.
-- Wczytaj tekst i klucz w programie głównym. Wynik wypisz z etykietą.
-- Sprawdź pięć przypadków z powyższej tabeli oraz pusty napis z kluczem 3. Adaptacja INF.04-02-25.06-SG, I: funkcja i program konsolowy.
+- Zbuduj QLineEdit „Imię”, QSpinBox 1-5 „Klasa” i przycisk „Pokaż”.
+- Po kliknięciu wypisz w QLabel: „Anna, klasa 4” dla danych Anna i 4.
+- Puste imię po strip ma dawać „Podaj imię”.
 
-**Wynik kontrolny:** wszystkie wyniki zgodne z tabelą, pusty napis daje „”.
+**Wynik kontrolny:** poprawne podsumowanie albo komunikat pustego pola.
 
-## Zadanie 2. Testy jednostkowe
+## Zadanie 2. Opcje niezależne
 
-- Napisz pięć osobnych metod unittest dla tabeli przypadków Cezara.
-- Nadaj nazwy opisujące przypadki. Użyj assertEqual.
-- Uruchom python -m unittest -v. Dodaj osobny test klucza 0. Adaptacja INF.04-02-25.06-SG, III: dodatkowy test klucza 0.
+- Dodaj QCheckBox „Python” i „SQL” oraz przycisk podsumowania.
+- Wypisz wybrane nazwy w tej kolejności, rozdzielone przecinkiem.
+- Gdy żadna nie jest wybrana, pokaż „Brak wyboru”.
 
-**Wynik kontrolny:** 6 testów kończy się OK.
+**Wynik kontrolny:** „Python”, „SQL”, „Python, SQL” albo „Brak wyboru”.
 
-## Zadanie 3. Szyfr z par
+## Zadanie 3. Rodzaj przesyłki i cena
 
-- Napisz gaderypoluki(tekst) dla wielkich liter. Pozostałe znaki zachowaj.
-- Zbuduj słownik par w kodzie i użyj go w pętli po tekście.
-- Sprawdź tekst „KOT ALA!” oraz pusty napis.
+- Utwórz trzy pola radio i QButtonGroup. Pocztówka wybrana na początku.
+- Dodaj przycisk „Sprawdź cenę” i QLabel z początkowym tekstem „Cena:”.
+- Wyświetl cenę z powyższego cennika. Obraz zastąp etykietą rodzaju przesyłki. Adaptacja INF.04-01-23.06-SG, II: etykieta zamiast obrazu.
 
-**Wynik kontrolny:** „IPT GUG!” i „”.
+**Wynik kontrolny:** List: 1,5 zł. Paczka: 10 zł.
 
-## Zadanie 4. Sprawdzenie odwracalności
+## Zadanie 4. Dla chętnych: Kod i zatwierdzenie
 
-- Dla Cezara użyj „ala ma kota” i kluczy -29, 0, 3, 52.
-- Zaszyfruj i odszyfruj każdy wynik, porównaj z oryginałem.
-- Dwa razy zastosuj GADERYPOLUKI do „KOT ALA!”.
+- Do zadania 3 dodaj QLineEdit kodu oraz przycisk „Zatwierdź”.
+- Za krótki lub długi kod: „Wymagane 5 znaków”. Obcy znak: „Wymagane cyfry”.
+- Poprawny kod: „Dane poprawne”. Sprawdź 12345, 1234, 12a45 i 12-345. Adaptacja INF.04-01-23.06-SG, II: uproszczone komunikaty.
 
-**Wynik kontrolny:** każdy tekst wraca do postaci wejściowej.
+**Wynik kontrolny:** tylko 12345 daje potwierdzenie.
 
 ## Diagnoza i praca domowa
 

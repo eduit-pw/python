@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Pobieranie wieku
 
@@ -78,7 +78,7 @@ Suma: 8
 | pusty lub same spacje | 0 | 0 | 0 | Brak poprawnych danych. |
 | `-3 0 3` | 3 | 0 | 0 | 0.00 |
 
-## Zadanie 4. NWD z bezpiecznym wejściem - adaptacja INF.04
+## Zadanie 4. Dla chętnych: NWD z bezpiecznym wejściem - adaptacja INF.04
 
 **Plik:** `zadanie4.py` • **Źródło algorytmu:** INF.04-01-23.01-SG, część I.
 

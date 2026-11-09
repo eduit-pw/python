@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Rabat: plik ćwiczeniowy",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/praca/rabaty.py",
+      "cwd": "${workspaceFolder}/praca",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Rezerwacja: testy ćwiczeniowe",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "unittest",
+      "args": [
+        "test_rezerwacje",
+        "-v"
+      ],
+      "cwd": "${workspaceFolder}/praca",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Serie: warunkowy punkt przerwania",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/praca/serie.py",
+      "cwd": "${workspaceFolder}/praca",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}

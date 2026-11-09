@@ -1,16 +1,16 @@
-# Ćwiczenia: Algorytmy na tekstach i listach: badanie palindromów, anagramów oraz Algorytm Wyszukiwania Lidera
+# Ćwiczenia: Układanie elementów w oknie: rozmieszczenie pionowe, poziome i dopasowanie do rozmiaru ekranu
 
-**Temat 34 | Lekcje 69-70**
+**Temat 35 | Lekcje 69-70**
 
 ## Przygotowanie
 
-Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
+Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Reguły funkcji
+## Organizacja okna
 
-`palindrom(tekst)` porównuje znaki od obu końców i zwraca bool, bez zmiany tekstu. Dla pustego napisu zwraca True zgodnie z umową tego zadania. `anagram(a, b)` porównuje liczności wszystkich znaków, z rozróżnianiem wielkości liter. `lider(dane)` zwraca element występujący **więcej niż połowę** razy albo None. W pierwszym przebiegu wyznacz kandydata przez parowanie różnych wartości, w drugim potwierdź jego liczność. Zachowaj wejścia. W zadaniu 4 normalizację wykonaj przed wywołaniem palindrom.
+Każde zadanie zapisz jako osobny program, zachowując wersje wcześniejsze. W zadaniu 1 przycisk „Pokaż” kopiuje przycięty tekst pola do etykiety; pusty tekst daje „Podaj imię”. Zadanie 2 ćwiczy rozmieszczenie i nie wymaga zapisu danych. W zadaniu 3 podpisy R, G, B i odpowiadające im suwaki mają tworzyć trzy kolumny; podgląd jest w kolejnym wierszu, z columnSpan=3. Zakres suwaków 0-255, zmiany odświeżają kolor.
 
 ## Sposób pracy podczas bloku
 
@@ -20,44 +20,45 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 | Zadanie 1 z prowadzącym | 25-35 min | Uruchamiasz pierwszy wariant i objaśniasz kluczowy zapis. |
 | Zadanie 2 wspólnie | 35-50 min | Proponujesz kolejne kroki, sam zapisujesz kod. |
 | Zadanie 3 samodzielnie | 50-70 min | Realizujesz kontrakt i wykonujesz próby. |
-| Zadanie 4 lub diagnoza błędu | 70-85 min | Sprawdzasz przypadki graniczne i poprawiasz program. |
+| Połączenie formularza z funkcją | 70-80 min | Odczytujesz pole, wywołujesz funkcję i pokazujesz wynik. |
+| Sprawdzenie połączenia | 80-85 min | Sprawdzasz wynik dla 0 i 7. |
 | Zakończenie | 85-90 min | Zapisujesz kod, jeden wniosek i wykonane próby. |
 
-Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
+Zadanie 4 i diagnoza są dla chętnych lub do samodzielnej kontynuacji. W podstawowym bloku zachowaj czas na połączenie formularza z funkcją. Tempo ustala nauczyciel.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Palindromy
+## Zadanie 1. Pionowy formularz
 
-- Zaimplementuj palindrom bez odwracania napisu przez slicing.
-- Sprawdź: kajak, abba, kot, a oraz pusty napis.
-- Zachowaj umowę: porównanie dokładne, pusty napis daje True.
+- Utwórz QWidget, QLineEdit, QPushButton „Pokaż” i QLabel.
+- Umieść je w QVBoxLayout, odstęp 12 i marginesy po 20.
+- Ustaw rozmiar 500 na 300. Sprawdź także 800 na 450.
 
-**Wynik kontrolny:** True, True, False, True, True.
+**Wynik kontrolny:** kolejność kontrolek zachowana, pola wykorzystują dostępne miejsce.
 
-## Zadanie 2. Pary anagramów
+## Zadanie 2. Formularz i przyciski
 
-- Sprawdź pary: (kot,kto), (aab,abb), (abcd,dcba), (abc,ab).
-- Użyj funkcji zliczającej znaki. Wypisz tylko pary anagramów.
-- Oblicz liczbę pasujących par. Porównanie ma być dokładne. Adaptacja wiązki „Anagramy” ze zbioru CKE: cztery własne pary.
+- Dodaj QFormLayout z polami Imię i Klasa oraz dolny QHBoxLayout.
+- W dolnym układzie umieść stretch, „Zapisz” i „Anuluj”.
+- Sprawdź widoczność etykiet przy wąskim i szerokim oknie.
 
-**Wynik kontrolny:** (kot,kto) i (abcd,dcba), razem 2.
+**Wynik kontrolny:** etykiety w kolumnie, oba przyciski przy prawym brzegu.
 
-## Zadanie 3. Lider listy
+## Zadanie 3. Siatka RGB
 
-- Napisz dwuprzebiegową funkcję lider(dane), zwracającą int albo None.
-- Dane mają być listą liczb całkowitych. Sprawdź,, [].
-- Nie używaj None jako elementu wejściowego.
+- Ułóż trzy podpisane suwaki RGB w jednym wierszu QGridLayout.
+- Pod nimi umieść podgląd obejmujący wszystkie trzy kolumny.
+- Nadaj podglądowi minimalną wysokość 120. Sprawdź zmianę rozmiaru.
 
-**Wynik kontrolny:** 2, None, None.
+**Wynik kontrolny:** trzy kolumny suwaków, szeroki podgląd pod nimi.
 
-## Zadanie 4. Zdanie i normalizacja
+## Zadanie 4. Dla chętnych: QMainWindow bez nakładania
 
-- Przed testem palindromu zamień litery na małe i usuń zwykłe spacje.
-- Sprawdź „Kobyła ma mały bok” oraz „Ala ma kota”.
-- Pozostałe znaki zachowaj. Wypisz także tekst po normalizacji.
+- Przenieś układ zadania 2 do QMainWindow przez centralny QWidget.
+- Ustal minimalny rozmiar 400 na 250. Sprawdź większy rozmiar.
+- Usuń ręczne move i setGeometry dla kontrolek obsługiwanych przez układ.
 
-**Wynik kontrolny:** „kobyłamamałybok”: True. „alamakota”: False.
+**Wynik kontrolny:** kontrolki bez nakładania i bez wychodzenia poza obszar centralny.
 
 ## Diagnoza i praca domowa
 
@@ -68,3 +69,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Połączenie logiki z oknem w ramach zadania 3
+
+Ostatnie 8–10 minut zadania 3 przeznacz na spięcie znanych części. Funkcja `podwoj(liczba)` w osobnym module zwraca `liczba * 2`. Okno ma pole `QSpinBox`, przycisk oraz `QLabel`. Po kliknięciu odczytaj `value()`, wywołaj zaimportowaną funkcję i pokaż `str(wynik)` przez `setText()`. Sprawdź 0 i 7. Nie dodawaj nowego mechanizmu GUI. W razie wolniejszego tempa pomiń wariant dodatkowy.

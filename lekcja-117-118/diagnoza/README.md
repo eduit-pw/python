@@ -1,8 +1,8 @@
-# Diagnoza i praca domowa: temat 57
+# Diagnoza i praca domowa: temat 59
 
 ## Kontrakt
 
-Istniejący rekord daje 200 i dane. Brak rekordu daje 404, a nie 200 z null.
+GET /suma?a=2&b=3 ma zwrócić wynik liczbowy 5. Dla a=x oczekuj 422.
 
 ## Kolejność pracy
 
@@ -15,3 +15,7 @@ Istniejący rekord daje 200 i dane. Brak rekordu daje 404, a nie 200 z null.
 Plik z samymi definicjami nie wypisuje wyników automatycznie. Do prób dopisz wywołania na swojej kopii albo użyj konsoli interaktywnej. Zależności są takie jak w folderze lekcji; GUI wymaga PyQt6. W zadaniach webowych możesz dopisać mały test z TestClient lub klientem Django.
 
 **Wariant dodatkowy:** dopisz własny przypadek, który wykrywa pierwotny błąd, i uzasadnij dobór danych. **Praca domowa:** dokończ diagnozę i wyjaśnienie, jeżeli nie zmieściły się na zajęciach.
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

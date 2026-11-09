@@ -1,8 +1,8 @@
-# Diagnoza i praca domowa: temat 54
+# Diagnoza i praca domowa: temat 56
 
 ## Kontrakt
 
-Wywołaj walidację formularza. Puste imię musi być odrzucone, Ala zaakceptowane.
+Zapytanie ma zwracać kolekcję aktywnych rekordów: może ich być 0, 1 lub wiele. Zastosuj właściwą metodę QuerySet.
 
 ## Kolejność pracy
 
@@ -15,3 +15,7 @@ Wywołaj walidację formularza. Puste imię musi być odrzucone, Ala zaakceptowa
 Plik z samymi definicjami nie wypisuje wyników automatycznie. Do prób dopisz wywołania na swojej kopii albo użyj konsoli interaktywnej. Zależności są takie jak w folderze lekcji; GUI wymaga PyQt6. W zadaniach webowych możesz dopisać mały test z TestClient lub klientem Django.
 
 **Wariant dodatkowy:** dopisz własny przypadek, który wykrywa pierwotny błąd, i uzasadnij dobór danych. **Praca domowa:** dokończ diagnozę i wyjaśnienie, jeżeli nie zmieściły się na zajęciach.
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

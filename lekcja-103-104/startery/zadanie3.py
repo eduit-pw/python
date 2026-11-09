@@ -1,4 +1,4 @@
-# Zadanie 3. Rozróżnij błędy
+# Zadanie 3. Trwała baza
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 

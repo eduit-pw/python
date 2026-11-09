@@ -1,16 +1,16 @@
-# Ćwiczenia: Tworzenie pierwszego okna aplikacji w PyQt: okno główne i uruchomienie programu
+# Ćwiczenia: Zamiana liczb między systemami dwójkowym, ósemkowym, dziesiętnym i szesnastkowym oraz Schemat Hornera
 
-**Temat 39 | Lekcje 79-80**
+**Temat 40 | Lekcje 79-80**
 
 ## Przygotowanie
 
-Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
+Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Organizacja programów
+## Wymagane funkcje
 
-Zainstaluj PyQt6 według instrukcji na stronie głównej repozytorium. Dla zadania 1 utwórz `QApplication`, `QWidget`, ustaw tytuł i rozmiar, wywołaj show oraz app.exec. Zachowaj referencję do okna. Zadania zapisz jako `zadanie1.py` itd.; `main.py` może zawierać końcową wersję. Tylko jedna instancja QApplication w pojedynczym procesie. Te ćwiczenia wymagają środowiska graficznego.
+Zapisz zadania jako `zadanie1.py` itd. W zadaniu 2 utwórz `z_binarnego(tekst)`: zaczynasz od wyniku 0, dla każdej cyfry aktualizujesz `wynik = wynik * 2 + cyfra`. W zadaniu 4 `horner(wspolczynniki, x)` przyjmuje współczynniki od najwyższej potęgi; aktualizacja to `wynik = wynik * x + wspolczynnik`. Brakująca potęga wymaga współczynnika 0. Zwracaj wyniki, a wypisywanie umieść w programie głównym.
 
 ## Sposób pracy podczas bloku
 
@@ -25,39 +25,39 @@ Zainstaluj PyQt6 według instrukcji na stronie głównej repozytorium. Dla zadan
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Uruchom i zamknij
+## Zadanie 1. Konwersje kontrolne
 
-- Zapisz minimalny program jako main.py i uruchom go w terminalu.
-- Nadaj tytuł „Python GUI - imię” i rozmiar 500 na 300.
-- Zamknij okno przyciskiem systemowym. Sprawdź powrót do terminalu.
+- Przelicz 45 na zapis binarny, ósemkowy i szesnastkowy.
+- Wypisz wyniki bez prefiksów, z wielkimi literami w hex.
+- Przelicz każdy z otrzymanych napisów z powrotem na int.
 
-**Wynik kontrolny:** widoczne okno, potem normalne zakończenie programu.
+**Wynik kontrolny:** 101101, 55, 2D. Każdy powrót daje 45.
 
-## Zadanie 2. Dwie etykiety
+## Zadanie 2. Horner i walidacja
 
-- Dodaj do QWidget dwa QLabel: „Imię: Anna” i „Grupa: 4TI”.
-- Rozmieść je na (30,40) i (30,100), nadaj obszary 300 na 40.
-- Zmień rozmiar okna i sprawdź, co dzieje się z pozycjami.
+- Rozbuduj z_binarnego: odrzucaj pusty napis i znaki inne niż 0 lub 1.
+- Wypisz wartości po przetworzeniu kolejnych cyfr napisu 1101.
+- Porównaj końcowy wynik z int("1101", 2).
 
-**Wynik kontrolny:** obie etykiety widoczne, ich pozycje pozostają stałe.
+**Wynik kontrolny:** 1, 3, 6, 13. Dla „102” i „” występuje ValueError.
 
-## Zadanie 3. Klasa okna
+## Zadanie 3. Własny zapis binarny
 
-- Przenieś budowę QWidget do klasy Okno i konstruktora __init__.
-- Wywołaj konstruktor klasy bazowej i zachowaj QLabel w self.napis.
-- W programie głównym utwórz QApplication, obiekt Okno i uruchom pętlę.
+- Napisz funkcję do_binarnego(n) dla int >= 0, używając dzielenia i reszt.
+- Zwróć napis. Nie używaj bin ani format do obliczeń.
+- Sprawdź n = 0, 1, 13 oraz odrzuć wartości ujemne.
 
-**Wynik kontrolny:** ten sam wygląd, jedno uruchomienie QApplication.
+**Wynik kontrolny:** „0”, „1”, „1101”.
 
-## Zadanie 4. Okno główne
+## Zadanie 4. Dla chętnych: Wielomian z brakującą potęgą
 
-- Utwórz osobny program oparty na QMainWindow.
-- Ustaw QLabel „Obszar centralny” przez setCentralWidget.
-- Zwiększ rozmiar okna. Porównaj zachowanie z etykietą ustawioną przez move.
+- Zapisz listę współczynników dla 3x³ - 2x + 4.
+- Oblicz wartość dla x = 2 za pomocą schematu Hornera.
+- Sprawdź x = 0 i x = -1. Wypisz wyniki. Adaptacja zbioru CKE „Schemat Hornera”: własny wielomian.
 
-**Wynik kontrolny:** obszar centralny dopasowuje się do dostępnego miejsca.
+**Wynik kontrolny:** [3, 0, -2, 4]. Wyniki: 24, 4, 3.
 
 ## Diagnoza i praca domowa
 
@@ -68,3 +68,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Lista adresów serwerów
 
@@ -97,7 +97,7 @@ magazyn = [
 
 Testuj wyszukiwanie towaru na pierwszej i ostatniej pozycji oraz nieobecnego kodu. Wskazówka: -1 jest poprawnym indeksem Pythona oznaczającym ostatni element, dlatego wynik wyszukiwania sprawdzamy przed aktualizacją.
 
-## Zadanie 4. Przeszukiwanie z wartownikiem - adaptacja INF.04-01-22.06-SG
+## Zadanie 4. Dla chętnych: Przeszukiwanie z wartownikiem - adaptacja INF.04-01-22.06-SG
 
 Projektowe 01_zadania_konsolowe.md, § 1.2, wskazuje ten algorytm. Treść i komentarz sprawdzono w oryginalnym arkuszu oraz zasadach oceniania. Oryginał wymaga co najmniej 50 pseudolosowych liczb z zakresu 1-100. Na tej lekcji zastępujemy losowanie pięciokrotnym dołączeniem bloku:
 

@@ -1,6 +1,6 @@
-# Ćwiczenia: Tworzenie tabel bazy danych w Django za pomocą modeli i aktualizacja bazy (ORM)
+# Ćwiczenia: Wyświetlanie danych na stronach w Django: szablony HTML i przekazywanie informacji do widoku
 
-**Temat 53 | Lekcje 109-110**
+**Temat 55 | Lekcje 109-110**
 
 ## Przygotowanie
 
@@ -8,17 +8,9 @@
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Model i dane początkowe
+## Kontynuacja projektu i dane widoku
 
-Kontynuuj kopię projektu szkola_web z poprzedniej lekcji. W `strony/models.py` zdefiniuj Film: tytul = CharField(max_length=80), rodzaj = PositiveSmallIntegerField(default=1), wypozyczenia = PositiveIntegerField(default=0). __str__ zwraca tytuł. Pole dostepny dodaj dopiero w zadaniu 4. Dane początkowe: Poranek i Wieczór, rodzaj=1, wypozyczenia=0. Pracuj na nowej bazie ćwiczeniowej i nie kasuj bazy poprzedniej lekcji. Twórz rekordy tylko raz.
-
-```powershell
-py manage.py makemigrations strony
-py manage.py migrate
-py manage.py shell
-```
-
-Po każdej zmianie modelu utwórz i zastosuj migrację. Serwer uruchamiaj przez `py manage.py runserver` z folderu zawierającego manage.py.
+Skopiuj działający `szkola_web` z poprzedniej lekcji do bieżącego folderu bez .venv. Uruchom go tym samym interpreterem. Utwórz katalog `strony/templates/strony/`. Lista początkowa to `["Programowanie w C#", "Angular dla początkujących", "Kurs Django"]`. Widok przekazuje ją w kontekście pod kluczem `kursy`. Szablony: `base.html`, `kursy.html`, `kontakt.html`; szablony podstron korzystają z extends i bloku treści. Zachowaj nazwy URL `kursy` i `kontakt`.
 
 ## Sposób pracy podczas bloku
 
@@ -33,38 +25,37 @@ Po każdej zmianie modelu utwórz i zastosuj migrację. Serwer uruchamiaj przez 
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Pierwsza tabela
+## Zadanie 1. Dynamiczna lista
 
-- Dodaj model Film opisany powyżej, wykonaj makemigrations i migrate.
-- W shell utwórz Poranek i Wieczór. Zacznij od nowej bazy ćwiczeniowej.
-- Zamknij shell, otwórz go ponownie i odczytaj rekordy.
+- Utwórz widok kursy, trasę /kursy/ i szablon listy trzech nazw podanych powyżej.
+- Wyświetl liczbę elementów oraz listę numerowaną. Dopisz czwarty kurs w widoku.
+- Liczba oraz liczba pozycji mają zmienić się bez ręcznej zmiany HTML. Adaptacja motywu INF.04-02-22.06-SG, II: wyświetlanie w Django.
 
-**Wynik kontrolny:** 2 rekordy po ponownym uruchomieniu.
+**Wynik kontrolny:** najpierw 3, następnie 4 kursy.
 
-## Zadanie 2. Zapytanie i sortowanie
+## Zadanie 2. Pusta lista
 
-- Dodaj film Alarm z rodzaj=3. Pozostałe dwa mają rodzaj=1.
-- Pobierz tylko rodzaj=1 i posortuj tytuły rosnąco.
-- Osobno sprawdź filter(pk=999).first(), zakładając brak tego ID.
+- Zastąp listę kursów przez []. Użyj {% empty %} do pokazania „Brak kursów”.
+- Nagłówek nadal pokazuje liczbę. Nie dodawaj danych zastępczych w widoku.
 
-**Wynik kontrolny:** Poranek, Wieczór oraz None dla brakującego ID.
+**Wynik kontrolny:** liczba 0 i czytelny komunikat.
 
-## Zadanie 3. Lista na stronie
+## Zadanie 3. Dwie strony, jeden układ
 
-- Utwórz /filmy/ i szablon z tytułem oraz liczbą wypożyczeń każdego rekordu.
-- Zmień liczbę wypożyczeń Poranka na 2 w shell i odśwież stronę.
-- Dodaj obsługę pustej listy przez {% empty %}.
+- Utwórz base.html z dokumentem HTML i linkiem do kursów przez {% url %}.
+- Niech kursy.html i kontakt.html dziedziczą ten układ.
+- Zmień podpis linku tylko w base.html i sprawdź obie strony.
 
-**Wynik kontrolny:** widok pokazuje stan zapisany w bazie.
+**Wynik kontrolny:** zmiana widoczna w obu szablonach.
 
-## Zadanie 4. Zmiana schematu
+## Zadanie 4. Dla chętnych: Tekst zawierający znaczniki
 
-- Dodaj pole dostepny = models.BooleanField(default=True). Utwórz i zastosuj migrację.
-- Sprawdź poprzednie rekordy. Ustaw False tylko dla Alarmu i zapisz go.
+- Przekaż tytul="<b>Oferta</b>" i wyświetl go przez {{ tytul }}.
+- Sprawdź treść strony i jej źródło. Nie używaj safe ani autoescape off.
 
-**Wynik kontrolny:** stare dane pozostają, Alarm ma dostepny=False.
+**Wynik kontrolny:** widoczny tekst `<b>Oferta</b>`, bez pogrubienia.
 
 ## Diagnoza i praca domowa
 
@@ -75,3 +66,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

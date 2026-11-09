@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Konfiguracja serwera
 
@@ -91,7 +91,7 @@ Przyjmujemy kompletny schemat rekordów: pola nazwa, ilosc, cena. Ilości, ceny 
 
 Nie filtrujemy według nazwy jako klucza: dwa produkty mogą mieć taką samą nazwę. Kod zachowuje ich odrębność. Zmiana słownika wynikowego niski_stan nie może zmienić ilości w magazynie.
 
-## Zadanie 4. Punkty za kości - fragment INF.04-01-24.06-SG
+## Zadanie 4. Dla chętnych: Punkty za kości - fragment INF.04-01-24.06-SG
 
 **Zakres adaptacji:** wyniki są podane w liście, liczniki tworzymy w dict. Nie losujemy ani nie powtarzamy gry; te etapy wymagają zagadnień ćwiczonych później. Dodajemy pomocniczą kontrolę listy. To ćwiczenie algorytmu, nie pełny próbny egzamin. Punktacja jest szkolna.
 

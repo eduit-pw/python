@@ -1,18 +1,12 @@
-# Ćwiczenia: Zapisywanie i odczytywanie danych z lokalnej bazy danych SQLite w aplikacji okienkowej (sqlite3)
+# Ćwiczenia: Praca z datą i czasem: formatowanie, obliczanie różnic czasowych oraz filtrowanie danych (moduł datetime)
 
-**Temat 46 | Lekcje 93-94**
+**Temat 47 | Lekcje 93-94**
 
 ## Przygotowanie
 
-Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
+Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
-
-## Schemat bazy i podział kodu
-
-Przygotuj `baza.py` dla operacji SQL i `main.py` dla okna. Baza `albumy.db` jest plikiem roboczym obok skryptu. Tabela `albumy`: `id INTEGER PRIMARY KEY`, `tytul TEXT NOT NULL`, `rok INTEGER NOT NULL CHECK(rok BETWEEN 1900 AND 2100)`. Tytuł po strip nie może być pusty. Używaj parametrów `?`, zatwierdzaj transakcje i zamykaj połączenia. Inicjalizacja tabeli ma być idempotentna. Dane początkowe dodawaj jednorazowo, nie przy każdym odczycie.
-
-Próbę wycofania wykonaj w oddzielnej pustej bazie testowej, np. `:memory:`; przygotowanie tabeli zatwierdź przed transakcją z dwoma INSERT. Nie testuj błędnych transakcji na własnych danych użytkowych.
 
 ## Sposób pracy podczas bloku
 
@@ -27,39 +21,39 @@ Próbę wycofania wykonaj w oddzielnej pustej bazie testowej, np. `:memory:`; pr
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Utwórz i odczytaj bazę
+## Zadanie 1. Termin za dwa tygodnie
 
-- Utwórz nową albumy.db z tabelą opisaną powyżej.
-- Dodaj parametrami dwa albumy: (Poranek,2024), (Wieczór,2023).
-- Wypisz id, tytuł i rok, uporządkowane po id. Uruchom osobno sam odczyt.
+- Utwórz date dla 2026-10-03 i dodaj 14 dni.
+- Wypisz termin w ISO i w formacie DD.MM.RRRR.
+- Sprawdź przejście roku: dodaj 2 dni do 2026-12-31.
 
-**Wynik kontrolny:** 2 trwałe rekordy. Odczyt nie dopisuje nowych.
+**Wynik kontrolny:** 2026-10-17, 17.10.2026 oraz 2027-01-02.
 
-## Zadanie 2. Formularz dodawania
+## Zadanie 2. Wczytanie daty
 
-- Zbuduj QLineEdit tytułu, QSpinBox 1900-2100 i przycisk „Dodaj”.
-- Po poprawnym zapisie odśwież QTableWidget. Odrzuć pusty tytuł.
-- Dodaj tytuł „Anna's album”, aby sprawdzić przekazanie apostrofu jako danych.
+- Wczytaj napis DD.MM.RRRR przez input i użyj strptime.
+- Wypisz poprawną datę w ISO. Przy ValueError pokaż komunikat.
+- Sprawdź 29.02.2024, 29.02.2025 oraz 31.04.2026.
 
-**Wynik kontrolny:** apostrof zapisany poprawnie, pusty tytuł nie tworzy rekordu.
+**Wynik kontrolny:** tylko 29.02.2024 jest poprawna.
 
-## Zadanie 3. Zmiana i usunięcie po ID
+## Zadanie 3. Czas trwania
 
-- Dodaj obsługę zaznaczonego rekordu: zmień jego tytuł, potem usuń go.
-- Wykonuj SQL po id, nie po numerze wiersza ani po tytule.
-- Sprawdź próbę operacji bez zaznaczenia i po sortowaniu tabeli.
+- Oblicz czas między 2026-10-03 23:30 a 2026-10-04 01:00.
+- Dane traktuj jako wspólny czas lokalny bez tzinfo.
+- Wypisz liczbę minut przez total_seconds(). Sprawdź też równe chwile.
 
-**Wynik kontrolny:** zmienia się tylko wskazany rekord, brak wyboru daje komunikat.
+**Wynik kontrolny:** 90 minut oraz 0 minut.
 
-## Zadanie 4. Wycofanie transakcji
+## Zadanie 4. Dla chętnych: Rekordy z października
 
-- W nowej testowej bazie wykonaj w jednym with db dwa INSERT.
-- Pierwszy: (Dobry,2024). Drugi: (Błędny,1800), naruszający CHECK.
-- Przechwyć IntegrityError poza with db i odczytaj tabelę.
+- Użyj dat: 2026-09-30, 2026-10-01, 2026-10-31, 2026-11-01.
+- Zamień napisy na date. Wybierz poczatek <= data < koniec.
+- Początek: 2026-10-01. Koniec: 2026-11-01. Wypisz wybrane daty.
 
-**Wynik kontrolny:** tabela pusta. Cała transakcja została wycofana.
+**Wynik kontrolny:** 2026-10-01 oraz 2026-10-31.
 
 ## Diagnoza i praca domowa
 
@@ -70,3 +64,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

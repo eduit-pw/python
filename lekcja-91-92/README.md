@@ -1,16 +1,16 @@
-# Ćwiczenia: Wyświetlanie list i tabel z danymi w oknie aplikacji oraz zaznaczanie wierszy (QTableWidget)
+# Ćwiczenia: Funkcje wywołujące same siebie (rekurencja), sortowanie szybkie oraz kolejki i stosy
 
-**Temat 45 | Lekcje 91-92**
+**Temat 46 | Lekcje 91-92**
 
 ## Przygotowanie
 
-Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
+Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Reguły tabeli
+## Wymagania implementacji
 
-Zadania zapisz w oddzielnych plikach. ID jest daną rekordu, nie indeksem wiersza. Odczytuj je z zaznaczonego wiersza albo przechowuj jako UserRole. Podczas wypełniania tabeli wyłącz sortowanie, a włącz je po uzupełnieniu wszystkich komórek. Brak zaznaczenia i pusta tabela muszą być obsłużone przed odczytem item(...). Sortowanie liczb wymaga wartości int w DisplayRole, a nie tekstu liczbowego.
+`silnia(n)` przyjmuje int: n < 0 zgłasza ValueError, n=0 zwraca 1, dla n>0 używa wywołania rekurencyjnego. `quicksort(dane)` wybiera pivot, dzieli dane na mniejsze, równe i większe, rekurencyjnie sortuje części i zwraca nową listę. Przypadek bazowy to długość <=1. Nie używaj `sorted` ani `list.sort`. Stos realizuj listą, kolejkę przez `collections.deque`.
 
 ## Sposób pracy podczas bloku
 
@@ -25,39 +25,39 @@ Zadania zapisz w oddzielnych plikach. ID jest daną rekordu, nie indeksem wiersz
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Lista albumów
+## Zadanie 1. Ślad rekurencji
 
-- Dodaj QListWidget z tytułami „Poranek”, „Wieczór” i „Noc”.
-- Po kliknięciu przycisku „Pokaż” wypisz bieżący tytuł w QLabel.
-- Bez zaznaczenia pokaż „Wybierz album”.
+- Dodaj do silnia komunikat przed wywołaniem rekurencyjnym i przed return.
+- Uruchom silnia(3), silnia(0) i silnia(-1).
+- Rozróżnij kolejność wejścia do funkcji i powrotu z funkcji.
 
-**Wynik kontrolny:** wybrany tytuł albo czytelny komunikat.
+**Wynik kontrolny:** 6, 1 oraz ValueError.
 
-## Zadanie 2. Tabela rekordów
+## Zadanie 2. Quicksort z powtórzeniami
 
-- Utwórz kolumny ID, Tytuł, Rok i rekordy (7,Poranek,2024), (12,Wieczór,2023).
-- Wypełnij wszystkie komórki i ustaw zaznaczanie pojedynczego wiersza.
-- Zablokuj edycję komórek bezpośrednio w tabeli.
+- Napisz quicksort(dane), zwracającą nową listę.
+- Sprawdź,, [] oraz [8].
+- Nie zmieniaj listy wejściowej i nie usuwaj duplikatów.
 
-**Wynik kontrolny:** 2 wiersze i 3 czytelne kolumny.
+**Wynik kontrolny:**,, [], [8].
 
-## Zadanie 3. ID po sortowaniu
+## Zadanie 3. Historia zmian
 
-- W tabeli zadania 2 włącz sortowanie po tytule.
-- Przyciskiem „Pokaż ID” odczytaj ID aktualnie wybranego rekordu.
-- Sprawdź oba rekordy przed sortowaniem i po odwróceniu kierunku.
+- Dodaj na stos napisy „start”, „zmiana A”, „zmiana B”.
+- Pobierz wszystkie elementy przez pop, wypisując kolejność.
+- Po opróżnieniu wypisz „Brak historii”, zamiast wywoływać kolejne pop.
 
-**Wynik kontrolny:** Poranek ma zawsze ID 7, Wieczór zawsze ID 12.
+**Wynik kontrolny:** zmiana B, zmiana A, start, Brak historii.
 
-## Zadanie 4. Liczby i pusta tabela
+## Zadanie 4. Dla chętnych: Obsługa zgłoszeń
 
-- Dodaj tabelę z kolumną Liczba i wartościami 2, 10, 1 jako DisplayRole typu int.
-- Włącz sortowanie rosnące. Następnie ustaw liczbę wierszy na 0.
-- Sprawdź obsługę przycisku odczytu, gdy tabela jest pusta.
+- Użyj deque. Dodaj zgłoszenia „Z1”, „Z2”, „Z3” i obsłuż dwa pierwsze.
+- Dodaj „Z4”, a potem obsłuż resztę przez popleft.
+- Na każdym etapie wypisz obsługiwany identyfikator.
 
-**Wynik kontrolny:** kolejność 1,2,10. Po opróżnieniu: komunikat, bez wyjątku.
+**Wynik kontrolny:** Z1, Z2, Z3, Z4. Kolejka jest pusta.
 
 ## Diagnoza i praca domowa
 
@@ -68,3 +68,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

@@ -1,19 +1,19 @@
-# Zadanie 1. Pionowy formularz
+# Zadanie 1. Indeks i liczba porównań
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-import sys
-from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow, QVBoxLayout, QHBoxLayout, QFormLayout, QGridLayout, QLineEdit, QPushButton, QLabel, QSlider
-
-def pionowy():
+def liniowe(dane, x):
     """TODO: uzupełnij zgodnie z kontraktem w README."""
     pass
 
-def formularz():
+def szukaj_wartownik(dane, x):
     """TODO: uzupełnij zgodnie z kontraktem w README."""
     pass
 
-def rgb():
+def binarne(dane, x, pokaz=False):
+    """TODO: uzupełnij zgodnie z kontraktem w README."""
+    pass
+
+def bisekcja():
     """TODO: uzupełnij zgodnie z kontraktem w README."""
     pass

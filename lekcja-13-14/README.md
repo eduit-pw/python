@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Przelicznik punktów, szkolne
 
@@ -84,7 +84,7 @@ Pozostałe testy:
 | raport_incydentu("   ") | None |
 | raport_incydentu("E1", poziom="AUDYT") | None |
 
-## Zadanie 4. NWD i kontrakt funkcji, adaptacja INF.04
+## Zadanie 4. Dla chętnych: NWD i kontrakt funkcji, adaptacja INF.04
 
 **Źródło algorytmu:** INF.04-01-23.01-SG, część I. Użyj odejmowania, nie modulo ani math.gcd.
 

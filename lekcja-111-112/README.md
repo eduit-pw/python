@@ -1,6 +1,6 @@
-# Ćwiczenia: Gotowy panel zarządzania danymi w Django oraz tworzenie i sprawdzanie formularzy
+# Ćwiczenia: Tworzenie tabel bazy danych w Django za pomocą modeli i aktualizacja bazy (ORM)
 
-**Temat 54 | Lekcje 111-112**
+**Temat 56 | Lekcje 111-112**
 
 ## Przygotowanie
 
@@ -8,9 +8,17 @@
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Kontynuacja i zasady formularza
+## Model i dane początkowe
 
-Kontynuuj kopię projektu szkola_web z tematu 53. Zachowaj model Film, listę /filmy/ i bazę; nie dodawaj ponownie Poranka, jeśli już istnieje. Utwórz lokalne konto przez `py manage.py createsuperuser`. W ModelForm użyj pola ChoiceField z pustym wyborem oraz wartościami 1-4. Oczyść tytuł przez strip i odrzuć pusty. Przed zapisem sprawdzaj form.is_valid. Obsługuj GET i POST, pokaż błędy formularza i po sukcesie zastosuj przekierowanie do listy. Zachowaj middleware CSRF i znacznik csrf_token w formularzu. Do próby POST bez tokenu użyj klienta HTTP z włączoną kontrolą CSRF albo żądania z narzędzi przeglądarki.
+Kontynuuj kopię projektu szkola_web z poprzedniej lekcji. W `strony/models.py` zdefiniuj Film: tytul = CharField(max_length=80), rodzaj = PositiveSmallIntegerField(default=1), wypozyczenia = PositiveIntegerField(default=0). __str__ zwraca tytuł. Pole dostepny dodaj dopiero w zadaniu 4. Dane początkowe: Poranek i Wieczór, rodzaj=1, wypozyczenia=0. Pracuj na nowej bazie ćwiczeniowej i nie kasuj bazy poprzedniej lekcji. Twórz rekordy tylko raz.
+
+```powershell
+py manage.py makemigrations strony
+py manage.py migrate
+py manage.py shell
+```
+
+Po każdej zmianie modelu utwórz i zastosuj migrację. Serwer uruchamiaj przez `py manage.py runserver` z folderu zawierającego manage.py.
 
 ## Sposób pracy podczas bloku
 
@@ -25,37 +33,38 @@ Kontynuuj kopię projektu szkola_web z tematu 53. Zachowaj model Film, listę /f
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Dane w panelu admina
+## Zadanie 1. Pierwsza tabela
 
-- Zarejestruj Film, utwórz lokalne konto admina i dodaj film Poranek, rodzaj=1.
-- Wyszukaj go po tytule. Otwórz /filmy/ i porównaj wynik.
+- Dodaj model Film opisany powyżej, wykonaj makemigrations i migrate.
+- W shell utwórz Poranek i Wieczór. Zacznij od nowej bazy ćwiczeniowej.
+- Zamknij shell, otwórz go ponownie i odczytaj rekordy.
 
-**Wynik kontrolny:** admin i widok pokazują ten sam rekord.
+**Wynik kontrolny:** 2 rekordy po ponownym uruchomieniu.
 
-## Zadanie 2. Formularz filmu
+## Zadanie 2. Zapytanie i sortowanie
 
-- Utwórz ModelForm i stronę /filmy/dodaj/ z polami „Tytuł filmu” i „Rodzaj”.
-- Rodzaje: pusta opcja, Komedia=1, Obyczajowy=2, Sensacyjny=3, Horror=4.
-- Przycisk „Dodaj” zapisuje poprawny film i przekierowuje do listy. Adaptacja INF.04-03-23.06-SG, II: Django i zapis do bazy zamiast konsoli.
+- Dodaj film Alarm z rodzaj=3. Pozostałe dwa mają rodzaj=1.
+- Pobierz tylko rodzaj=1 i posortuj tytuły rosnąco.
+- Osobno sprawdź filter(pk=999).first(), zakładając brak tego ID.
 
-**Wynik kontrolny:** Alarm i rodzaj 3 tworzą dokładnie 1 rekord.
+**Wynik kontrolny:** Poranek, Wieczór oraz None dla brakującego ID.
 
-## Zadanie 3. Niepoprawne dane
+## Zadanie 3. Lista na stronie
 
-- Wyślij formularz z pustym tytułem, samymi spacjami i bez wyboru rodzaju.
-- Sprawdź komunikaty oraz liczbę rekordów przed i po każdym przypadku.
+- Utwórz /filmy/ i szablon z tytułem oraz liczbą wypożyczeń każdego rekordu.
+- Zmień liczbę wypożyczeń Poranka na 2 w shell i odśwież stronę.
+- Dodaj obsługę pustej listy przez {% empty %}.
 
-**Wynik kontrolny:** błędy są widoczne, liczba filmów nie zmienia się.
+**Wynik kontrolny:** widok pokazuje stan zapisany w bazie.
 
-## Zadanie 4. Przekierowanie i CSRF
+## Zadanie 4. Dla chętnych: Zmiana schematu
 
-- Dodaj film, odśwież docelową stronę i sprawdź brak powtórnego zapisu.
-- W narzędziach przeglądarki sprawdź ukryte pole csrfmiddlewaretoken.
-- Usuń token z wysyłanego POST w narzędziu testowym i sprawdź odpowiedź.
+- Dodaj pole dostepny = models.BooleanField(default=True). Utwórz i zastosuj migrację.
+- Sprawdź poprzednie rekordy. Ustaw False tylko dla Alarmu i zapisz go.
 
-**Wynik kontrolny:** odświeżenie nie duplikuje filmu, POST bez tokenu daje 403.
+**Wynik kontrolny:** stare dane pozostają, Alarm ma dostepny=False.
 
 ## Diagnoza i praca domowa
 
@@ -66,3 +75,7 @@ Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo b�
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 
 [Spis lekcji](../README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

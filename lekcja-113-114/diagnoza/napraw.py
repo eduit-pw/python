@@ -1,5 +1,6 @@
-from fastapi import FastAPI, HTTPException
-app = FastAPI()
-@app.get("/suma")
-def suma(a: str, b: str):
-    return {"wynik": a + b}
+from django import forms
+class Formularz(forms.Form):
+    imie = forms.CharField(min_length=2)
+def sprawdz(dane):
+    formularz = Formularz(dane)
+    return bool(formularz.is_valid)

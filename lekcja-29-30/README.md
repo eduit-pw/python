@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Dwa konta
 
@@ -50,7 +50,7 @@ Oczekiwane: numery `1 2 3`, licznik `3`, pierwszy numer `1`, licznik po `del` na
 
 Oczekiwane: `Zeszyt 12`, `Naklejka 0`. Zakładamy poprawny format z jednym średnikiem i nieujemną ceną całkowitą. Dodatkowo utwórz `"Długopis;5"` i zmień cenę tylko pierwszego produktu.
 
-## Zadanie 4. Narzędzia tekstowe
+## Zadanie 4. Dla chętnych: Narzędzia tekstowe
 
 Zachowujemy wymagania algorytmiczne oryginału. Nazwa klasy i metod oraz zestaw testów są doborem szkolnym. W Pythonie odpowiednikiem `null` jest `None`.
 

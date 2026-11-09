@@ -9,4 +9,5 @@ build/
 dist/
 .pytest_cache/
 .idea/
-.vscode/
+**/.vscode/*
+!**/.vscode/launch.json

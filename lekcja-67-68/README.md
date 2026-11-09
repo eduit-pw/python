@@ -1,16 +1,16 @@
-# Ćwiczenia: Działania na liczbach: sprawdzanie liczb pierwszych, Sito Eratostenesa, rozkład na czynniki i Algorytm Euklidesa
+# Ćwiczenia: Łączenie przycisków z akcjami w kodzie: reagowanie na kliknięcia i wprowadzany tekst (sygnały i sloty)
 
-**Temat 33 | Lekcje 67-68**
+**Temat 34 | Lekcje 67-68**
 
 ## Przygotowanie
 
-Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
+Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
 
-## Umowy algorytmów
+## Stan początkowy i zapis wersji
 
-`pierwsza(n)` zwraca bool: dla n < 2 wynik False. Szukaj dzielnika od 2, dopóki d*d <= n. `wypelnij(tablica)` modyfikuje tablicę sita: od p=2, przy zaznaczonym p wykreślaj wielokrotności od p*p do końca tablicy, następnie zwiększ p; kontynuuj, dopóki p*p mieści się w tablicy. Nie zwracaj nowej tablicy. Przy rozkładzie powtarzaj dzielenie przez d, dopóki reszta jest zerowa; na końcu uwzględnij pozostały czynnik > 1. NWD z odejmowaniem zapisuj w osobnej funkcji dla dodatnich argumentów.
+Każdy przykład zapisz osobno, np. `zadanie1.py`. Sygnały podłączaj raz podczas budowy okna. Zadania 3-4 tworzą kolejne wersje panelu RGB. Duży podgląd i zapisana próbka są odrębnymi kontrolkami oraz odrębnymi wartościami stanu. Na początku oba kolory są białe.
 
 ## Sposób pracy podczas bloku
 
@@ -25,39 +25,39 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Przedział liczb pierwszych
+## Zadanie 1. Licznik kliknięć
 
-- Napisz program wypisujący liczby pierwsze z przedziału 0-20.
-- Użyj funkcji pierwsza i sprawdź osobno -7, 0, 1, 2, 49.
-- Wyjaśnij, dlaczego warunek d*d <= n nie może być zastąpiony przez <.
+- Zbuduj etykietę wyniku, przyciski „+1” i „Reset”. Stan początkowy: 0.
+- Pierwszy przycisk zwiększa pole self.licznik, drugi zeruje je.
+- Kliknij +1 trzy razy, Reset i +1 jeden raz.
 
-**Wynik kontrolny:** 2, 3, 5, 7, 11, 13, 17, 19.
+**Wynik kontrolny:** kolejno 1, 2, 3, 0, 1.
 
-## Zadanie 2. Sito do 100
+## Zadanie 2. Liczba znaków na żywo
 
-- Utwórz tablicę 101 wartości logicznych. Ustaw 0 i 1 na False.
-- Napisz funkcję wypelnij(tablica) bez wartości zwracanej, zgodną z opisem algorytmu powyżej.
-- Wypisz liczby pierwsze od 2 do 100 i ich liczbę. Adaptacja INF.04-01-23.06-SG, I: dodatkowe zliczanie wyników.
+- Połącz QLineEdit.textChanged z metodą pokazującą długość tekstu.
+- Licz wszystkie znaki, także spacje. Pusty napis ma długość 0.
+- Sprawdź „abc”, „a b” oraz wyczyszczenie pola.
 
-**Wynik kontrolny:** 25 liczb. Pierwsza 2, ostatnia 97.
+**Wynik kontrolny:** 3, 3, 0.
 
-## Zadanie 3. Rozkład i odtworzenie
+## Zadanie 3. Podgląd RGB
 
-- Napisz funkcję czynniki(n), przyjmującą int >= 2.
-- Sprawdź 84, 49 i 13. Wypisz listę czynników i ich iloczyn.
-- Odrzuć n < 2 przez ValueError.
+- Utwórz suwaki R, G, B 0-255, początkowo wszystkie ustawione na 255.
+- Po każdej zmianie odśwież duży QLabel i napis z trzema wartościami.
+- Sprawdź ustawienia (255,0,0), (0,255,0), (0,0,255). Adaptacja INF.04-01-25.06-SG, II: same suwaki i podgląd.
 
-**Wynik kontrolny:**,, [13]. Iloczyny: 84, 49, 13.
+**Wynik kontrolny:** podgląd czerwony, zielony i niebieski.
 
-## Zadanie 4. NWD zgodnie z poleceniem
+## Zadanie 4. Dla chętnych: Zapamiętanie próbki
 
-- Wczytaj dwie dodatnie liczby całkowite i oblicz NWD przez odejmowanie.
-- Sprawdź pary (18,12), (7,5), (6,6). Odrzuć 0 i liczby ujemne.
-- Porównaj wyniki z wersją modulo, używaną tylko jako kontrola. Adaptacja INF.04-01-23.01-SG, I: dodatnie dane i porównanie wersji.
+- Do zadania 3 dodaj „Pobierz” oraz osobny QLabel małej próbki i zapisanych wartości.
+- Na początku próbka jest biała, (255,255,255). Zapisuj ją tylko przyciskiem.
+- Pobierz czerwony, potem ustaw niebieski bez kliknięcia przycisku. Adaptacja INF.04-01-25.06-SG, II: własny układ okna.
 
-**Wynik kontrolny:** 6, 1, 6.
+**Wynik kontrolny:** duży podgląd niebieski, mała próbka nadal czerwona.
 
 ## Diagnoza i praca domowa
 

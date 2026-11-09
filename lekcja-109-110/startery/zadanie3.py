@@ -1,5 +1,8 @@
-# Zadanie 3. Lista na stronie
+# Zadanie 3. Dwie strony, jeden układ
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
-# TODO: zapisz kolejne kroki rozwiązania.
+from django.apps import AppConfig
+
+class StronyConfig(AppConfig):
+    pass

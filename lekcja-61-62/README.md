@@ -1,12 +1,16 @@
-# Ćwiczenia: Sprawdzanie poprawności wpisów tekstowych za pomocą wyrażeń regularnych (moduł re)
+# Ćwiczenia: Tworzenie pierwszego okna aplikacji w PyQt: okno główne i uruchomienie programu
 
-**Temat 30 | Lekcje 61-62**
+**Temat 31 | Lekcje 61-62**
 
 ## Przygotowanie
 
-Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
+Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+
+## Organizacja programów
+
+Zainstaluj PyQt6 według instrukcji na stronie głównej repozytorium. Dla zadania 1 utwórz `QApplication`, `QWidget`, ustaw tytuł i rozmiar, wywołaj show oraz app.exec. Zachowaj referencję do okna. Zadania zapisz jako `zadanie1.py` itd.; `main.py` może zawierać końcową wersję. Tylko jedna instancja QApplication w pojedynczym procesie. Te ćwiczenia wymagają środowiska graficznego.
 
 ## Sposób pracy podczas bloku
 
@@ -21,39 +25,39 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
-## Zadanie 1. Kod z łącznikiem
+## Zadanie 1. Uruchom i zamknij
 
-- Napisz funkcję poprawny_kod(tekst) zwracającą bool.
-- Wymagaj dokładnie formatu NN-NNN i cyfr ASCII.
-- Sprawdź: 12-345, 12345, 12-345x, 1a-345 oraz pusty napis.
+- Zapisz minimalny program jako main.py i uruchom go w terminalu.
+- Nadaj tytuł „Python GUI - imię” i rozmiar 500 na 300.
+- Zamknij okno przyciskiem systemowym. Sprawdź powrót do terminalu.
 
-**Wynik kontrolny:** tylko 12-345 daje True.
+**Wynik kontrolny:** widoczne okno, potem normalne zakończenie programu.
 
-## Zadanie 2. Pięć cyfr
+## Zadanie 2. Dwie etykiety
 
-- Przygotuj walidację formatu uproszczonego: dokładnie pięć cyfr ASCII.
-- Sprawdź 12345, 12-345, 1234, 12a45 oraz napis "\uFF11\uFF12\uFF13\uFF14\uFF15".
-- Wyjaśnij, dlaczego nie używasz wzorca z łącznikiem. Adaptacja INF.04-01-23.06-SG, II: sama funkcja walidująca.
+- Dodaj do QWidget dwa QLabel: „Imię: Anna” i „Grupa: 4TI”.
+- Rozmieść je na (30,40) i (30,100), nadaj obszary 300 na 40.
+- Zmień rozmiar okna i sprawdź, co dzieje się z pozycjami.
 
-**Wynik kontrolny:** tylko 12345 daje True.
+**Wynik kontrolny:** obie etykiety widoczne, ich pozycje pozostają stałe.
 
-## Zadanie 3. Identyfikatory w tekście
+## Zadanie 3. Klasa okna
 
-- Dla „Zgłoszenia: ID-12, ID-7, ID-305.” znajdź wszystkie numery po „ID-”.
-- Użyj jednej grupy przechwytującej i findall.
-- Zamień wyniki na int i oblicz ich sumę.
+- Przenieś budowę QWidget do klasy Okno i konstruktora __init__.
+- Wywołaj konstruktor klasy bazowej i zachowaj QLabel w self.napis.
+- W programie głównym utwórz QApplication, obiekt Okno i uruchom pętlę.
 
-**Wynik kontrolny:** [12, 7, 305], suma 324.
+**Wynik kontrolny:** ten sam wygląd, jedno uruchomienie QApplication.
 
-## Zadanie 4. Format daty
+## Zadanie 4. Dla chętnych: Okno główne
 
-- Sprawdź fullmatch dla RRRR-MM-DD: 2026-10-03, 2026-02-30 i 26-10-03.
-- Wymagaj 4, 2 i 2 cyfr, rozdzielonych łącznikami.
-- Wskaż przykład, który pasuje do wzorca, lecz nie jest datą kalendarzową.
+- Utwórz osobny program oparty na QMainWindow.
+- Ustaw QLabel „Obszar centralny” przez setCentralWidget.
+- Zwiększ rozmiar okna. Porównaj zachowanie z etykietą ustawioną przez move.
 
-**Wynik kontrolny:** dwa pierwsze pasują. 2026-02-30 wymaga dalszej kontroli.
+**Wynik kontrolny:** obszar centralny dopasowuje się do dostępnego miejsca.
 
 ## Diagnoza i praca domowa
 

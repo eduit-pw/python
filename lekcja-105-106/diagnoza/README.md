@@ -1,8 +1,8 @@
-# Diagnoza i praca domowa: temat 51
+# Diagnoza i praca domowa: temat 53
 
 ## Kontrakt
 
-urlpatterns ma przechowywać funkcję widoku, a GET /start/ ma zwrócić Start.
+Rozpoznaj całą klasę odpowiedzi HTTP 2xx jako sukces. Sprawdź 200, 201, 204, 404 i 500.
 
 ## Kolejność pracy
 
@@ -15,3 +15,7 @@ urlpatterns ma przechowywać funkcję widoku, a GET /start/ ma zwrócić Start.
 Plik z samymi definicjami nie wypisuje wyników automatycznie. Do prób dopisz wywołania na swojej kopii albo użyj konsoli interaktywnej. Zależności są takie jak w folderze lekcji; GUI wymaga PyQt6. W zadaniach webowych możesz dopisać mały test z TestClient lub klientem Django.
 
 **Wariant dodatkowy:** dopisz własny przypadek, który wykrywa pierwotny błąd, i uzasadnij dobór danych. **Praca domowa:** dokończ diagnozę i wyjaśnienie, jeżeli nie zmieściły się na zajęciach.
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

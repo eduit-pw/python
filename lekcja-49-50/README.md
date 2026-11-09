@@ -21,7 +21,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na kolejnych zajęciach lub zastępuje dodatkową diagnozę. Zadania dodatkowe nie są warunkiem ukończenia podstawowego bloku.
 
-**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](SCIAGA.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
+**Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Wspólne ustawienia - trzy testy
 
@@ -68,7 +68,7 @@ Nie wysyłamy wiadomości. Funkcja produktu jedynie przygotowuje napis. Wspólna
 | Nazwa i docstring | Dane oryginalnej funkcji. |
 | Funkcja zgłasza `ValueError` | Ten sam typ wyjątku, tylko komunikat początku. |
 
-## Zadanie 4. NWD z arkusza i osobne opakowanie - pięć testów
+## Zadanie 4. Dla chętnych: NWD z arkusza i osobne opakowanie - pięć testów
 
 1. W `nwd.py` zachowaj algorytm z odejmowaniem. Funkcja przyjmuje dwa dodatnie argumenty i zwraca liczbę, bez `input()` ani `print()`.
 2. Uzupełnij komentarz nad funkcją. Program główny pobiera dane i wypisuje wynik.

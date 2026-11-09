@@ -1,4 +1,4 @@
-# Zadanie 4. Okno główne
+# Zadanie 4. Wielomian z brakującą potęgą
 # Pełne wymagania i wyniki kontrolne: ../README.md
 # Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
 
