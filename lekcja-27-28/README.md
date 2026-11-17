@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Dwoje uczniów
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 1. Utwórz `Uczen(imie, klasa)` z polami `self.imie` i `self.klasa`.
 2. Dodaj `przedstaw()`, zwracającą napis w formacie `Ala, klasa 3TP`.
 3. Utwórz Alę z klasy 3TP i Jana z klasy 2TP. Wyświetl wyniki ich metod.
@@ -33,6 +35,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 Oczekiwane opisy: przed zmianą `Ala, klasa 3TP`, `Jan, klasa 2TP`; po zmianie `Ala, klasa 3TP`, `Jan, klasa 3TP`. Dodatkowo utwórz trzeciego ucznia i sprawdź jego opis.
 
 ## Zadanie 2. Prostokąty
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 1. Utwórz `Prostokat(szerokosc, wysokosc)`. Wymiary są dodatnimi liczbami całkowitymi w centymetrach.
 2. Dodaj `pole()` i `obwod()`, zwracające wyniki obliczone z aktualnych pól obiektu. Nie zapamiętuj obliczonego pola jako osobnego pola instancji.
@@ -50,6 +54,8 @@ Dodatkowo sprawdź kwadrat 5 × 5. Przyjmujemy poprawne dodatnie wymiary, bez wa
 
 ## Zadanie 3. Dwa niezależne liczniki
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 1. Utwórz `Licznik()` z polem instancji `wartosc`, początkowo 0.
 2. Dodaj `zwieksz()`, która zwiększa wartość o 1, i `wyzeruj()`, która ustawia 0. Obie metody zmieniają stan i nie zwracają danych.
 3. Dodaj `pobierz()`, zwracającą aktualną wartość.
@@ -58,6 +64,8 @@ Dodatkowo sprawdź kwadrat 5 × 5. Przyjmujemy poprawne dodatnie wymiary, bez wa
 Oczekiwane pary: początkowo `0 0`, po zwiększeniach `2 1`, po zerowaniu `0 1`. Dodatkowo zwiększ ponownie pierwszy licznik i sprawdź parę `1 1`. To dwa pola instancji; wspólny licznik klasy pojawi się w temacie 15.
 
 ## Zadanie 4. Dla chętnych: Film w wypożyczalni
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 1. Utwórz `Film()` z początkowymi polami `_tytul = ""` oraz `_liczba_wypozyczen = 0`.
 2. Dodaj `ustaw_tytul(tytul)`, `pobierz_tytul()` i `pobierz_liczbe_wypozyczen()`.
@@ -87,6 +95,8 @@ class Film:
 ```
 
 ## Zadanie 5. Dla chętnych: Lista obiektów (autorskie, opcjonalne)
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 Utwórz listę trzech obiektów `Uczen`. W pętli wyświetl wynik `przedstaw()` dla każdego ucznia. Zmień klasę drugiego ucznia przez indeks listy i ponownie wyświetl jego opis. Lista zawiera odwołania do obiektów; pobrany z niej uczeń nadal ma swoje pola i metody.
 

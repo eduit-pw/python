@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Termin za dwa tygodnie
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Utwórz date dla 2026-10-03 i dodaj 14 dni.
 - Wypisz termin w ISO i w formacie DD.MM.RRRR.
 - Sprawdź przejście roku: dodaj 2 dni do 2026-12-31.
@@ -32,6 +34,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** 2026-10-17, 17.10.2026 oraz 2027-01-02.
 
 ## Zadanie 2. Wczytanie daty
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Wczytaj napis DD.MM.RRRR przez input i użyj strptime.
 - Wypisz poprawną datę w ISO. Przy ValueError pokaż komunikat.
@@ -41,6 +45,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Czas trwania
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Oblicz czas między 2026-10-03 23:30 a 2026-10-04 01:00.
 - Dane traktuj jako wspólny czas lokalny bez tzinfo.
 - Wypisz liczbę minut przez total_seconds(). Sprawdź też równe chwile.
@@ -48,6 +54,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** 90 minut oraz 0 minut.
 
 ## Zadanie 4. Dla chętnych: Rekordy z października
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Użyj dat: 2026-09-30, 2026-10-01, 2026-10-31, 2026-11-01.
 - Zamień napisy na date. Wybierz poczatek <= data < koniec.

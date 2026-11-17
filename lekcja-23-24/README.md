@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Rabat i wybór cen
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 1. Użyj listy `ceny = [20, 50, 100]`.
 2. Pętlą zbuduj nową listę cen po rabacie 10%. Nie zmieniaj listy wejściowej.
 3. Drugą pętlą wybierz z wyniku ceny mniejsze niż 50 zł. Wyświetl obie listy i dane wejściowe.
@@ -33,6 +35,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 Kontrola: po rabacie `[18.0, 45.0, 90.0]`, wybrane `[18.0, 45.0]`. Puste wejście daje dwie puste listy. Wybór odbywa się po rabacie, a nie przed nim.
 
 ## Zadanie 2. Produkty według ceny
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 ```python
 produkty = [
@@ -51,6 +55,8 @@ Kontrola: `dlugopis 3`, `gumka 3`, `zeszyt 7`. Oryginalna lista nadal zaczyna si
 
 ## Zadanie 3. Pole i obwód koła
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 1. Napisz `parametry_kola(promien)`, zwracającą krotkę `(pole, obwod)`. Użyj `math.pi`, wzorów `pi * r ** 2` i `2 * pi * r`. Funkcja nie wykonuje `input()` ani `print()`.
 2. Program główny wczytuje promień przez `float`. Przyjmujemy poprawny zapis skończonej liczby rzeczywistej.
 3. Dla ujemnego promienia wyświetl komunikat bez wywoływania funkcji. W pozostałych przypadkach rozpakuj krotkę i wyświetl opisane wyniki z dwiema cyframi po kropce.
@@ -63,6 +69,8 @@ Kontrola: `dlugopis 3`, `gumka 3`, `zeszyt 7`. Oryginalna lista nadal zaczyna si
 | -1 | komunikat o niedopuszczalnym promieniu |
 
 ## Zadanie 4. Dla chętnych: Loteria liczbowa INF.04
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 Adaptacja części konsolowej **INF.04-01-25.06-SG**. W Pythonie realizujemy ją strukturalnie. Zakres aplikacji zachowuje losowanie wielu zestawów i raport wystąpień. Kontrola dodatniości liczby zestawów, konkretne nazwy funkcji oraz ćwiczenie algorytmu z `while` są doprecyzowaniem szkolnym.
 
@@ -87,6 +95,8 @@ zestawy_kontrolne = [
 Liczby 1, 2 i 3 mają licznik 2. Liczby 4, 5, 6, 7, 8 i 49 mają licznik 1. Pozostałe mają 0. Suma to 12. Stałe dane służą tylko testowi funkcji zliczającej, a nie zastępują losowania w programie.
 
 ## Zadanie 5. Dla chętnych: Raport rzutów kostką (opcjonalne)
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 1. `losuj_rzuty(ile=20)` zwraca listę wyników z `random.randint(1, 6)`. Przyjmij dodatnie `ile`. Powtórzenia są dozwolone.
 2. Napisz `zlicz_oczka(wyniki)`, zwracającą słownik liczników dla każdej wartości 1-6, także niewylosowanych.

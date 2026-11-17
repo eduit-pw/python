@@ -1,7 +1,6 @@
-# Zadanie 3. Szkielet, temat 7.
-# Kontrakt i wyniki kontrolne są w README lekcji.
-# pass oznacza miejsce na własną implementację.
+# Temat 7. Zadanie 3. Raport incydentu, szkolne
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
 def raport_incydentu(kod, poziom='OSTRZEZENIE', **parametry):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

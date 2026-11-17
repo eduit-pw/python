@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Format danych i pliki
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Raport z liczb
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Utwórz liczby.txt z wierszami: 4, 7, -2 oraz jednym pustym wierszem.
 - Wczytaj liczby, pomijając puste wiersze. Oblicz sumę i liczbę danych.
 - Zapisz raport.txt w UTF-8: „Suma: 9” i „Liczba danych: 3”.
@@ -36,6 +38,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** dwa wiersze raportu, suma 9.
 
 ## Zadanie 2. Lista komunikatów
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Napisz funkcję dopisz_log(tekst), która dopisuje jeden wiersz do log.txt.
 - Wywołaj ją dla „START”, „ZAPIS” i „KONIEC”. Zacznij od pustego pliku.
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Albumy z pliku
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Utwórz dane.txt: Zespół Północ, Poranek, 8, 2024, 120 w osobnych wierszach.
 - Dodaj drugi blok: Anna Nowak, Wieczór, 10, 2023, 80.
 - Wczytaj rekordy do obiektów Album z pięcioma polami i wypisz ich dane.
@@ -53,6 +59,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** 2 albumy, razem 200 pobrań.
 
 ## Zadanie 4. Dla chętnych: Błędy odczytu
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Rozbuduj zadanie 1: osobno obsłuż brak pliku i nieliczbowy wiersz.
 - W komunikacie błędu danych podaj numer wiersza. Zakończ obliczenia.

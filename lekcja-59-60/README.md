@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Dane i reguły walidacji
 
@@ -31,6 +31,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Suma ilości w CSV
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Otwórz dołączony `magazyn.csv`: nagłówek i trzy rekordy.
 - Wczytaj rekordy przez DictReader z separatorem „;”.
 - Zamień ilosc na int i oblicz sumę. Zachowaj pełną nazwę pióra.
@@ -38,6 +40,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** 3 rekordy, suma 6.
 
 ## Zadanie 2. CSV do JSON
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Wczytaj magazyn.csv z zadania 1 i zbuduj listę słowników.
 - Zapisz magazyn.json w UTF-8, z wcięciami i ilością typu int.
@@ -47,6 +51,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Raport braków
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Utwórz CSV z nagłówkiem nazwa;ilosc i rekordami: Ołówek;0, Zeszyt;2, Gumka;0.
 - Zapisz braki.csv: ten sam nagłówek, tylko produkty o ilości równej 0.
 - Użyj DictWriter. Zachowaj kolejność rekordów.
@@ -54,6 +60,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** Ołówek;0 i Gumka;0.
 
 ## Zadanie 4. Dla chętnych: Walidacja JSON
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Napisz funkcję sprawdzającą listę produktów według umowy opisanej w przygotowaniu.
 - Sprawdź puste [], brak ilosc, ilosc=-1, ilosc="2" oraz ilosc=true.

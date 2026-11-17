@@ -1,11 +1,9 @@
-# Zadanie 1. Szkielet, temat 6.
-# Kontrakt i wyniki kontrolne są w README lekcji.
-# pass oznacza miejsce na własną implementację.
+# Temat 6. Zadanie 1. Pole i obwód, szkolne
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
 def pole_prostokata(szerokosc: float, wysokosc: float) -> float:
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
 
 def obwod_prostokata(szerokosc: float, wysokosc: float) -> float:
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

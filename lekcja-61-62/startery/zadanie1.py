@@ -1,12 +1,14 @@
-# Zadanie 1. Uruchom i zamknij
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 31. Zadanie 1. Uruchom i zamknij
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QMainWindow
+from PyQt6.QtWidgets import QApplication, QWidget, QLabel
 
-class Okno(QWidget):
-
-    def __init__(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    okno = QWidget()
+    # TODO: ustaw tytuł i rozmiar wskazane w poleceniu.
+    # TODO: w zadaniu 2 dodaj dwie etykiety należące do okna.
+    okno.show()
+    sys.exit(app.exec())

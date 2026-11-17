@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Kontrakty sortowania
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Min/max parami
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Napisz min_max(dane), zwracającą parę minimum i maksimum dla niepustej listy.
 - Porównuj kolejne elementy parami. Obsłuż pozostały pojedynczy element.
 - Sprawdź,, [5] oraz []. Dla [] zgłoś ValueError.
@@ -36,6 +38,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** (1,9), (2,9), (5,5).
 
 ## Zadanie 2. Bubble sort
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Zaimplementuj sortowanie bąbelkowe rosnąco. Wypisz listę przed i po zmianie.
 - Sprawdź,, [] oraz [3].
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Insertion sort
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Utwórz funkcję wstawianie(dane), modyfikującą listę rosnąco.
 - Zapamiętaj wstawianą liczbę i przesuwaj większe elementy do następnych pozycji.
 - Sprawdź oraz listę już uporządkowaną.
@@ -52,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** oraz.
 
 ## Zadanie 4. Dla chętnych: Selection sort w klasie
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Wczytaj 10 liczb z klawiatury do obiektu klasy Sortowanie.
 - Zaimplementuj _indeks_maksimum(start) i sortuj() bez sorted oraz list.sort.

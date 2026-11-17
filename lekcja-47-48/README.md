@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Granice magazynu - siedem testów
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1/README.md).
+
 1. W `magazyn.py` zachowaj definicje z tematu 22, bez sekwencji demonstracyjnej wykonywanej przy imporcie.
 2. W `test_magazyn.py` utwórz `self.magazyn = Magazyn(5)` w `setUp`.
 3. Sprawdź stan początkowy oraz pobrania 2, 5, 6, 0, -1 i napisu `"2"`.
@@ -42,6 +44,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 2. Granice właściwości ocena - sześć testów
 
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2/README.md).
+
 1. W `uczen.py` zachowaj `Uczen`, `OcenaError` i walidator z tematu 22. Imię jest napisem; po `strip()` ma być niepuste. Ocena wymaga dokładnie `int`, w zakresie 1-6.
 2. W `setUp` utwórz `self.uczen = Uczen("Ala", 4)`.
 3. Przypisuj do publicznej właściwości `ocena`, nie bezpośrednio do `_ocena`.
@@ -50,6 +54,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 Każda metoda zaczyna z oceną 4. Nie traktujemy kolejnych wierszy jako sekwencji zmian na jednym współdzielonym uczniu. Odrzucenie `True` wynika z jawnego kontraktu dokładnego typu z tematu 22.
 
 ## Zadanie 3. Cezar z arkusza i pięć dodatkowych prób - dziesięć testów
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3/README.md).
 
 **Źródło podstawowych pięciu prób:** INF.04-02-25.06-SG, część III, tabela 4. Kolejne próby są autorskie.
 
@@ -76,6 +82,8 @@ Dane są stałe, a oczekiwania zapisane wprost. `setUp` nie jest obowiązkowe do
 
 ## Zadanie 4. Dla chętnych: Bufor i tearDown - trzy testy
 
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4/README.md).
+
 1. W dołączonym `raport.py` znajduje się funkcja `zapisz_wynik(bufor, nazwa, czy_ok)`. Założenia ćwiczenia: `nazwa` jest napisem, `czy_ok` ma typ `bool`, bufor jest otwarty i umożliwia zapis tekstu.
 2. W `test_raport.py` zaimportuj `io`, `unittest` i funkcję. W `setUp` twórz `self.bufor = io.StringIO()`.
 3. W `tearDown` wykonuj `self.bufor.close()`.
@@ -91,6 +99,8 @@ Dane są stałe, a oczekiwania zapisane wprost. `setUp` nie jest obowiązkowe do
 W literałach `\n` oznacza znak nowego wiersza. Zapisujemy i sprawdzamy rzeczywistą nową linię, a nie dwa znaki backslash i n. Nie mylimy etykiety `FAIL` zapisanej przez funkcję z niepowodzeniem testu: test zapisu tej etykiety ma przejść, jeśli tekst jest zgodny z wymaganiem.
 
 ## Zadanie 5. Dla chętnych: Sprzątanie po nieudanej asercji - dodatkowe
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 W osobnym folderze poza bieżącym folderem lekcji zapisz `test_sprzatanie.py`. W `setUp` przygotuj pusty bufor, a w `tearDown` zamknij go i pokaż `closed`. Test ma celowo porównywać pustą zawartość z `"tekst"`. Nie naprawiaj oczekiwania w tym pokazie: jego celem jest zaobserwowanie sprzątania po `FAIL`.
 

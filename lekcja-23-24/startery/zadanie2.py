@@ -1,7 +1,10 @@
-# Zadanie 2. Szkielet, temat 12.
-# Kontrakt i wyniki kontrolne są w README lekcji.
-# pass oznacza miejsce na własną implementację.
+# Temat 12. Zadanie 2. Produkty według ceny
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Utwórz nową listę przez sorted, przekazując lambdę zwracającą cenę, czyli drugi element krotki.
+# TODO: Wyświetl nazwy i ceny w kolejności rosnącej ceny. Zachowaj listę wejściową.
+# TODO: Sprawdź produkty o równej cenie. Ich wcześniejsza kolejność ma pozostać taka sama.
+# TODO: Zapisz też nazwany klucz ceny przez def i porównaj wyniki obu wersji.
 
 def pobierz_cene(produkt):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

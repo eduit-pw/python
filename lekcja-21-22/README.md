@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Analiza liczb
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 Dane: `liczby = [-3, 0, 2, -1, 4]`.
 
 1. Napisz `analizuj_liczby(liczby)` za pomocą pętli, warunku i append.
@@ -40,6 +42,8 @@ Dane: `liczby = [-3, 0, 2, -1, 4]`.
 | [0, 3] | [0, 9] | [] |
 
 ## Zadanie 2. Raport ocen
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 Dane: `imiona = ["Ala", "Jan", "Ola"]`, `punkty = [18, 12, 20]`. Próg 15 jest szkolny, nie pochodzi z kryteriów CKE. Przyjmujemy listę tekstowych imion i listę liczbowych wyników; nie sprawdzamy zakresu punktów.
 
@@ -57,6 +61,8 @@ Dane: `imiona = ["Ala", "Jan", "Ola"]`, `punkty = [18, 12, 20]`. Próg 15 jest s
 
 ## Zadanie 3. Aktualizacja cennika
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 Dane: `pozycje = [("zeszyt", 7), ("dlugopis", 3), ("zeszyt", 8), ("gumka", 2)]`.
 
 1. Napisz `zbuduj_cennik(pozycje)` za pomocą pętli. Zwróć słownik, którego kluczem jest nazwa produktu, a wartością cena.
@@ -67,6 +73,8 @@ Dane: `pozycje = [("zeszyt", 7), ("dlugopis", 3), ("zeszyt", 8), ("gumka", 2)]`.
 Wynik zawiera ceny: zeszyt 8, dlugopis 3, gumka 2. Wypisanie: `dlugopis 3`, `gumka 2`, `zeszyt 8`. Dla pustej listy wynik to `{}`, a pętla wypisująca nie wykonuje żadnego kroku.
 
 ## Zadanie 4. Dla chętnych: Suma kontrolna i cyfra płci PESEL - adaptacja INF.04-01-24.01-SG
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 **Rdzeń z arkusza:** PESEL przechowywany jako tekst lub tablica, oddzielna funkcja płci zwracająca K/M, oddzielna funkcja sumy zwracająca bool, wczytanie numeru, wywołania funkcji i opisane wyniki. Dziesiąta cyfra określa płeć parzystością, jedenasta służy do kontroli. Algorytm używa wag oraz etapów S, M i R.
 
@@ -94,6 +102,8 @@ Funkcje płci i sumy mają warunek wejściowy: tekst długości 11 zawierający 
 Zerowy przypadek służy sprawdzeniu gałęzi M == 0. Zgodna suma nie oznacza poprawnej daty urodzenia, nadania numeru ani jego pełnej poprawności. W tej lekcji sprawdzamy tylko format, sumę i cyfrę płci. Dla przykładu podstawowego iloczyny to `[5, 15, 0, 27, 0, 3, 0, 9, 1, 27]`, suma 87.
 
 ## Zadanie 5. Dla chętnych: Macierz - autorskie, dodatkowe
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 Napisz `przetworz_macierz(macierz)`. Za pomocą dwóch pętli zwróć krotkę: lista sum wierszy i lista wszystkich liczb w kolejności wierszy. Funkcja nie zmienia danych ani niczego nie wypisuje. Wiersze mogą mieć różne długości; pusty wiersz ma sumę 0. Program główny wypisuje rezultat. Porównaj kod z dwoma wyrażeniami składanymi.
 

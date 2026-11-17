@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Kontynuacja i zasady formularza
 
@@ -30,12 +30,16 @@ Zadanie 4 i diagnoza są dla chętnych lub do samodzielnej kontynuacji. W podsta
 
 ## Zadanie 1. Dane w panelu admina
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1/README.md).
+
 - Zarejestruj Film, utwórz lokalne konto admina i dodaj film Poranek, rodzaj=1.
 - Wyszukaj go po tytule. Otwórz /filmy/ i porównaj wynik.
 
 **Wynik kontrolny:** admin i widok pokazują ten sam rekord.
 
 ## Zadanie 2. Formularz filmu
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2/README.md).
 
 - Utwórz ModelForm i stronę /filmy/dodaj/ z polami „Tytuł filmu” i „Rodzaj”.
 - Rodzaje: pusta opcja, Komedia=1, Obyczajowy=2, Sensacyjny=3, Horror=4.
@@ -45,12 +49,16 @@ Zadanie 4 i diagnoza są dla chętnych lub do samodzielnej kontynuacji. W podsta
 
 ## Zadanie 3. Niepoprawne dane
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3/README.md).
+
 - Wyślij formularz z pustym tytułem, samymi spacjami i bez wyboru rodzaju.
 - Sprawdź komunikaty oraz liczbę rekordów przed i po każdym przypadku.
 
 **Wynik kontrolny:** błędy są widoczne, liczba filmów nie zmienia się.
 
 ## Zadanie 4. Dla chętnych: Przekierowanie i CSRF
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4/README.md).
 
 - Dodaj film, odśwież docelową stronę i sprawdź brak powtórnego zapisu.
 - W narzędziach przeglądarki sprawdź ukryte pole csrfmiddlewaretoken.

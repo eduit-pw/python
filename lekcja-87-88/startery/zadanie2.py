@@ -1,5 +1,9 @@
-# Zadanie 2. Wartownik
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 44. Zadanie 2. Wartownik
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Napisz funkcję szukaj_wartownik(dane, x) używającą kopii listy.
+# TODO: W pętli sprawdzaj tylko zgodność elementu z x. Po pętli sprawdź indeks.
+# TODO: Dla szukaj 7 i 5. Upewnij się, że wejściowa lista się nie zmieniła. Adaptacja INF.04-01-22.06-SG, I: trzy własne wartości.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+def szukaj_wartownik(dane, x):
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

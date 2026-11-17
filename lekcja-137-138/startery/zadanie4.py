@@ -1,5 +1,11 @@
-# Zadanie 4. Priorytet konfiguracji
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 69. Zadanie 4. Parametry i konfiguracja
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv(Path(__file__).with_name(".env"))
+# TODO: odczytaj konfigurację i sprawdź pierwszeństwo zgodnie z README.
+# Tokena nie wyświetlaj i nie zapisuj w repozytorium.

@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Książka w konsoli
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 Ćwiczenie autorskie.
 
 1. Napisz `Ksiazka(tytul, autor)` z atrybutami instancji.
@@ -36,6 +38,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 Początkowo oczekujemy `Solaris - Lem`, `Ksiazka('Solaris', 'Lem')` oraz `[Ksiazka('Solaris', 'Lem')]`. Po zmianie otrzymujemy `Eden - Lem` oraz `Ksiazka('Eden', 'Lem')`. Przyjmujemy napisy; nie dodajemy walidacji danych.
 
 ## Zadanie 2. Dziennik z długością
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 Ćwiczenie autorskie.
 
@@ -53,6 +57,8 @@ Początkowo oczekujemy `Solaris - Lem`, `Ksiazka('Solaris', 'Lem')` oraz `[Ksiaz
 | Po Powtórka | 3 | Wpisy: 3 | 0 |
 
 ## Zadanie 3. Porównywanie punktów
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
 Ćwiczenie autorskie.
 
@@ -109,6 +115,8 @@ Wyniki: `Python: Powtórz klasy` i 13 znaków; `Egzamin: Sprawdź kod` i 11 znak
 - Zapisz dokument `egzamin.docx` albo `egzamin.odt` ze zrzutem oraz nazwami systemu, środowiska i języka. Dokumentujemy tylko realizowaną aplikację konsolową.
 
 ## Zadanie 5. Dla chętnych: Równość książek - dodatkowe
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 Ćwiczenie autorskie. Rozszerz `Ksiazka` z zadania 1 o `__eq__`. Dwie książki są równe, gdy mają takie same tytuły i autorów. Dla innych typów zwróć `NotImplemented`.
 

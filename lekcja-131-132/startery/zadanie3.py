@@ -1,5 +1,11 @@
-# Zadanie 3. Próby błędne
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 66. Zadanie 3. proba
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+import os
+import requests
+
+def proba(sciezka, timeout=5):
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
+
+# TODO: wywołaj funkcję dla danych i przypadków opisanych w zadaniu.

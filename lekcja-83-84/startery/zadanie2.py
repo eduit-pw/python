@@ -1,5 +1,9 @@
-# Zadanie 2. Sito do 100
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 42. Zadanie 2. Sito do 100
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Utwórz tablicę 101 wartości logicznych. Ustaw 0 i 1 na False.
+# TODO: Napisz funkcję wypelnij(tablica) bez wartości zwracanej, zgodną z opisem algorytmu powyżej.
+# TODO: Wypisz liczby pierwsze od 2 do 100 i ich liczbę. Adaptacja INF.04-01-23.06-SG, I: dodatkowe zliczanie wyników.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+def wypelnij(tablica):
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

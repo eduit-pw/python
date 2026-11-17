@@ -1,5 +1,9 @@
-# Zadanie 3. Rozkład i odtworzenie
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 42. Zadanie 3. Rozkład i odtworzenie
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Napisz funkcję czynniki(n), przyjmującą int >= 2.
+# TODO: Sprawdź 84, 49 i 13. Wypisz listę czynników i ich iloczyn.
+# TODO: Odrzuć n < 2 przez ValueError.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+def czynniki(n):
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

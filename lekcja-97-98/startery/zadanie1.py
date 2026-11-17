@@ -1,6 +1,9 @@
-# Zadanie 1. Lista albumów
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 49. Zadanie 1. Lista albumów
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Dodaj QListWidget z tytułami „Poranek”, „Wieczór” i „Noc”.
+# TODO: Po kliknięciu przycisku „Pokaż” wypisz bieżący tytuł w QLabel.
+# TODO: Bez zaznaczenia pokaż „Wybierz album”.
 
 import sys
 from PyQt6.QtCore import Qt
@@ -9,17 +12,17 @@ from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QListWidget, QLa
 class Okno(QWidget):
 
     def __init__(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        super().__init__()
+        self.setWindowTitle('Uzupełnij zadanie')
+        # TODO: umieść kontrolki w oknie i połącz właściwe sygnały.
+        self.lista = QListWidget()
+        self.wynik = QLabel()
 
     def pokaz_tytul(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
-
-    def pokaz_id(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
-
-    def oproznij(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    okno = Okno()
+    okno.resize(600, 400)
+    okno.show()
+    sys.exit(app.exec())

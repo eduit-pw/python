@@ -1,32 +1,13 @@
-# Zadanie 1. Utwórz i odczytaj bazę
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
-
+# Temat 50. Zadanie 1. Utwórz i odczytaj bazę.
 import sqlite3
 from pathlib import Path
-from contextlib import contextmanager
 
-@contextmanager
-def polacz():
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def inicjalizuj():
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def odczytaj():
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def dodaj(tytul, rok):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def zmien(identyfikator, tytul, rok):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def usun(identyfikator):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+sciezka = Path(__file__).with_name("albumy.db")
+db = sqlite3.connect(sciezka)
+try:
+    with db:
+        # TODO: utwórz tabelę i dodaj rekordy parametrami SQL.
+        pass
+    # TODO: wykonaj odczyt uporządkowany według ID i wyświetl wyniki.
+finally:
+    db.close()

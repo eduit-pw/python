@@ -1,18 +1,12 @@
-# Zadanie 1. Kod z łącznikiem
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 39. Zadanie 1. Kod z łącznikiem
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Napisz funkcję poprawny_kod(tekst) zwracającą bool.
+# TODO: Wymagaj dokładnie formatu NN-NNN i cyfr ASCII.
+# TODO: Sprawdź: 12-345, 12345, 12-345x, 1a-345 oraz pusty napis.
 
 import re
 from datetime import date
 
 def poprawny_kod(tekst):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def piec_cyfr(tekst):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def format_daty(tekst):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

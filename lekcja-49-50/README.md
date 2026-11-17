@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Wspólne ustawienia - trzy testy
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 1. Utwórz `Ustawienia` z polem klasowym `_instancja` oraz metodą `__new__`.
 2. Przy pierwszym utworzeniu ustaw `tryb = "jasny"`. Kolejne wywołanie klasy ma zachować zmieniony tryb.
 3. Utwórz dwa odwołania, zmień tryb przez pierwsze i odczytaj przez drugie. Sprawdź `pierwsze is drugie`.
@@ -38,6 +40,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 | Zmiana na `"ciemny"`, ponowne wywołanie | Nadal `"ciemny"`. |
 
 ## Zadanie 2. Metoda Wytwórcza - cztery testy
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 1. Zdefiniuj klasy produktów: `Powiadomienie`, `Email`, `SMS`.
 2. Utwórz bazowego twórcę `Nadawca` z abstrakcyjną metodą `utworz`.
@@ -53,6 +57,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 Nie wysyłamy wiadomości. Funkcja produktu jedynie przygotowuje napis. Wspólna operacja twórcy nie zawiera warunków zależnych od typu produktu.
 
 ## Zadanie 3. Dekorator logujący - cztery testy
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
 1. Zdefiniuj `loguj(funkcja)` oraz wewnętrzne `opakowanie(*args, **kwargs)`.
 2. Dodaj komunikat początku, pojedyncze wywołanie funkcji i komunikat końca po sukcesie.
@@ -70,6 +76,8 @@ Nie wysyłamy wiadomości. Funkcja produktu jedynie przygotowuje napis. Wspólna
 
 ## Zadanie 4. Dla chętnych: NWD z arkusza i osobne opakowanie - pięć testów
 
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
+
 1. W `nwd.py` zachowaj algorytm z odejmowaniem. Funkcja przyjmuje dwa dodatnie argumenty i zwraca liczbę, bez `input()` ani `print()`.
 2. Uzupełnij komentarz nad funkcją. Program główny pobiera dane i wypisuje wynik.
 3. W osobnym `nwd_demo.py` utwórz `nwd_z_logiem = loguj(nwd)`. Nie nadpisuj egzaminowej funkcji.
@@ -86,6 +94,8 @@ Nie wysyłamy wiadomości. Funkcja produktu jedynie przygotowuje napis. Wspólna
 | 36 | 12 | 12 |
 
 ## Zadanie 5. Dla chętnych: Trzeci produkt - dodatkowe
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 Dodaj `Push(Powiadomienie)` i `NadawcaPush(Nadawca)`. Zwróć `"Push: " + tekst`. Wykorzystaj odziedziczoną metodę `przygotuj_wiadomosc`, bez zmiany `Nadawca`, `Email` i `SMS`. Sprawdź typ produktu i wiadomość `"Push: Gotowe"`.
 

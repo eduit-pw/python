@@ -1,5 +1,22 @@
-# Zadanie 4. Przekazanie odbiorcy
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 52. Zadanie 4. Dla chętnych: Przekazanie odbiorcy
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Przygotuj paczkę onedir lub onefile dla tego samego systemu i architektury.
+# TODO: Sprawdź start, zapis, odczyt, anulowanie dialogu i brak zasobu.
+# TODO: Dodaj krótką instrukcję uruchomienia oraz wersje użytych zależności.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+import sys
+from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout
+
+def zbuduj_okno():
+    okno = QWidget()
+    uklad = QVBoxLayout(okno)
+    # TODO: dodaj kontrolki i układy opisane w tym zadaniu.
+    return okno
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    okno = zbuduj_okno()
+    okno.show()
+    sys.exit(app.exec())
+

@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Dwa konta
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 1. Utwórz `Konto(wlasciciel, saldo)` i metodę `wplac(kwota)`.
 2. Dodaj `wyplac(kwota)`: przy wystarczającym saldzie odejmij kwotę i zwróć `True`; w przeciwnym razie zwróć `False`, zachowując saldo.
 3. Utwórz konto Ali z 100 zł i Jana z 50 zł. Wpłać Ali 30 zł, wypłać 80 zł, następnie spróbuj wypłacić 60 zł.
@@ -33,6 +35,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 Oczekiwane: `True`, `False`, `50 50`. Sprawdź dodatkowo wypłatę dokładnie całego salda oraz niezależną wpłatę Jana.
 
 ## Zadanie 2. Numerowane bilety
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 1. Utwórz `Bilet` z polem klasy `licznik = 0`.
 2. W `__init__` zwiększ wspólny licznik i przypisz jego aktualną wartość do `self.numer`.
@@ -43,6 +47,8 @@ Oczekiwane: numery `1 2 3`, licznik `3`, pierwszy numer `1`, licznik po `del` na
 
 ## Zadanie 3. Produkt tworzony na dwa sposoby
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 1. Utwórz `Produkt(nazwa, cena)` z polami instancji. Cena jest całkowitą liczbą złotych.
 2. Dodaj metodę klasową `z_tekstu(tekst)`. Rozdziel tekst przez średnik, zamień cenę na `int` i zwróć `cls(...)`.
 3. Dodaj metodę klasową `darmowy(nazwa)`, zwracającą produkt o cenie 0.
@@ -51,6 +57,8 @@ Oczekiwane: numery `1 2 3`, licznik `3`, pierwszy numer `1`, licznik po `del` na
 Oczekiwane: `Zeszyt 12`, `Naklejka 0`. Zakładamy poprawny format z jednym średnikiem i nieujemną ceną całkowitą. Dodatkowo utwórz `"Długopis;5"` i zmień cenę tylko pierwszego produktu.
 
 ## Zadanie 4. Dla chętnych: Narzędzia tekstowe
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 Zachowujemy wymagania algorytmiczne oryginału. Nazwa klasy i metod oraz zestaw testów są doborem szkolnym. W Pythonie odpowiednikiem `null` jest `None`.
 
@@ -74,6 +82,8 @@ Zachowujemy wymagania algorytmiczne oryginału. Nazwa klasy i metod oraz zestaw 
 `input()` zawsze zwraca napis, więc `None` testujemy osobnym wywołaniem metod. Nie stosuj `.strip()` do wejścia: spacje są częścią danych i również podlegają przetwarzaniu. Porównanie znaków uwzględnia wielkość liter. Samogłoski liczymy w oryginalnym napisie, zanim usuniemy powtórzenia.
 
 ## Zadanie 5. Dla chętnych: Osobne dzienniki (autorskie, opcjonalne)
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 Utwórz klasę `Dziennik`, w której początkowo `wpisy = []` znajduje się w ciele klasy. Pokaż problem wspólnej listy i napraw go. Każdy obiekt ma własne `wpisy`. Dodaj metodę instancji `dodaj(tekst)`, utwórz dwa dzienniki, dodaj im różne wpisy i sprawdź, że każda lista zawiera wyłącznie swoje dane. Wyjaśnij różnicę między przypisaniem nowej listy w `__init__` a `append()` na wspólnej liście klasy.
 

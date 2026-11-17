@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Organizacja programów
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Uruchom i zamknij
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Zapisz minimalny program jako main.py i uruchom go w terminalu.
 - Nadaj tytuł „Python GUI - imię” i rozmiar 500 na 300.
 - Zamknij okno przyciskiem systemowym. Sprawdź powrót do terminalu.
@@ -36,6 +38,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** widoczne okno, potem normalne zakończenie programu.
 
 ## Zadanie 2. Dwie etykiety
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Dodaj do QWidget dwa QLabel: „Imię: Anna” i „Grupa: 4TI”.
 - Rozmieść je na (30,40) i (30,100), nadaj obszary 300 na 40.
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Klasa okna
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Przenieś budowę QWidget do klasy Okno i konstruktora __init__.
 - Wywołaj konstruktor klasy bazowej i zachowaj QLabel w self.napis.
 - W programie głównym utwórz QApplication, obiekt Okno i uruchom pętlę.
@@ -52,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** ten sam wygląd, jedno uruchomienie QApplication.
 
 ## Zadanie 4. Dla chętnych: Okno główne
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Utwórz osobny program oparty na QMainWindow.
 - Ustaw QLabel „Obszar centralny” przez setCentralWidget.

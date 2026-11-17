@@ -1,13 +1,11 @@
-# Zadanie 5. Szkielet, temat 14.
-# Kontrakt i wyniki kontrolne są w README lekcji.
-# pass oznacza miejsce na własną implementację.
+# Temat 14. Zadanie 5. Dla chętnych: Lista obiektów (autorskie, opcjonalne)
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
 class Uczen:
 
     def __init__(self, imie, klasa):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
 
     def przedstaw(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

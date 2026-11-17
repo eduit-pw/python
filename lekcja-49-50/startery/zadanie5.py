@@ -1,17 +1,15 @@
-# Zadanie 5. Szkielet, temat 25.
-# Kontrakt i wyniki kontrolne są w README lekcji.
-# pass oznacza miejsce na własną implementację.
+# Temat 25. Zadanie 5. Dla chętnych: Trzeci produkt - dodatkowe
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
 from powiadomienia import Powiadomienie, Nadawca
 
 class Push(Powiadomienie):
 
     def przygotuj(self, tekst):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
 
 class NadawcaPush(Nadawca):
 
     def utworz(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

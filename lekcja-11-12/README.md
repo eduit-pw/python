@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Pole i obwód, szkolne
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 **Polecenie:** utwórz pole_prostokata(szerokosc: float, wysokosc: float) -> float i obwod_prostokata(szerokosc: float, wysokosc: float) -> float. Dla nieujemnych boków zwracaj odpowiednio ich iloczyn i 2 * (szerokosc + wysokosc). Funkcje nie odczytują i nie wypisują danych. W programie głównym wykonaj testy. Przyjmujemy poprawne, nieujemne wartości float; zero to dopuszczony przypadek graniczny do testowania wzoru.
 
 | Szerokość | Wysokość | Pole | Obwód |
@@ -34,6 +36,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 | 0.0 | 4.0 | 0.0 | 8.0 |
 
 ## Zadanie 2. Palindrom, szkolne
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 **Polecenie:** napisz czy_palindrom(tekst: str) -> bool. Usuń białe znaki z końców przez strip, zwykłe spacje wewnątrz przez replace(" ", "") i zamień wielkie litery na małe przez lower. Pusty wynik oznacza False. Porównuj znak z początku i końca, przesuwając dwa indeksy pętlą while. Przy różnicy zwróć False, a po zakończeniu porównań True. Nie używaj odwracania wycinkiem [::-1]. Wypisywanie umieść poza funkcją.
 
@@ -46,6 +50,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 | "   " lub "" | False |
 
 ## Zadanie 3. Kalkulator przesyłki, szkolne
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
 **Polecenie:** podziel program na trzy funkcje i program główny:
 
@@ -66,6 +72,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 4. Dla chętnych: Narzędzia tekstowe, adaptacja INF.04
 
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
+
 **Źródło:** CKE, INF.04-02-24.01-SG, część I.
 
 **Polecenie:** zaimplementuj dwie funkcje. policz_samogloski ma zwracać liczbę znaków należących do "aąeęiouóyAĄEĘIOUÓY". usun_powtorzenia ma pozostawiać jeden znak z każdej serii identycznych sąsiadów. Wielkość liter ma znaczenie przy porównywaniu powtórzeń. Dla None lub pustego napisu zwracaj odpowiednio 0 i "". Funkcje nie odczytują ani nie wypisują danych. Program główny wczytuje napis i prezentuje oba wyniki. Sprawdź także None przez bezpośrednie wywołania testowe - input nie zwraca None.
@@ -81,6 +89,8 @@ Na tej lekcji używaj zwykłych funkcji. Jest to adaptacja algorytmów; klasę z
 | None | 0 | "" |
 
 ## Zadanie 5. Dla chętnych: Cyfry w raporcie - opcjonalne / domowe
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 **Polecenie:** utwórz policz_cyfry(tekst: str) -> int i zbuduj_raport(tekst: str) -> str. Pierwsza funkcja liczy wyłącznie znaki od "0" do "9" jawną pętlą. Druga wywołuje pierwszą i zwraca komunikat Cyfry: {liczba}. Testy: "Błąd 404, port 80" daje 5, "ABC" daje 0, "" daje 0. Użyj przynależności do napisu "0123456789", aby kontrakt obejmował wyłącznie cyfry ASCII.
 

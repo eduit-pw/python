@@ -1,5 +1,11 @@
-# Zadanie 2. Quicksort z powtórzeniami
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 46. Zadanie 2. Quicksort z powtórzeniami
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Napisz quicksort(dane), zwracającą nową listę.
+# TODO: Sprawdź,, [] oraz [8].
+# TODO: Nie zmieniaj listy wejściowej i nie usuwaj duplikatów.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+from collections import deque
+
+def quicksort(dane):
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

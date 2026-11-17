@@ -1,5 +1,9 @@
-# Zadanie 1. Pobieranie wieku
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 21. Zadanie 1. Pobieranie wieku
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Pobieraj wiek do momentu otrzymania liczby całkowitej z zakresu 0-120 włącznie.
+# TODO: ValueError przy int() obsłuż komunikatem Podaj liczbę całkowitą. i ponów pytanie.
+# TODO: Wartość poza zakresem obsłuż osobnym if: Zakres: 0-120. i ponów pytanie.
+# TODO: Po sukcesie wyświetl Wiek: i wartość, a następnie zakończ pętlę.
 
-# TODO: zapisz kolejne kroki rozwiązania.
+# Zapisz tutaj kod realizujący powyższe kroki.

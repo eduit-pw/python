@@ -1,5 +1,9 @@
-# Zadanie 4. Analiza trzech liczb
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 3. Zadanie 4. Dla chętnych: Analiza trzech liczb
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Pobierz trzy liczby całkowite a, b i c.
+# TODO: Wyznacz minimum i maksimum przez porównania. Zacznij od a. Nie używaj min() ani max().
+# TODO: Wypisz minimum, maksimum i sumę jako liczby całkowite. Średnią arytmetyczną wypisz z dwoma miejscami po kropce.
+# TODO: Wypisz jedną kategorię: „Wszystkie równe”, „Dwie równe” albo „Wszystkie różne”.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+# Zapisz tutaj kod realizujący powyższe kroki.

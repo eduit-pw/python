@@ -1,6 +1,6 @@
-# Zadanie 5. Szkielet, temat 24.
-# Kontrakt i wyniki kontrolne są w README lekcji.
-# pass oznacza miejsce na własną implementację.
+# Temat 24. Zadanie 5. Dla chętnych: Sprzątanie po nieudanej asercji - dodatkowe
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
 import io
 import unittest
@@ -8,13 +8,13 @@ import unittest
 class TestSprzatanie(unittest.TestCase):
 
     def setUp(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
 
     def tearDown(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
 
     def test_celowo_bledny(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
+
+if __name__ == "__main__":
+    unittest.main()

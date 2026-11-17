@@ -1,21 +1,9 @@
-# Zadanie 5. Dla chętnych: Test ujawnia celowy błąd - dodatkowe
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 23. Zadanie 5. Dla chętnych: Test ujawnia celowy błąd - dodatkowe
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Skopiuj cezar.py i test_cezar.py do osobnego folderu proba_bledu, poza katalogiem podstawowego zestawu.
+# TODO: W kopii cezar.py, tylko w gałęzi if znak == " ":, zamień wynik = wynik + " " na wynik = wynik + "_".
+# TODO: Nie zmieniaj danych i oczekiwań testów. Z katalogu kopii uruchom python -m unittest test_cezar -v.
+# TODO: W testy.md zapisz, który test ujawnił problem oraz wartości: rzeczywistą cd_ef i oczekiwaną cd ef.
 
-class BrakTowaruError(Exception):
-    pass
-
-class Magazyn:
-
-    def __init__(self, stan):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
-
-    @property
-    def stan(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
-
-    def pobierz(self, sztuki):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+# Zapisz tutaj kod realizujący powyższe kroki.

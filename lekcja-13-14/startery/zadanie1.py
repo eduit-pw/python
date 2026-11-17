@@ -1,7 +1,6 @@
-# Zadanie 1. Szkielet, temat 7.
-# Kontrakt i wyniki kontrolne są w README lekcji.
-# pass oznacza miejsce na własną implementację.
+# Temat 7. Zadanie 1. Przelicznik punktów, szkolne
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
 def przelicz_punkty(punkty, mnoznik=1, *, premia=0):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

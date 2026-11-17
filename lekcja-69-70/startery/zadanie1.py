@@ -1,19 +1,15 @@
-# Zadanie 1. Pionowy formularz
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 35. Zadanie 1. Układ kontrolek
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
 import sys
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow, QVBoxLayout, QHBoxLayout, QFormLayout, QGridLayout, QLineEdit, QPushButton, QLabel, QSlider
+from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow, QVBoxLayout, QLineEdit, QPushButton, QLabel, QSlider, QHBoxLayout
 
-def pionowy():
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def formularz():
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def rgb():
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    okno = QWidget()
+    uklad = QVBoxLayout(okno)
+    # TODO: uzupełnij układ, kontrolki i ustawienia według tego zadania.
+    okno.show()
+    sys.exit(app.exec())

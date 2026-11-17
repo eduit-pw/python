@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Stan początkowy i zapis wersji
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Licznik kliknięć
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Zbuduj etykietę wyniku, przyciski „+1” i „Reset”. Stan początkowy: 0.
 - Pierwszy przycisk zwiększa pole self.licznik, drugi zeruje je.
 - Kliknij +1 trzy razy, Reset i +1 jeden raz.
@@ -36,6 +38,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** kolejno 1, 2, 3, 0, 1.
 
 ## Zadanie 2. Liczba znaków na żywo
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Połącz QLineEdit.textChanged z metodą pokazującą długość tekstu.
 - Licz wszystkie znaki, także spacje. Pusty napis ma długość 0.
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Podgląd RGB
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Utwórz suwaki R, G, B 0-255, początkowo wszystkie ustawione na 255.
 - Po każdej zmianie odśwież duży QLabel i napis z trzema wartościami.
 - Sprawdź ustawienia (255,0,0), (0,255,0), (0,0,255). Adaptacja INF.04-01-25.06-SG, II: same suwaki i podgląd.
@@ -52,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** podgląd czerwony, zielony i niebieski.
 
 ## Zadanie 4. Dla chętnych: Zapamiętanie próbki
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Do zadania 3 dodaj „Pobierz” oraz osobny QLabel małej próbki i zapisanych wartości.
 - Na początku próbka jest biała, (255,255,255). Zapisuj ją tylko przyciskiem.

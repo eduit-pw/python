@@ -1,12 +1,22 @@
-# Zadanie 1. Paczka onedir
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 52. Zadanie 1. Paczka onedir
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Sprawdź działanie main.py, potem zbuduj --onedir z widoczną konsolą.
+# TODO: Skopiuj cały dist/main do nowego folderu testowego.
+# TODO: Uruchom plik wynikowy z tego folderu. Zanotuj brakujące zasoby lub błędy.
 
 import sys
-from pathlib import Path
-from PyQt6 import uic
-from PyQt6.QtWidgets import QApplication
+from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout
 
-def powitaj():
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+def zbuduj_okno():
+    okno = QWidget()
+    uklad = QVBoxLayout(okno)
+    # TODO: dodaj kontrolki i układy opisane w tym zadaniu.
+    return okno
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    okno = zbuduj_okno()
+    okno.show()
+    sys.exit(app.exec())
+

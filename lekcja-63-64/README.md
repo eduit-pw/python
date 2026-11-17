@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Specyfikacja formularza
 
@@ -37,6 +37,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Projekt formularza
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1/README.md).
+
 - Utwórz w Designer formularz zgodny z powyższą specyfikacją.
 - Ustaw tytuł „Powitanie”, przycisk „Powitaj” i pusty wynik.
 - Zapisz okno.ui i sprawdź podgląd przy zmianie rozmiaru.
@@ -44,6 +46,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** trzy kontrolki w pionowym układzie, poprawne objectName.
 
 ## Zadanie 2. Wczytanie i akcja
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2/README.md).
 
 - Wczytaj okno.ui przez loadUi. Połącz przycisk z funkcją powitania.
 - Dla pustego lub białego imienia pokaż „Podaj imię”.
@@ -53,6 +57,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Wariant generowany
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3/README.md).
+
 - Wygeneruj ui_okno.py, utwórz własną klasę Okno i dodaj metodę powitaj.
 - Zachowaj działanie z zadania 2. Nie modyfikuj pliku generowanego.
 - Uruchom program z main.py.
@@ -60,6 +66,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** powitanie i kontrola pustego imienia działają jak wcześniej.
 
 ## Zadanie 4. Dla chętnych: Zmiana projektu
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4/README.md).
 
 - W .ui zmień tekst przycisku na „Pokaż powitanie” i dodaj QLabel „Imię ucznia”.
 - Sprawdź program z loadUi, a potem wariant generowany.

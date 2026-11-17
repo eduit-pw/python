@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -24,6 +24,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Wizytówka ucznia
+
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
 
 1. Pobierz imię, nazwisko, klasę i nazwę kierunku jako tekst.
 2. Pobierz numer w dzienniku jako int. Przyjmujemy numery 1-999.
@@ -76,6 +78,8 @@ Kierunek: Programowanie
 Imię i nazwisko tworzą jeden wiersz. Kierunek też wypisz w jednym wierszu po etykiecie. Numer zachowuje typ int, a zera dodajemy dopiero przy wyświetlaniu.
 
 ## Zadanie 2. Podsumowanie zamówienia
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 1. Pobierz nazwę produktu, kod produktu, cenę sztuki, liczbę sztuk i wpłatę. Kod pozostaje tekstem.
 2. Przyjmujemy cenę co najmniej 0, liczbę sztuk 0-999 i wpłatę nie mniejszą od kosztu.
@@ -138,6 +142,8 @@ Kolejność odczytu: nazwa, kod, cena, liczba sztuk, wpłata. W tej symulacji wp
 
 ## Zadanie 3. Raport trzech pomiarów
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 1. Pobierz nazwę stacji, kod czujnika i trzy temperatury. Kod jest tekstem, temperatury mają typ float.
 2. Przyjmujemy temperatury od -50 do 60 stopni Celsjusza.
 3. Oblicz sumę pomiarów oraz średnią: suma / 3.
@@ -198,6 +204,8 @@ Suma: 0.00
 Średnia dotyczy trzech podanych wartości, nie automatycznie całej doby. Suma jest pośrednią wielkością obliczeniową, dlatego pokazujemy ją bez jednostki i nie przedstawiamy jako osobnej temperatury. Nie określamy sprawności czujnika na podstawie trzech pomiarów.
 
 ## Zadanie 4. Dla chętnych: Dane adresowe na podstawie arkusza INF.04
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 **Pochodzenie:** projektowe `02_zadania_desktopowe.md`, D.2, wskazuje arkusz **INF.04-01-23.06-SG**, czerwiec 2023. Oryginalna część II, strona 3 z 5, zawiera pola „Ulica z numerem”, „Kod pocztowy”, „Miasto”. Nasze ćwiczenie wykorzystuje te pola do szkolnego programu konsolowego. Nie jest pełnym zadaniem egzaminacyjnym: nie tworzy GUI, nie wybiera ceny przesyłki, nie podmienia obrazów i nie sprawdza kodu.
 

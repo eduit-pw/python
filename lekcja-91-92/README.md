@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Wymagania implementacji
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Ślad rekurencji
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Dodaj do silnia komunikat przed wywołaniem rekurencyjnym i przed return.
 - Uruchom silnia(3), silnia(0) i silnia(-1).
 - Rozróżnij kolejność wejścia do funkcji i powrotu z funkcji.
@@ -36,6 +38,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** 6, 1 oraz ValueError.
 
 ## Zadanie 2. Quicksort z powtórzeniami
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Napisz quicksort(dane), zwracającą nową listę.
 - Sprawdź,, [] oraz [8].
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Historia zmian
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Dodaj na stos napisy „start”, „zmiana A”, „zmiana B”.
 - Pobierz wszystkie elementy przez pop, wypisując kolejność.
 - Po opróżnieniu wypisz „Brak historii”, zamiast wywoływać kolejne pop.
@@ -52,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** zmiana B, zmiana A, start, Brak historii.
 
 ## Zadanie 4. Dla chętnych: Obsługa zgłoszeń
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Użyj deque. Dodaj zgłoszenia „Z1”, „Z2”, „Z3” i obsłuż dwa pierwsze.
 - Dodaj „Z4”, a potem obsłuż resztę przez popleft.

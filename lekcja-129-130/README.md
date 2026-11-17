@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Projekt i polecenia Docker
 
@@ -43,6 +43,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Obraz i odpowiedź API
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1/README.md).
+
 - Dodaj Dockerfile oraz .dockerignore do projektu. Zbuduj obraz albumy-api.
 - Uruchom kontener i sprawdź /status oraz /docs.
 - Zapisz, który port należy do hosta, a który do kontenera.
@@ -51,13 +53,17 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 2. Błąd startu
 
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2/README.md).
+
 - Zatrzymaj kontener, utwórz wariant z błędnym modułem brak:app w CMD i uruchom go.
 - Sprawdź docker ps -a i docker logs dla nowego kontenera.
-- Przywróć main:app, zbuduj poprawny obraz i uruchom usługę.
+- Przywróć zadanie2:app, zbuduj poprawny obraz i uruchom usługę.
 
 **Wynik kontrolny:** log wskazuje brak modułu; poprawiony obraz uruchamia API.
 
 ## Zadanie 3. Baza w wolumenie
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3/README.md).
 
 - Zmień ścieżkę bazy, przebuduj obraz i uruchom wariant albumy-db z wolumenem.
 - Zatrzymaj wcześniejszy kontener, aby zwolnić port 8000. Dodaj jeden album.
@@ -66,6 +72,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** zapisany album pozostaje po utworzeniu nowego kontenera.
 
 ## Zadanie 4. Dla chętnych: Instrukcja uruchomienia
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4/README.md).
 
 - Przygotuj URUCHOMIENIE.md: build, run z portem i wolumenem, adres /docs oraz logs.
 - Sprawdź polecenia od nowego kontenera. Opisz miejsce trwałej bazy.

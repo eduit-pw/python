@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Kontrakt CRUD
 
@@ -39,12 +39,16 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Dodawanie i lista
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1/README.md).
+
 - Połącz schemat z tematu 60 z kodem GET i POST z tej lekcji.
 - Od pustego stanu dodaj Poranek=120 i Wieczór=80. Pobierz listę.
 
 **Wynik kontrolny:** 201 dla obu zapisów, lista dwóch różnych ID.
 
 ## Zadanie 2. Edycja po ID
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2/README.md).
 
 - Dodaj PUT. Zmień pobrania pierwszego albumu na 121, zachowując tytuł.
 - Spróbuj zmienić nieistniejący album 999.
@@ -54,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Usunięcie i kolejny zapis
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3/README.md).
+
 - Usuń pierwszy album. Ponownie wyślij DELETE dla tego samego ID.
 - Dodaj trzeci album Noc z pobrania=0.
 - Sprawdź, czy Wieczór zachował ID, a nowy album nie przejął usuniętego ID.
@@ -61,6 +67,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** 204, potem 404; nowe id=3, Wieczór nadal id=2.
 
 ## Zadanie 4. Dla chętnych: Błędne dane nie zmieniają stanu
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4/README.md).
 
 - Wyślij PUT dla Wieczoru z pobrania=-1, potem bez pola pobrania.
 - Używaj modelu z wymaganymi polami, bez wartości domyślnej z ćwiczenia 56.3.

@@ -1,5 +1,9 @@
-# Zadanie 2. Pierwszy program
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 1. Zadanie 2. Pierwszy program
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Utwórz hello.py i dodaj komentarz z tematem lekcji.
+# TODO: Wyświetl, w trzech osobnych liniach:
+# TODO: Zapisz plik i uruchom go przez py hello.py w terminalu.
+# TODO: Zmień drugi komunikat na Uczę się programowania., zapisz i uruchom ponownie.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+# Zapisz tutaj kod realizujący powyższe kroki.

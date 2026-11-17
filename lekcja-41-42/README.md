@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Pobieranie wieku
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 **Plik:** `zadanie1.py`.
 
 1. Pobieraj wiek do momentu otrzymania liczby całkowitej z zakresu 0-120 włącznie.
@@ -35,6 +37,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 Próby: `abc`, `3.5`, pusty wpis - błędny zapis; `-1`, `121` - zły zakres; `0`, `120` - przyjmowane granice. Sekwencja `abc → -1 → 121 → 18` daje trzy komunikaty błędu i końcowe `Wiek: 18`.
 
 ## Zadanie 2. Dzielenie z zakończeniem każdej próby
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 **Plik:** `zadanie2.py`.
 
@@ -53,6 +57,8 @@ Próby: `abc`, `3.5`, pusty wpis - błędny zapis; `-1`, `121` - zły zakres; `0
 | `q` jako pierwszy tekst | Koniec bez pobrania drugiego tekstu i bez nowej próby. |
 
 ## Zadanie 3. Raport z mieszanego wiersza danych
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
 **Plik:** `zadanie3.py`.
 
@@ -80,6 +86,8 @@ Suma: 8
 
 ## Zadanie 4. Dla chętnych: NWD z bezpiecznym wejściem - adaptacja INF.04
 
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
+
 **Plik:** `zadanie4.py` • **Źródło algorytmu:** INF.04-01-23.01-SG, część I.
 
 1. Napisz funkcję `pobierz_liczbe(komunikat)`. Ma używać `while`, `int()` i `except ValueError`, ponawiać pytanie po błędnym zapisie i zwracać dopiero liczbę z zakresu **1-1000**.
@@ -98,6 +106,8 @@ Suma: 8
 | `-5` lub `1001` | Odrzucenie wartości i nowe pytanie o tę samą liczbę. |
 
 ## Zadanie 5. Dla chętnych: Cennik i dwa rodzaje błędów - dodatkowe
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 **Plik:** `zadanie5.py` • **Status:** autorskie rozszerzenie po wykonaniu zadań 1-4.
 

@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Symulacja operacji i pomiar czasu
 
@@ -31,12 +31,16 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Sekwencja i współbieżność
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Uruchom pobierz dla A=0,3 s oraz B=0,5 s w wariancie sekwencyjnym i współbieżnym opisanym powyżej.
 - Zmierz perf_counter przed i po operacji. Porównaj wyniki i czas.
 
 **Wynik kontrolny:** te same dane; około 0,8 s sekwencyjnie i 0,5 s współbieżnie.
 
 ## Zadanie 2. Kolejność wyników
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Utwórz zadania A=0,5 s, B=0,1 s i C=0,3 s. Przekaż je do gather w kolejności A, B, C.
 - Zapisz w korutynie chwilę zakończenia i porównaj ją z listą wyników.
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Przekroczenie czasu
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Zastosuj timeout=0,1 s do pobierz z czasem 0,5 s.
 - Pokaż komunikat błędu, potem wykonaj osobną szybką operację.
 - Nie umieszczaj except TimeoutError wewnątrz bloku timeout.
@@ -52,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** komunikat o czasie, a program nadal wykonuje kolejną operację.
 
 ## Zadanie 4. Dla chętnych: Blokujące i nieblokujące oczekiwanie
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - W dwóch zadaniach porównaj time.sleep(0.3) z await asyncio.sleep(0.3).
 - W obu wariantach zaplanuj zadania współbieżnie i zmierz czas.

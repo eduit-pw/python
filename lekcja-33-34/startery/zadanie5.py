@@ -1,19 +1,16 @@
-# Zadanie 5. Szkielet, temat 17.
-# Kontrakt i wyniki kontrolne są w README lekcji.
-# pass oznacza miejsce na własną implementację.
+# Temat 17. Zadanie 5. Dla chętnych: Ocena z walidacją - dodatkowe
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
 class Uczen:
 
     def __init__(self, ocena):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
 
     @property
     def ocena(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
 
     @ocena.setter
     def ocena(self, nowa_ocena):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

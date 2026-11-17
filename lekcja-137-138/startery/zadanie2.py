@@ -1,6 +1,6 @@
-# Zadanie 2. Pomoc i błędne argumenty
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 69. Zadanie 2. Parametry i konfiguracja
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
 import argparse
 import json
@@ -8,5 +8,11 @@ import sys
 from pathlib import Path
 
 def main():
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+    parser = argparse.ArgumentParser(description="Raport albumów")
+    # TODO: dodaj argumenty wskazane w zadaniu.
+    args = parser.parse_args()
+    # TODO: odczytaj i sprawdź dane, wykonaj wymagane operacje i zapisz wynik.
+    raise NotImplementedError("Uzupełnij obsługę bieżącego zadania.")
+
+if __name__ == "__main__":
+    sys.exit(main())

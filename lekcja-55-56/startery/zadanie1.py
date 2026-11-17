@@ -1,30 +1,16 @@
-# Zadanie 1. Raport z liczb
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 28. Zadanie 1. Raport z liczb
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Utwórz liczby.txt z wierszami: 4, 7, -2 oraz jednym pustym wierszem.
+# TODO: Wczytaj liczby, pomijając puste wiersze. Oblicz sumę i liczbę danych.
+# TODO: Zapisz raport.txt w UTF-8: „Suma: 9” i „Liczba danych: 3”.
 
 from pathlib import Path
 from dataclasses import dataclass
+BAZA = Path(__file__).resolve().parent
 
 def liczby(sciezka):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
 
 def zapisz_raport():
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def dopisz_log(tekst):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-@dataclass
-class Album:
-    artysta: str
-    tytul: str
-    utwory: int
-    rok: int
-    pobrania: int
-
-def odczytaj_albumy(sciezka):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

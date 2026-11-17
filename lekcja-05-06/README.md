@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -24,6 +24,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Kalkulator dwóch liczb
+
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
 
 1. Pobierz dwie liczby całkowite a i b.
 2. Wypisz sumę, różnicę a - b oraz iloczyn.
@@ -46,6 +48,8 @@ Dla b = 0 po iloczynie wypisz: Nie można dzielić przez zero.
 Każdy wynik wypisz w osobnym wierszu w postaci `Suma: 10`, analogicznie pozostałe etykiety. „Podłoga” nazywa wynik `a // b`. Dodatkowo sprawdź (0, 3), (7, -3) i (0, 0).
 
 ## Zadanie 2. Szkolny cennik biletów
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 | Kolejność | Warunek | Cena |
 | --- | --- | --- |
@@ -79,6 +83,8 @@ Dodatkowe próby: (6, T), (18, N), (26, N), (65, T), (20, t), (20, pusty wpis), 
 
 ## Zadanie 3. Cena i koszt przesyłek - adaptacja arkusza
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 **Pochodzenie:** projektowe `02_zadania_desktopowe.md`, D.2, odpowiadające arkuszowi **INF.04-01-23.06-SG**, czerwiec 2023, część II, strona 3 z 5. Ceny potwierdzono w arkuszu i w zasadach, R.3.7.
 
 | Wybór | Rodzaj przesyłki | Cena jednej sztuki |
@@ -109,6 +115,8 @@ Cena i koszt zajmują dwie osobne linie. Dla błędnych danych wypisz jeden komu
 Dodatkowe próby: (1, 100), (2, 1), (3, 1), (1, 0), (4, 2). Cena i koszt mają kropkę oraz dokładnie dwa miejsca po niej. Menu wypisujemy zawsze przed wczytaniem obu liczb.
 
 ## Zadanie 4. Dla chętnych: Analiza trzech liczb
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 1. Pobierz trzy liczby całkowite a, b i c.
 2. Wyznacz minimum i maksimum przez porównania. Zacznij od a. Nie używaj min() ani max().

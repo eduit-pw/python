@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Baza do wykorzystania
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Odziedziczone metody i dwa obiekty
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 Użyj bazy `Urzadzenie` i `class Pralka(Urzadzenie): pass`.
 
 1. Utwórz `p1 = Pralka("Pralka A")` i `p2 = Pralka("Pralka B")`.
@@ -40,6 +42,8 @@ Użyj bazy `Urzadzenie` i `class Pralka(Urzadzenie): pass`.
 **Wskazówka:** każde uruchomienie `__init__` przypisuje dane do konkretnego `self`.
 
 ## Zadanie 2. Program pralki
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 1. Dodaj do `Pralka` własne `__init__(self, nazwa)`. Użyj inicjalizacji bazy i ustaw `program = 1`.
 2. Napisz `ustaw_program(self, numer)`. Dla całkowitego numeru z zakresu 1-5 ustawia program i zwraca `True`. Poza zakresem zwraca `False` i zachowuje dotychczasowy program. Przyjmujemy liczby całkowite; nie testujemy napisów, `None` ani `bool`.
@@ -58,6 +62,8 @@ Użyj bazy `Urzadzenie` i `class Pralka(Urzadzenie): pass`.
 
 ## Zadanie 3. Rozszerzony opis pralki
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 1. W klasie `Pralka` z zadania 2 nadpisz `opis(self)`.
 2. Wywołaj opis z bazy przez `super().opis()` i dopisz `", program "` oraz numer programu.
 3. Metoda ma zwracać napis. Nie powielaj warunku włączenia z klasy bazowej.
@@ -74,6 +80,8 @@ Pralka: włączone, program 5
 **Wskazówka:** do połączenia napisu z liczbą użyj `str(self.program)` albo znanego f-stringa.
 
 ## Zadanie 4. Dla chętnych: Drugie urządzenie i raport
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 1. Zdefiniuj `Odkurzacz(Urzadzenie)`. Inicjalizuj stan bazy i własny atrybut `moc = 1`.
 2. Napisz `ustaw_moc(self, poziom)`. Dopuszcza całkowite wartości 1-3. Poprawna wartość daje `True` i aktualizuje moc; błędna daje `False` bez zmiany mocy.
@@ -93,6 +101,8 @@ Po wyłączeniu: `Odkurzacz: wyłączone, moc 3`. Dla prób mocy `0`, `4`, `1` w
 **Wskazówka:** wykorzystaj układ klasy `Pralka`, ale zmień nazwę atrybutu i zakres. Nie kopiuj całej klasy bazowej do `Odkurzacz`.
 
 ## Zadanie 5. Dla chętnych: Urządzenie, które liczy włączenia
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 Utwórz `LiczaceUrzadzenie(Urzadzenie)` z licznikiem `liczba_wlaczen = 0`. Nadpisz `wlacz()`: zwiększ licznik tylko przy przejściu ze stanu wyłączonego do włączonego i użyj `super().wlacz()` do zmiany stanu. Kolejne `wlacz()` już włączonego obiektu nie zwiększa licznika.
 

@@ -1,18 +1,11 @@
-# Zadanie 1. Raport z lokalnego API
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 66. Zadanie 1. pobierz_albumy
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
 import os
 import requests
 
 def pobierz_albumy(prog=0):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
 
-def proba(sciezka, timeout=5):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def ai_demo():
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+# TODO: wywołaj funkcję dla danych i przypadków opisanych w zadaniu.

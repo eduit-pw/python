@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Reguły tabeli
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Lista albumów
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Dodaj QListWidget z tytułami „Poranek”, „Wieczór” i „Noc”.
 - Po kliknięciu przycisku „Pokaż” wypisz bieżący tytuł w QLabel.
 - Bez zaznaczenia pokaż „Wybierz album”.
@@ -36,6 +38,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** wybrany tytuł albo czytelny komunikat.
 
 ## Zadanie 2. Tabela rekordów
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Utwórz kolumny ID, Tytuł, Rok i rekordy (7,Poranek,2024), (12,Wieczór,2023).
 - Wypełnij wszystkie komórki i ustaw zaznaczanie pojedynczego wiersza.
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. ID po sortowaniu
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - W tabeli zadania 2 włącz sortowanie po tytule.
 - Przyciskiem „Pokaż ID” odczytaj ID aktualnie wybranego rekordu.
 - Sprawdź oba rekordy przed sortowaniem i po odwróceniu kierunku.
@@ -52,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** Poranek ma zawsze ID 7, Wieczór zawsze ID 12.
 
 ## Zadanie 4. Dla chętnych: Liczby i pusta tabela
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Dodaj tabelę z kolumną Liczba i wartościami 2, 10, 1 jako DisplayRole typu int.
 - Włącz sortowanie rosnące. Następnie ustaw liczbę wierszy na 0.

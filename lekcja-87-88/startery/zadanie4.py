@@ -1,5 +1,9 @@
-# Zadanie 4. Przybliżenie pierwiastka z 2
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 44. Zadanie 4. Dla chętnych: Przybliżenie pierwiastka z 2
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Dla f(x)=x²-2 wykonaj bisekcję na, aż b-a <= 0.001.
+# TODO: Zwróć środek ostatniego przedziału. Nie używaj sqrt do obliczeń.
+# TODO: Policz iteracje i wypisz wynik z trzema miejscami po przecinku.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+def bisekcja():
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

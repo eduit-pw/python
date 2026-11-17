@@ -1,15 +1,8 @@
-# Zadanie 1. Konwersje kontrolne
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 40. Zadanie 1. Konwersje kontrolne
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Przelicz 45 na zapis binarny, ósemkowy i szesnastkowy.
+# TODO: Wypisz wyniki bez prefiksów, z wielkimi literami w hex.
+# TODO: Przelicz każdy z otrzymanych napisów z powrotem na int.
 
-def z_binarnego(tekst, pokaz=False):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def do_binarnego(n):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def horner(wspolczynniki, x):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+# Zapisz tutaj kod realizujący powyższe kroki.

@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Schemat bazy i podział kodu
 
@@ -31,6 +31,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Utwórz i odczytaj bazę
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Utwórz nową albumy.db z tabelą opisaną powyżej.
 - Dodaj parametrami dwa albumy: (Poranek,2024), (Wieczór,2023).
 - Wypisz id, tytuł i rok, uporządkowane po id. Uruchom osobno sam odczyt.
@@ -38,6 +40,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** 2 trwałe rekordy. Odczyt nie dopisuje nowych.
 
 ## Zadanie 2. Formularz dodawania
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Zbuduj QLineEdit tytułu, QSpinBox 1900-2100 i przycisk „Dodaj”.
 - Po poprawnym zapisie odśwież QTableWidget. Odrzuć pusty tytuł.
@@ -47,6 +51,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Zmiana i usunięcie po ID
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Dodaj obsługę zaznaczonego rekordu: zmień jego tytuł, potem usuń go.
 - Wykonuj SQL po id, nie po numerze wiersza ani po tytule.
 - Sprawdź próbę operacji bez zaznaczenia i po sortowaniu tabeli.
@@ -54,6 +60,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** zmienia się tylko wskazany rekord, brak wyboru daje komunikat.
 
 ## Zadanie 4. Dla chętnych: Wycofanie transakcji
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - W nowej testowej bazie wykonaj w jednym with db dwa INSERT.
 - Pierwszy: (Dobry,2024). Drugi: (Błędny,1800), naruszający CHECK.

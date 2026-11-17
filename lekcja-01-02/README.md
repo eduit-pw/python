@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Stanowisko i folder projektu
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 1. Ustaw krzesło, klawiaturę i monitor; sprawdź przejście przy stanowisku.
 2. Wskaż, komu i w jaki sposób zgłosisz uszkodzony przewód lub inne zagrożenie.
 3. Utwórz folder `temat01` w miejscu wskazanym przez nauczyciela.
@@ -33,6 +35,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 W razie usterki, braku uprawnień lub niedziałającego polecenia zgłoś problem nauczycielowi. Nie naprawiaj sprzętu i nie instaluj programu samodzielnie.
 
 ## Zadanie 2. Pierwszy program
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 1. Utwórz `hello.py` i dodaj komentarz z tematem lekcji.
 2. Wyświetl, w trzech osobnych liniach:
@@ -47,6 +51,8 @@ W razie usterki, braku uprawnień lub niedziałającego polecenia zgłoś proble
 4. Zmień drugi komunikat na `Uczę się programowania.`, zapisz i uruchom ponownie.
 
 ## Zadanie 3. Naprawa trzech fragmentów
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
 Każdy poniższy fragment jest **osobnym przypadkiem**. Sprawdzaj je kolejno w `poprawa.py`: najpierw zobacz komunikat błędu, następnie popraw kod i uruchom. Nie łącz trzech błędów w jeden program.
 
@@ -72,6 +78,8 @@ Za każdym razem poprawny wynik ma brzmieć `Program działa.`. Nazwij pomyłkę
 
 ## Zadanie 4. Dla chętnych: Środowisko i dokumentacja programu
 
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
+
 1. W folderze `temat01` utwórz `.venv` poleceniem `py -m venv .venv`.
 2. Wybierz ten interpreter w VS Code.
 3. Uruchom zmieniony `hello.py` przez `.\.venv\Scripts\python.exe hello.py`.
@@ -80,6 +88,8 @@ Za każdym razem poprawny wynik ma brzmieć `Program działa.`. Nazwij pomyłkę
 6. Utwórz `URUCHOMIENIE.md`: podaj rzeczywistą wersję Pythona, nazwę pliku oraz polecenia utworzenia środowiska i uruchomienia programu.
 
 ## Zadanie 5. Dla chętnych: Uruchomienie kopii - dodatkowe
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 1. Utwórz osobny folder `temat01_kopia` obok `temat01`.
 2. Skopiuj do niego `hello.py`, `URUCHOMIENIE.md` i folder `dokumentacja`. Nie kopiuj `.venv`.

@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Kod wejściowy i izolacja testów
 
@@ -31,12 +31,16 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Pierwsze dwa testy
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1/README.md).
+
 - Napisz setUp, tearDown i dwa testy opisane powyżej. Uruchom `py -m unittest discover -v`.
 - Uruchom cały zestaw ponownie. Nie usuwaj ręcznie bazy użytkowej.
 
 **Wynik kontrolny:** oba testy przechodzą również w drugim uruchomieniu.
 
 ## Zadanie 2. Cykl edycji i usunięcia
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2/README.md).
 
 - Dodaj test: POST, PUT pobrania=121, GET, DELETE i ponowny GET.
 - Sprawdź niezmienione ID, nowe wartości, status 204 i puste ciało DELETE.
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Uszkodzona implementacja
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3/README.md).
+
 - Zmień lokalnie POST tak, aby oddawał 200 zamiast 201. Uruchom testy.
 - Odczytaj nazwę testu, oczekiwaną i rzeczywistą wartość.
 - Przywróć poprawny kod i powtórz zestaw.
@@ -52,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** test wykrywa błąd statusu, po naprawie przechodzi.
 
 ## Zadanie 4. Dla chętnych: Start aplikacji i izolacja
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4/README.md).
 
 - Ustaw osobną ścieżkę bazy i wykonaj próbę wewnątrz with TestClient(app) as client.
 - Nie wywołuj inicjalizuj ręcznie: sprawdź start tabeli przez lifespan.

@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Umowa szyfrów i przypadki testowe
 
@@ -39,6 +39,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Funkcja Cezara
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Napisz cezar(tekst, klucz), zgodnie z umową powyżej.
 - Wczytaj tekst i klucz w programie głównym. Wynik wypisz z etykietą.
 - Sprawdź pięć przypadków z powyższej tabeli oraz pusty napis z kluczem 3. Adaptacja INF.04-02-25.06-SG, I: funkcja i program konsolowy.
@@ -47,13 +49,17 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 2. Testy jednostkowe
 
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
+
 - Napisz pięć osobnych metod unittest dla tabeli przypadków Cezara.
 - Nadaj nazwy opisujące przypadki. Użyj assertEqual.
-- Uruchom python -m unittest -v. Dodaj osobny test klucza 0. Adaptacja INF.04-02-25.06-SG, III: dodatkowy test klucza 0.
+- Uruchom python -m unittest zadanie2 -v. Dodaj osobny test klucza 0. Adaptacja INF.04-02-25.06-SG, III: dodatkowy test klucza 0.
 
 **Wynik kontrolny:** 6 testów kończy się OK.
 
 ## Zadanie 3. Szyfr z par
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
 - Napisz gaderypoluki(tekst) dla wielkich liter. Pozostałe znaki zachowaj.
 - Zbuduj słownik par w kodzie i użyj go w pętli po tekście.
@@ -62,6 +68,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** „IPT GUG!” i „”.
 
 ## Zadanie 4. Dla chętnych: Sprawdzenie odwracalności
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Dla Cezara użyj „ala ma kota” i kluczy -29, 0, 3, 52.
 - Zaszyfruj i odszyfruj każdy wynik, porównaj z oryginałem.

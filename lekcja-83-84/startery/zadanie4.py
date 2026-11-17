@@ -1,5 +1,9 @@
-# Zadanie 4. NWD zgodnie z poleceniem
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 42. Zadanie 4. Dla chętnych: NWD zgodnie z poleceniem
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Wczytaj dwie dodatnie liczby całkowite i oblicz NWD przez odejmowanie.
+# TODO: Sprawdź pary (18,12), (7,5), (6,6). Odrzuć 0 i liczby ujemne.
+# TODO: Porównaj wyniki z wersją modulo, używaną tylko jako kontrola. Adaptacja INF.04-01-23.01-SG, I: dodatnie dane i porównanie wersji.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+def nwd(a, b):
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

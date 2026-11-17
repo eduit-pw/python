@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Klasy początkowe
 
@@ -40,6 +40,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Kolejne głosy
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 1. Przed uruchomieniem pętli dla `[Pies(), Kot(), Zwierze()]` zapisz przewidywane wyniki i klasy, których metody zostaną wykonane.
 2. Dodaj klasę `Krowa(Zwierze)` z metodą `glos()` zwracającą `"muu"`.
 3. Uruchom tę samą pętlę dla `[Kot(), Krowa(), Pies()]`, a następnie dla pustej listy.
@@ -49,6 +51,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wskazówka:** skopiuj sposób nadpisania metody z klasy `Kot`, a następnie zmień wynik.
 
 ## Zadanie 2. Prostokąt bez pola
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 Użyj abstrakcyjnej `Figura` opisanej w przygotowaniu oraz poniższej niepełnej klasy:
 
@@ -69,6 +73,8 @@ class Prostokat(Figura):
 
 ## Zadanie 3. Różne figury w jednym raporcie
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 1. Utwórz `Trojkat(Figura)`. Konstruktor przyjmuje nieujemną podstawę `a` i wysokość `h`. `pole()` zwraca `a * h / 2`.
 2. Napisz funkcję `suma_pol(figury)`, która w jednej klasycznej pętli dodaje wyniki `figura.pole()` i zwraca sumę. Funkcja nie rozgałęzia działania według typu figury.
 3. Wyświetl pola i sumę dla `[Prostokat(3, 4), Trojkat(4, 3), Prostokat(0, 5)]`.
@@ -86,6 +92,8 @@ class Prostokat(Figura):
 **Wskazówka:** zacznij od `suma = 0`, a w pętli użyj `suma += figura.pole()`.
 
 ## Zadanie 4. Dla chętnych: Dwa rodzaje pytań do quizu
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 Klasa bazowa jest gotowym szkieletem. `sprawdz(odpowiedz)` ma zwracać `bool`. Przyjmujemy wyłącznie napisy jako odpowiedzi, a klucz poprawnej odpowiedzi jest poprawny dla danego rodzaju pytania.
 
@@ -124,6 +132,8 @@ proby = [
 **Wyniki prób:** `True`, `True`, `False`, `False`; liczba poprawnych `2`; dla pustej listy `0`. Dodatkowo sprawdź `wyboru.sprawdz("BB")` → `False` i `tekstowe.sprawdz("Py thon")` → `False`.
 
 ## Zadanie 5. Dla chętnych: Walidacja wymiarów
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 Rozbuduj `Prostokat` i `Trojkat`, aby w konstruktorze zgłaszały `ValueError`, jeśli którykolwiek wymiar jest ujemny. Zero jest poprawne. Zachowaj dotychczasowe metody i funkcję `suma_pol`.
 

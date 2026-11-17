@@ -1,21 +1,22 @@
-# Zadanie 2. Interfejs .ui
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 52. Zadanie 2. Interfejs .ui
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Spakuj formularz z tematu 32, używający loadUi.
+# TODO: Dołącz okno.ui przez --add-data i odczytuj ścieżkę względem __file__.
+# TODO: Sprawdź uruchomienie paczki z folderu o innej ścieżce.
 
 import sys
-import sqlite3
-from pathlib import Path
-from PyQt6.QtCore import QStandardPaths
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLineEdit, QLabel, QPushButton
+from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout
 
-def wykonaj(sql, parametry=()):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+def zbuduj_okno():
+    okno = QWidget()
+    uklad = QVBoxLayout(okno)
+    # TODO: dodaj kontrolki i układy opisane w tym zadaniu.
+    return okno
 
-def odswiez():
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    okno = zbuduj_okno()
+    okno.show()
+    sys.exit(app.exec())
 
-def dodaj():
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass

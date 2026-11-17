@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Ustalenia formularza
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Formularz ucznia
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Zbuduj QLineEdit „Imię”, QSpinBox 1-5 „Klasa” i przycisk „Pokaż”.
 - Po kliknięciu wypisz w QLabel: „Anna, klasa 4” dla danych Anna i 4.
 - Puste imię po strip ma dawać „Podaj imię”.
@@ -36,6 +38,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** poprawne podsumowanie albo komunikat pustego pola.
 
 ## Zadanie 2. Opcje niezależne
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Dodaj QCheckBox „Python” i „SQL” oraz przycisk podsumowania.
 - Wypisz wybrane nazwy w tej kolejności, rozdzielone przecinkiem.
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Rodzaj przesyłki i cena
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Utwórz trzy pola radio i QButtonGroup. Pocztówka wybrana na początku.
 - Dodaj przycisk „Sprawdź cenę” i QLabel z początkowym tekstem „Cena:”.
 - Wyświetl cenę z powyższego cennika. Obraz zastąp etykietą rodzaju przesyłki. Adaptacja INF.04-01-23.06-SG, II: etykieta zamiast obrazu.
@@ -52,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** List: 1,5 zł. Paczka: 10 zł.
 
 ## Zadanie 4. Dla chętnych: Kod i zatwierdzenie
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Do zadania 3 dodaj QLineEdit kodu oraz przycisk „Zatwierdź”.
 - Za krótki lub długi kod: „Wymagane 5 znaków”. Obcy znak: „Wymagane cyfry”.

@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Ustalenia dziennika
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Plik i dwa uruchomienia
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Skonfiguruj zapis UTF-8 do aplikacja.log na poziomie INFO.
 - Zapisz START oraz KONIEC i uruchom program dwa razy.
 - Sprawdź, że komunikaty z pierwszego uruchomienia pozostały.
@@ -37,12 +39,16 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 2. Próg poziomu
 
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
+
 - Wyemituj po jednym komunikacie DEBUG, INFO, WARNING i ERROR.
 - Uruchom osobno z progiem INFO i z progiem ERROR, w nowych plikach logów.
 
 **Wynik kontrolny:** 3 wpisy przy INFO i 1 przy ERROR.
 
 ## Zadanie 3. Import z błędem
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
 - Przetwarzaj wiersze 4, abc i 7. Poprawne liczby sumuj, błędne pomijaj.
 - Zapisz WARNING z numerem wiersza albo ERROR z traceback, według przyjętej umowy.
@@ -51,6 +57,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** 2 poprawne liczby, suma 11, jeden opis błędnego wiersza.
 
 ## Zadanie 4. Dla chętnych: Powielone wpisy
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - W małym przykładzie dodaj dwa osobne handlery zapisujące do tego samego pliku.
 - Wyślij jeden komunikat i sprawdź duplikat. Popraw konfigurację do jednego handlera.

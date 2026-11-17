@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Serwer do ćwiczeń
 
@@ -31,12 +31,16 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Raport z lokalnego API
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Uruchom dołączony serwer.py według instrukcji powyżej. Pobierz /albumy przez requests.
 - Sprawdź status i pola, wypisz tytuły oraz sumę pobrań.
 
 **Wynik kontrolny:** Poranek, Wieczór, suma 200.
 
 ## Zadanie 2. Filtr query
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Pobierz listę z params={"min":100}, a potem z min=200.
 - Nie dopisuj wartości query ręcznie do adresu. Obsłuż pustą listę.
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Próby błędne
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Wyślij GET /brak, GET /nie-json i GET /wolno z timeout=0.1.
 - Zatrzymaj serwer i ponownie wyślij GET /albumy.
 - Dla każdej próby wyświetl komunikat odpowiadający przyczynie.
@@ -52,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** błąd HTTP, JSON, timeout oraz połączenia.
 
 ## Zadanie 4. Dla chętnych: Integracja demonstracyjna AI
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Wyślij tekst do /ai-demo z tokenem demo_token z API_TOKEN.
 - Sprawdź status i pole odpowiedz. Powtórz bez tokenu i z tokenem błędnym.

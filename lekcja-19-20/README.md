@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -24,6 +24,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Konfiguracja serwera
+
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
 
 To zadanie szkolne, nie wskazane zadanie z arkusza CKE. Porty i nazwa serwera są przykładowymi wartościami danych; program nie nawiązuje połączenia sieciowego.
 
@@ -47,6 +49,8 @@ Uruchom funkcję dwukrotnie: za każdym razem ma tworzyć nowy słownik i zwraca
 
 ## Zadanie 2. Licznik słów
 
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
+
 Napisz zlicz_slowa(tekst), która zwraca dict z liczbami wystąpień słów. Przejdź pętlą po tekst.lower().split(). Z obu końców każdego fragmentu usuń znaki przez strip(".,!?;:"). Pomiń pusty rezultat. Użyj if do utworzenia licznika i zwiększaj go przy każdym wystąpieniu. Funkcja nie pobiera danych i niczego nie wypisuje. W programie głównym wypisz klucze alfabetycznie z licznikami.
 
 | Tekst | Oczekiwany słownik |
@@ -60,6 +64,8 @@ Napisz zlicz_slowa(tekst), która zwraca dict z liczbami wystąpień słów. Prz
 To celowo uproszczona definicja słowa: split dzieli po białych znakach, strip usuwa wskazane znaki tylko z końców, nie z wnętrza. Nie wymagamy regex ani pełnego przetwarzania języka naturalnego. Funkcja lower zwraca nowy tekst i nie zmienia oryginalnego argumentu.
 
 ## Zadanie 3. Magazyn
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
 Ceny są umownymi liczbami całkowitymi. To zadanie szkolne, nie kopia konkretnego arkusza. Nie liczymy VAT ani procentów; skupiamy się na rekordach i agregacji.
 
@@ -93,6 +99,8 @@ Nie filtrujemy według nazwy jako klucza: dwa produkty mogą mieć taką samą n
 
 ## Zadanie 4. Dla chętnych: Punkty za kości - fragment INF.04-01-24.06-SG
 
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
+
 **Zakres adaptacji:** wyniki są podane w liście, liczniki tworzymy w dict. Nie losujemy ani nie powtarzamy gry; te etapy wymagają zagadnień ćwiczonych później. Dodajemy pomocniczą kontrolę listy. To ćwiczenie algorytmu, nie pełny próbny egzamin. Punktacja jest szkolna.
 
 1. Napisz zlicz_oczka(oczka): nowy dict {wartosc: liczba_wystapien}. Zainicjalizuj licznik dla nowego klucza i zwiększaj go w pętli.
@@ -116,6 +124,8 @@ Odrzuć w programie głównym dwie kości, jedenaście kości, [0, 2, 2] i [7, 2
 Punkty liczymy za **wszystkie** powtórzenia, nie tylko parę: [2, 2, 2] daje 6, nie 4. Pojedyncza szóstka nie punktuje. Słownik liczników jest naszym sposobem implementacji; oryginał nie narzuca jego użycia.
 
 ## Zadanie 5. Dla chętnych: Grupowanie uczniów - autorskie, dodatkowe
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 Dane: [("Ala", "2A"), ("Jan", "2B"), ("Ola", "2A")]. Napisz grupuj_uczniow(uczniowie), która zwraca nowy słownik. Kluczem jest klasa, wartością lista imion w kolejności wejścia. Dla nowej klasy utwórz osobną listę, potem dopisz imię. Zachowuj powtórzone rekordy. Funkcja nie zmienia wejścia ani niczego nie wypisuje. Program główny pokazuje grupy według klasy.
 

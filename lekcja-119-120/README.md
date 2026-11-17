@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Umowa modeli
 
@@ -29,12 +29,16 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Model i poprawny POST
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1/README.md).
+
 - Dodaj AlbumWejscie, walidator tytułu i POST /sprawdz.
 - Wyślij {"tytul":" Poranek ","pobrania":0} przez /docs.
 
 **Wynik kontrolny:** 200, tytuł Poranek bez skrajnych spacji i liczba 0.
 
 ## Zadanie 2. Granice danych
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2/README.md).
 
 - Sprawdź tytuł długości 80 i 81 znaków, pusty tekst oraz same spacje.
 - Dla pobrania sprawdź 0, -1, "3" i true.
@@ -44,6 +48,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Brakujące i dodatkowe pola
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3/README.md).
+
 - Wyślij JSON bez pobrania, potem z pobrania=2 i dodatkowym id=99.
 - Zmień deklarację pobrania na Field(default=0, ge=0, strict=True).
 - Ponownie wyślij tylko tytul i porównaj wyniki.
@@ -51,6 +57,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** początkowo 422, po zmianie brak pobrania przyjmuje 0; id nadal odrzucone.
 
 ## Zadanie 4. Dla chętnych: Wynik opisany schematem
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4/README.md).
 
 - Dodaj AlbumOdczyt i POST /podglad zgodnie z umową powyżej.
 - Wyślij poprawny album. Sprawdź schemat odpowiedzi w /docs.

@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Organizacja okna
 
@@ -30,6 +30,8 @@ Zadanie 4 i diagnoza są dla chętnych lub do samodzielnej kontynuacji. W podsta
 
 ## Zadanie 1. Pionowy formularz
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Utwórz QWidget, QLineEdit, QPushButton „Pokaż” i QLabel.
 - Umieść je w QVBoxLayout, odstęp 12 i marginesy po 20.
 - Ustaw rozmiar 500 na 300. Sprawdź także 800 na 450.
@@ -37,6 +39,8 @@ Zadanie 4 i diagnoza są dla chętnych lub do samodzielnej kontynuacji. W podsta
 **Wynik kontrolny:** kolejność kontrolek zachowana, pola wykorzystują dostępne miejsce.
 
 ## Zadanie 2. Formularz i przyciski
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Dodaj QFormLayout z polami Imię i Klasa oraz dolny QHBoxLayout.
 - W dolnym układzie umieść stretch, „Zapisz” i „Anuluj”.
@@ -46,6 +50,8 @@ Zadanie 4 i diagnoza są dla chętnych lub do samodzielnej kontynuacji. W podsta
 
 ## Zadanie 3. Siatka RGB
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Ułóż trzy podpisane suwaki RGB w jednym wierszu QGridLayout.
 - Pod nimi umieść podgląd obejmujący wszystkie trzy kolumny.
 - Nadaj podglądowi minimalną wysokość 120. Sprawdź zmianę rozmiaru.
@@ -53,6 +59,8 @@ Zadanie 4 i diagnoza są dla chętnych lub do samodzielnej kontynuacji. W podsta
 **Wynik kontrolny:** trzy kolumny suwaków, szeroki podgląd pod nimi.
 
 ## Zadanie 4. Dla chętnych: QMainWindow bez nakładania
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Przenieś układ zadania 2 do QMainWindow przez centralny QWidget.
 - Ustal minimalny rozmiar 400 na 250. Sprawdź większy rozmiar.

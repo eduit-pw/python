@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -24,6 +24,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Lista adresów serwerów
+
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
 
 Wszystkie adresy są tekstami do ćwiczenia list. 192.168.1.53 oznacza umowny lokalny serwer DNS, nie automatycznie bramę lub rzeczywiście dostępny serwer. Nie zmieniamy konfiguracji komputera.
 
@@ -47,6 +49,8 @@ Osobno sprawdź remove/index przy braku adresu oraz pop dla pustej listy. Nie wy
 
 ## Zadanie 2. Dodatnie pomiary
 
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
+
 Dane: pomiary = [18, 0, -2, 25, 0, 31, 18]. Przyjmujemy listę liczb całkowitych.
 
 1. Napisz wybierz_dodatnie(pomiary). Pętlą zbuduj nową listę wartości > 0, zachowując kolejność i powtórzenia. Nie zmieniaj wejścia.
@@ -64,6 +68,8 @@ Dane: pomiary = [18, 0, -2, 25, 0, 31, 18]. Przyjmujemy listę liczb całkowityc
 | Pomiary [2, 2] | Filtr [2, 2], średnia 2.0 |
 
 ## Zadanie 3. Dostawa i wycofywanie towarów
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
 Upraszczamy rekord do [kod, nazwa, ilosc] i pomijamy ceny. Kod i nazwa są tekstami, ilość liczbą całkowitą. Kody w bazie są unikalne i porównujemy je dokładnie. Ilości <= 0 oznaczają pozycje do wycofania.
 
@@ -99,6 +105,8 @@ Testuj wyszukiwanie towaru na pierwszej i ostatniej pozycji oraz nieobecnego kod
 
 ## Zadanie 4. Dla chętnych: Przeszukiwanie z wartownikiem - adaptacja INF.04-01-22.06-SG
 
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
+
 Projektowe 01_zadania_konsolowe.md, § 1.2, wskazuje ten algorytm. Treść i komentarz sprawdzono w oryginalnym arkuszu oraz zasadach oceniania. Oryginał wymaga co najmniej 50 pseudolosowych liczb z zakresu 1-100. Na tej lekcji zastępujemy losowanie pięciokrotnym dołączeniem bloku:
 
 ```python
@@ -128,6 +136,8 @@ W Pythonie indeksy zaczynają się od 0: dla n elementów rzeczywiste indeksy to
 Po temacie 12 wymień tylko funkcję przygotowania danych na rzeczywiste pseudolosowanie. Pseudolosowość i część mobilna nie są realizowane w tej wersji. Nie przypisujemy ćwiczeniu spełnienia pełnych kryteriów egzaminu. Kopia i próba pustej listy są dodatkami szkolnymi.
 
 ## Zadanie 5. Dla chętnych: Mała kolejka zgłoszeń - adaptacja szkolna, dodatkowe
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 Zastępujemy słowniki tekstami i odkładamy sortowanie priorytetowe oraz identyfikatory. Dane: kolejka = ["Drukarka", "Sieć", "Mysz"], archiwum = [].
 

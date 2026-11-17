@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Wersja z bazą danych
 
@@ -31,6 +31,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Trwały zapis
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1/README.md).
+
 - Zaimplementuj wersję SQLite według kontraktu powyżej i uruchom usługę.
 - Dodaj Poranek=120 i Wieczór=80. Zatrzymaj i ponownie uruchom serwer.
 - Odczytaj listę. Nie dodawaj danych startowych przy każdym uruchomieniu.
@@ -38,6 +40,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** te same dwa rekordy po restarcie.
 
 ## Zadanie 2. Parametry i apostrof
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2/README.md).
 
 - Dodaj album o tytule "Anna's album" i pobrania=0.
 - Odczytaj go po ID i sprawdź dokładny tytuł.
@@ -47,12 +51,16 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Brak rekordu
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3/README.md).
+
 - Wywołaj GET, PUT i DELETE dla ID, którego nie ma w bazie.
 - Nie wybieraj ID istniejącego albumu. Sprawdź listę przed i po próbach.
 
 **Wynik kontrolny:** trzy statusy 404, istniejące dane bez zmian.
 
 ## Zadanie 4. Dla chętnych: Transakcja testowa
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4/README.md).
 
 - W osobnej testowej bazie wykonaj w jednym with db dwa INSERT.
 - Pierwszy album ma pobrania=1, drugi pobrania=-1 i narusza CHECK.

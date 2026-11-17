@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Wymagane funkcje
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Konwersje kontrolne
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Przelicz 45 na zapis binarny, ósemkowy i szesnastkowy.
 - Wypisz wyniki bez prefiksów, z wielkimi literami w hex.
 - Przelicz każdy z otrzymanych napisów z powrotem na int.
@@ -36,6 +38,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** 101101, 55, 2D. Każdy powrót daje 45.
 
 ## Zadanie 2. Horner i walidacja
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Rozbuduj z_binarnego: odrzucaj pusty napis i znaki inne niż 0 lub 1.
 - Wypisz wartości po przetworzeniu kolejnych cyfr napisu 1101.
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Własny zapis binarny
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Napisz funkcję do_binarnego(n) dla int >= 0, używając dzielenia i reszt.
 - Zwróć napis. Nie używaj bin ani format do obliczeń.
 - Sprawdź n = 0, 1, 13 oraz odrzuć wartości ujemne.
@@ -52,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** „0”, „1”, „1101”.
 
 ## Zadanie 4. Dla chętnych: Wielomian z brakującą potęgą
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Zapisz listę współczynników dla 3x³ - 2x + 4.
 - Oblicz wartość dla x = 2 za pomocą schematu Hornera.

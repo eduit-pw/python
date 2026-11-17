@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -24,6 +24,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Przeglądanie ocen
+
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
 
 **Cel:** `iter`, `next`, wyczerpanie i ponowne przeglądanie listy.
 
@@ -50,6 +52,8 @@ KONIEC
 
 ## Zadanie 2. Generator odliczania
 
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
+
 **Cel:** `yield` i granica zakończenia.
 
 1. Napisz generator `odliczaj(n)`, który oddaje kolejne liczby od `n` do 1 włącznie.
@@ -67,6 +71,8 @@ KONIEC
 **Wskazówka 1:** warunek `while n > 0`. **Wskazówka 2:** zmiana `n` następuje po `yield`.
 
 ## Zadanie 3. Liczby parzyste w przedziale
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
 **Cel:** generator z klasyczną pętlą i warunkiem.
 
@@ -87,6 +93,8 @@ Napisz `parzyste_od_do(start, stop)`. Argumenty są całkowite. Generator oddaje
 **Wskazówka:** liczba jest parzysta, gdy `liczba % 2 == 0`.
 
 ## Zadanie 4. Dla chętnych: Analiza temperatur
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 **Cel:** połączenie generatora z licznikiem, sumatorem i minimum/maksimum.
 
@@ -123,6 +131,8 @@ Maksimum: 22
 **Wskazówka 3:** sprawdź brak danych przed dzieleniem przez licznik.
 
 ## Zadanie 5. Dla chętnych: Iterator parzystych
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 Napisz klasę `ParzysteDo`, której obiekt jest iteratorem liczb `0, 2, 4, ...` aż do podanego całkowitego limitu włącznie.
 

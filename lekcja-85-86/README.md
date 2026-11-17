@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Reguły funkcji
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Palindromy
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Zaimplementuj palindrom bez odwracania napisu przez slicing.
 - Sprawdź: kajak, abba, kot, a oraz pusty napis.
 - Zachowaj umowę: porównanie dokładne, pusty napis daje True.
@@ -36,6 +38,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** True, True, False, True, True.
 
 ## Zadanie 2. Pary anagramów
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Sprawdź pary: (kot,kto), (aab,abb), (abcd,dcba), (abc,ab).
 - Użyj funkcji zliczającej znaki. Wypisz tylko pary anagramów.
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Lider listy
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Napisz dwuprzebiegową funkcję lider(dane), zwracającą int albo None.
 - Dane mają być listą liczb całkowitych. Sprawdź,, [].
 - Nie używaj None jako elementu wejściowego.
@@ -52,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** 2, None, None.
 
 ## Zadanie 4. Dla chętnych: Zdanie i normalizacja
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Przed testem palindromu zamień litery na małe i usuń zwykłe spacje.
 - Sprawdź „Kobyła ma mały bok” oraz „Ala ma kota”.

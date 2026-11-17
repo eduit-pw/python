@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Kontynuacja projektu i dane widoku
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Dynamiczna lista
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1/README.md).
+
 - Utwórz widok kursy, trasę /kursy/ i szablon listy trzech nazw podanych powyżej.
 - Wyświetl liczbę elementów oraz listę numerowaną. Dopisz czwarty kurs w widoku.
 - Liczba oraz liczba pozycji mają zmienić się bez ręcznej zmiany HTML. Adaptacja motywu INF.04-02-22.06-SG, II: wyświetlanie w Django.
@@ -37,12 +39,16 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 2. Pusta lista
 
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2/README.md).
+
 - Zastąp listę kursów przez []. Użyj {% empty %} do pokazania „Brak kursów”.
 - Nagłówek nadal pokazuje liczbę. Nie dodawaj danych zastępczych w widoku.
 
 **Wynik kontrolny:** liczba 0 i czytelny komunikat.
 
 ## Zadanie 3. Dwie strony, jeden układ
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3/README.md).
 
 - Utwórz base.html z dokumentem HTML i linkiem do kursów przez {% url %}.
 - Niech kursy.html i kontakt.html dziedziczą ten układ.
@@ -51,6 +57,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** zmiana widoczna w obu szablonach.
 
 ## Zadanie 4. Dla chętnych: Tekst zawierający znaczniki
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4/README.md).
 
 - Przekaż tytul="<b>Oferta</b>" i wyświetl go przez {{ tytul }}.
 - Sprawdź treść strony i jej źródło. Nie używaj safe ani autoescape off.

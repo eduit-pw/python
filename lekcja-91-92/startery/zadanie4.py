@@ -1,5 +1,8 @@
-# Zadanie 4. Obsługa zgłoszeń
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 46. Zadanie 4. Dla chętnych: Obsługa zgłoszeń
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Użyj deque. Dodaj zgłoszenia „Z1”, „Z2”, „Z3” i obsłuż dwa pierwsze.
+# TODO: Dodaj „Z4”, a potem obsłuż resztę przez popleft.
+# TODO: Na każdym etapie wypisz obsługiwany identyfikator.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+from collections import deque

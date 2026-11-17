@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Cztery testy funkcji logicznej
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1/README.md).
+
 1. W `parzystosc.py` przygotuj `czy_parzysta(n)`, która dla argumentu `int` zwraca `True`, gdy liczba jest parzysta, a w przeciwnym razie `False`.
 2. Utwórz `test_parzystosc.py` i klasę `TestParzystosc(unittest.TestCase)`.
 3. Napisz osobne metody: zero, dodatnia parzysta, dodatnia nieparzysta, ujemna nieparzysta. Użyj `assertTrue` lub `assertFalse`.
@@ -41,6 +43,8 @@ W tym zadaniu zakładamy argument `int`; nie dodajemy walidacji ani przypadków 
 
 ## Zadanie 2. Sześć testów walidatora oceny
 
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2/README.md).
+
 1. W `oceny.py` zapisz same definicje `OcenaError` i `sprawdz_ocene` z tematu 22. Reguła: dokładnie `int`, zakres 1-6 włącznie.
 2. W `test_oceny.py` importuj definicje i utwórz klasę testową.
 3. Dla 1 i 6 sprawdź zwróconą wartość przez `assertEqual`.
@@ -56,6 +60,8 @@ W tym zadaniu zakładamy argument `int`; nie dodajemy walidacji ani przypadków 
 
 ## Zadanie 3. Cztery testy magazynu
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3/README.md).
+
 1. W `magazyn.py` zapisz definicje `Magazyn` i `BrakTowaruError` z tematu 22, bez sekwencji wykonywanej przy imporcie.
 2. W `test_magazyn.py` napisz cztery metody. W każdej stwórz nowy `Magazyn(5)`.
 3. Sprawdź stan początkowy 5, a po poprawnym pobraniu 2 - stan 3.
@@ -69,6 +75,8 @@ W tym zadaniu zakładamy argument `int`; nie dodajemy walidacji ani przypadków 
 | Pobranie 0 | `ValueError`, następnie `stan == 5`. |
 
 ## Zadanie 4. Dla chętnych: Pięć testów szyfru Cezara z arkusza
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4/README.md).
 
 **Źródło:** INF.04-02-25.06-SG, część III, tabela 4. Wykorzystujemy podane przypadki i własne nazwy plików.
 
@@ -88,6 +96,8 @@ W tym zadaniu zakładamy argument `int`; nie dodajemy walidacji ani przypadków 
 Funkcja do testowania znajduje się w dołączonym pliku `cezar.py`. Napisz samodzielnie testy.
 
 ## Zadanie 5. Dla chętnych: Test ujawnia celowy błąd - dodatkowe
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 1. Skopiuj `cezar.py` i `test_cezar.py` do osobnego folderu `proba_bledu`, poza katalogiem podstawowego zestawu.
 2. W kopii `cezar.py`, tylko w gałęzi `if znak == " ":`, zamień `wynik = wynik + " "` na `wynik = wynik + "_"`.

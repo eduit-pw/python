@@ -1,5 +1,14 @@
-# Zadanie 4. Niepoprawna liczba i zmiana klasy
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 67. Zadanie 4. Dla chętnych: Niepoprawna liczba i zmiana klasy
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Zmień 80 na tekst osiemdziesiąt i odnotuj błąd konwersji rekordu.
+# TODO: W osobnej próbie zmień klasę jednej karty na rekord. Sprawdź liczbę dopasowań.
+# TODO: Zapisz, jak wykryjesz zmianę źródłowego HTML w regularnym imporcie.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+import csv
+from pathlib import Path
+from bs4 import BeautifulSoup
+BAZA = Path(__file__).resolve().parent
+
+def odczytaj(tekst):
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

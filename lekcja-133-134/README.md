@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Plik źródłowy i reguły parsera
 
@@ -29,12 +29,16 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Dwa rekordy
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Otwórz dołączony albumy.html i wybierz article.album.
 - Odczytaj ID, tytuł i pobrania. Oblicz sumę.
 
 **Wynik kontrolny:** 2 rekordy i suma 200.
 
 ## Zadanie 2. Eksport CSV
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Zapisz odczytane dane do albumy.csv przez csv.DictWriter, separator ;.
 - Kolumny: id, tytul, pobrania. Użyj UTF-8 i newline="".
@@ -44,6 +48,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Brak pola
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - W kopii HTML usuń p.pobrania z drugiego albumu.
 - Ustal w tym ćwiczeniu: brak pola pobrania oznacza 0. Sprawdź None przed get_text.
 - Pozostaw zasadę, że brak h2 oznacza błąd i pominięcie karty.
@@ -51,6 +57,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** 2 rekordy, suma 120. Brak tytułu pomija odpowiednią kartę.
 
 ## Zadanie 4. Dla chętnych: Niepoprawna liczba i zmiana klasy
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Zmień 80 na tekst osiemdziesiąt i odnotuj błąd konwersji rekordu.
 - W osobnej próbie zmień klasę jednej karty na rekord. Sprawdź liczbę dopasowań.

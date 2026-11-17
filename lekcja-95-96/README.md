@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Pliki projektu
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Menu i skrót
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Utwórz QMainWindow z QTextEdit w obszarze centralnym.
 - Dodaj akcję „Wyczyść”, menu „Edycja” i skrót Ctrl+L.
 - Obsługa ma wyczyścić tekst. Sprawdź zarówno menu, jak i skrót.
@@ -36,6 +38,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** obie drogi wywołują tę samą akcję.
 
 ## Zadanie 2. Pasek narzędzi
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Dodaj do zadania 1 QToolBar i tę samą akcję „Wyczyść”.
 - Dodaj „O programie”, pokazującą information z tekstem „Edytor 1.0”.
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Zapis i anulowanie
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Dodaj akcję „Zapisz” z Ctrl+S oraz dialog zapisu.
 - Zapisz tekst „Zażółć gęślą jaźń” jako wynik.txt w UTF-8.
 - Powtórz akcję i anuluj dialog. Obsłuż błąd zapisu przez warning.
@@ -52,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** tekst w pliku jest zgodny, anulowanie nie zmienia pliku.
 
 ## Zadanie 4. Dla chętnych: Otwieranie pliku
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Dodaj akcję „Otwórz”, getOpenFileName i odczyt UTF-8.
 - Po sukcesie wstaw odczytany tekst przez setPlainText.

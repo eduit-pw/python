@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -24,6 +24,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Podczas pracy:** korzystaj z [tabel składni i krótkich wzorców](KONSTRUKCJE.md). W [starterach](startery/README.md) znajdziesz punkty wyjścia. Pełne polecenia i nazwy docelowych plików są poniżej.
 
 ## Zadanie 1. Dwa punkty pomiarowe
+
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
 
 Upraszczamy dane do liczb całkowitych; nie obliczamy odległości geograficznej ani nie wymagamy try/except. Pola punktu: (szerokosc, dlugosc, wysokosc, kod). Wysokość w metrach.
 
@@ -43,6 +45,8 @@ Dane: baza = (50, 19, 220, "STACJA-A"), cel = (51, 20, 285, "MASZT-B").
 Przyjmujemy poprawne czteroelementowe krotki, trzy pola liczbowe i tekstowy kod. Nie wymagamy walidacji liczby pól. Zamiana zmiennych w celu demonstracji nie zmienia znaczenia danych w źródłowym rekordzie.
 
 ## Zadanie 2. Uprawnienia
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 Punkt wyjścia: projektowe ćwiczenie uprawnień, uproszczone do kilku nazw. To model danych do ćwiczenia zbiorów, bez integracji z rzeczywistym systemem logowania.
 
@@ -69,6 +73,8 @@ Część wspólna trzech ról: {'login', 'read'}. Tylko admin względem editor: 
 
 ## Zadanie 3. Dwie sesje logowań
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 Zastępujemy adresy IP prostymi loginami i pomijamy walidację IPv4, aby ćwiczyć kolekcje. To zadanie szkolne, nie kopia wskazanego arkusza CKE.
 
 Dane: rano = [" ala ", "jan", "Ala", "ola", " "], popoludnie = ["Jan", "ewa", "ewa"].
@@ -89,6 +95,8 @@ Dane: rano = [" ala ", "jan", "Ala", "ola", " "], popoludnie = ["Jan", "ewa", "e
 Testuj także dwie puste listy, listy samych odstępów i przypadek rano = ['ala'], popoludnie = []. Dla dwóch pustych wejść mamy dwie puste listy oraz trzy puste zbiory. Gdy rano jest ala, a po południu nic: wszyscy {'ala'}, wspolni set(), nowi set(). Nie wymagamy, by kolejność zbioru zgadzała się z wejściem. Normalizacja do małych liter jest regułą tego ćwiczenia, nie uniwersalną regułą każdego systemu kont.
 
 ## Zadanie 4. Dla chętnych: Sześć różnych liczb - przygotowanie do INF.04-01-25.06-SG
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 Projektowe § 1.6 opisuje loterię z sześcioma różnymi liczbami z zakresu 1-49. Z arkuszem i kluczem zweryfikowano warunki, a nie tylko skrót projektowy. **Z oryginału bierzemy rozmiar i zakres zestawu oraz brak powtórzeń.** Nasz wybór z gotowej listy nie jest losowaniem, dlatego nie przypisujemy mu spełnienia kryterium dotyczącego generatora lub losowania bez powtórzeń.
 
@@ -121,6 +129,8 @@ Dodatkowo sprawdź trafienia bez wspólnych liczb i dla identycznych zestawów: 
 Pełna konsola z arkusza pobiera liczbę losowań, generuje wiele zestawów funkcją pseudolosową, przechowuje je, wyświetla i zlicza wystąpienia liczb 1-49. Nasz etap przygotowawczy nie zastępuje tych wymagań. Sortowanie raportu jest wyborem szkolnym: oryginał nie narzuca sortowania każdego zestawu jako osobnego wymogu. Zbiory nie zachowają liczby powtórzeń między losowaniami; nie wolno zastąpić całego rejestru losowań jednym set.
 
 ## Zadanie 5. Dla chętnych: Unikalne punkty - autorskie, dodatkowe
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 Dane: punkty = [(1, 2), (2, 3), (1, 2)]. Napisz unikalne_punkty(punkty). Każdy punkt jest krotką dwóch liczb całkowitych. Pętlą dodawaj je do zbioru, a potem zwróć krotkę (posortowana_lista, liczba_punktow). Funkcja nie zmienia wejścia i niczego nie wypisuje; wynik wyświetla program główny.
 

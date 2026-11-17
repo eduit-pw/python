@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Projekt wejściowy i polecenia
 
@@ -37,13 +37,17 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Paczka onedir
 
-- Sprawdź działanie main.py, potem zbuduj --onedir z widoczną konsolą.
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
+- Sprawdź działanie zadanie1.py, potem zbuduj --onedir z widoczną konsolą.
 - Skopiuj cały dist/main do nowego folderu testowego.
 - Uruchom plik wynikowy z tego folderu. Zanotuj brakujące zasoby lub błędy.
 
 **Wynik kontrolny:** aplikacja działa bez otwartego projektu źródłowego.
 
 ## Zadanie 2. Interfejs .ui
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Spakuj formularz z tematu 32, używający loadUi.
 - Dołącz okno.ui przez --add-data i odczytuj ścieżkę względem __file__.
@@ -53,6 +57,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Trwała baza
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - W projekcie albumów umieść bazę w AppDataLocation, także przed pakowaniem.
 - Dodaj rekord, zamknij program i uruchom go ponownie.
 - Zbuduj onefile i powtórz test. Wypisz w URUCHOMIENIE.md faktyczne miejsce bazy.
@@ -60,6 +66,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** rekord pozostaje po obu restartach.
 
 ## Zadanie 4. Dla chętnych: Przekazanie odbiorcy
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Przygotuj paczkę onedir lub onefile dla tego samego systemu i architektury.
 - Sprawdź start, zapis, odczyt, anulowanie dialogu i brak zasobu.

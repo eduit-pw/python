@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Umowy algorytmów
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Przedział liczb pierwszych
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Napisz program wypisujący liczby pierwsze z przedziału 0-20.
 - Użyj funkcji pierwsza i sprawdź osobno -7, 0, 1, 2, 49.
 - Wyjaśnij, dlaczego warunek d*d <= n nie może być zastąpiony przez <.
@@ -36,6 +38,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** 2, 3, 5, 7, 11, 13, 17, 19.
 
 ## Zadanie 2. Sito do 100
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Utwórz tablicę 101 wartości logicznych. Ustaw 0 i 1 na False.
 - Napisz funkcję wypelnij(tablica) bez wartości zwracanej, zgodną z opisem algorytmu powyżej.
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Rozkład i odtworzenie
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Napisz funkcję czynniki(n), przyjmującą int >= 2.
 - Sprawdź 84, 49 i 13. Wypisz listę czynników i ich iloczyn.
 - Odrzuć n < 2 przez ValueError.
@@ -52,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:**,, [13]. Iloczyny: 84, 49, 13.
 
 ## Zadanie 4. Dla chętnych: NWD zgodnie z poleceniem
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Wczytaj dwie dodatnie liczby całkowite i oblicz NWD przez odejmowanie.
 - Sprawdź pary (18,12), (7,5), (6,6). Odrzuć 0 i liczby ujemne.

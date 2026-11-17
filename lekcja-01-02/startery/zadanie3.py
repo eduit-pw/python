@@ -1,5 +1,5 @@
-# Zadanie 3. Naprawa trzech fragmentów
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 1. Zadanie 3. Naprawa trzech fragmentów
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+# Zapisz tutaj kod realizujący powyższe kroki.

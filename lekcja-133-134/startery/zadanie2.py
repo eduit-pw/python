@@ -1,5 +1,14 @@
-# Zadanie 2. Eksport CSV
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 67. Zadanie 2. Eksport CSV
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Zapisz odczytane dane do albumy.csv przez csv.DictWriter, separator ;.
+# TODO: Kolumny: id, tytul, pobrania. Użyj UTF-8 i newline="".
+# TODO: Wczytaj zapisany plik ponownie i sprawdź wiersze.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+import csv
+from pathlib import Path
+from bs4 import BeautifulSoup
+BAZA = Path(__file__).resolve().parent
+
+def odczytaj(tekst):
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

@@ -1,7 +1,6 @@
-# Zadanie 5. Niezależne tagi.
-# Pominięty argument oznacza nową listę, a jawna lista ma zostać zmieniona.
-# Pełne wymagania i przykłady: README lekcji.
+# Temat 7. Zadanie 5. Dla chętnych: Niezależne tagi - opcjonalne / domowe
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
 def dodaj_tag(tag, tagi=None):
-    """TODO: uzupełnij implementację zgodnie z kontraktem."""
-    pass
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

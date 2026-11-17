@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Umowy wyszukiwania
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Indeks i liczba porównań
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Rozbuduj liniowe wyszukiwanie: zwracaj (indeks, liczba_porownan).
 - Dla szukaj 3, 9 i 8. Sprawdź także pustą listę.
 - Licz jedno porównanie elementu z szukaną wartością na odwiedzoną pozycję.
@@ -36,6 +38,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** (1,2), (-1,4), (0,1). Dla []: (-1,0).
 
 ## Zadanie 2. Wartownik
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Napisz funkcję szukaj_wartownik(dane, x) używającą kopii listy.
 - W pętli sprawdzaj tylko zgodność elementu z x. Po pętli sprawdź indeks.
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Wyszukiwanie binarne
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Napisz funkcję dla rosnącej listy.
 - Sprawdź 12, 2, 14 i 5 oraz pustą listę.
 - Wypisz badane indeksy dla szukania 12. Nie sortuj wewnątrz funkcji.
@@ -52,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** indeksy 5, 0, 6, -1. Dla []: -1. Badane: 3 i 5.
 
 ## Zadanie 4. Dla chętnych: Przybliżenie pierwiastka z 2
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Dla f(x)=x²-2 wykonaj bisekcję na, aż b-a <= 0.001.
 - Zwróć środek ostatniego przedziału. Nie używaj sqrt do obliczeń.

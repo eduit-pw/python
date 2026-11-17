@@ -1,17 +1,18 @@
-# Zadanie 1. Szkielet, temat 16.
-# Kontrakt i wyniki kontrolne są w README lekcji.
-# pass oznacza miejsce na własną implementację.
+# Temat 16. Zadanie 1. Książka w konsoli
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Napisz Ksiazka(tytul, autor) z atrybutami instancji.
+# TODO: __str__ zwraca "tytuł - autor", korzystając z aktualnych danych obiektu.
+# TODO: __repr__ zwraca opis Ksiazka('tytuł', 'autor'). Użyj !r, aby reprezentować argumenty napisowe.
+# TODO: Utwórz Ksiazka("Solaris", "Lem"). Porównaj wyniki print(ksiazka), print(repr(ksiazka)), print([ksiazka]).
 
 class Ksiazka:
 
     def __init__(self, tytul, autor):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
 
     def __str__(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
 
     def __repr__(self):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

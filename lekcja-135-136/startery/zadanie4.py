@@ -1,5 +1,17 @@
-# Zadanie 4. Powielone wpisy
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 68. Zadanie 4. Dla chętnych: Powielone wpisy
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: W małym przykładzie dodaj dwa osobne handlery zapisujące do tego samego pliku.
+# TODO: Wyślij jeden komunikat i sprawdź duplikat. Popraw konfigurację do jednego handlera.
+# TODO: Nie uruchamiaj addHandler w pętli przetwarzania danych.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+import logging
+import sys
+from pathlib import Path
+BAZA = Path(__file__).resolve().parent
+
+def logger(sciezka, poziom):
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
+
+def zadanie4():
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

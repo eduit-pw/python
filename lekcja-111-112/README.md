@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Model i dane początkowe
 
@@ -37,6 +37,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Pierwsza tabela
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1/README.md).
+
 - Dodaj model Film opisany powyżej, wykonaj makemigrations i migrate.
 - W shell utwórz Poranek i Wieczór. Zacznij od nowej bazy ćwiczeniowej.
 - Zamknij shell, otwórz go ponownie i odczytaj rekordy.
@@ -44,6 +46,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** 2 rekordy po ponownym uruchomieniu.
 
 ## Zadanie 2. Zapytanie i sortowanie
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2/README.md).
 
 - Dodaj film Alarm z rodzaj=3. Pozostałe dwa mają rodzaj=1.
 - Pobierz tylko rodzaj=1 i posortuj tytuły rosnąco.
@@ -53,6 +57,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Lista na stronie
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3/README.md).
+
 - Utwórz /filmy/ i szablon z tytułem oraz liczbą wypożyczeń każdego rekordu.
 - Zmień liczbę wypożyczeń Poranka na 2 w shell i odśwież stronę.
 - Dodaj obsługę pustej listy przez {% empty %}.
@@ -60,6 +66,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** widok pokazuje stan zapisany w bazie.
 
 ## Zadanie 4. Dla chętnych: Zmiana schematu
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4/README.md).
 
 - Dodaj pole dostepny = models.BooleanField(default=True). Utwórz i zastosuj migrację.
 - Sprawdź poprzednie rekordy. Ustaw False tylko dla Alarmu i zapisz go.

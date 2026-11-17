@@ -1,11 +1,13 @@
-# Zadanie 1. Dwa rekordy
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 67. Zadanie 1. Dwa rekordy
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Otwórz dołączony albumy.html i wybierz article.album.
+# TODO: Odczytaj ID, tytuł i pobrania. Oblicz sumę.
 
 import csv
 from pathlib import Path
 from bs4 import BeautifulSoup
+BAZA = Path(__file__).resolve().parent
 
 def odczytaj(tekst):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

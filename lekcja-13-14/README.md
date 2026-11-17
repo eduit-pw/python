@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Przelicznik punktów, szkolne
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 **Polecenie:** napisz przelicz_punkty(punkty, mnoznik=1, *, premia=0). Parametry są liczbami całkowitymi. Dla punkty >= 0, mnoznik >= 1 i premia >= 0 zwróć punkty * mnoznik + premia. Dla niepoprawnego zakresu zwróć None. Funkcja nie odczytuje danych i nie wypisuje komunikatów. W programie głównym wykonaj testy z tabeli. Po wywołaniu dla zmiennej punkty = 10 sprawdź, że nadal ma ona wartość 10.
 
 | Wywołanie | Wynik |
@@ -37,6 +39,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 | przelicz_punkty(10, premia=-1) | None |
 
 ## Zadanie 2. Raport pomiarów, szkolne
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 **Polecenie:** napisz raport_pomiarow(*odczyty, jednostka="V", precyzja=2). Odczyty są liczbami, jednostka napisem, precyzja liczbą całkowitą od 0 do 3. Przy braku odczytów zwróć dokładnie [BRAK POMIARÓW]. W innym przypadku oblicz sumę jawną pętlą for i zwróć trzy linie: liczba pomiarów, suma i średnia. Suma i średnia mają precyzja miejsc po kropce i jednostkę. Opcje podawaj po nazwie. Na tej lekcji zakładamy poprawne typy i zakres precyzji.
 
@@ -57,6 +61,8 @@ Suma: 6.0 A
 ```
 
 ## Zadanie 3. Raport incydentu, szkolne
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
 **Polecenie:** napisz raport_incydentu(kod, poziom="OSTRZEZENIE", **parametry). kod, poziom i wartości dodatkowych parametrów są napisami. Usuń otaczające białe znaki kodu; poziom oczyść i zamień na wielkie litery. Dopuszczalne poziomy to INFO, OSTRZEZENIE, KRYTYCZNY. Pusty kod lub inny poziom oznacza zwrot None. Dla poprawnych danych zwróć nagłówek [POZIOM] kod oraz osobną linię nazwa: wartość dla każdego dodatkowego parametru w kolejności podania. Dozwolone są dowolne dodatkowe nazwy. Funkcja nie wypisuje raportu; robi to program główny. Nie używaj global.
 
@@ -86,6 +92,8 @@ Pozostałe testy:
 
 ## Zadanie 4. Dla chętnych: NWD i kontrakt funkcji, adaptacja INF.04
 
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
+
 **Źródło algorytmu:** INF.04-01-23.01-SG, część I. Użyj odejmowania, nie modulo ani math.gcd.
 
 **Polecenie:** utwórz nwd(a, b) dla dodatnich liczb całkowitych. Dopóki a i b są różne, odejmuj mniejszą od większej; zwróć a po zakończeniu. Funkcja ma dokładnie dwa argumenty i nie korzysta z input ani print. Program główny wczytuje obie liczby przez int(input(...)), a dla wartości <= 0 ponawia odczyt. Użytkownik wpisuje zapisy liczb całkowitych; obsługa tekstu nienumerycznego jest poza zakresem lekcji. Wypisz wynik z komunikatem. Dodaj komentarz nad funkcją według wzoru z arkusza: nazwa, opis, parametry, zwracany typ i opis, autor. Na lekcji jako autora wpisz identyfikator ucznia.
@@ -101,6 +109,8 @@ Pozostałe testy:
 Ślad dla (48, 18): (48, 18) → (30, 18) → (12, 18) → (12, 6) → (6, 6). Zwracana wartość: 6. Gdy argumenty od początku są równe, pętla nie wykona się ani razu. Zero lub liczba ujemna nie należą do kontraktu algorytmu; trzeba je odrzucić przed wywołaniem.
 
 ## Zadanie 5. Dla chętnych: Niezależne tagi - opcjonalne / domowe
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 **Polecenie:** popraw dodaj_blednie(tag, tagi=[]), używając None. Funkcja ma tworzyć nową listę po pominięciu tagi, ale dopisywać do listy przekazanej jawnie. Sprawdź trzy przypadki: dodaj_tag("siec"), dodaj_tag("system"), a następnie wspolne = ["start"] i dodaj_tag("test", wspolne). Po ostatnim wywołaniu wyświetl wspolne. Wyjaśnij, dlaczego wzorzec None nie oznacza kopiowania podanej listy.
 

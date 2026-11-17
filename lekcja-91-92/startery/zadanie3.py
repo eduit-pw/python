@@ -1,5 +1,8 @@
-# Zadanie 3. Historia zmian
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 46. Zadanie 3. Historia zmian
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Dodaj na stos napisy „start”, „zmiana A”, „zmiana B”.
+# TODO: Pobierz wszystkie elementy przez pop, wypisując kolejność.
+# TODO: Po opróżnieniu wypisz „Brak historii”, zamiast wywoływać kolejne pop.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+from collections import deque

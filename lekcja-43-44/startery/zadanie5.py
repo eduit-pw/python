@@ -1,9 +1,8 @@
-# Zadanie 5. Szkielet, temat 22.
-# Kontrakt i wyniki kontrolne są w README lekcji.
-# pass oznacza miejsce na własną implementację.
+# Temat 22. Zadanie 5. Dla chętnych: Wartość w obiekcie wyjątku - dodatkowe
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
 
 class OcenaError(ValueError):
 
     def __init__(self, wartosc):
-        """TODO: uzupełnij zgodnie z kontraktem w README."""
-        pass
+        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

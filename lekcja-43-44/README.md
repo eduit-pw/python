@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Walidator oceny
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 **Plik:** `zadanie1.py`.
 
 1. Zdefiniuj `OcenaError(ValueError)`.
@@ -37,6 +39,8 @@ Próby: `1` i `6` - sukces; `0` i `7` - błąd zakresu; `abc`, pusty tekst, `3.5
 
 ## Zadanie 2. Uczeń z walidowaną właściwością
 
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
+
 **Plik:** `zadanie2.py`.
 
 1. Umieść w pliku klasę `OcenaError` i walidator z zadania 1.
@@ -47,6 +51,8 @@ Próby: `1` i `6` - sukces; `0` i `7` - błąd zakresu; `abc`, pusty tekst, `3.5
 6. Osobno sprawdź nieudane konstrukcje z pustym imieniem i oceną 0; nie korzystaj z wyniku nieudanej próby.
 
 ## Zadanie 3. Magazyn i odrzucona operacja
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
 **Plik:** `zadanie3.py`.
 
@@ -66,6 +72,8 @@ Próby: `1` i `6` - sukces; `0` i `7` - błąd zakresu; `abc`, pusty tekst, `3.5
 | 1 | `Za mało towaru.`, następnie `Stan: 0` |
 
 ## Zadanie 4. Dla chętnych: Format PESEL w obiekcie i funkcje z arkusza
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 **Plik:** `zadanie4.py` • **Źródło:** INF.04-01-24.01-SG, część I, **adaptacja**.
 
@@ -91,6 +99,8 @@ Algorytm sumy: wagi `[1, 3, 7, 9, 1, 3, 7, 9, 1, 3]`; `S` jest sumą dziesięciu
 | `123` przekazane bezpośrednio do klasy | `TypeError`: wymagany napis. |
 
 ## Zadanie 5. Dla chętnych: Wartość w obiekcie wyjątku - dodatkowe
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 **Plik:** `zadanie5.py`.
 

@@ -34,3 +34,7 @@ To wzorzec do projektu Django. Gdy urlpatterns jest w osobnym pliku urls.py, zai
 ## Utrwalanie Git w ramach tego bloku
 
 Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.
+
+## Odczyt żądania i odpowiedzi
+
+`GET /kontakt/` pobiera stronę. URL wskazuje host, port i ścieżkę. W odpowiedzi odczytaj status oraz `Content-Type`. `200` oznacza sukces, `404` brak zasobu, a `500` błąd serwera. Nie każda odpowiedź zawiera JSON.

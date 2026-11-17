@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Kod z łącznikiem
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Napisz funkcję poprawny_kod(tekst) zwracającą bool.
 - Wymagaj dokładnie formatu NN-NNN i cyfr ASCII.
 - Sprawdź: 12-345, 12345, 12-345x, 1a-345 oraz pusty napis.
@@ -32,6 +34,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** tylko 12-345 daje True.
 
 ## Zadanie 2. Pięć cyfr
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Przygotuj walidację formatu uproszczonego: dokładnie pięć cyfr ASCII.
 - Sprawdź 12345, 12-345, 1234, 12a45 oraz napis "\uFF11\uFF12\uFF13\uFF14\uFF15".
@@ -41,6 +45,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Identyfikatory w tekście
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - Dla „Zgłoszenia: ID-12, ID-7, ID-305.” znajdź wszystkie numery po „ID-”.
 - Użyj jednej grupy przechwytującej i findall.
 - Zamień wyniki na int i oblicz ich sumę.
@@ -48,6 +54,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** [12, 7, 305], suma 324.
 
 ## Zadanie 4. Dla chętnych: Format daty
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - Sprawdź fullmatch dla RRRR-MM-DD: 2026-10-03, 2026-02-30 i 26-10-03.
 - Wymagaj 4, 2 i 2 cyfr, rozdzielonych łącznikami.

@@ -56,8 +56,8 @@ Każdy temat obejmuje 2 × 45 minut. Razem 140 godzin lekcyjnych. W folderze lek
 | 50 | 99-100 | [Zapisywanie i odczytywanie danych z lokalnej bazy danych SQLite w aplikacji okienkowej (sqlite3)](lekcja-99-100/README.md) |
 | 51 | 101-102 | [Projekt programistyczny: budowa kompletnego programu okienkowego z bazą danych i formularzem](lekcja-101-102/README.md) |
 | 52 | 103-104 | [Przygotowanie programu do uruchomienia na innych komputerach: tworzenie pliku wykonywalnego (.exe)](lekcja-103-104/README.md) |
-| 53 | 105-106 | [Jak działa sieć i strony internetowe: zapytania i odpowiedzi, przesyłanie danych oraz zasady API](lekcja-105-106/README.md) |
-| 54 | 107-108 | [Pierwsze kroki z frameworkiem Django: tworzenie projektu, ustawienia i adresy podstron](lekcja-107-108/README.md) |
+| 53 | 105-106 | [Praktyczny sprawdzian umiejętności: algorytmy i przetwarzanie danych w plikach](lekcja-105-106/README.md) |
+| 54 | 107-108 | [Podstawy HTTP i pierwsza aplikacja Django: projekt, ustawienia i adresy podstron](lekcja-107-108/README.md) |
 | 55 | 109-110 | [Wyświetlanie danych na stronach w Django: szablony HTML i przekazywanie informacji do widoku](lekcja-109-110/README.md) |
 | 56 | 111-112 | [Tworzenie tabel bazy danych w Django za pomocą modeli i aktualizacja bazy (ORM)](lekcja-111-112/README.md) |
 | 57 | 113-114 | [Gotowy panel zarządzania danymi w Django oraz tworzenie i sprawdzanie formularzy](lekcja-113-114/README.md) |
@@ -105,3 +105,11 @@ W VS Code wybierz interpreter z `.venv` poleceniem **Python: Select Interpreter*
 Na Linux/macOS odpowiednikami są `python3 -m venv .venv` oraz `.venv/bin/python`. W lekcjach Django, FastAPI, PyQt i Docker obowiązują dodatkowo instrukcje z README danej lekcji. Nie instaluj wszystkich pakietów całego kursu przed pierwszym ćwiczeniem.
 
 Materiały korzystają z różnych zapisów `py`, `python` i `python3`, zależnie od przykładu. Zawsze uruchamiaj kod interpreterem wybranym dla danego zadania. Numer tematu różni się od numeru godziny: **temat 37 to lekcje 73–74**.
+
+## Osobne startery do zadań
+
+Przed pracą otwórz startery/README.md w danej lekcji. Zawiera przypisanie każdego zadania do pliku lub folderu i polecenie uruchomienia. GUI i API mają przygotowaną część startową, a kod oznaczony TODO lub NotImplementedError uzupełniasz samodzielnie. W lekcjach testowania dostarczona aplikacja jest materiałem do napisania własnych testów. W lekcjach modułów, debuggera i Git pracujesz na wskazanym wspólnym materiale wejściowym.
+
+## Podmiana starszych starterów
+
+Rozpakuj ZIP do nowego folderu. Po zachowaniu własnych zmian zastąp w lokalnym repozytorium całe foldery lekcja-* oraz pliki instrukcji z tej paczki. Zachowaj katalog .git. Sama podmiana pojedynczych plików pozostawiłaby starsze startery, np. obok nowych folderów zadanie1–zadanie4. Commit i push wykonujesz samodzielnie po przejrzeniu zmian.

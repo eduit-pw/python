@@ -1,5 +1,10 @@
-# Zadanie 3. Raport niezależny od cwd
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 29. Zadanie 3. Raport niezależny od cwd
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: W folderze skryptu utwórz dane/liczby.txt z liczbami 4, 7, -2.
+# TODO: Zbuduj ścieżkę do tego pliku na podstawie __file__. Oblicz sumę.
+# TODO: Uruchom skrypt z jego folderu oraz z folderu nadrzędnego.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+from pathlib import Path
+from shutil import copy2
+BAZA = Path(__file__).resolve().parent

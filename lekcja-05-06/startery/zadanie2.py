@@ -1,5 +1,9 @@
-# Zadanie 2. Szkolny cennik biletów
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 3. Zadanie 2. Szkolny cennik biletów
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Pobierz wiek jako liczbę całkowitą i kartę jako tekst T albo N.
+# TODO: Wiek poza 0-120: wypisz „Błędny wiek”. Nie obliczaj ceny.
+# TODO: Dla poprawnego wieku i karty innej niż T lub N wypisz „Błędna karta”.
+# TODO: Dla poprawnych danych wybierz cenę z cennika przez if…elif…else i wypisz „Cena: … zł”.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+# Zapisz tutaj kod realizujący powyższe kroki.

@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Sposób pracy podczas bloku
 
@@ -25,6 +25,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Licznik z kontrolowaną zmianą
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 Zadanie autorskie. Napisz od początku `Licznik`:
 
 1. Utwórz w konstruktorze `__wartosc = 0`.
@@ -35,6 +37,8 @@ Zadanie autorskie. Napisz od początku `Licznik`:
 **Oczekiwane wyniki:** przed zmianami `0 0`, po zmianach `2 1`. Wyjaśnij, dlaczego obiekty mają różne wartości.
 
 ## Zadanie 2. Cena przez właściwość
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 Zadanie autorskie. Zbuduj `Produkt(cena)` z właściwością `cena`:
 
@@ -54,6 +58,8 @@ Zadanie autorskie. Zbuduj `Produkt(cena)` z właściwością `cena`:
 
 ## Zadanie 3. Liczba wypożyczeń tylko do odczytu
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 Zadanie autorskie. Napisz klasę `Egzemplarz`:
 
 1. Konstruktor ustawia `_liczba_wypozyczen = 0`.
@@ -65,6 +71,8 @@ Zadanie autorskie. Napisz klasę `Egzemplarz`:
 Przez „tylko do odczytu” rozumiemy tutaj publiczną właściwość. Metoda klasy nadal może aktualizować wewnętrzny stan. Bezpośrednia zmiana `_liczba_wypozyczen` z zewnątrz jest technicznie możliwa, ale omija zaprojektowany interfejs.
 
 ## Zadanie 4. Dla chętnych: Wypożyczalnia filmów i dokumentacja
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 **Adaptacja CKE:** INF.04-03-23.06-SG, część I i dokumentacja części konsolowej z III. Polecenie w skrócie:
 
@@ -92,6 +100,8 @@ Przez „tylko do odczytu” rozumiemy tutaj publiczną właściwość. Metoda k
 Nie wymagamy osobnej metody wyświetlającej stan ani settera licznika. Nie trzeba używać `input()`: oryginał przewiduje test ustawienia dowolnego tytułu. Przygotowanie części webowej należy do osobnych zajęć.
 
 ## Zadanie 5. Dla chętnych: Ocena z walidacją - dodatkowe
+
+**Punkt wyjścia:** [starter zadania 5](startery/zadanie5.py).
 
 Zadanie autorskie. Napisz `Uczen(ocena)` z właściwością `ocena`. Wewnętrzne `_ocena` zaczyna od 1. Setter przyjmuje liczby całkowite 1-6, a pozostałe liczby całkowite ignoruje. Konstruktor korzysta z tej samej reguły.
 

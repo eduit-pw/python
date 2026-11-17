@@ -1,19 +1,9 @@
-# Zadanie 1. Palindromy
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 43. Zadanie 1. Palindromy
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Zaimplementuj palindrom bez odwracania napisu przez slicing.
+# TODO: Sprawdź: kajak, abba, kot, a oraz pusty napis.
+# TODO: Zachowaj umowę: porównanie dokładne, pusty napis daje True.
 
 def palindrom(tekst):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def zlicz(tekst):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def anagram(a, b):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def lider(dane):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')

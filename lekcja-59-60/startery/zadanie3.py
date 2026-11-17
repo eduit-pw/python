@@ -1,5 +1,11 @@
-# Zadanie 3. Raport braków
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 30. Zadanie 3. Raport braków
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Utwórz CSV z nagłówkiem nazwa;ilosc i rekordami: Ołówek;0, Zeszyt;2, Gumka;0.
+# TODO: Zapisz braki.csv: ten sam nagłówek, tylko produkty o ilości równej 0.
+# TODO: Użyj DictWriter. Zachowaj kolejność rekordów.
 
-# TODO: przygotuj dane, wykonaj operacje, pokaż wynik.
+import csv
+import json
+from pathlib import Path
+BAZA = Path(__file__).resolve().parent

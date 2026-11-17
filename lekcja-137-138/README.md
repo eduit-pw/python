@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Kontrakt programu CLI
 
@@ -38,6 +38,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Raport z progiem
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Napisz i uruchom raport.py dla danych Poranek=120 i Wieczór=80, z --min 100.
 - Zapisz raport do raport.txt przez --wyjscie. Użyj UTF-8.
 - Powtórz dla progu 200.
@@ -46,12 +48,16 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 2. Pomoc i błędne argumenty
 
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
+
 - Sprawdź --help, brak argumentu pliku, --min abc i --min -1.
 - Porównaj komunikaty i kod zakończenia.
 
 **Wynik kontrolny:** pomoc z kodem 0, błędne użycie z kodem 2.
 
 ## Zadanie 3. Błąd danych wejściowych
+
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
 - Uruchom raport.py dla nieistniejącego pliku oraz pliku z samym znakiem {.
 - Sprawdź komunikat i brak pliku raportu po nieudanym odczycie.
@@ -60,6 +66,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** kod 1 dla obu błędów, poprawny raport z kodem 0.
 
 ## Zadanie 4. Dla chętnych: Priorytet konfiguracji
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - W osobnym config_demo.py dodaj --url, load_dotenv i os.getenv według reguły opisanej powyżej.
 - Porównaj brak konfiguracji, API_URL w .env, API_URL w środowisku i --url.

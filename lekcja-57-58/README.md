@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Zadania wprowadzają kolejne zmiany; zachowuj wcześniejsze wersje w podfolderach, jeśli wymaga tego polecenie.
+Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 
 ## Przygotowanie plików
 
@@ -29,6 +29,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 1. Inwentaryzacja folderu
 
+**Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
+
 - Utwórz cwiczenia/dane: a.txt z „ABC”, b.txt z „DE” (oba bez końcowej nowej linii) oraz pusty folder inne.
 - Wypisz nazwy zwykłych plików, ich rozszerzenia i rozmiary w bajtach.
 - Użyj stat().st_size. Posortuj wynik według nazw.
@@ -36,6 +38,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** a.txt: 3 bajty, b.txt: 2 bajty. Folder pominięty.
 
 ## Zadanie 2. Kopia tekstów
+
+**Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Dodaj do danych foto.png jako dowolny plik i podfolder inne/c.txt.
 - Skopiuj tylko zwykłe pliki *.txt z danych do cwiczenia/kopie.
@@ -45,6 +49,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 ## Zadanie 3. Raport niezależny od cwd
 
+**Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
+
 - W folderze skryptu utwórz dane/liczby.txt z liczbami 4, 7, -2.
 - Zbuduj ścieżkę do tego pliku na podstawie __file__. Oblicz sumę.
 - Uruchom skrypt z jego folderu oraz z folderu nadrzędnego.
@@ -52,6 +58,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Wynik kontrolny:** suma 9 w obu uruchomieniach.
 
 ## Zadanie 4. Dla chętnych: Porządkowanie bez nadpisywania
+
+**Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
 - W cwiczenia utwórz roboczy.txt i zmień nazwę na gotowy.txt.
 - Przed rename sprawdź obecność nazwy docelowej. Przy konflikcie odmów zmiany.

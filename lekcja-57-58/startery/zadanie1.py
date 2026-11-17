@@ -1,18 +1,13 @@
-# Zadanie 1. Inwentaryzacja folderu
-# Pełne wymagania i wyniki kontrolne: ../README.md
-# Najpierw ustal wejście i wynik. Uzupełnij kod; ten plik jest starterem.
+# Temat 29. Zadanie 1. Inwentaryzacja folderu
+# Starter do uzupełnienia, bez rozwiązania.
+# Pełne polecenie: README lekcji.
+# TODO: Utwórz cwiczenia/dane: a.txt z „ABC”, b.txt z „DE” (oba bez końcowej nowej linii) oraz pusty folder inne.
+# TODO: Wypisz nazwy zwykłych plików, ich rozszerzenia i rozmiary w bajtach.
+# TODO: Użyj stat().st_size. Posortuj wynik według nazw.
 
 from pathlib import Path
 from shutil import copy2
+BAZA = Path(__file__).resolve().parent
 
 def inwentaryzacja(folder):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def kopiuj_teksty(zrodlo, cel):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
-
-def zmien_nazwe(zrodlo, cel):
-    """TODO: uzupełnij zgodnie z kontraktem w README."""
-    pass
+    raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
