@@ -10,7 +10,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 ## Schemat bazy i podział kodu
 
-Przygotuj `baza.py` dla operacji SQL i `main.py` dla okna. Baza `albumy.db` jest plikiem roboczym obok skryptu. Tabela `albumy`: `id INTEGER PRIMARY KEY`, `tytul TEXT NOT NULL`, `rok INTEGER NOT NULL CHECK(rok BETWEEN 1900 AND 2100)`. Tytuł po strip nie może być pusty. Używaj parametrów `?`, zatwierdzaj transakcje i zamykaj połączenia. Inicjalizacja tabeli ma być idempotentna. Dane początkowe dodawaj jednorazowo, nie przy każdym odczycie.
+Przygotuj `baza.py` dla operacji SQL i osobny plik Pythona dla każdego zadania. Baza `albumy.db` jest plikiem roboczym obok skryptu. Tabela `albumy`: `id INTEGER PRIMARY KEY`, `tytul TEXT NOT NULL`, `rok INTEGER NOT NULL CHECK(rok BETWEEN 1900 AND 2100)`. Tytuł po strip nie może być pusty. Używaj parametrów `?`, zatwierdzaj transakcje i zamykaj połączenia. Inicjalizacja tabeli ma być idempotentna. Dane początkowe dodawaj jednorazowo, nie przy każdym odczycie.
 
 Próbę wycofania wykonaj w oddzielnej pustej bazie testowej, np. `:memory:`; przygotowanie tabeli zatwierdź przed transakcją z dwoma INSERT. Nie testuj błędnych transakcji na własnych danych użytkowych.
 

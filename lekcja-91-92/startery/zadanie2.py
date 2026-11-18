@@ -2,7 +2,7 @@
 # Starter do uzupełnienia, bez rozwiązania.
 # Pełne polecenie: README lekcji.
 # TODO: Napisz quicksort(dane), zwracającą nową listę.
-# TODO: Sprawdź,, [] oraz [8].
+# TODO: Sprawdź [3, 1, 4, 3, 2], [5, 5, 5], [] oraz [8].
 # TODO: Nie zmieniaj listy wejściowej i nie usuwaj duplikatów.
 
 from collections import deque

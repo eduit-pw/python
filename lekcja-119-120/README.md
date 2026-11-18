@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
+Każde zadanie ma osobny folder w `startery/`. Skopiuj cały wybrany folder i otwórz w nim terminal. Korzystaj z nazwy modułu i poleceń w README tego zadania. Zachowaj swoją działającą wersję poprzedniego etapu.
 
 ## Umowa modeli
 

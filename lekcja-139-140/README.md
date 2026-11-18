@@ -4,7 +4,7 @@
 
 ## Przygotowanie
 
-Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Wystarcza biblioteka standardowa Pythona.
+Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Użyj Pythona 3.11 lub nowszego, aby móc uruchomić także zadanie z asyncio.timeout().
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
 

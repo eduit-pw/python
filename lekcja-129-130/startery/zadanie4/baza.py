@@ -5,6 +5,7 @@ import os
 SCIEZKA=Path(os.getenv("DB_PATH",str(Path(__file__).resolve().parent/"albumy.db")))
 @contextmanager
 def polacz():
+    SCIEZKA.parent.mkdir(parents=True, exist_ok=True)
     db=sqlite3.connect(SCIEZKA)
     db.row_factory=sqlite3.Row
     try:

@@ -33,7 +33,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 - Napisz min_max(dane), zwracającą parę minimum i maksimum dla niepustej listy.
 - Porównuj kolejne elementy parami. Obsłuż pozostały pojedynczy element.
-- Sprawdź,, [5] oraz []. Dla [] zgłoś ValueError.
+- Sprawdź `[7, 2, 9, 4, 1]`, `[7, 2, 9, 4]`, `[5]` oraz `[]`. Dla [] zgłoś ValueError.
 
 **Wynik kontrolny:** (1,9), (2,9), (5,5).
 
@@ -42,10 +42,10 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Zaimplementuj sortowanie bąbelkowe rosnąco. Wypisz listę przed i po zmianie.
-- Sprawdź,, [] oraz [3].
+- Sprawdź `[5, 2, 4, 1]`, `[2, 2, 1]`, `[]` oraz `[3]`.
 - W pierwszym przykładzie wypisz listę po każdym pełnym przebiegu. Adaptacja INF.04-02-23.06-SG, I: własne dane testowe.
 
-**Wynik kontrolny:**,, [], [3].
+**Wynik kontrolny:** `[1, 2, 4, 5]`, `[1, 2, 2]`, `[]`, `[3]`.
 
 ## Zadanie 3. Insertion sort
 
@@ -53,9 +53,9 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 - Utwórz funkcję wstawianie(dane), modyfikującą listę rosnąco.
 - Zapamiętaj wstawianą liczbę i przesuwaj większe elementy do następnych pozycji.
-- Sprawdź oraz listę już uporządkowaną.
+- Sprawdź `[3, 1, 3, 2]` oraz uporządkowaną listę `[1, 2, 3]`.
 
-**Wynik kontrolny:** oraz.
+**Wynik kontrolny:** `[1, 2, 3, 3]` oraz `[1, 2, 3]`.
 
 ## Zadanie 4. Dla chętnych: Selection sort w klasie
 
@@ -65,7 +65,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 - Zaimplementuj _indeks_maksimum(start) i sortuj() bez sorted oraz list.sort.
 - Dane kontrolne: 4,1,7,2,7,0,9,3,5,6. Wypisz wynik malejąco. Adaptacja INF.04-01-21.06-SG, I: własny zestaw kontrolny.
 
-**Wynik kontrolny:**.
+**Wynik kontrolny:** `[9, 7, 7, 6, 5, 4, 3, 2, 1, 0]`.
 
 ## Diagnoza i praca domowa
 

@@ -55,7 +55,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 - Sprawdź 84, 49 i 13. Wypisz listę czynników i ich iloczyn.
 - Odrzuć n < 2 przez ValueError.
 
-**Wynik kontrolny:**,, [13]. Iloczyny: 84, 49, 13.
+**Wynik kontrolny:** `[2, 2, 3, 7]`, `[7, 7]`, `[13]`. Iloczyny: 84, 49, 13.
 
 ## Zadanie 4. Dla chętnych: NWD zgodnie z poleceniem
 

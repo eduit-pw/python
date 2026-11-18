@@ -1,8 +1,8 @@
 # Temat 52. Zadanie 1. Paczka onedir
 # Starter do uzupełnienia, bez rozwiązania.
 # Pełne polecenie: README lekcji.
-# TODO: Sprawdź działanie main.py, potem zbuduj --onedir z widoczną konsolą.
-# TODO: Skopiuj cały dist/main do nowego folderu testowego.
+# TODO: Sprawdź działanie zadanie1.py, potem zbuduj --onedir z widoczną konsolą.
+# TODO: Skopiuj cały dist/zadanie1 do nowego folderu testowego.
 # TODO: Uruchom plik wynikowy z tego folderu. Zanotuj brakujące zasoby lub błędy.
 
 import sys

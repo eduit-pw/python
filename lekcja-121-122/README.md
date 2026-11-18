@@ -6,11 +6,11 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
+Każde zadanie ma osobny folder w `startery/`. Skopiuj cały wybrany folder i otwórz w nim terminal. Korzystaj z nazwy modułu i poleceń w README tego zadania. Zachowaj swoją działającą wersję poprzedniego etapu.
 
 ## Kontrakt CRUD
 
-Kontynuuj kopię main.py i schematy.py z tematu 60. Przywróć wymagane pole pobrania, bez default. Zapis w tej lekcji jest w pamięci procesu: restart usuwa albumy i zaczyna ID od 1. Utrzymuj oddzielny rosnący licznik ID; nie wyliczaj nowego ID z długości listy.
+Kontynuuj kod API i model z pliku schematy.py z tematu 60. Przywróć wymagane pole pobrania, bez default. Zapis w tej lekcji jest w pamięci procesu: restart usuwa albumy i zaczyna ID od 1. Utrzymuj oddzielny rosnący licznik ID; nie wyliczaj nowego ID z długości listy.
 
 | Metoda i adres | Sukces | Brak zasobu |
 | --- | --- | --- |
@@ -20,7 +20,7 @@ Kontynuuj kopię main.py i schematy.py z tematu 60. Przywróć wymagane pole pob
 | PUT /albumy/{id} | 200, cały zaktualizowany album | 404 |
 | DELETE /albumy/{id} | 204, bez ciała | 404 |
 
-Pola wejścia: tytul i pobrania. Schemat waliduje je przed zmianą stanu; id nadaje serwer. Nie zaimplementowano PATCH. Uruchom `py -m uvicorn main:app --reload`. Dla tego ćwiczenia nie zmieniaj kodu między kolejnymi operacjami testowej sekwencji, bo przeładowanie resetuje pamięć.
+Pola wejścia: tytul i pobrania. Schemat waliduje je przed zmianą stanu; id nadaje serwer. Nie zaimplementowano PATCH. Uruchom `py -m uvicorn zadanie1:app --reload`. Dla tego ćwiczenia nie zmieniaj kodu między kolejnymi operacjami testowej sekwencji, bo przeładowanie resetuje pamięć.
 
 ## Sposób pracy podczas bloku
 
@@ -71,7 +71,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Punkt wyjścia:** [starter zadania 4](startery/zadanie4/README.md).
 
 - Wyślij PUT dla Wieczoru z pobrania=-1, potem bez pola pobrania.
-- Używaj modelu z wymaganymi polami, bez wartości domyślnej z ćwiczenia 56.3.
+- Używaj modelu z wymaganymi polami, bez wartości domyślnej z zadania 3 z tematu 60.
 - Pobierz Wieczór ponownie i sprawdź zachowanie poprzednich danych.
 
 **Wynik kontrolny:** dwa statusy 422, zapisane wartości bez zmian.

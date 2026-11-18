@@ -10,15 +10,15 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 ## Projekt wejściowy i polecenia
 
-Użyj własnego działającego projektu z poprzedniej lekcji; wariant .ui pochodzi z tematu 32. Zainstaluj PyInstaller. Polecenia wykonuj z folderu zawierającego main.py, po sprawdzeniu zwykłego `py main.py`.
+Przed budowaniem uruchom plik danego zadania w środowisku z PyQt6 i PyInstallerem. W zadaniu 2 połóż okno.ui obok skryptu. W zadaniu 3 aplikacja zapisuje bazę w katalogu danych użytkownika.
 
 ```powershell
-py -m PyInstaller --onedir main.py
-py -m PyInstaller --onedir --add-data "okno.ui:." main_load.py
-py -m PyInstaller --onefile main.py
+python -m PyInstaller --onedir zadanie1.py
+python -m PyInstaller --onedir --add-data "okno.ui:." zadanie2.py
+python -m PyInstaller --onefile zadanie3.py
 ```
 
-Drugie polecenie dotyczy wariantu dynamicznie wczytującego .ui i tworzy dist/main_load. W zadaniu 3 wyznacz katalog danych przez `QStandardPaths.AppDataLocation`, po ustawieniu nazwy aplikacji i organizacji; utwórz go przed połączeniem z bazą. Dane trwałe nie mogą trafiać do tymczasowego katalogu rozpakowania onefile. Do odbiorcy przekaż całą paczkę onedir albo właściwy plik onefile, dla użytego systemu i architektury.
+Dla onedir przekaż cały katalog wynikowy, np. `dist/zadanie1`. Dla onefile na Windows plikiem wynikowym jest `dist/zadanie3.exe`.
 
 ## Sposób pracy podczas bloku
 
@@ -40,7 +40,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
 
 - Sprawdź działanie zadanie1.py, potem zbuduj --onedir z widoczną konsolą.
-- Skopiuj cały dist/main do nowego folderu testowego.
+- Skopiuj cały dist/zadanie1 do nowego folderu testowego.
 - Uruchom plik wynikowy z tego folderu. Zanotuj brakujące zasoby lub błędy.
 
 **Wynik kontrolny:** aplikacja działa bez otwartego projektu źródłowego.

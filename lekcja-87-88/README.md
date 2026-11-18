@@ -32,7 +32,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
 
 - Rozbuduj liniowe wyszukiwanie: zwracaj (indeks, liczba_porownan).
-- Dla szukaj 3, 9 i 8. Sprawdź także pustą listę.
+- W liście `[8, 3, 5, 3]` wyszukaj 3, 9 i 8. Sprawdź także pustą listę.
 - Licz jedno porównanie elementu z szukaną wartością na odwiedzoną pozycję.
 
 **Wynik kontrolny:** (1,2), (-1,4), (0,1). Dla []: (-1,0).
@@ -43,15 +43,15 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 - Napisz funkcję szukaj_wartownik(dane, x) używającą kopii listy.
 - W pętli sprawdzaj tylko zgodność elementu z x. Po pętli sprawdź indeks.
-- Dla szukaj 7 i 5. Upewnij się, że wejściowa lista się nie zmieniła. Adaptacja INF.04-01-22.06-SG, I: trzy własne wartości.
+- W liście `[4, 7, 9]` wyszukaj 7 i 5. Upewnij się, że wejściowa lista się nie zmieniła. Adaptacja INF.04-01-22.06-SG, I: trzy własne wartości.
 
-**Wynik kontrolny:** 1 i -1. Lista nadal.
+**Wynik kontrolny:** 1 i -1. Po wyszukaniu lista nadal ma postać `[4, 7, 9]`.
 
 ## Zadanie 3. Wyszukiwanie binarne
 
 **Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
-- Napisz funkcję dla rosnącej listy.
+- Napisz funkcję dla rosnącej listy. Użyj danych `[2, 4, 6, 8, 10, 12, 14]`.
 - Sprawdź 12, 2, 14 i 5 oraz pustą listę.
 - Wypisz badane indeksy dla szukania 12. Nie sortuj wewnątrz funkcji.
 
@@ -61,7 +61,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 **Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
-- Dla f(x)=x²-2 wykonaj bisekcję na, aż b-a <= 0.001.
+- Dla f(x)=x²-2 wykonaj bisekcję w przedziale `[1, 2]`, aż b-a <= 0.001.
 - Zwróć środek ostatniego przedziału. Nie używaj sqrt do obliczeń.
 - Policz iteracje i wypisz wynik z trzema miejscami po przecinku.
 

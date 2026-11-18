@@ -10,7 +10,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 ## Pliki projektu
 
-Rozwijaj jeden program `main.py`, zachowując kopie etapów. QAction importuj z `PyQt6.QtGui`. Menu, pasek narzędzi i skrót mają korzystać z tej samej instancji akcji. Anulowanie dialogu rozpoznaj po pustej ścieżce, zanim otworzysz plik. Po nieudanym zapisie zachowaj tekst; po nieudanym odczycie nie zastępuj zawartości edytora.
+Rozwijaj program etapami. Zapisz kolejne wersje jako `zadanie1.py`, `zadanie2.py`, `zadanie3.py` i `zadanie4.py`. QAction importuj z `PyQt6.QtGui`. Menu, pasek narzędzi i skrót mają korzystać z tej samej instancji akcji. Anulowanie dialogu rozpoznaj po pustej ścieżce, zanim otworzysz plik. Po nieudanym zapisie zachowaj tekst; po nieudanym odczycie nie zastępuj zawartości edytora.
 
 ## Sposób pracy podczas bloku
 

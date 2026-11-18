@@ -6,25 +6,27 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
+Każde zadanie ma osobny folder w `startery/`. Skopiuj cały wybrany folder i otwórz w nim terminal. Korzystaj z nazwy modułu i poleceń w README tego zadania. Zachowaj swoją działającą wersję poprzedniego etapu.
 
 ## Projekt i polecenia Docker
 
-Pracuj na własnym API SQLite z tematu 63 lub 60. Docker musi działać na stanowisku. Utwórz Dockerfile: obraz bazowy python:3.13-slim, WORKDIR /app, kopiowanie requirements.txt, instalacja zależności, kopiowanie aplikacji. Proces startowy: `python -m uvicorn main:app --host 0.0.0.0 --port 8000`. W .dockerignore pomiń .venv, .git, __pycache__, pliki baz i logi. Zachowaj GET /status. W zadaniu 3 ustaw ścieżkę SQLite na `/app/dane/albumy.db`, utwórz katalog przed startem i wykorzystaj nazwany wolumen.
+Pracuj na własnym API SQLite z tematu 63 albo na gotowym kodzie wejściowym w starterze. Docker musi działać na stanowisku. Utwórz Dockerfile: obraz bazowy python:3.13-slim, WORKDIR /app, kopiowanie requirements.txt, instalacja zależności, kopiowanie aplikacji. Proces startowy: `python -m uvicorn zadanie1:app --host 0.0.0.0 --port 8000`. W .dockerignore pomiń .venv, .git, __pycache__, pliki baz i logi. Zachowaj GET /status. W zadaniu 3 ustaw ścieżkę SQLite na `/app/dane/albumy.db`, utwórz katalog przed startem i wykorzystaj nazwany wolumen.
 
 ```powershell
 docker build -t albumy-api .
-docker run --name albumy-test -p 127.0.0.1:8000:8000 albumy-api
+docker run -d --name albumy-test -p 127.0.0.1:8000:8000 albumy-api
 docker logs albumy-test
 ```
 
 Po próbie zatrzymaj albumy-test. Wersję z bazą uruchom po przebudowaniu obrazu:
 
 ```powershell
-docker run --name albumy-db -p 127.0.0.1:8000:8000 -v albumy-dane:/app/dane albumy-api
+docker run -d --name albumy-db -p 127.0.0.1:8000:8000 -e DB_PATH=/app/dane/albumy.db -v albumy-dane:/app/dane albumy-api
 ```
 
 Po usunięciu kontenera albumy-db uruchom to samo polecenie ponownie. Nie usuwaj wolumenu albumy-dane, bo to on przechowuje wynik próby trwałości. Wariant z błędnym CMD zbuduj pod inną nazwą obrazu i kontenera.
+
+W kolejnych folderach zmień nazwę modułu na nazwę pliku danego zadania, np. `zadanie2:app`.
 
 ## Sposób pracy podczas bloku
 

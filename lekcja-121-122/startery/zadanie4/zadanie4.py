@@ -2,7 +2,7 @@
 # Starter do uzupełnienia, bez rozwiązania.
 # Pełne polecenie: README lekcji.
 # TODO: Wyślij PUT dla Wieczoru z pobrania=-1, potem bez pola pobrania.
-# TODO: Używaj modelu z wymaganymi polami, bez wartości domyślnej z ćwiczenia 56.3.
+# TODO: Używaj modelu z wymaganymi polami, bez wartości domyślnej z zadania 3 z tematu 60.
 # TODO: Pobierz Wieczór ponownie i sprawdź zachowanie poprzednich danych.
 
 from fastapi import FastAPI, HTTPException, Response

@@ -12,7 +12,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 W Qt Designer utwórz formularz typu QWidget. Dodaj QLineEdit o objectName `imieEdit`, QPushButton `powitajButton` i QLabel `wynikLabel`. Ułóż je pionowo w layoucie. QLabel ma początkowo pusty tekst. Zapisz `okno.ui` w folderze projektu. Designer musi być dostępny na stanowisku; sam pakiet PyQt6 nie gwarantuje instalacji programu Designer.
 
-Wariant dynamiczny uruchamiaj przez `py main_load.py`, a generowany przez `py main.py`. Wygeneruj kod poleceniem:
+Ze starterów uruchom `python zadanie2.py` (loadUi) albo `python zadanie3.py` (kod wygenerowany), w folderze wybranego zadania. Wygeneruj kod poleceniem:
 
 ```powershell
 py -m PyQt6.uic.pyuic okno.ui -o ui_okno.py
@@ -61,7 +61,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 - Wygeneruj ui_okno.py, utwórz własną klasę Okno i dodaj metodę powitaj.
 - Zachowaj działanie z zadania 2. Nie modyfikuj pliku generowanego.
-- Uruchom program z main.py.
+- Uruchom swój skrypt z klasą Okno. W starterze do zadania 3 jest to `zadanie3.py`.
 
 **Wynik kontrolny:** powitanie i kontrola pustego imienia działają jak wcześniej.
 

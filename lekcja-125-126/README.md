@@ -6,13 +6,15 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
+Każde zadanie ma osobny folder w `startery/`. Skopiuj cały wybrany folder i otwórz w nim terminal. Korzystaj z nazwy modułu i poleceń w README tego zadania. Zachowaj swoją działającą wersję poprzedniego etapu.
 
 ## Wersja z bazą danych
 
 Skopiuj kontrakt API i schematy z tematu 61. Napisz `baza.py`: połączenie SQLite, inicjalizacja tabeli oraz CRUD po ID. `albumy` ma pola: id INTEGER PRIMARY KEY AUTOINCREMENT, tytul TEXT NOT NULL, pobrania INTEGER NOT NULL CHECK(pobrania>=0). Ścieżkę bazy wyznacz względem modułu. Funkcje zapisują parametrami SQL, zatwierdzają operację i zamykają połączenie. Inicjalizacja przez lifespan FastAPI ma tworzyć brakującą tabelę bez usuwania danych.
 
-Użyj `main.py`, `schematy.py`, `baza.py`. Zachowaj statusy z tematu 61 oraz GET /status. Restart nie kasuje danych. Samodzielnie połącz moduły; pełne rozwiązanie nie jest dołączone. Uruchom `py -m uvicorn main:app --reload`.
+W zadaniu 1 użyj `zadanie1.py`, `schematy.py`, `baza.py`. Zachowaj statusy z tematu 61 oraz GET /status. Restart nie kasuje danych. Samodzielnie połącz moduły; pełne rozwiązanie nie jest dołączone. Uruchom `py -m uvicorn zadanie1:app --reload`.
+
+W kolejnych folderach zmień nazwę modułu na nazwę pliku danego zadania, np. `zadanie2:app`.
 
 ## Sposób pracy podczas bloku
 

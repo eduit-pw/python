@@ -6,7 +6,7 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
+Każde zadanie ma osobny folder w `startery/`. Skopiuj cały wybrany folder i otwórz w nim terminal. Korzystaj z nazwy modułu i poleceń w README tego zadania. Zachowaj swoją działającą wersję poprzedniego etapu.
 
 ## Projekt wejściowy
 
@@ -45,7 +45,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 - Po zmianie odczytaj album, a po usunięciu spróbuj odczytać go jeszcze raz.
 - Zapisz każde żądanie w kolekcji lub tabeli scenariuszy.
 
-**Wynik kontrolny:** 201, 200, 200, 204, a na końcu 404.
+**Wynik kontrolny:** POST 201, GET 200, PUT 200, kontrolny GET 200, DELETE 204 i końcowy GET 404.
 
 ## Zadanie 3. Próby negatywne
 

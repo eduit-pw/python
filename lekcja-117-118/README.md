@@ -6,17 +6,19 @@
 
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
-Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
+Każde zadanie ma osobny folder w `startery/`. Skopiuj cały wybrany folder i otwórz w nim terminal. Korzystaj z nazwy modułu i poleceń w README tego zadania. Zachowaj swoją działającą wersję poprzedniego etapu.
 
 ## Uruchomienie usługi
 
-Utwórz `main.py` i obiekt `app = FastAPI()`. Samodzielnie dodaj GET /status zwracający słownik `{"stan": "ok"}`. Używaj pliku requirements.txt i środowiska FastAPI z instrukcji głównej. Po zapisaniu kodu uruchom:
+W pliku `zadanie1.py` przygotuj obiekt `app = FastAPI()`. Samodzielnie dodaj GET /status zwracający słownik `{"stan": "ok"}`. Używaj pliku requirements.txt i środowiska FastAPI z instrukcji głównej. Po zapisaniu kodu uruchom:
 
 ```powershell
-py -m uvicorn main:app --reload
+py -m uvicorn zadanie1:app --reload
 ```
 
 Adres bazowy: `http://127.0.0.1:8000`. Dokumentacja: `/docs`. W /kwadrat/{liczba} odpowiedź ma pola `liczba` i `kwadrat`. Zatrzymaj inne serwery używające portu 8000.
+
+W kolejnych folderach zmień nazwę modułu na nazwę pliku danego zadania, np. `zadanie2:app`.
 
 ## Sposób pracy podczas bloku
 

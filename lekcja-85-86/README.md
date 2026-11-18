@@ -52,7 +52,7 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
 - Napisz dwuprzebiegową funkcję lider(dane), zwracającą int albo None.
-- Dane mają być listą liczb całkowitych. Sprawdź,, [].
+- Dane mają być listą liczb całkowitych. Sprawdź `[2, 2, 1, 2, 3]`, `[1, 1, 2, 2]` oraz `[]`.
 - Nie używaj None jako elementu wejściowego.
 
 **Wynik kontrolny:** 2, None, None.

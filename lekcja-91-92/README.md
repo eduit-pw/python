@@ -42,10 +42,10 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 **Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
 
 - Napisz quicksort(dane), zwracającą nową listę.
-- Sprawdź,, [] oraz [8].
+- Sprawdź `[3, 1, 4, 3, 2]`, `[5, 5, 5]`, `[]` oraz `[8]`.
 - Nie zmieniaj listy wejściowej i nie usuwaj duplikatów.
 
-**Wynik kontrolny:**,, [], [8].
+**Wynik kontrolny:** `[1, 2, 3, 3, 4]`, `[5, 5, 5]`, `[]`, `[8]`.
 
 ## Zadanie 3. Historia zmian
 
