@@ -1,0 +1,51 @@
+# Temat 48. Menu, akcje i dialogi
+
+## Formularz z Qt Designer
+
+W zadaniach okienkowych od tematu 32 układ kontrolek przygotowujemy w Designerze. Nazwij kontrolki w polu `objectName`. Ich właściwości odczytu i obsługi pozostają takie same po wczytaniu `.ui`.
+
+```python
+from pathlib import Path
+from PyQt6 import uic
+
+# Po utworzeniu QApplication:
+sciezka = Path(__file__).with_name("zadanie2.ui")  # Użyj nazwy z zadania.
+okno = uic.loadUi(str(sciezka))
+```
+
+Wzorce tworzenia kontrolek lub layoutów w kodzie pomagają zrozumieć API Qt. Gdy formularz już zawiera kontrolkę, używaj jej pod nazwą z Designera.
+
+
+## Składnia pod ręką
+
+| Zapis | Do czego służy | Wynik lub ważna reguła |
+| --- | --- | --- |
+| `QAction("Zapisz", self)` | Wspólna akcja | Import QAction z PyQt6.QtGui. |
+| `akcja.triggered.connect(obsluga)` | Obsługa wykonania akcji | Jedna akcja może być w menu i pasku narzędzi. |
+| `akcja.setShortcut("Ctrl+S")` | Skrót klawiaturowy | Wywołuje tę samą akcję. |
+| `self.menuBar().addMenu("Plik")` | Menu w QMainWindow | menu.addAction(akcja) dodaje pozycję. |
+| `QFileDialog.getOpenFileName(...)` | Wybór pliku do odczytu | Wynik: (ścieżka, filtr). |
+| `QFileDialog.getSaveFileName(...)` | Wybór miejsca zapisu | Sam dialog nie zapisuje danych. |
+| `if sciezka:` | Sprawdzenie wyboru | Po anulowaniu ścieżka jest pusta. |
+| `QMessageBox.information(...), warning(...)` | Komunikat informacyjny i ostrzeżenie | question służy do pytania o decyzję. |
+
+## Krótki wzorzec
+
+```python
+from PyQt6.QtGui import QAction
+
+# W metodzie okna QMainWindow:
+def dodaj_menu(self):
+    akcja = QAction("Zakończ", self)
+    akcja.setShortcut("Ctrl+Q")
+    akcja.triggered.connect(self.close)
+    self.menuBar().addMenu("Plik").addAction(akcja)
+```
+
+Fragment dodaj_menu wywołaj na instancji QMainWindow po utworzeniu QApplication. Dialog wyboru ścieżki i operacja na pliku to dwa osobne kroki.
+
+[Dokumentacja](https://doc.qt.io/qt-6/qfiledialog.html) · [Zadania lekcji](README.md)
+
+## Utrwalanie Git w ramach tego bloku
+
+Przed zmianą sprawdź `git status`, a po działającej poprawce obejrzyj `git diff`. Zapisz mały commit z opisem wykonanej zmiany. Czynność zajmuje 2–3 minuty przewidziane na sprawdzenie pracy.

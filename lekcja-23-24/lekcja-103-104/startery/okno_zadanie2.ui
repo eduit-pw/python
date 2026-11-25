@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>180</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Powitanie</string>
+  </property>
+  <layout class="QVBoxLayout" name="uklad">
+   <item>
+    <widget class="QLineEdit" name="imieEdit" />
+   </item>
+   <item>
+    <widget class="QPushButton" name="powitajButton">
+     <property name="text">
+      <string>Powitaj</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="wynikLabel">
+     <property name="text">
+      <string />
+     </property>
+     <property name="textFormat">
+      <enum>Qt::PlainText</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="miejsce">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources />
+ <connections />
+</ui>
