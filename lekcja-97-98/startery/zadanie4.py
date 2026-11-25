@@ -1,32 +1,26 @@
-# Temat 49. Zadanie 4. Dla chętnych: Liczby i pusta tabela
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: Dodaj tabelę z kolumną Liczba i wartościami 2, 10, 1 jako DisplayRole typu int.
-# TODO: Włącz sortowanie rosnące. Następnie ustaw liczbę wierszy na 0.
-# TODO: Sprawdź obsługę przycisku odczytu, gdy tabela jest pusta.
+"""Temat 49, zadanie 4. Najpierw zaprojektuj formularz zgodnie z README."""
 
 import sys
+from pathlib import Path
+
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QListWidget, QLabel, QPushButton, QTableWidget, QTableWidgetItem, QAbstractItemView
+from PyQt6.QtWidgets import QTableWidgetItem
 
-class Okno(QWidget):
 
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('Uzupełnij zadanie')
-        # TODO: umieść kontrolki w oknie i połącz właściwe sygnały.
-        self.wynik = QLabel()
-        self.tabela = QTableWidget(2, 3)
-        self.liczby = QTableWidget(3, 1)
-
-    def pokaz_id(self):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-
-    def oproznij(self):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
-    okno = Okno()
-    okno.resize(600, 400)
+    sciezka = Path(__file__).with_name("zadanie4.ui")
+    if not sciezka.is_file():
+        print(f"Zapisz plik {sciezka.name} z Qt Designer obok tego skryptu.", file=sys.stderr)
+        return 1
+
+    okno = uic.loadUi(str(sciezka))
+    # TODO: Rozwiń zadanie 3. Uzupełnij tabelę liczb obiektami QTableWidgetItem i obsłuż opróżnienie obu tabel.
     okno.show()
-    sys.exit(app.exec())
+    return app.exec()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

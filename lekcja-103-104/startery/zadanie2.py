@@ -1,22 +1,25 @@
-# Temat 52. Zadanie 2. Interfejs .ui
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: Spakuj formularz z tematu 32, używający loadUi.
-# TODO: Dołącz okno.ui przez --add-data i odczytuj ścieżkę względem __file__.
-# TODO: Sprawdź uruchomienie paczki z folderu o innej ścieżce.
+"""Temat 52. Zadanie 2: interfejs odczytany z pliku .ui przy starcie."""
 
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout
+from pathlib import Path
 
-def zbuduj_okno():
-    okno = QWidget()
-    uklad = QVBoxLayout(okno)
-    # TODO: dodaj kontrolki i układy opisane w tym zadaniu.
-    return okno
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
+
+
+def main():
+    app = QApplication(sys.argv)
+    sciezka = Path(__file__).with_name("okno.ui")
+    okno = uic.loadUi(str(sciezka))
+
+    def powitaj():
+        imie = okno.imieEdit.text().strip()
+        okno.wynikLabel.setText(f"Witaj, {imie}" if imie else "Podaj imię")
+
+    okno.powitajButton.clicked.connect(powitaj)
+    okno.show()
+    return app.exec()
+
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    okno = zbuduj_okno()
-    okno.show()
-    sys.exit(app.exec())
-
+    sys.exit(main())

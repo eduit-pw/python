@@ -1,31 +1,26 @@
-# Temat 33. Zadanie 4. Dla chętnych: Kod i zatwierdzenie
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: Do zadania 3 dodaj QLineEdit kodu oraz przycisk „Zatwierdź”.
-# TODO: Za krótki lub długi kod: „Wymagane 5 znaków”. Obcy znak: „Wymagane cyfry”.
-# TODO: Poprawny kod: „Dane poprawne”. Sprawdź 12345, 1234, 12a45 i 12-345. Adaptacja INF.04-01-23.06-SG, II: uproszczone komunikaty.
+"""Temat 33, zadanie 4. Najpierw zaprojektuj formularz zgodnie z README."""
 
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLineEdit, QSpinBox, QPushButton, QLabel, QCheckBox, QRadioButton, QButtonGroup
+from pathlib import Path
 
-class Poczta(QWidget):
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
+from PyQt6.QtWidgets import QButtonGroup
 
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('Uzupełnij zadanie')
-        # TODO: umieść kontrolki w oknie i połącz właściwe sygnały.
-        self.grupa = QButtonGroup(self)
-        self.cena = QLabel('Cena:')
-        self.rodzaj = QLabel()
 
-    def sprawdz_cene(self):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-
-    def zatwierdz(self):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
-    okno = Poczta()
-    okno.resize(600, 400)
+    sciezka = Path(__file__).with_name("zadanie4.ui")
+    if not sciezka.is_file():
+        print(f"Zapisz plik {sciezka.name} z Qt Designer obok tego skryptu.", file=sys.stderr)
+        return 1
+
+    okno = uic.loadUi(str(sciezka))
+    # TODO: Przenieś działanie z zadania 3.
+    # TODO: Połącz zatwierdzButton z walidacją kodu.
     okno.show()
-    sys.exit(app.exec())
+    return app.exec()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

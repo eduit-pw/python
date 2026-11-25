@@ -1,28 +1,24 @@
-# Temat 33. Zadanie 2. Opcje niezależne
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: Dodaj QCheckBox „Python” i „SQL” oraz przycisk podsumowania.
-# TODO: Wypisz wybrane nazwy w tej kolejności, rozdzielone przecinkiem.
-# TODO: Gdy żadna nie jest wybrana, pokaż „Brak wyboru”.
+"""Temat 33, zadanie 2. Najpierw zaprojektuj formularz zgodnie z README."""
 
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLineEdit, QSpinBox, QPushButton, QLabel, QCheckBox, QRadioButton, QButtonGroup
+from pathlib import Path
 
-class Opcje(QWidget):
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
 
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('Uzupełnij zadanie')
-        # TODO: umieść kontrolki w oknie i połącz właściwe sygnały.
-        self.python = QCheckBox('Python')
-        self.sql = QCheckBox('SQL')
-        self.wynik = QLabel()
 
-    def pokaz(self):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
-    okno = Opcje()
-    okno.resize(600, 400)
+    sciezka = Path(__file__).with_name("zadanie2.ui")
+    if not sciezka.is_file():
+        print(f"Zapisz plik {sciezka.name} z Qt Designer obok tego skryptu.", file=sys.stderr)
+        return 1
+
+    okno = uic.loadUi(str(sciezka))
+    # TODO: Połącz pokazButton z podsumowaniem zaznaczonych pól.
     okno.show()
-    sys.exit(app.exec())
+    return app.exec()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

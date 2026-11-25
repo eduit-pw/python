@@ -4,6 +4,8 @@
 
 ## Przygotowanie
 
+W Qt Designer wybierz typ okna podany w zadaniu, ustaw `windowTitle` i odtwórz kontrolki z podglądu. Ustaw ich `objectName` według tabeli, nałóż layout i sprawdź podgląd przy zmianie rozmiaru. Zapisz plik `.ui` obok skryptu, zgodnie z nazwą z polecenia. W Pythonie odczytaj formularz przez `uic.loadUi()`, a potem podłącz sygnały i dopisz działanie. Podgląd pokazuje przykład. Kolory systemowe, font i dokładna wielkość okna mogą się różnić.
+
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
@@ -31,6 +33,18 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 **Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
 
+**Widok wzorcowy.** Lista albumów zajmuje górną część. Poniżej przycisk „Pokaż” i miejsce na tytuł lub komunikat. Zrzut może pokazywać przykładowe dane po wykonaniu próby.
+
+![Widok wzorcowy zadania 1](media/zadanie-1.png)
+
+**Plik projektu** `zadanie1.ui`, typ `QWidget`, tytuł „Lista albumów”.
+
+| Kontrolka | `objectName` |
+| --- | --- |
+| QListWidget | `lista` |
+| QPushButton | `pokazButton` |
+| QLabel | `wynik` |
+
 - Dodaj QListWidget z tytułami „Poranek”, „Wieczór” i „Noc”.
 - Po kliknięciu przycisku „Pokaż” wypisz bieżący tytuł w QLabel.
 - Bez zaznaczenia pokaż „Wybierz album”.
@@ -40,6 +54,16 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 ## Zadanie 2. Tabela rekordów
 
 **Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
+
+**Widok wzorcowy.** Główna tabela ma kolumny ID, Tytuł i Rok. Kliknięcie zaznacza jeden cały wiersz. Komórki są tylko do odczytu. Zrzut może pokazywać przykładowe dane po wykonaniu próby.
+
+![Widok wzorcowy zadania 2](media/zadanie-2.png)
+
+**Plik projektu** `zadanie2.ui`, typ `QWidget`, tytuł „Tabela albumów”.
+
+| Kontrolka | `objectName` |
+| --- | --- |
+| QTableWidget | `tabela` |
 
 - Utwórz kolumny ID, Tytuł, Rok i rekordy (7,Poranek,2024), (12,Wieczór,2023).
 - Wypełnij wszystkie komórki i ustaw zaznaczanie pojedynczego wiersza.
@@ -51,6 +75,18 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 **Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
+**Widok wzorcowy.** Główna tabela ma kolumny ID, Tytuł i Rok. Kliknięcie zaznacza jeden cały wiersz. Komórki są tylko do odczytu. Pod tabelą „Pokaż ID” i etykieta wyniku. Zrzut może pokazywać przykładowe dane po wykonaniu próby.
+
+![Widok wzorcowy zadania 3](media/zadanie-3.png)
+
+**Plik projektu** `zadanie3.ui`, typ `QWidget`, tytuł „Tabela albumów”.
+
+| Kontrolka | `objectName` |
+| --- | --- |
+| QTableWidget | `tabela` |
+| QPushButton | `odczytButton` |
+| QLabel | `wynik` |
+
 - W tabeli zadania 2 włącz sortowanie po tytule.
 - Przyciskiem „Pokaż ID” odczytaj ID aktualnie wybranego rekordu.
 - Sprawdź oba rekordy przed sortowaniem i po odwróceniu kierunku.
@@ -60,6 +96,20 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 ## Zadanie 4. Dla chętnych: Liczby i pusta tabela
 
 **Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
+
+**Widok wzorcowy.** Główna tabela ma kolumny ID, Tytuł i Rok. Kliknięcie zaznacza jeden cały wiersz. Komórki są tylko do odczytu. Pod tabelą „Pokaż ID” i etykieta wyniku. Dalej osobna tabela z kolumną „Liczba” oraz przycisk opróżniania. Zrzut może pokazywać przykładowe dane po wykonaniu próby.
+
+![Widok wzorcowy zadania 4](media/zadanie-4.png)
+
+**Plik projektu** `zadanie4.ui`, typ `QWidget`, tytuł „Tabela albumów”.
+
+| Kontrolka | `objectName` |
+| --- | --- |
+| QTableWidget | `tabela` |
+| QPushButton | `odczytButton` |
+| QLabel | `wynik` |
+| QTableWidget | `liczby` |
+| QPushButton | `oproznijButton` |
 
 - Dodaj tabelę z kolumną Liczba i wartościami 2, 10, 1 jako DisplayRole typu int.
 - Włącz sortowanie rosnące. Następnie ustaw liczbę wierszy na 0.
@@ -72,6 +122,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
+
+Dołącz własny plik `.ui` do kodu zadania okienkowego, jeśli był używany.
 
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 

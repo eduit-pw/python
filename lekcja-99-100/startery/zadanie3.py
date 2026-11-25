@@ -1,46 +1,29 @@
-# Temat 50. Zadanie 3. Zmiana i usunięcie po ID
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: Dodaj obsługę zaznaczonego rekordu: zmień jego tytuł, potem usuń go.
-# TODO: Wykonuj SQL po id, nie po numerze wiersza ani po tytule.
-# TODO: Sprawdź próbę operacji bez zaznaczenia i po sortowaniu tabeli.
+"""Temat 50, zadanie 3. Najpierw zaprojektuj formularz zgodnie z README."""
 
 import sys
-import sqlite3
+from pathlib import Path
+
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
+from PyQt6.QtWidgets import QMessageBox, QTableWidgetItem
+
 import baza
-from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLineEdit, QSpinBox, QPushButton, QTableWidget, QTableWidgetItem, QMessageBox, QAbstractItemView
 
-class Okno(QWidget):
 
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('Uzupełnij zadanie')
-        # TODO: umieść kontrolki w oknie i połącz właściwe sygnały.
-        self.tytul = QLineEdit()
-        self.rok = QSpinBox()
-        self.tabela = QTableWidget(0, 3)
-
-    def id(self):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-
-    def odswiez(self):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-
-    def blad(self, tekst):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-
-    def dodaj(self):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-
-    def zmien(self):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-
-    def usun(self):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
-    okno = Okno()
-    okno.resize(600, 400)
+    sciezka = Path(__file__).with_name("zadanie3.ui")
+    if not sciezka.is_file():
+        print(f"Zapisz plik {sciezka.name} z Qt Designer obok tego skryptu.", file=sys.stderr)
+        return 1
+
+    okno = uic.loadUi(str(sciezka))
+    baza.SCIEZKA = Path(__file__).with_name("zadanie3.db")
+    # TODO: Przenieś dodawanie i wyświetlanie z zadania 2.
+    # TODO: Zainicjalizuj bazę i podłącz zmienButton oraz usunButton.
     okno.show()
-    sys.exit(app.exec())
+    return app.exec()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

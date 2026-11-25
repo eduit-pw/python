@@ -1,25 +1,24 @@
-# Temat 48. Zadanie 1. Menu i skrót
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: Utwórz QMainWindow z QTextEdit w obszarze centralnym.
-# TODO: Dodaj akcję „Wyczyść”, menu „Edycja” i skrót Ctrl+L.
-# TODO: Obsługa ma wyczyścić tekst. Sprawdź zarówno menu, jak i skrót.
+"""Temat 48, zadanie 1. Najpierw zaprojektuj formularz zgodnie z README."""
 
 import sys
 from pathlib import Path
-from PyQt6.QtGui import QAction
-from PyQt6.QtWidgets import QApplication, QMainWindow, QTextEdit, QToolBar, QFileDialog, QMessageBox
 
-class Edytor(QMainWindow):
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
 
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('Uzupełnij zadanie')
-        # TODO: umieść kontrolki w oknie i połącz właściwe sygnały.
-        self.tekst = QTextEdit()
-if __name__ == '__main__':
+
+def main():
     app = QApplication(sys.argv)
-    okno = Edytor()
-    okno.resize(600, 400)
+    sciezka = Path(__file__).with_name("zadanie1.ui")
+    if not sciezka.is_file():
+        print(f"Zapisz plik {sciezka.name} z Qt Designer obok tego skryptu.", file=sys.stderr)
+        return 1
+
+    okno = uic.loadUi(str(sciezka))
+    # TODO: Połącz akcjaWyczysc.triggered z wyczyszczeniem pola tekst.
     okno.show()
-    sys.exit(app.exec())
+    return app.exec()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

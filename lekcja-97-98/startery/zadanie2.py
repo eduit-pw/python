@@ -1,25 +1,26 @@
-# Temat 49. Zadanie 2. Tabela rekordów
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: Utwórz kolumny ID, Tytuł, Rok i rekordy (7,Poranek,2024), (12,Wieczór,2023).
-# TODO: Wypełnij wszystkie komórki i ustaw zaznaczanie pojedynczego wiersza.
-# TODO: Zablokuj edycję komórek bezpośrednio w tabeli.
+"""Temat 49, zadanie 2. Najpierw zaprojektuj formularz zgodnie z README."""
 
 import sys
+from pathlib import Path
+
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QListWidget, QLabel, QPushButton, QTableWidget, QTableWidgetItem, QAbstractItemView
+from PyQt6.QtWidgets import QTableWidgetItem
 
-class Okno(QWidget):
 
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('Uzupełnij zadanie')
-        # TODO: umieść kontrolki w oknie i połącz właściwe sygnały.
-        self.wynik = QLabel()
-        self.tabela = QTableWidget(2, 3)
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
-    okno = Okno()
-    okno.resize(600, 400)
+    sciezka = Path(__file__).with_name("zadanie2.ui")
+    if not sciezka.is_file():
+        print(f"Zapisz plik {sciezka.name} z Qt Designer obok tego skryptu.", file=sys.stderr)
+        return 1
+
+    okno = uic.loadUi(str(sciezka))
+    # TODO: Wypełnij tabelę podanymi rekordami.
     okno.show()
-    sys.exit(app.exec())
+    return app.exec()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

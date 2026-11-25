@@ -1,28 +1,24 @@
-# Temat 33. Zadanie 1. Formularz ucznia
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: Zbuduj QLineEdit „Imię”, QSpinBox 1-5 „Klasa” i przycisk „Pokaż”.
-# TODO: Po kliknięciu wypisz w QLabel: „Anna, klasa 4” dla danych Anna i 4.
-# TODO: Puste imię po strip ma dawać „Podaj imię”.
+"""Temat 33, zadanie 1. Najpierw zaprojektuj formularz zgodnie z README."""
 
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLineEdit, QSpinBox, QPushButton, QLabel, QCheckBox, QRadioButton, QButtonGroup
+from pathlib import Path
 
-class Uczen(QWidget):
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
 
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('Uzupełnij zadanie')
-        # TODO: umieść kontrolki w oknie i połącz właściwe sygnały.
-        self.imie = QLineEdit()
-        self.klasa = QSpinBox()
-        self.wynik = QLabel()
 
-    def pokaz(self):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
-    okno = Uczen()
-    okno.resize(600, 400)
+    sciezka = Path(__file__).with_name("zadanie1.ui")
+    if not sciezka.is_file():
+        print(f"Zapisz plik {sciezka.name} z Qt Designer obok tego skryptu.", file=sys.stderr)
+        return 1
+
+    okno = uic.loadUi(str(sciezka))
+    # TODO: Połącz pokazButton z metodą czytającą imię i klasę.
     okno.show()
-    sys.exit(app.exec())
+    return app.exec()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

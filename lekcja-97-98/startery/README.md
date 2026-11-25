@@ -13,4 +13,4 @@ Skopiuj wybrany plik do folderu lekcji, aby pliki danych pozostały obok program
 | 3. ID po sortowaniu | [zadanie3.py](zadanie3.py) | `python zadanie3.py` po uzupełnieniu |
 | 4. Dla chętnych: Liczby i pusta tabela | [zadanie4.py](zadanie4.py) | `python zadanie4.py` po uzupełnieniu |
 
-GUI wymaga PyQt6. Najpierw sprawdź aktywne venv i instalację `python -m pip install PyQt6`. Okno startowe jest przygotowane, a kontrolki, układ i obsługa wskazane w TODO pozostają do uzupełnienia. Przy Designerze najpierw przygotuj wymagany plik .ui.
+GUI wymaga PyQt6. Najpierw odtwórz układ widoczny w README lekcji w Qt Designer. Zapisz `zadanieN.ui` obok `zadanieN.py`. Skrypt otworzy formularz. Dopisz obsługę wskazaną w TODO.

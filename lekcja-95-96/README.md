@@ -4,6 +4,8 @@
 
 ## Przygotowanie
 
+W Qt Designer wybierz typ okna podany w zadaniu, ustaw `windowTitle` i odtwórz kontrolki z podglądu. Ustaw ich `objectName` według tabeli, nałóż layout i sprawdź podgląd przy zmianie rozmiaru. Zapisz plik `.ui` obok skryptu, zgodnie z nazwą z polecenia. W Pythonie odczytaj formularz przez `uic.loadUi()`, a potem podłącz sygnały i dopisz działanie. Podgląd pokazuje przykład. Kolory systemowe, font i dokładna wielkość okna mogą się różnić.
+
 Środowisko i polecenia uruchamiania opisano w [instrukcji głównej](../README.md#uruchamianie). Przed pracą zainstaluj zależności z dołączonego `requirements.txt` w wybranym środowisku: `py -m pip install -r requirements.txt`.
 
 Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uruchamiaj w terminalu z tego folderu. Każde zadanie ma osobny starter. Zadania rozwijające aplikację wykonuj na kopii poprzedniego etapu, zgodnie z instrukcją startera.
@@ -31,6 +33,21 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 **Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
 
+**Widok wzorcowy.** Na górze menu „Edycja” z akcją „Wyczyść” (Ctrl+L). Edytor tekstu wypełnia środek okna. Zrzut może pokazywać przykładowe dane po wykonaniu próby.
+
+![Widok wzorcowy zadania 1](media/zadanie-1.png)
+
+**Plik projektu** `zadanie1.ui`, typ `QMainWindow`, tytuł „Edytor tekstu”.
+
+| Kontrolka | `objectName` |
+| --- | --- |
+| QTextEdit | `tekst` |
+| QMenuBar | `menuBar` |
+| QMenu | `menuEdycja` |
+| QAction | `akcjaWyczysc` |
+
+W Designerze utwórz akcje w Edytorze akcji. Tę samą akcję „Wyczyść” można dodać do menu i paska. Połączenia `triggered` zostają w Pythonie.
+
 - Utwórz QMainWindow z QTextEdit w obszarze centralnym.
 - Dodaj akcję „Wyczyść”, menu „Edycja” i skrót Ctrl+L.
 - Obsługa ma wyczyścić tekst. Sprawdź zarówno menu, jak i skrót.
@@ -40,6 +57,23 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 ## Zadanie 2. Pasek narzędzi
 
 **Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
+
+**Widok wzorcowy.** Na górze menu „Edycja” z akcją „Wyczyść” (Ctrl+L). Edytor tekstu wypełnia środek okna. Pod menu pasek z akcjami „Wyczyść” i „O programie”. Zrzut może pokazywać przykładowe dane po wykonaniu próby.
+
+![Widok wzorcowy zadania 2](media/zadanie-2.png)
+
+**Plik projektu** `zadanie2.ui`, typ `QMainWindow`, tytuł „Edytor tekstu”.
+
+| Kontrolka | `objectName` |
+| --- | --- |
+| QTextEdit | `tekst` |
+| QMenuBar | `menuBar` |
+| QMenu | `menuEdycja` |
+| QToolBar | `pasekNarzedzi` |
+| QAction | `akcjaWyczysc` |
+| QAction | `akcjaOProgramie` |
+
+W Designerze utwórz akcje w Edytorze akcji. Tę samą akcję „Wyczyść” można dodać do menu i paska. Połączenia `triggered` zostają w Pythonie.
 
 - Dodaj do zadania 1 QToolBar i tę samą akcję „Wyczyść”.
 - Dodaj „O programie”, pokazującą information z tekstem „Edytor 1.0”.
@@ -51,6 +85,25 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 **Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
+**Widok wzorcowy.** Na górze menu „Edycja” z akcją „Wyczyść” (Ctrl+L). Edytor tekstu wypełnia środek okna. Pod menu pasek z akcjami „Wyczyść” i „O programie”. W menu „Plik” jest „Zapisz” (Ctrl+S). Zrzut może pokazywać przykładowe dane po wykonaniu próby.
+
+![Widok wzorcowy zadania 3](media/zadanie-3.png)
+
+**Plik projektu** `zadanie3.ui`, typ `QMainWindow`, tytuł „Edytor tekstu”.
+
+| Kontrolka | `objectName` |
+| --- | --- |
+| QTextEdit | `tekst` |
+| QMenuBar | `menuBar` |
+| QMenu | `menuPlik` |
+| QMenu | `menuEdycja` |
+| QToolBar | `pasekNarzedzi` |
+| QAction | `akcjaWyczysc` |
+| QAction | `akcjaOProgramie` |
+| QAction | `akcjaZapisz` |
+
+W Designerze utwórz akcje w Edytorze akcji. Tę samą akcję „Wyczyść” można dodać do menu i paska. Połączenia `triggered` zostają w Pythonie.
+
 - Dodaj akcję „Zapisz” z Ctrl+S oraz dialog zapisu.
 - Zapisz tekst „Zażółć gęślą jaźń” jako wynik.txt w UTF-8.
 - Powtórz akcję i anuluj dialog. Obsłuż błąd zapisu przez warning.
@@ -60,6 +113,26 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 ## Zadanie 4. Dla chętnych: Otwieranie pliku
 
 **Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
+
+**Widok wzorcowy.** Na górze menu „Edycja” z akcją „Wyczyść” (Ctrl+L). Edytor tekstu wypełnia środek okna. Pod menu pasek z akcjami „Wyczyść” i „O programie”. W menu „Plik” jest „Zapisz” (Ctrl+S). Druga akcja to „Otwórz” (Ctrl+O). Zrzut może pokazywać przykładowe dane po wykonaniu próby.
+
+![Widok wzorcowy zadania 4](media/zadanie-4.png)
+
+**Plik projektu** `zadanie4.ui`, typ `QMainWindow`, tytuł „Edytor tekstu”.
+
+| Kontrolka | `objectName` |
+| --- | --- |
+| QTextEdit | `tekst` |
+| QMenuBar | `menuBar` |
+| QMenu | `menuPlik` |
+| QMenu | `menuEdycja` |
+| QToolBar | `pasekNarzedzi` |
+| QAction | `akcjaWyczysc` |
+| QAction | `akcjaOProgramie` |
+| QAction | `akcjaZapisz` |
+| QAction | `akcjaOtworz` |
+
+W Designerze utwórz akcje w Edytorze akcji. Tę samą akcję „Wyczyść” można dodać do menu i paska. Połączenia `triggered` zostają w Pythonie.
 
 - Dodaj akcję „Otwórz”, getOpenFileName i odczyt UTF-8.
 - Po sukcesie wstaw odczytany tekst przez setPlainText.
@@ -72,6 +145,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
+
+Dołącz własny plik `.ui` do kodu zadania okienkowego, jeśli był używany.
 
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 

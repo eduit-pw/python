@@ -1,15 +1,24 @@
-# Temat 35. Zadanie 3. Układ kontrolek
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
+"""Temat 35, zadanie 3. Najpierw zaprojektuj formularz zgodnie z README."""
 
 import sys
-from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow, QGridLayout, QLineEdit, QPushButton, QLabel, QSlider, QHBoxLayout
+from pathlib import Path
+
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
+
+
+def main():
+    app = QApplication(sys.argv)
+    sciezka = Path(__file__).with_name("zadanie3.ui")
+    if not sciezka.is_file():
+        print(f"Zapisz plik {sciezka.name} z Qt Designer obok tego skryptu.", file=sys.stderr)
+        return 1
+
+    okno = uic.loadUi(str(sciezka))
+    # TODO: Zgrupuj trzy suwaki. Ich zmiany mają aktualizować podgląd.
+    okno.show()
+    return app.exec()
+
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    okno = QWidget()
-    uklad = QGridLayout(okno)
-    # TODO: uzupełnij układ, kontrolki i ustawienia według tego zadania.
-    okno.show()
-    sys.exit(app.exec())
+    sys.exit(main())

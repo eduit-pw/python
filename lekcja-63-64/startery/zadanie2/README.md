@@ -1,9 +1,9 @@
-# Zadanie 2: Qt Designer
+# Zadanie 2. Wczytanie i akcja
 
-Najpierw wykonaj w Designerze formularz zgodny z poleceniem. Zapisz tutaj plik `okno.ui` jako QWidget. Zachowaj wymagane objectName.
+- Skopiuj `okno.ui` z zadania 1 obok `zadanie2.py` i wczytaj go przez `uic.loadUi()`.
+- Połącz kliknięcie z powitaniem. Dla pustego imienia lub samych spacji pokaż „Podaj imię”.
+- Dla „ Anna ” pokaż „Witaj, Anna”.
 
-Dołącz tutaj swoją wersję formularza z poprzedniego etapu i wykonaj wymaganą zmianę.
+Podgląd i nazwy: [polecenie w README](../../README.md).
 
-Uruchom `python zadanie2.py` po przygotowaniu formularza.
-
-Główny obiekt formularza nazwij Form. Wygenerowana klasa będzie nosić nazwę Ui_Form. Nazwy kontrolek zachowaj dokładnie według README lekcji.
+Uruchom `python zadanie2.py` po przygotowaniu plików.

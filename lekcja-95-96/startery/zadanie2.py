@@ -1,25 +1,25 @@
-# Temat 48. Zadanie 2. Pasek narzędzi
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: Dodaj do zadania 1 QToolBar i tę samą akcję „Wyczyść”.
-# TODO: Dodaj „O programie”, pokazującą information z tekstem „Edytor 1.0”.
-# TODO: Sprawdź działanie po kilku użyciach. Nie twórz ponownych połączeń.
+"""Temat 48, zadanie 2. Najpierw zaprojektuj formularz zgodnie z README."""
 
 import sys
 from pathlib import Path
-from PyQt6.QtGui import QAction
-from PyQt6.QtWidgets import QApplication, QMainWindow, QTextEdit, QToolBar, QFileDialog, QMessageBox
 
-class Edytor(QMainWindow):
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
+from PyQt6.QtWidgets import QFileDialog, QMessageBox
 
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('Uzupełnij zadanie')
-        # TODO: umieść kontrolki w oknie i połącz właściwe sygnały.
-        self.tekst = QTextEdit()
-if __name__ == '__main__':
+
+def main():
     app = QApplication(sys.argv)
-    okno = Edytor()
-    okno.resize(600, 400)
+    sciezka = Path(__file__).with_name("zadanie2.ui")
+    if not sciezka.is_file():
+        print(f"Zapisz plik {sciezka.name} z Qt Designer obok tego skryptu.", file=sys.stderr)
+        return 1
+
+    okno = uic.loadUi(str(sciezka))
+    # TODO: Zachowaj obsługę czyszczenia. Połącz akcjaOProgramie z komunikatem.
     okno.show()
-    sys.exit(app.exec())
+    return app.exec()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

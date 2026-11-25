@@ -1,31 +1,12 @@
-# Temat 32. Qt Designer i pliki .ui
+# Temat 32. Qt Designer i PyQt6
 
-## Składnia pod ręką
+| Zapis lub właściwość | Działanie |
+| --- | --- |
+| `objectName` | Nazwa kontrolki używana w Pythonie. |
+| `text` | Napis widoczny dla użytkownika. |
+| `Path(__file__).with_name("okno.ui")` | Szuka formularza obok pliku skryptu. |
+| `uic.loadUi(str(sciezka))` | Tworzy obiekt okna i wczytuje kontrolki przy uruchomieniu. |
+| `okno.powitajButton.clicked.connect(powitaj)` | Przekazuje funkcję do wywołania po kliknięciu. |
+| `uic.loadUi(str(sciezka), self)` | Wypełnia własny obiekt okna. Klasa bazowa musi odpowiadać rodzajowi formularza. |
 
-| Zapis | Do czego służy | Wynik lub ważna reguła |
-| --- | --- | --- |
-| `objectName` | Nazwa kontrolki w pliku .ui | Nie jest tym samym co tekst widoczny na przycisku. |
-| `from PyQt6 import uic` | Narzędzia obsługi .ui | Plik .ui przechowuje opis interfejsu. |
-| `uic.loadUi(sciezka, self)` | Wczytanie interfejsu do obiektu | Typ bazowy okna musi pasować do .ui. |
-| `uic.loadUi(sciezka)` | Wczytanie jako nowy obiekt okna | Zachowaj zwrócony obiekt. |
-| `pyuic6 okno.ui -o ui_okno.py` | Generowanie pliku Python | Polecenie terminalu. |
-| `self.setupUi(self)` | Inicjalizacja w typowym wzorcu dziedziczenia z Ui_* | Wariant z kodem wygenerowanym. |
-| `Path(__file__).resolve().parent / "okno.ui"` | Ścieżka względem skryptu | Przekaż str(sciezka) do loadUi. |
-
-## Krótki wzorzec
-
-```python
-from pathlib import Path
-from PyQt6 import uic
-from PyQt6.QtWidgets import QMainWindow
-
-class Okno(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        plik = Path(__file__).resolve().parent / "okno.ui"
-        uic.loadUi(str(plik), self)
-```
-
-Fragment zakłada okno QMainWindow zapisane w okno.ui oraz standardowy start QApplication z poprzedniego tematu. Logikę trzymaj poza plikiem generowanym, bo ponowne generowanie nadpisze zmiany.
-
-[Dokumentacja](https://www.riverbankcomputing.com/static/Docs/PyQt6/designer.html) · [Zadania lekcji](README.md)
+Wariant dodatkowy: `python -m PyQt6.uic.pyuic okno.ui -o ui_okno.py`. Klasa dla głównego obiektu `Form` to `Ui_Form`. Własną logikę trzymaj w osobnym pliku, bo polecenie nadpisuje wygenerowany moduł.

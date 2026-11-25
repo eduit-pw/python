@@ -1,22 +1,46 @@
-# Temat 52. Zadanie 1. Paczka onedir
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: Sprawdź działanie zadanie1.py, potem zbuduj --onedir z widoczną konsolą.
-# TODO: Skopiuj cały dist/zadanie1 do nowego folderu testowego.
-# TODO: Uruchom plik wynikowy z tego folderu. Zanotuj brakujące zasoby lub błędy.
-
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout
+import sqlite3
+from pathlib import Path
+from PyQt6.QtCore import QStandardPaths
+from PyQt6.QtWidgets import QApplication,QWidget,QVBoxLayout,QLineEdit,QLabel,QPushButton
 
-def zbuduj_okno():
-    okno = QWidget()
-    uklad = QVBoxLayout(okno)
-    # TODO: dodaj kontrolki i układy opisane w tym zadaniu.
-    return okno
+app=QApplication(sys.argv)
+app.setOrganizationName("Technikum")
+app.setApplicationName("AlbumyTemat52Zadanie1")
+folder=Path(QStandardPaths.writableLocation(QStandardPaths.StandardLocation.AppDataLocation))
+folder.mkdir(parents=True,exist_ok=True)
+sciezka=folder/"albumy.db"
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    okno = zbuduj_okno()
-    okno.show()
-    sys.exit(app.exec())
+def wykonaj(sql,parametry=()):
+    db=sqlite3.connect(sciezka)
+    try:
+        with db:
+            return db.execute(sql,parametry).fetchall()
+    finally:db.close()
 
+wykonaj("CREATE TABLE IF NOT EXISTS albumy(id INTEGER PRIMARY KEY,tytul TEXT NOT NULL)")
+okno=QWidget()
+okno.setWindowTitle("Katalog albumów")
+okno.resize(570, 270)
+uklad=QVBoxLayout(okno)
+tytul=QLineEdit()
+tytul.setPlaceholderText("Tytuł albumu")
+wynik=QLabel()
+przycisk=QPushButton("Zapisz album")
+
+def odswiez():
+    dane=wykonaj("SELECT id,tytul FROM albumy ORDER BY id")
+    wynik.setText("\n".join(f"{i}: {t}" for i,t in dane)+f"\nBaza: {sciezka}")
+
+def dodaj():
+    tekst=tytul.text().strip()
+    if not tekst:return
+    wykonaj("INSERT INTO albumy(tytul) VALUES(?)",(tekst,))
+    odswiez()
+    tytul.clear()
+
+przycisk.clicked.connect(dodaj)
+for w in (tytul,przycisk,wynik):uklad.addWidget(w)
+odswiez()
+okno.show()
+sys.exit(app.exec())

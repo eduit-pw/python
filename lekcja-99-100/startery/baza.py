@@ -2,7 +2,10 @@ import sqlite3
 from pathlib import Path
 from contextlib import contextmanager
 
-# Uzupełnij operacje bazy z bieżącego zadania.
+SCIEZKA = Path(__file__).with_name("albumy.db")
+
+# Skrypty okienkowe ustawiają SCIEZKA przed pierwszym połączeniem.
+# W polacz() użyj tej wartości, aby otworzyć bazę danego zadania.
 
 @contextmanager
 def polacz():

@@ -109,3 +109,7 @@ Materiały korzystają z różnych zapisów `py`, `python` i `python3`, zależni
 ## Osobne startery do zadań
 
 Przed pracą otwórz startery/README.md w danej lekcji. Zawiera przypisanie każdego zadania do pliku lub folderu i polecenie uruchomienia. GUI i API mają przygotowaną część startową, a kod oznaczony TODO lub NotImplementedError uzupełniasz samodzielnie. W lekcjach testowania dostarczona aplikacja jest materiałem do napisania własnych testów. W lekcjach modułów, debuggera i Git pracujesz na wskazanym wspólnym materiale wejściowym.
+
+## Okna w PyQt6
+
+Od [tematu 32](lekcja-63-64/README.md) projektuj okna w Qt Designer. Porównuj obraz ze specyfikacją, nazwij kontrolki, zapisz `.ui` obok odpowiedniego skryptu i wczytaj przez `uic.loadUi()`. Uruchom Designer przed lekcją. Sam pakiet `PyQt6` dostarcza biblioteki Pythona, a Designer musi być dostępny osobno.

@@ -11,3 +11,5 @@ dist/
 .idea/
 **/.vscode/*
 !**/.vscode/launch.json
+
+.DS_Store

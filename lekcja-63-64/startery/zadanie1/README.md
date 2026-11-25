@@ -1,7 +1,6 @@
-# Zadanie 1: Qt Designer
+# Zadanie 1. Projekt formularza
 
-Najpierw wykonaj w Designerze formularz zgodny z poleceniem. Zapisz tutaj plik `okno.ui` jako QWidget. Zachowaj wymagane objectName.
+- Odtwórz widok w Qt Designer. Ustaw wskazane nazwy i układ.
+- Zapisz `okno.ui`. W Designerze sprawdź puste pole, napis na przycisku i zachowanie układu przy zmianie rozmiaru.
 
-To zadanie projektowe: kontrolę poprawności wykonaj w Designerze.
-
-Główny obiekt formularza nazwij Form. Wygenerowana klasa będzie nosić nazwę Ui_Form. Nazwy kontrolek zachowaj dokładnie według README lekcji.
+Podgląd i nazwy: [polecenie w README](../../README.md).

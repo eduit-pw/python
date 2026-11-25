@@ -7,3 +7,5 @@ Polecenie, dane i sposób sprawdzenia przekaże nauczyciel na zajęciach. Przygo
 Powtórz kontrolki PyQt, odczyt danych z formularza, obsługę błędów i użycie funkcji bazy SQLite. Obowiązkowy zakres mieści się w jednym bloku.
 
 Podzielcie zadania i zapiszcie wkład każdej osoby. Każdy członek zespołu uczestniczy w kodowaniu oraz potrafi wyjaśnić swoją część. Na zakończenie pokażcie aplikację i wyniki prób. Projekt pozostaje osobną pracą ocenianą.
+
+Do przećwiczenia projektowania użyj podglądu z [tematu 50](../lekcja-99-100/README.md). Przypomnij sobie zapis formularza `.ui` i wczytanie go przez `uic.loadUi()`.

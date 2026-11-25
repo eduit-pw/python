@@ -10,12 +10,14 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 ## Projekt wejściowy i polecenia
 
-Przed budowaniem uruchom plik danego zadania w środowisku z PyQt6 i PyInstallerem. W zadaniu 2 połóż okno.ui obok skryptu. W zadaniu 3 aplikacja zapisuje bazę w katalogu danych użytkownika.
+**Pliki wejściowe.** W `startery/` masz gotowe przykłady do pakowania w zadaniach 1 i 2. W zadaniach 2–4 skopiuj odpowiedni `okno_zadanieN.ui` obok skryptu jako `okno.ui`. Przy pracy nad kolejnym zadaniem użyj osobnego folderu. W 3 i 4 uzupełniasz obsługę danych.
+
+Przed budowaniem uruchom plik danego zadania w środowisku z PyQt6 i PyInstallerem. Pierwszy przykład tworzy proste okno w kodzie. W zadaniach 2–4 aplikacja odczytuje formularz `okno.ui`. W zadaniach 3 i 4 baza trafia do katalogu danych użytkownika.
 
 ```powershell
 python -m PyInstaller --onedir zadanie1.py
 python -m PyInstaller --onedir --add-data "okno.ui:." zadanie2.py
-python -m PyInstaller --onefile zadanie3.py
+python -m PyInstaller --onefile --add-data "okno.ui:." zadanie3.py
 ```
 
 Dla onedir przekaż cały katalog wynikowy, np. `dist/zadanie1`. Dla onefile na Windows plikiem wynikowym jest `dist/zadanie3.exe`.
@@ -39,6 +41,10 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 **Punkt wyjścia:** [starter zadania 1](startery/zadanie1.py).
 
+**Widok wzorcowy.** Okno „Katalog albumów” z polem tytułu, przyciskiem zapisu i miejscem na listę oraz ścieżkę bazy. W pierwszej próbie pakujemy prosty program, który buduje okno w Pythonie.
+
+![Widok wzorcowy zadania 1](media/zadanie-1.png)
+
 - Sprawdź działanie zadanie1.py, potem zbuduj --onedir z widoczną konsolą.
 - Skopiuj cały dist/zadanie1 do nowego folderu testowego.
 - Uruchom plik wynikowy z tego folderu. Zanotuj brakujące zasoby lub błędy.
@@ -48,6 +54,12 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 ## Zadanie 2. Interfejs .ui
 
 **Punkt wyjścia:** [starter zadania 2](startery/zadanie2.py).
+
+**Widok wzorcowy.** Okno „Powitanie” z pola imienia, przycisku „Powitaj” i etykiety. Wzór interfejsu pochodzi z tematu 32.
+
+![Widok wzorcowy zadania 2](media/zadanie-2.png)
+
+Formularz wykorzystuje `imieEdit` (QLineEdit), `powitajButton` (QPushButton) i `wynikLabel` (QLabel).
 
 - Spakuj formularz z tematu 32, używający loadUi.
 - Dołącz okno.ui przez --add-data i odczytuj ścieżkę względem __file__.
@@ -59,7 +71,13 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 **Punkt wyjścia:** [starter zadania 3](startery/zadanie3.py).
 
-- W projekcie albumów umieść bazę w AppDataLocation, także przed pakowaniem.
+**Widok wzorcowy.** Pole „Tytuł albumu”, „Zapisz album”, a pod nimi zapisane tytuły i informacja o ścieżce bazy. Graficzny układ jest w `okno.ui`.
+
+![Widok wzorcowy zadania 3](media/zadanie-3.png)
+
+Formularz wykorzystuje `tytulEdit` (QLineEdit), `zapiszButton` (QPushButton) i `wynikLabel` (QLabel).
+
+- W projekcie albumów wczytaj dostarczony formularz `okno.ui` i umieść bazę w AppDataLocation. Dołącz `okno.ui` do paczki, jak w zadaniu 2.
 - Dodaj rekord, zamknij program i uruchom go ponownie.
 - Zbuduj onefile i powtórz test. Wypisz w URUCHOMIENIE.md faktyczne miejsce bazy.
 
@@ -69,7 +87,13 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 **Punkt wyjścia:** [starter zadania 4](startery/zadanie4.py).
 
-- Przygotuj paczkę onedir lub onefile dla tego samego systemu i architektury.
+**Widok wzorcowy.** Widok zapisu albumu z dodatkowym przyciskiem „Wczytaj tytuł z pliku”. Dialog pozwala wybrać plik tekstowy.
+
+![Widok wzorcowy zadania 4](media/zadanie-4.png)
+
+Do kontrolek z zadania 3 dochodzi `importujButton` (QPushButton).
+
+- Przygotuj paczkę onedir lub onefile z `okno.ui` dla tego samego systemu i architektury. Wypróbuj przycisk „Wczytaj tytuł z pliku”.
 - Sprawdź start, zapis, odczyt, anulowanie dialogu i brak zasobu.
 - Dodaj krótką instrukcję uruchomienia oraz wersje użytych zależności.
 
@@ -80,6 +104,8 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
+
+Dołącz własny plik `.ui` do kodu zadania okienkowego, jeśli był używany.
 
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 

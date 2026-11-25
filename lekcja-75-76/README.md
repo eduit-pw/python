@@ -14,3 +14,5 @@ Zakres: konsola, PyQt6, trzy testy jednostkowe logiki i komentarze. Konkretne po
 Przed I próbą wróć do tematów 23–24, 27 oraz 31–36. Powtórz podstawowe kontrolki, connect(), układy i testy unittest.
 
 Nie publikujemy tutaj ocenianych wariantów ani rozwiązań. [Konstrukcje do powtórzenia](KONSTRUKCJE.md).
+
+Do powtórki odtwórz dowolny widok z [lekcji 63–64](../lekcja-63-64/README.md). Sprawdź, czy Twój skrypt ładuje formularz `.ui` i reaguje na kliknięcie.

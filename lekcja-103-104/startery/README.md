@@ -13,4 +13,6 @@ Skopiuj wybrany plik do folderu lekcji, aby pliki danych pozostały obok program
 | 3. Trwała baza | [zadanie3.py](zadanie3.py) | `python zadanie3.py` po uzupełnieniu |
 | 4. Dla chętnych: Przekazanie odbiorcy | [zadanie4.py](zadanie4.py) | `python zadanie4.py` po uzupełnieniu |
 
-GUI wymaga PyQt6. Najpierw sprawdź aktywne venv i instalację `python -m pip install PyQt6`. Okno startowe jest przygotowane, a kontrolki, układ i obsługa wskazane w TODO pozostają do uzupełnienia. Przy Designerze najpierw przygotuj wymagany plik .ui.
+
+**Pliki wejściowe.** W `startery/` masz gotowe przykłady do pakowania w zadaniach 1 i 2. W zadaniach 2–4 skopiuj odpowiedni `okno_zadanieN.ui` obok skryptu jako `okno.ui`. Przy pracy nad kolejnym zadaniem użyj osobnego folderu. W 3 i 4 uzupełniasz obsługę danych.
+

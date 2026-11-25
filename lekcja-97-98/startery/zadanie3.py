@@ -1,28 +1,26 @@
-# Temat 49. Zadanie 3. ID po sortowaniu
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: W tabeli zadania 2 włącz sortowanie po tytule.
-# TODO: Przyciskiem „Pokaż ID” odczytaj ID aktualnie wybranego rekordu.
-# TODO: Sprawdź oba rekordy przed sortowaniem i po odwróceniu kierunku.
+"""Temat 49, zadanie 3. Najpierw zaprojektuj formularz zgodnie z README."""
 
 import sys
+from pathlib import Path
+
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QListWidget, QLabel, QPushButton, QTableWidget, QTableWidgetItem, QAbstractItemView
+from PyQt6.QtWidgets import QTableWidgetItem
 
-class Okno(QWidget):
 
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('Uzupełnij zadanie')
-        # TODO: umieść kontrolki w oknie i połącz właściwe sygnały.
-        self.wynik = QLabel()
-        self.tabela = QTableWidget(2, 3)
-
-    def pokaz_id(self):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
-    okno = Okno()
-    okno.resize(600, 400)
+    sciezka = Path(__file__).with_name("zadanie3.ui")
+    if not sciezka.is_file():
+        print(f"Zapisz plik {sciezka.name} z Qt Designer obok tego skryptu.", file=sys.stderr)
+        return 1
+
+    okno = uic.loadUi(str(sciezka))
+    # TODO: Wypełnij tabelę. Włącz sortowanie i połącz odczyt z przyciskiem odczytButton.
     okno.show()
-    sys.exit(app.exec())
+    return app.exec()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

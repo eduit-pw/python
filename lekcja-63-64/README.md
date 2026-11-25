@@ -10,15 +10,7 @@ Utwórz pliki wskazane w zadaniach wewnątrz bieżącego folderu lekcji. Kod uru
 
 ## Specyfikacja formularza
 
-W Qt Designer utwórz formularz typu QWidget. Dodaj QLineEdit o objectName `imieEdit`, QPushButton `powitajButton` i QLabel `wynikLabel`. Ułóż je pionowo w layoucie. QLabel ma początkowo pusty tekst. Zapisz `okno.ui` w folderze projektu. Designer musi być dostępny na stanowisku; sam pakiet PyQt6 nie gwarantuje instalacji programu Designer.
-
-Ze starterów uruchom `python zadanie2.py` (loadUi) albo `python zadanie3.py` (kod wygenerowany), w folderze wybranego zadania. Wygeneruj kod poleceniem:
-
-```powershell
-py -m PyQt6.uic.pyuic okno.ui -o ui_okno.py
-```
-
-Logikę powitania umieść w swojej klasie, a ścieżkę .ui w wariancie loadUi ustal względem pliku skryptu.
+W Qt Designer wybierz **Widget (QWidget)**, pozostaw nazwę głównego formularza `Form` i nadaj mu tytuł „Powitanie”. W oknie umieść od góry pole, przycisk oraz początkowo pustą etykietę. Ułóż kontrolki pionowo przy pomocy layoutu. W zadaniach 1–3 korzystasz z własnego projektu i odczytu pliku `uic.loadUi()`. Generowanie modułu `.py` poznasz w zadaniu dodatkowym.
 
 ## Sposób pracy podczas bloku
 
@@ -39,47 +31,96 @@ Tempo ustala nauczyciel. Jeśli zadanie 4 jest większe, stanowi kontynuację na
 
 **Punkt wyjścia:** [starter zadania 1](startery/zadanie1/README.md).
 
-- Utwórz w Designer formularz zgodny z powyższą specyfikacją.
-- Ustaw tytuł „Powitanie”, przycisk „Powitaj” i pusty wynik.
-- Zapisz okno.ui i sprawdź podgląd przy zmianie rozmiaru.
+**Widok wzorcowy.** Układ pionowy. Od góry pole imienia, przycisk „Powitaj” i początkowo pusta etykieta wyniku. Zrzut może pokazywać przykładowe dane po wykonaniu próby.
 
-**Wynik kontrolny:** trzy kontrolki w pionowym układzie, poprawne objectName.
+![Widok wzorcowy zadania 1](media/zadanie-1.png)
+
+**Plik projektu** `okno.ui`, typ `QWidget`, tytuł „Powitanie”.
+
+| Kontrolka | `objectName` |
+| --- | --- |
+| QLineEdit | `imieEdit` |
+| QPushButton | `powitajButton` |
+| QLabel | `wynikLabel` |
+
+- Odtwórz widok w Qt Designer. Ustaw wskazane nazwy i układ.
+- Zapisz `okno.ui`. W Designerze sprawdź puste pole, napis na przycisku i zachowanie układu przy zmianie rozmiaru.
+
+**Wynik kontrolny:** Trzy kontrolki w layoutcie, poprawne `objectName`.
 
 ## Zadanie 2. Wczytanie i akcja
 
 **Punkt wyjścia:** [starter zadania 2](startery/zadanie2/README.md).
 
-- Wczytaj okno.ui przez loadUi. Połącz przycisk z funkcją powitania.
-- Dla pustego lub białego imienia pokaż „Podaj imię”.
-- Dla „ Anna ” pokaż powitanie bez zewnętrznych spacji.
+**Widok wzorcowy.** Układ pionowy. Od góry pole imienia, przycisk „Powitaj” i początkowo pusta etykieta wyniku. Zrzut może pokazywać przykładowe dane po wykonaniu próby.
 
-**Wynik kontrolny:** „Witaj, Anna” albo „Podaj imię”.
+![Widok wzorcowy zadania 2](media/zadanie-2.png)
 
-## Zadanie 3. Wariant generowany
+**Plik projektu** `okno.ui`, typ `QWidget`, tytuł „Powitanie”.
+
+| Kontrolka | `objectName` |
+| --- | --- |
+| QLineEdit | `imieEdit` |
+| QPushButton | `powitajButton` |
+| QLabel | `wynikLabel` |
+
+- Skopiuj `okno.ui` z zadania 1 obok `zadanie2.py` i wczytaj go przez `uic.loadUi()`.
+- Połącz kliknięcie z powitaniem. Dla pustego imienia lub samych spacji pokaż „Podaj imię”.
+- Dla „ Anna ” pokaż „Witaj, Anna”.
+
+**Wynik kontrolny:** Po kliknięciu działa powitanie i obsługa pustego pola.
+
+## Zadanie 3. Zmiana wyglądu w Designerze
 
 **Punkt wyjścia:** [starter zadania 3](startery/zadanie3/README.md).
 
-- Wygeneruj ui_okno.py, utwórz własną klasę Okno i dodaj metodę powitaj.
-- Zachowaj działanie z zadania 2. Nie modyfikuj pliku generowanego.
-- Uruchom swój skrypt z klasą Okno. W starterze do zadania 3 jest to `zadanie3.py`.
+**Widok wzorcowy.** Układ z poprzedniego zadania. Nad polem podpis „Imię ucznia”, na przycisku „Pokaż powitanie”. Zrzut może pokazywać przykładowe dane po wykonaniu próby.
 
-**Wynik kontrolny:** powitanie i kontrola pustego imienia działają jak wcześniej.
+![Widok wzorcowy zadania 3](media/zadanie-3.png)
 
-## Zadanie 4. Dla chętnych: Zmiana projektu
+**Plik projektu** `okno_zadanie3.ui`, typ `QWidget`, tytuł „Powitanie”.
+
+| Kontrolka | `objectName` |
+| --- | --- |
+| QLineEdit | `imieEdit` |
+| QPushButton | `powitajButton` |
+| QLabel | `wynikLabel` |
+
+- Otwórz formularz z poprzedniego zadania i zapisz kopię jako `okno_zadanie3.ui`.
+- Nad polem dodaj „Imię ucznia”, a tekst przycisku zmień na „Pokaż powitanie”. Zachowaj `objectName` używane przez skrypt.
+- Uruchom `zadanie3.py` i powtórz próby z zadania 2. Pozostaw w Pythonie tę samą obsługę przycisku.
+
+**Wynik kontrolny:** Nowy wygląd pojawia się przy ponownym uruchomieniu. Powitanie działa jak wcześniej.
+
+## Zadanie 4. Dla chętnych: Wariant generowany
 
 **Punkt wyjścia:** [starter zadania 4](startery/zadanie4/README.md).
 
-- W .ui zmień tekst przycisku na „Pokaż powitanie” i dodaj QLabel „Imię ucznia”.
-- Sprawdź program z loadUi, a potem wariant generowany.
-- Dla drugiego wariantu ponownie wygeneruj ui_okno.py.
+**Widok wzorcowy.** Układ pionowy. Od góry pole imienia, przycisk „Powitaj” i początkowo pusta etykieta wyniku. Zrzut może pokazywać przykładowe dane po wykonaniu próby.
 
-**Wynik kontrolny:** nowy wygląd, własna metoda powitania zachowana.
+![Widok wzorcowy zadania 4](media/zadanie-4.png)
+
+**Plik projektu** `okno.ui`, typ `QWidget`, tytuł „Powitanie”.
+
+| Kontrolka | `objectName` |
+| --- | --- |
+| QLineEdit | `imieEdit` |
+| QPushButton | `powitajButton` |
+| QLabel | `wynikLabel` |
+
+- W osobnym folderze skopiuj podstawowy `okno.ui` z zadania 1. Uruchom `python -m PyQt6.uic.pyuic okno.ui -o ui_okno.py`.
+- Zaimportuj `Ui_Form`, wywołaj `setupUi(self)` i połącz sygnał w swojej klasie w `zadanie4.py`.
+- Zmień np. tekst przycisku w Designerze, wygeneruj moduł ponownie i sprawdź, kiedy widać zmianę.
+
+**Wynik kontrolny:** Własna obsługa pozostaje w `zadanie4.py`, a generator zastępuje wyłącznie `ui_okno.py`.
 
 ## Diagnoza i praca domowa
 
 Otwórz [zadanie naprawcze](diagnoza/README.md). Ma własny kontrakt i celowo błędny kod. Wykonaj je na zajęciach lub dokończ w domu zgodnie z ustaleniem prowadzącego.
 
 ## Oddanie pracy
+
+Dołącz własny plik `.ui` do kodu zadania okienkowego, jeśli był używany.
 
 Zachowaj źródła i niezbędne pliki danych. W `testy.md` opisz rzeczywiście wykonane próby: dane, oczekiwany wynik, wynik otrzymany i wniosek. Własną instrukcję uruchomienia zapisz w `URUCHOMIENIE.md`, aby zachować treść zadań w tym README. Dołącz dokumentację wskazaną w poleceniu. Zadania oznaczone jako dodatkowe są dla chętnych.
 

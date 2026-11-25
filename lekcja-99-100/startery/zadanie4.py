@@ -1,22 +1,18 @@
-# Temat 50. Zadanie 4. Dla chętnych: Wycofanie transakcji
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: W nowej testowej bazie wykonaj w jednym with db dwa INSERT.
-# TODO: Pierwszy: (Dobry,2024). Drugi: (Błędny,1800), naruszający CHECK.
-# TODO: Przechwyć IntegrityError poza with db i odczytaj tabelę.
+"""Temat 50. Zadanie 4. Sprawdź wycofanie transakcji w SQLite."""
 
-import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout
+import sqlite3
+from contextlib import closing
 
-def zbuduj_okno():
-    okno = QWidget()
-    uklad = QVBoxLayout(okno)
-    # TODO: dodaj kontrolki i układy opisane w tym zadaniu.
-    return okno
+
+def main():
+    with closing(sqlite3.connect(":memory:")) as db:
+        # TODO: utwórz tabelę albumy z ograniczeniem CHECK dla roku.
+        # Zatwierdź utworzenie tabeli przed rozpoczęciem próby.
+        # TODO: w jednej transakcji dodaj ("Dobry", 2024) i ("Błędny", 1800).
+        # TODO: obsłuż sqlite3.IntegrityError poza blokiem transakcji.
+        # TODO: odczytaj tabelę i sprawdź, ile rekordów pozostało.
+        pass
+
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    okno = zbuduj_okno()
-    okno.show()
-    sys.exit(app.exec())
-
+    main()

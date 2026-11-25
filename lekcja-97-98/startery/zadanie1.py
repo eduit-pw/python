@@ -1,28 +1,24 @@
-# Temat 49. Zadanie 1. Lista albumów
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: Dodaj QListWidget z tytułami „Poranek”, „Wieczór” i „Noc”.
-# TODO: Po kliknięciu przycisku „Pokaż” wypisz bieżący tytuł w QLabel.
-# TODO: Bez zaznaczenia pokaż „Wybierz album”.
+"""Temat 49, zadanie 1. Najpierw zaprojektuj formularz zgodnie z README."""
 
 import sys
-from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QListWidget, QLabel, QPushButton, QTableWidget, QTableWidgetItem, QAbstractItemView
+from pathlib import Path
 
-class Okno(QWidget):
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
 
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('Uzupełnij zadanie')
-        # TODO: umieść kontrolki w oknie i połącz właściwe sygnały.
-        self.lista = QListWidget()
-        self.wynik = QLabel()
 
-    def pokaz_tytul(self):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
-    okno = Okno()
-    okno.resize(600, 400)
+    sciezka = Path(__file__).with_name("zadanie1.ui")
+    if not sciezka.is_file():
+        print(f"Zapisz plik {sciezka.name} z Qt Designer obok tego skryptu.", file=sys.stderr)
+        return 1
+
+    okno = uic.loadUi(str(sciezka))
+    # TODO: Wypełnij listę. Po kliknięciu pokaż tytuł lub komunikat.
     okno.show()
-    sys.exit(app.exec())
+    return app.exec()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

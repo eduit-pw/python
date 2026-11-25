@@ -1,25 +1,24 @@
-# Temat 34. Zadanie 2. Liczba znaków na żywo
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: Połącz QLineEdit.textChanged z metodą pokazującą długość tekstu.
-# TODO: Licz wszystkie znaki, także spacje. Pusty napis ma długość 0.
-# TODO: Sprawdź „abc”, „a b” oraz wyczyszczenie pola.
+"""Temat 34, zadanie 2. Najpierw zaprojektuj formularz zgodnie z README."""
 
 import sys
-from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton, QLineEdit, QSlider
+from pathlib import Path
 
-class Okno(QWidget):
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
 
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('Uzupełnij zadanie')
-        # TODO: umieść kontrolki w oknie i połącz właściwe sygnały.
-        self.tekst = QLineEdit()
-        self.dlugosc = QLabel('0')
-if __name__ == '__main__':
+
+def main():
     app = QApplication(sys.argv)
-    okno = Okno()
-    okno.resize(600, 400)
+    sciezka = Path(__file__).with_name("zadanie2.ui")
+    if not sciezka.is_file():
+        print(f"Zapisz plik {sciezka.name} z Qt Designer obok tego skryptu.", file=sys.stderr)
+        return 1
+
+    okno = uic.loadUi(str(sciezka))
+    # TODO: Połącz tekst.textChanged z aktualizacją etykiety dlugosc.
     okno.show()
-    sys.exit(app.exec())
+    return app.exec()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

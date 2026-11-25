@@ -1,26 +1,26 @@
-# Temat 52. Zadanie 3. Trwała baza
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: W projekcie albumów umieść bazę w AppDataLocation, także przed pakowaniem.
-# TODO: Dodaj rekord, zamknij program i uruchom go ponownie.
-# TODO: Zbuduj onefile i powtórz test. Wypisz w URUCHOMIENIE.md faktyczne miejsce bazy.
+"""Temat 52, zadanie 3. Najpierw zaprojektuj formularz zgodnie z README."""
 
 import sys
-import sqlite3
 from pathlib import Path
-from PyQt6.QtCore import QStandardPaths
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout
 
-def zbuduj_okno():
-    okno = QWidget()
-    uklad = QVBoxLayout(okno)
-    # TODO: wyznacz AppDataLocation i utwórz tam folder trwałej bazy.
-    # TODO: wykorzystaj tutaj własny kod albumów z poprzedniego tematu.
-    return okno
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
+from PyQt6.QtCore import QStandardPaths
+
+
+def main():
+    app = QApplication(sys.argv)
+    sciezka = Path(__file__).with_name("okno.ui")
+    if not sciezka.is_file():
+        print(f"Zapisz plik {sciezka.name} z Qt Designer obok tego skryptu.", file=sys.stderr)
+        return 1
+
+    okno = uic.loadUi(str(sciezka))
+    # TODO: Wyznacz QStandardPaths.AppDataLocation, utwórz katalog i połącz z nim bazę.
+    # TODO: Podepnij zapis i odczyt tytułów.
+    okno.show()
+    return app.exec()
+
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    okno = zbuduj_okno()
-    okno.show()
-    sys.exit(app.exec())
-
+    sys.exit(main())

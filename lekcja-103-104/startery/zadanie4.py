@@ -1,22 +1,26 @@
-# Temat 52. Zadanie 4. Dla chętnych: Przekazanie odbiorcy
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: Przygotuj paczkę onedir lub onefile dla tego samego systemu i architektury.
-# TODO: Sprawdź start, zapis, odczyt, anulowanie dialogu i brak zasobu.
-# TODO: Dodaj krótką instrukcję uruchomienia oraz wersje użytych zależności.
+"""Temat 52, zadanie 4. Najpierw zaprojektuj formularz zgodnie z README."""
 
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout
+from pathlib import Path
 
-def zbuduj_okno():
-    okno = QWidget()
-    uklad = QVBoxLayout(okno)
-    # TODO: dodaj kontrolki i układy opisane w tym zadaniu.
-    return okno
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
+from PyQt6.QtWidgets import QFileDialog
+
+
+def main():
+    app = QApplication(sys.argv)
+    sciezka = Path(__file__).with_name("okno.ui")
+    if not sciezka.is_file():
+        print(f"Zapisz plik {sciezka.name} z Qt Designer obok tego skryptu.", file=sys.stderr)
+        return 1
+
+    okno = uic.loadUi(str(sciezka))
+    # TODO: Przenieś trwały zapis z zadania 3. Dodaj dialog pliku i reakcję na anulowanie.
+    # TODO: Zbuduj paczkę z plikiem okno.ui.
+    okno.show()
+    return app.exec()
+
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    okno = zbuduj_okno()
-    okno.show()
-    sys.exit(app.exec())
-
+    sys.exit(main())

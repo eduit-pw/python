@@ -1,11 +1,9 @@
-# Zadanie 3: Qt Designer
+# Zadanie 3. Zmiana wyglądu w Designerze
 
-Najpierw wykonaj w Designerze formularz zgodny z poleceniem. Zapisz tutaj plik `okno.ui` jako QWidget. Zachowaj wymagane objectName.
+- Otwórz formularz z poprzedniego zadania i zapisz kopię jako `okno_zadanie3.ui`.
+- Nad polem dodaj „Imię ucznia”, a tekst przycisku zmień na „Pokaż powitanie”. Zachowaj `objectName` używane przez skrypt.
+- Uruchom `zadanie3.py` i powtórz próby z zadania 2. Pozostaw w Pythonie tę samą obsługę przycisku.
 
-Dołącz tutaj swoją wersję formularza z poprzedniego etapu i wykonaj wymaganą zmianę.
+Podgląd i nazwy: [polecenie w README](../../README.md).
 
-Wygeneruj plik: `python -m PyQt6.uic.pyuic okno.ui -o ui_okno.py`.
-
-Uruchom `python zadanie3.py` po przygotowaniu formularza.
-
-Główny obiekt formularza nazwij Form. Wygenerowana klasa będzie nosić nazwę Ui_Form. Nazwy kontrolek zachowaj dokładnie według README lekcji.
+Uruchom `python zadanie3.py` po przygotowaniu plików.

@@ -1,30 +1,24 @@
-# Temat 34. Zadanie 1. Licznik kliknięć
-# Starter do uzupełnienia, bez rozwiązania.
-# Pełne polecenie: README lekcji.
-# TODO: Zbuduj etykietę wyniku, przyciski „+1” i „Reset”. Stan początkowy: 0.
-# TODO: Pierwszy przycisk zwiększa pole self.licznik, drugi zeruje je.
-# TODO: Kliknij +1 trzy razy, Reset i +1 jeden raz.
+"""Temat 34, zadanie 1. Najpierw zaprojektuj formularz zgodnie z README."""
 
 import sys
-from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton, QLineEdit, QSlider
+from pathlib import Path
 
-class Okno(QWidget):
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
 
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('Uzupełnij zadanie')
-        # TODO: umieść kontrolki w oknie i połącz właściwe sygnały.
-        self.licznik_wynik = QLabel('0')
 
-    def zwieksz(self):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-
-    def reset(self):
-        raise NotImplementedError('Uzupełnij rozwiązanie według polecenia.')
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
-    okno = Okno()
-    okno.resize(600, 400)
+    sciezka = Path(__file__).with_name("zadanie1.ui")
+    if not sciezka.is_file():
+        print(f"Zapisz plik {sciezka.name} z Qt Designer obok tego skryptu.", file=sys.stderr)
+        return 1
+
+    okno = uic.loadUi(str(sciezka))
+    # TODO: Podłącz plusButton i resetButton. Aktualizuj etykietę licznik_wynik.
     okno.show()
-    sys.exit(app.exec())
+    return app.exec()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

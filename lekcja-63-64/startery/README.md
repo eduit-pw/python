@@ -10,7 +10,7 @@ Skopiuj wybrany plik do folderu lekcji, aby pliki danych pozostały obok program
 | --- | --- | --- |
 | 1. Projekt formularza | [zadanie1/](zadanie1/README.md) | Instrukcja w folderze |
 | 2. Wczytanie i akcja | [zadanie2/](zadanie2/README.md) | Instrukcja w folderze |
-| 3. Wariant generowany | [zadanie3/](zadanie3/README.md) | Instrukcja w folderze |
-| 4. Dla chętnych: Zmiana projektu | [zadanie4/](zadanie4/README.md) | Instrukcja w folderze |
+| 3. Zmiana wyglądu w Designerze | [zadanie3/](zadanie3/README.md) | Instrukcja w folderze |
+| 4. Dla chętnych: Wariant generowany | [zadanie4/](zadanie4/README.md) | Instrukcja w folderze |
 
-GUI wymaga PyQt6. Najpierw sprawdź aktywne venv i instalację `python -m pip install PyQt6`. Okno startowe jest przygotowane, a kontrolki, układ i obsługa wskazane w TODO pozostają do uzupełnienia. Przy Designerze najpierw przygotuj wymagany plik .ui.
+GUI wymaga PyQt6. Najpierw sprawdź aktywne venv i instalację `python -m pip install PyQt6`. Projekt okna przygotuj w Qt Designer zgodnie z podglądem w README lekcji. Przy Designerze najpierw przygotuj wymagany plik .ui.
