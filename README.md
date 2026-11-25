@@ -109,7 +109,3 @@ Materiały korzystają z różnych zapisów `py`, `python` i `python3`, zależni
 ## Osobne startery do zadań
 
 Przed pracą otwórz startery/README.md w danej lekcji. Zawiera przypisanie każdego zadania do pliku lub folderu i polecenie uruchomienia. GUI i API mają przygotowaną część startową, a kod oznaczony TODO lub NotImplementedError uzupełniasz samodzielnie. W lekcjach testowania dostarczona aplikacja jest materiałem do napisania własnych testów. W lekcjach modułów, debuggera i Git pracujesz na wskazanym wspólnym materiale wejściowym.
-
-## Podmiana starszych starterów
-
-Rozpakuj ZIP do nowego folderu. Po zachowaniu własnych zmian zastąp w lokalnym repozytorium całe foldery lekcja-* oraz pliki instrukcji z tej paczki. Zachowaj katalog .git. Sama podmiana pojedynczych plików pozostawiłaby starsze startery, np. obok nowych folderów zadanie1–zadanie4. Commit i push wykonujesz samodzielnie po przejrzeniu zmian.
